@@ -60,15 +60,17 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    ENTRY_LOG;
-    EXIT_LOG;
-    ERROR_EXIT_LOG;
-    
-    DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
-    DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
-    DDLogInfo(@"%s Info ", __PRETTY_FUNCTION__);
-    DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
-    DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
+
+#pragma mark - TODO: Remove the below commented statements
+//    ENTRY_LOG;
+//    EXIT_LOG;
+//    ERROR_EXIT_LOG;
+//    
+//    DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
+//    DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
+//    DDLogInfo(@"%s Info ", __PRETTY_FUNCTION__);
+//    DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
+//    DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
