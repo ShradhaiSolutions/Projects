@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4AD155EB621640108A22DE9D /* libPods-PropertySalesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2FAFC7B654D93A3F075C1 /* libPods-PropertySalesTests.a */; };
 		7EA81D9150D64BB9A3A04909 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1B0038DC8245B09D11F7E4 /* libPods.a */; };
+		8A4B2EF0189E04C8005AEADF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */; };
+		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
+		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
 		8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */; };
 		8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */; };
 		8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
@@ -36,6 +39,10 @@
 /* Begin PBXFileReference section */
 		37918D9DAC1A4C458C6C9B40 /* Pods-PropertySalesTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertySalesTests.xcconfig"; path = "Pods/Pods-PropertySalesTests.xcconfig"; sourceTree = "<group>"; };
 		57F2FAFC7B654D93A3F075C1 /* libPods-PropertySalesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PropertySalesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
+		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
+		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
 		8ADD4AEC189DA3AC00F1C54B /* PropertySales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertySales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */,
+				8A4B2EF0189E04C8005AEADF /* Crashlytics.framework in Frameworks */,
 				8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */,
 				8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */,
 				7EA81D9150D64BB9A3A04909 /* libPods.a in Frameworks */,
@@ -107,6 +115,7 @@
 		8ADD4AEE189DA3AC00F1C54B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */,
 				8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */,
 				8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */,
 				8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */,
@@ -122,6 +131,9 @@
 			children = (
 				8ADD4AFE189DA3AC00F1C54B /* PSAppDelegate.h */,
 				8ADD4AFF189DA3AC00F1C54B /* PSAppDelegate.m */,
+				8A4B2EF1189E0651005AEADF /* PSTestViewController.h */,
+				8A4B2EF2189E0651005AEADF /* PSTestViewController.m */,
+				8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */,
 				8AFAD2A5189DE455007457B8 /* PSLogging.h */,
 				8ADD4B01189DA3AC00F1C54B /* Images.xcassets */,
 				8ADD4AF6189DA3AC00F1C54B /* Supporting Files */,
@@ -170,6 +182,7 @@
 				8ADD4AE9189DA3AC00F1C54B /* Frameworks */,
 				8ADD4AEA189DA3AC00F1C54B /* Resources */,
 				F2AF47BCF8104E8E91401614 /* Copy Pods Resources */,
+				8A4B2EEE189E045C005AEADF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,6 +253,7 @@
 			files = (
 				8ADD4AFA189DA3AC00F1C54B /* InfoPlist.strings in Resources */,
 				8ADD4B02189DA3AC00F1C54B /* Images.xcassets in Resources */,
+				8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +298,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		8A4B2EEE189E045C005AEADF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run fae00db142eb503989a6c199d8a844b24463151f";
+		};
 		9D1F1A8F389C4FA3BD26B35E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,6 +350,7 @@
 			files = (
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
 				8ADD4B00189DA3AC00F1C54B /* PSAppDelegate.m in Sources */,
+				8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +472,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kon2740/Dhana/GitHubProjects/PropertySales,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PropertySales/PropertySales-Prefix.pch";
 				INFOPLIST_FILE = "PropertySales/PropertySales-Info.plist";
@@ -458,6 +490,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kon2740/Dhana/GitHubProjects/PropertySales,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PropertySales/PropertySales-Prefix.pch";
 				INFOPLIST_FILE = "PropertySales/PropertySales-Info.plist";

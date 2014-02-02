@@ -11,6 +11,10 @@
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 
+#import <Crashlytics/Crashlytics.h>
+
+#import "PSTestViewController.h"
+
 @implementation PSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -20,8 +24,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    //DDLogger must be configured before setting the rootViewController
     [self setupLoggerFramework];
     
+    [Crashlytics startWithAPIKey:@"fae00db142eb503989a6c199d8a844b24463151f"];
+
+    //Set the RootViewController after integrating all the frameworks
+    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PSTestStoryboard"
+                                                                bundle:nil]
+                                      instantiateInitialViewController];
+
     return YES;
 }
 
@@ -66,11 +78,11 @@
 //    EXIT_LOG;
 //    ERROR_EXIT_LOG;
 //    
-//    DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
-//    DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
-//    DDLogInfo(@"%s Info ", __PRETTY_FUNCTION__);
-//    DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
-//    DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
+    DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
+    DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
+    DDLogInfo(@"%s Info ", __PRETTY_FUNCTION__);
+    DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
+    DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
