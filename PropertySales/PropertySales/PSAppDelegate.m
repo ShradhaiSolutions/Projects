@@ -20,11 +20,34 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [self setupLoggerFramework];
+    
+    return YES;
+}
+
+- (void) setupLoggerFramework
+{
     //CocoaLumberjack Log framework integration
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
-    return YES;
+    // And we also enable colors
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    
+#ifdef DEBUG
+    UIColor *gray = [UIColor darkGrayColor];
+    UIColor *blue = [UIColor blueColor];
+    UIColor *green = [UIColor greenColor];
+    UIColor *orange = [UIColor orangeColor];
+    UIColor *red = [UIColor redColor];
+    
+    [[DDTTYLogger sharedInstance] setForegroundColor:gray backgroundColor:nil forFlag:LOG_FLAG_VERBOSE];
+    [[DDTTYLogger sharedInstance] setForegroundColor:blue backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
+    [[DDTTYLogger sharedInstance] setForegroundColor:green backgroundColor:nil forFlag:LOG_FLAG_INFO];
+    [[DDTTYLogger sharedInstance] setForegroundColor:orange backgroundColor:nil forFlag:LOG_FLAG_WARN];
+    [[DDTTYLogger sharedInstance] setForegroundColor:red backgroundColor:nil forFlag:LOG_FLAG_ERROR];
+#endif
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -39,6 +62,13 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     ENTRY_LOG;
     EXIT_LOG;
+    ERROR_EXIT_LOG;
+    
+    DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
+    DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
+    DDLogInfo(@"%s Info ", __PRETTY_FUNCTION__);
+    DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
+    DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
