@@ -2,7 +2,7 @@
 //  PropertySalesTests.m
 //  PropertySalesTests
 //
-//  Created by Muddineti, Dhana (NonEmp) on 2/1/14.
+//  Created by Dhana Prakash Muddineti on 2/1/14.
 //  Copyright (c) 2014 Shradha iSolutions. All rights reserved.
 //
 

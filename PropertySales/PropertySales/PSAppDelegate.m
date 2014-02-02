@@ -2,11 +2,14 @@
 //  PSAppDelegate.m
 //  PropertySales
 //
-//  Created by Muddineti, Dhana (NonEmp) on 2/1/14.
+//  Created by Dhana Prakash Muddineti on 2/1/14.
 //  Copyright (c) 2014 Shradha iSolutions. All rights reserved.
 //
 
 #import "PSAppDelegate.h"
+
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
 
 @implementation PSAppDelegate
 
@@ -16,6 +19,11 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //CocoaLumberjack Log framework integration
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
     return YES;
 }
 
@@ -29,6 +37,8 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    ENTRY_LOG;
+    EXIT_LOG;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
