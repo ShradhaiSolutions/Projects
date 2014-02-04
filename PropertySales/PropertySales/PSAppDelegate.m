@@ -48,8 +48,8 @@
     
 #ifdef DEBUG
     UIColor *gray = [UIColor darkGrayColor];
-    UIColor *blue = [UIColor blueColor];
-    UIColor *green = [UIColor greenColor];
+    UIColor *blue = [UIColor colorWithRed:(32/255.0) green:(32/255.0) blue:(192/255.0) alpha:1.0];
+    UIColor *green = [UIColor colorWithRed:(32/255.0) green:(192/255.0) blue:(32/255.0) alpha:1.0];
     UIColor *orange = [UIColor orangeColor];
     UIColor *red = [UIColor redColor];
     

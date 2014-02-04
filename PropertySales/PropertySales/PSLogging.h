@@ -11,14 +11,29 @@
 
 #import "DDLog.h"
 
-#define ENTRY_LOG      DDLogVerbose(@"%s ENTRY ", __PRETTY_FUNCTION__);
-#define EXIT_LOG       DDLogVerbose(@"%s EXIT ", __PRETTY_FUNCTION__);
+#define ENTRY_LOG      DDLogDebug(@"%s ENTRY ", __PRETTY_FUNCTION__);
+#define EXIT_LOG       DDLogDebug(@"%s EXIT ", __PRETTY_FUNCTION__);
 #define ERROR_EXIT_LOG DDLogError(@"%s ERROR EXIT", __PRETTY_FUNCTION__);
 
+
+//Compiler does the string concatenation
+#define LogVerbose(frmt, ...) DDLogVerbose(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#define LogDebug(frmt, ...) DDLogDebug(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#define LogInfo(frmt, ...) DDLogInfo(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#define LogWarn(frmt, ...) DDLogWarn(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#define LogError(frmt, ...) DDLogError(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+
 #ifdef DEBUG
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_DEBUG;
 #else
 static const int ddLogLevel = LOG_LEVEL_ERROR;
 #endif
 
 #endif
+
+//LogVerbose(@"Verbose");
+//LogDebug(@"Debug");
+//LogInfo(@"Info");
+//LogWarn(@"Warn");
+//LogError(@"Error");
+

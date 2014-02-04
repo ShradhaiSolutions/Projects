@@ -24,6 +24,8 @@
 		8ADD4B0B189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
 		8ADD4B13189DA3AC00F1C54B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ADD4B11189DA3AC00F1C54B /* InfoPlist.strings */; };
 		8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */; };
+		8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
+		8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		8ADD4B10189DA3AC00F1C54B /* PropertySalesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PropertySalesTests-Info.plist"; sourceTree = "<group>"; };
 		8ADD4B12189DA3AC00F1C54B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertySalesTests.m; sourceTree = "<group>"; };
+		8AE1458018A05B2D0051E912 /* PSDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataController.h; sourceTree = "<group>"; };
+		8AE1458118A05B2D0051E912 /* PSDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataController.m; sourceTree = "<group>"; };
 		8AFAD2A5189DE455007457B8 /* PSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLogging.h; sourceTree = "<group>"; };
 		A6414AA82B044257923D8A23 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		AE1B0038DC8245B09D11F7E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,7 @@
 		8ADD4AF5189DA3AC00F1C54B /* PropertySales */ = {
 			isa = PBXGroup;
 			children = (
+				8AE1457F18A05B010051E912 /* Data */,
 				8ADD4AFE189DA3AC00F1C54B /* PSAppDelegate.h */,
 				8ADD4AFF189DA3AC00F1C54B /* PSAppDelegate.m */,
 				8A4B2EF1189E0651005AEADF /* PSTestViewController.h */,
@@ -168,6 +173,15 @@
 				8ADD4B11189DA3AC00F1C54B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AE1457F18A05B010051E912 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8AE1458018A05B2D0051E912 /* PSDataController.h */,
+				8AE1458118A05B2D0051E912 /* PSDataController.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +364,7 @@
 			files = (
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
 				8ADD4B00189DA3AC00F1C54B /* PSAppDelegate.m in Sources */,
+				8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */,
 				8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */,
 				8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

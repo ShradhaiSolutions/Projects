@@ -8,6 +8,7 @@
 
 #import "PSTestViewController.h"
 #import <Crashlytics/Crashlytics.h>
+#import "PSDataController.h"
 
 @interface PSTestViewController ()
 
@@ -28,6 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    PSDataController *dataController = [[PSDataController alloc] init];
+    [dataController fetchData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,8 +47,6 @@
 
 - (IBAction)crashMe:(id)sender {
     //    [[Crashlytics sharedInstance] crash];
-    
-    NSLog(@"%s Verbose ", __PRETTY_FUNCTION__);
     
     DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
     DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
