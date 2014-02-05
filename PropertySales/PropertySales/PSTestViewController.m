@@ -9,6 +9,7 @@
 #import "PSTestViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import "PSDataController.h"
+#import "PSLocationUtils.h"
 
 @interface PSTestViewController ()
 
@@ -31,7 +32,11 @@
 	// Do any additional setup after loading the view.
     
     PSDataController *dataController = [[PSDataController alloc] init];
-    [dataController fetchData];
+//    [dataController fetchData];
+    
+    PSLocationUtils *locationUtils = [[PSLocationUtils alloc] init];
+    locationUtils.propertiesArray = [dataController getProperties];
+    [locationUtils getCoordinates];
 }
 
 - (void)viewWillAppear:(BOOL)animated

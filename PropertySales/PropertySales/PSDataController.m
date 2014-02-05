@@ -10,10 +10,11 @@
 #import <AFNetworking/AFNetworking.h>
 #import "TFHpple.h"
 
-NSString const *requestURL = @"http://apps.hcso.org/PropertySale.aspx";
+NSString *requestURL = @"http://apps.hcso.org/PropertySale.aspx";
 NSString *INITIAL_REQUEST_RESPONSE_HTML_FILE_NAME = @"responseData1.html";
 NSString *PROPERTY_SALES_RESPONSE_HTML_FILE_NAME = @"responseData2.html";
 NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
+NSString *PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME = @"PropertiesDictionary.plist";
 
 @interface PSDataController ()
 
@@ -177,20 +178,25 @@ NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
     if([headers count] > 0) {
         
         for(int j=2; j<totalNumberOfProperties; j++) {
-            NSArray *values = [self parseTableRowData:propertySalesParse forTheRowNumber:j];
+//            NSArray *values = [self parseTableRowData:propertySalesParse forTheRowNumber:j];
+            NSMutableDictionary *propertyDictionary = [self parseTableRowData:propertySalesParse
+                                                         forTheRowNumber:j
+                                                             withHeaders:headers];
             
-            if(values == nil || [values count] <= 0) {
-                LogError(@"Could parse the table data");
-            } else {
-                LogDebug(@"Property Row%d: %@", j, values);
-                LogDebug(@"Address: %@ %@", values[3], values[8]);
-            }
+//            if(values == nil || [values count] <= 0) {
+//                LogError(@"Could parse the table data");
+//            } else {
+//                LogDebug(@"Property Row%d: %@", j, values);
+//                LogDebug(@"Address: %@ %@", values[3], values[8]);
+//            }
             
-            [properties addObject:values];
+//            [properties addObject:values];
+            [properties addObject:propertyDictionary];
         }
         
         if([properties count] > 0) {
             LogInfo(@"Property Sales are parsed successfully. Number of Properties: %u", [properties count]);
+            LogDebug(@"Properties: %@", properties);
             [self savePropertiesToFile:properties];
         } else {
             LogError(@"There is some problem in parsing the Property Sales html response");
@@ -238,6 +244,29 @@ NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
     return values;
 }
 
+- (NSMutableDictionary *)parseTableRowData:(TFHpple *)propertySalesParse forTheRowNumber:(NSUInteger)rowNumber withHeaders:(NSArray *)headers
+{
+    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%d]/td/font", rowNumber];
+    NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:xpath];
+    
+    NSMutableDictionary *propertyDictionary = [NSMutableDictionary dictionary];
+    
+    int i = 0;
+    
+    for (TFHppleElement *element in propertyNodes) {
+        id value = @"";
+        
+        if([[element firstChild] content] != nil) {
+            value = [[element firstChild] content];
+        }
+        
+        [propertyDictionary setObject:value forKey:headers[i]];
+        i++;
+    }
+    
+    return propertyDictionary;
+}
+
 
 #pragma mark - Save to Text File
 
@@ -266,7 +295,7 @@ NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
 {
     ENTRY_LOG;
     
-    NSString *path = [self filePathFor:PROPERTY_SALES_DATA_ARRAY_FILE_NAME];
+    NSString *path = [self filePathFor:PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME];
     
     BOOL succeed = [propertiesArray writeToFile:path atomically:YES];
     if (succeed){
@@ -291,6 +320,21 @@ NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
     EXIT_LOG;
     
     return path;
+}
+
+#pragma mark - Utility methods
+- (NSArray *)getProperties
+{
+    ENTRY_LOG;
+    
+    NSString *path = [self filePathFor:PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME];
+    
+    NSArray *propertiesArray = [NSArray arrayWithContentsOfFile:path];
+
+    EXIT_LOG;
+    
+    return propertiesArray;
+
 }
 
 @end

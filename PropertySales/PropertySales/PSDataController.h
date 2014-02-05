@@ -11,5 +11,6 @@
 @interface PSDataController : NSObject
 
 - (void)fetchData;
+- (NSArray *)getProperties;
 
 @end
