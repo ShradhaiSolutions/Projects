@@ -1,16 +1,35 @@
 //
-//  PSLocationUtils.m
+//  PSLocationManager.m
 //  PropertySales
 //
 //  Created by Muddineti, Dhana (NonEmp) on 2/4/14.
 //  Copyright (c) 2014 Shradha iSolutions. All rights reserved.
 //
 
-#import "PSLocationUtils.h"
+#import "PSLocationManager.h"
 #import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
+#import "PSProperty.h"
 
-@implementation PSLocationUtils
+@implementation PSLocationManager
+
+-(NSArray *)createPropertiesModel
+{
+    NSMutableArray *properties = [NSMutableArray array];
+    for (NSDictionary *property in self.propertiesArray) {
+        [properties addObject:[self mapToPropertyModel:property]];
+    }
+    return properties;
+}
+
+- (PSProperty *)mapToPropertyModel:(NSDictionary *)propertyDictionary
+{
+    PSProperty *property = [[PSProperty alloc] init];
+    property.address = propertyDictionary[@"Address"];
+    property.township = propertyDictionary[@"Township"];
+    
+    return property;
+}
 
 - (void)getCoordinates
 {

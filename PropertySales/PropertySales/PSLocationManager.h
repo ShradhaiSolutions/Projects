@@ -1,5 +1,5 @@
 //
-//  PSLocationUtils.h
+//  PSLocationManager.h
 //  PropertySales
 //
 //  Created by Muddineti, Dhana (NonEmp) on 2/4/14.
@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSLocationUtils : NSObject
+@interface PSLocationManager : NSObject
 
 @property (strong, nonatomic) NSArray *propertiesArray;
 
 - (void)getCoordinates;
+-(NSArray *)createPropertiesModel;
 
 @end

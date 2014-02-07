@@ -14,8 +14,12 @@
 		8A4B2EF0189E04C8005AEADF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */; };
 		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
-		8A645C1D18A1B1B800DCD756 /* PSLocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationUtils.m */; };
-		8A645C1E18A1B1B800DCD756 /* PSLocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationUtils.m */; };
+		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
+		8A645C1E18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
+		8A86CF5C18A47116009048A4 /* PSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF5B18A47116009048A4 /* PSProperty.m */; };
+		8A86CF5D18A47116009048A4 /* PSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF5B18A47116009048A4 /* PSProperty.m */; };
+		8A86CF6118A47628009048A4 /* PSProperty+LocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */; };
+		8A86CF6218A47628009048A4 /* PSProperty+LocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */; };
 		8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */; };
 		8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */; };
 		8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
@@ -51,8 +55,12 @@
 		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
 		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
 		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
-		8A645C1B18A1B1B800DCD756 /* PSLocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationUtils.h; sourceTree = "<group>"; };
-		8A645C1C18A1B1B800DCD756 /* PSLocationUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationUtils.m; sourceTree = "<group>"; };
+		8A645C1B18A1B1B800DCD756 /* PSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationManager.h; sourceTree = "<group>"; };
+		8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationManager.m; sourceTree = "<group>"; };
+		8A86CF5A18A47116009048A4 /* PSProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSProperty.h; sourceTree = "<group>"; };
+		8A86CF5B18A47116009048A4 /* PSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSProperty.m; sourceTree = "<group>"; };
+		8A86CF5F18A47628009048A4 /* PSProperty+LocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSProperty+LocationParser.h"; sourceTree = "<group>"; };
+		8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSProperty+LocationParser.m"; sourceTree = "<group>"; };
 		8ADD4AEC189DA3AC00F1C54B /* PropertySales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertySales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,10 +116,19 @@
 		8A645C1A18A1B19700DCD756 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				8A645C1B18A1B1B800DCD756 /* PSLocationUtils.h */,
-				8A645C1C18A1B1B800DCD756 /* PSLocationUtils.m */,
+				8A645C1B18A1B1B800DCD756 /* PSLocationManager.h */,
+				8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		8A86CF5E18A4711C009048A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A86CF5A18A47116009048A4 /* PSProperty.h */,
+				8A86CF5B18A47116009048A4 /* PSProperty.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		8ADD4AE3189DA3AC00F1C54B = {
@@ -200,6 +217,9 @@
 		8AE1457F18A05B010051E912 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8A86CF5E18A4711C009048A4 /* Model */,
+				8A86CF5F18A47628009048A4 /* PSProperty+LocationParser.h */,
+				8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */,
 				8AE1458018A05B2D0051E912 /* PSDataController.h */,
 				8AE1458118A05B2D0051E912 /* PSDataController.m */,
 			);
@@ -384,9 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A86CF6118A47628009048A4 /* PSProperty+LocationParser.m in Sources */,
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
 				8ADD4B00189DA3AC00F1C54B /* PSAppDelegate.m in Sources */,
-				8A645C1D18A1B1B800DCD756 /* PSLocationUtils.m in Sources */,
+				8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */,
+				8A86CF5C18A47116009048A4 /* PSProperty.m in Sources */,
 				8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */,
 				8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */,
 			);
@@ -396,9 +418,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A645C1E18A1B1B800DCD756 /* PSLocationUtils.m in Sources */,
+				8A645C1E18A1B1B800DCD756 /* PSLocationManager.m in Sources */,
+				8A86CF6218A47628009048A4 /* PSProperty+LocationParser.m in Sources */,
 				8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */,
 				8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */,
+				8A86CF5D18A47116009048A4 /* PSProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
