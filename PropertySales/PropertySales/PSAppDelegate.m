@@ -24,6 +24,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    //Setup Magical Record
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"PropertySales"];
+    
     //DDLogger must be configured before setting the rootViewController
     [self setupLoggerFramework];
     
@@ -98,6 +101,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    [MagicalRecord cleanUp];
 }
 
 @end

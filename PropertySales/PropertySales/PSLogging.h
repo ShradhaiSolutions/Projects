@@ -24,9 +24,9 @@
 #define LogError(frmt, ...) DDLogError(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 
 #ifdef DEBUG
-static const int ddLogLevel = LOG_LEVEL_DEBUG;
+static int ddLogLevel = LOG_LEVEL_DEBUG;
 #else
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+static int ddLogLevel = LOG_LEVEL_ERROR;
 #endif
 
 #endif

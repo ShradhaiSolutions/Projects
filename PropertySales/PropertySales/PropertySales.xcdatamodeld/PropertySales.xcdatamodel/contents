@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AddressLookup" representedClassName="AddressLookup" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lookupAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Property" inverseName="addressLookup" inverseEntity="Property" syncable="YES"/>
+    </entity>
+    <entity name="Property" representedClassName="Property" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="addressType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="appraisal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attyPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="caseNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lookupAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minBid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plaintiff" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saleData" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="township" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wd" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="addressLookup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AddressLookup" inverseName="relationship" inverseEntity="AddressLookup" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Property" positionX="160" positionY="192" width="128" height="253"/>
+        <element name="AddressLookup" positionX="160" positionY="192" width="128" height="103"/>
+    </elements>
+</model>

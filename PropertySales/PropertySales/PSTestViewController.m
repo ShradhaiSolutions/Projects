@@ -12,6 +12,10 @@
 #import "PSLocationManager.h"
 #import "PSProperty+LocationParser.h"
 
+#import "Property+Methods.h"
+#import "AddressLookup.h"
+
+
 @interface PSTestViewController ()
 
 @end
@@ -55,15 +59,136 @@
 //    [self testMultipleProperties];
 //    [self testPropertyParsing];
 
-    PSDataController *dataController = [[PSDataController alloc] init];
-    NSDictionary *locationCoordinatesMap = [dataController getLocationCoordinatesMap];
+//    PSDataController *dataController = [[PSDataController alloc] init];
+//    NSDictionary *locationCoordinatesMap = [dataController getLocationCoordinatesMap];
+//    
+//    for (NSString *key in locationCoordinatesMap) {
+//        NSDictionary *coordinateDictionary = [locationCoordinatesMap objectForKey:key];
+//        
+////        LogDebug(@"Address: %@ Coordinates: %@", key, [NSValue valueWithMKCoordinate:[self dictionaryToCoordinate:coordinateDictionary]]);
+//        LogDebug(@"Address: %@ Coordinates: {%@, %@}", key, coordinateDictionary[@"lat"], coordinateDictionary[@"long"]);
+//    }
+//    [self testCoreDataImport];
+//    [self testCoreDataImportForProperty];
     
-    for (NSString *key in locationCoordinatesMap) {
-        NSDictionary *coordinateDictionary = [locationCoordinatesMap objectForKey:key];
+//    [self buildRelationships];
+
+    NSArray *properties = [Property MR_findAll];
+    NSLog(@"Properties: %@", properties);
+}
+
+- (void)testCoreDataImportForProperty
+{
+    __block NSArray *data = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]
+                                                                             pathForResource:@"PropertiesDictionary"
+                                                                             ofType:@"plist"] ];
+    //    NSLog(@"Data: %@", data);
+    
+    //    AddressLookup *addressLookup = [AddressLookup MR_createEntity];
+    //    addressLookup.lookupAddress = @"Test";
+    //    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+    //        if(success) {
+    //            LogInfo(@"AddressLookup data is successfully saved");
+    //        } else {
+    //            LogError(@"Error while saving the AddressLookup data: %@", error);
+    //        }
+    //    }];
+    
+    NSArray *a = [Property MR_findAll];
+//    NSLog(@"From CoreData: %@", a);
+    
+    [AddressLookup MR_truncateAll];
+    
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MM/dd/yyyy"];
         
-//        LogDebug(@"Address: %@ Coordinates: %@", key, [NSValue valueWithMKCoordinate:[self dictionaryToCoordinate:coordinateDictionary]]);
-        LogDebug(@"Address: %@ Coordinates: {%@, %@}", key, coordinateDictionary[@"lat"], coordinateDictionary[@"long"]);
-    }
+        for (NSDictionary *dict in data) {
+            Property *property = [Property MR_createInContext:localContext];
+            property.address = dict[@"Address"];
+            property.appraisal = dict[@"Appraisal"];
+            property.attyName = dict[@"AttyName"];
+            property.attyPhone = dict[@"AttyPhone"];
+            property.caseNo = dict[@"CaseNO"];
+            property.minBid = dict[@"MinBid"];
+            property.name = dict[@"Name"];
+            property.plaintiff = dict[@"Plaintiff"];
+            property.saleData = [formatter dateFromString:dict[@"SaleDate"]];
+            property.township = dict[@"Township"];
+            property.wd = dict[@"WD"];
+            property.lookupAddress = [NSString stringWithFormat:@"%@ %@ OH", dict[@"Address"], dict[@"Township"]];
+        }
+        
+        [localContext MR_saveToPersistentStoreAndWait];
+    } completion:^(BOOL success, NSError *error) {
+        NSArray *b = [AddressLookup MR_findAll];
+        NSLog(@"AddressLookup from CoreData: %@", b);
+        
+        NSArray *a = [Property MR_findAll];
+        NSLog(@"From CoreData: %@", a);
+    }];
+}
+
+- (void)testCoreDataImport
+{
+    __block NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                                     pathForResource:@"LocationCoordinates"
+                                                                     ofType:@"plist"] ];
+//    NSLog(@"Data: %@", data);
+    
+//    AddressLookup *addressLookup = [AddressLookup MR_createEntity];
+//    addressLookup.lookupAddress = @"Test";
+//    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+//        if(success) {
+//            LogInfo(@"AddressLookup data is successfully saved");
+//        } else {
+//            LogError(@"Error while saving the AddressLookup data: %@", error);
+//        }
+//    }];
+    
+    NSArray *a = [AddressLookup MR_findAll];
+    NSLog(@"From CoreData: %@", a);
+    
+    [AddressLookup MR_truncateAll];
+    
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        for (NSString *key in data) {
+            NSDictionary *coordinateDictionary = [data objectForKey:key];
+            
+//            LogDebug(@"Key: %@", key);
+            
+            AddressLookup *addressLookup = [AddressLookup MR_createInContext:localContext];
+            addressLookup.lookupAddress = key;
+            addressLookup.latitude = coordinateDictionary[@"lat"];
+            addressLookup.longitude = coordinateDictionary[@"long"];
+        }
+        
+        [localContext MR_saveToPersistentStoreAndWait];
+    } completion:^(BOOL success, NSError *error) {
+//        if(success) {
+//            LogInfo(@"AddressLookup data is successfully saved");
+//        } else {
+//            LogError(@"Error while saving the AddressLookup data: %@", error);
+//        }
+        
+        NSArray *a = [AddressLookup MR_findAll];
+        NSLog(@"From CoreData: %@", a);
+    }];
+}
+
+- (void)buildRelationships
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        NSArray *properties = [Property MR_findAllInContext:localContext];
+        
+        for (Property *property in properties) {
+            property.addressLookup = [AddressLookup MR_findFirstByAttribute:@"lookupAddress"
+                                                                  withValue:[property getAddress]
+                                                                  inContext:localContext];
+        }
+        
+        [localContext MR_saveToPersistentStoreAndWait];
+    }];
 }
 
 - (void)testPropertyParsing
@@ -252,12 +377,12 @@
     DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
     DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
     
-    NSString *string = nil;
-    
-    NSDictionary *diction = @{@"key":@"value",
-                              @"key1":string};
-    
-    NSLog(@"DICTIONARY: %@", diction);
+//    NSString *string = nil;
+//    
+//    NSDictionary *diction = @{@"key":@"value",
+//                              @"key1":string};
+//    
+//    NSLog(@"DICTIONARY: %@", diction);
     
     //    int *x = NULL; *x = 42;
 }
