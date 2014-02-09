@@ -13,4 +13,7 @@
 - (void)fetchData;
 - (NSArray *)getProperties;
 
+-(void)saveLocationsMap:(NSDictionary *)locationCoordinatesMap;
+- (NSDictionary *)getLocationCoordinatesMap;
+
 @end

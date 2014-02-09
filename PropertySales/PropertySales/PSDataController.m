@@ -15,6 +15,7 @@ NSString *INITIAL_REQUEST_RESPONSE_HTML_FILE_NAME = @"responseData1.html";
 NSString *PROPERTY_SALES_RESPONSE_HTML_FILE_NAME = @"responseData2.html";
 NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
 NSString *PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME = @"PropertiesDictionary.plist";
+NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.plist";
 
 @interface PSDataController ()
 
@@ -308,6 +309,23 @@ NSString *PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME = @"PropertiesDictionary.plis
     EXIT_LOG;
 }
 
+-(void)saveLocationsMap:(NSDictionary *)locationCoordinatesMap
+{
+    ENTRY_LOG;
+    
+    NSString *path = [self filePathFor:LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME];
+    
+    BOOL succeed = [locationCoordinatesMap writeToFile:path atomically:YES];
+    if (succeed){
+        // Handle error here
+        LogInfo(@"Successfully saved to %@", path);
+    } else {
+        LogError(@"Failed to Save to %@", path);
+    }
+    
+    EXIT_LOG;
+}
+
 - (NSString *)filePathFor:(NSString *)fileName
 {
     ENTRY_LOG;
@@ -335,6 +353,19 @@ NSString *PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME = @"PropertiesDictionary.plis
     
     return propertiesArray;
 
+}
+
+- (NSDictionary *)getLocationCoordinatesMap
+{
+    ENTRY_LOG
+    
+    NSString *path = [self filePathFor:LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME];
+    
+    NSDictionary *locationCoordinatesMap = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    return locationCoordinatesMap;
+    
+    EXIT_LOG
 }
 
 @end

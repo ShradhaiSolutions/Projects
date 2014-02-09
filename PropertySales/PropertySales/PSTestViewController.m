@@ -53,8 +53,17 @@
 //    }];
 
 //    [self testMultipleProperties];
-    [self testPropertyParsing];
+//    [self testPropertyParsing];
+
+    PSDataController *dataController = [[PSDataController alloc] init];
+    NSDictionary *locationCoordinatesMap = [dataController getLocationCoordinatesMap];
     
+    for (NSString *key in locationCoordinatesMap) {
+        NSDictionary *coordinateDictionary = [locationCoordinatesMap objectForKey:key];
+        
+//        LogDebug(@"Address: %@ Coordinates: %@", key, [NSValue valueWithMKCoordinate:[self dictionaryToCoordinate:coordinateDictionary]]);
+        LogDebug(@"Address: %@ Coordinates: {%@, %@}", key, coordinateDictionary[@"lat"], coordinateDictionary[@"long"]);
+    }
 }
 
 - (void)testPropertyParsing
@@ -109,7 +118,6 @@
     int numberOfSingleLocations = 0;
     int numberOfLocationsNotFound = 0;
     int numberOfLocationsInError = 0;
-
     
     for (PSProperty *property in properties) {
         switch (property.addressType) {
@@ -137,6 +145,45 @@
     return numberOfLocationsInError;
 }
 
+- (void)saveLocationMapping:(NSArray *)propertiesModel
+{
+    ENTRY_LOG;
+    
+    NSMutableDictionary *locationCoordinatesMap = [NSMutableDictionary dictionary];
+    
+    for (PSProperty *property in propertiesModel) {
+        if([property getAddress] != nil && CLLocationCoordinate2DIsValid(property.coordinates)) {
+            [locationCoordinatesMap setObject:[self coordinateToDictionary:property.coordinates]
+                                       forKey:[property getAddress]];
+        }
+    }
+    
+    LogInfo(@"Location Coordinates Map: %@", locationCoordinatesMap);
+    
+    PSDataController *dataController = [[PSDataController alloc] init];
+    [dataController saveLocationsMap:locationCoordinatesMap];
+    
+    EXIT_LOG;
+}
+
+- (NSDictionary *)coordinateToDictionary:(CLLocationCoordinate2D)coordinate
+{
+    NSNumber *lat = [NSNumber numberWithDouble:coordinate.latitude];
+    NSNumber *lon = [NSNumber numberWithDouble:coordinate.longitude];
+
+    NSDictionary *coordinateDictionary = @{@"lat":lat,@"long":lon};
+    return coordinateDictionary;
+}
+
+- (CLLocationCoordinate2D)dictionaryToCoordinate:(NSDictionary *)coordinateDictionary
+{
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[coordinateDictionary objectForKey:@"lat"] doubleValue];
+    coordinate.latitude = [[coordinateDictionary objectForKey:@"long"] doubleValue];
+    
+    return coordinate;
+}
+
 - (void)parseAddresses:(NSArray *)propertiesModel
 {
 //    RACSignal *propertiesSignal = propertiesModel.rac_sequence.signal;
@@ -155,6 +202,7 @@
         LogError(@"Error: %@", error);
     } completed:^{
         int numberOfLocationsInError = [self printSummary:propertiesModel];
+        [self saveLocationMapping:propertiesModel];
     }];
 }
 
