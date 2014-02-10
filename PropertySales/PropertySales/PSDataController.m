@@ -11,6 +11,7 @@
 #import "TFHpple.h"
 #import "Property.h"
 #import "AddressLookup.h"
+#import "PSDataImporter.h"
 
 NSString *requestURL = @"http://apps.hcso.org/PropertySale.aspx";
 NSString *INITIAL_REQUEST_RESPONSE_HTML_FILE_NAME = @"responseData1.html";
@@ -376,11 +377,27 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
     ENTRY_LOG;
     
     NSArray *properties = [Property MR_findAll];
+    
+    if([properties count] <= 0) {
+        [self dataImport];
+    }
 
     EXIT_LOG;
     
     return properties;
     
 }
+
+- (void)dataImport
+{
+    PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+    [[dataImporter setupData] subscribeError:^(NSError *error) {
+        LogError(@"Error while importing the data: %@",error);
+    } completed:^{
+        NSArray *properties = [Property MR_findAll];
+        LogDebug(@"Properties: %@", properties);
+    }];
+}
+
 
 @end

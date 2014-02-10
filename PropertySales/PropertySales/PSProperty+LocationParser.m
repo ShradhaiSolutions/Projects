@@ -8,7 +8,6 @@
 
 #import "PSProperty+LocationParser.h"
 #import <MapKit/MapKit.h>
-#import "EXTScope.h"
 
 @implementation PSProperty (LocationParser)
 
