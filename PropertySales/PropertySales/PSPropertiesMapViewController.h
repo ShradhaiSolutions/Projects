@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSBaseViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface PSPropertiesMapViewController : UIViewController
+@interface PSPropertiesMapViewController : PSBaseViewController <MKMapViewDelegate>
 
 @property(copy, nonatomic) NSArray *properties;
 

@@ -8,6 +8,7 @@
 
 #import "PSPropertiesListViewController.h"
 #import "PSPropertyListTableDataSource.h"
+#import "PSPropertyDetailsViewController.h"
 
 @interface PSPropertiesListViewController ()
 
@@ -52,16 +53,6 @@
     EXIT_LOG;
 }
 
-//- (void)setProperties:(NSArray *)properties
-//{
-//    _properties = properties;
-//    if([_properties count] > 0) {
-////        [self.tableView setScrollEnabled:YES];
-//        self.dataSource.properties = self.properties;
-//        [self.tableView reloadData];
-//    }
-//}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -91,5 +82,19 @@
         [self.tableView reloadData];
     }
 }
+
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PropertyDetailsFromListSegue"]) {
+        Property *property = (Property *)[self.properties objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+
+        LogDebug(@"Selected Property: %@", property);
+
+        PSPropertyDetailsViewController *controller = segue.destinationViewController;
+        controller.selectedProperty = property;
+    }
+}
+
 
 @end

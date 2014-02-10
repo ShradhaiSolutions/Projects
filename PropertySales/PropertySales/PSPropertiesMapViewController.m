@@ -9,12 +9,14 @@
 #import "PSPropertiesMapViewController.h"
 #import <MapKit/MapKit.h>
 #import "Property+MKAnnotations.h"
+#import "PSPropertyDetailsViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
 @interface PSPropertiesMapViewController ()
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) Property *selectedStore;
 
 @end
 
@@ -37,6 +39,9 @@
 
 - (void)setupMap
 {
+    //Setting MKMapViewDelegate
+//    self.mapView.delegate = self;
+    
     // 1
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.2472;
@@ -47,6 +52,8 @@
     
     // 3
     [self.mapView setRegion:viewRegion animated:YES];
+    
+    self.mapView.delegate = self;
     
     @weakify(self);
     [RACObserve(self, properties) subscribeNext:^(id x) {
@@ -81,22 +88,51 @@
 #pragma mark - MKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    static NSString *identifier = @"PSPropertyLocation";
+    static NSString *identifier = @"PropertyAnnotation";
     if ([annotation isKindOfClass:[Property class]]) {
-        MKAnnotationView *annotationView = (MKAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (annotationView == nil) {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
+//            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
+            annotationView.pinColor = MKPinAnnotationColorRed;
+//            annotationView.animatesDrop = YES;
         } else {
             annotationView.annotation = annotation;
         }
+        
+        //Left Accessory
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         
         return annotationView;
     }
     
     return nil;
 }
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    LogDebug(@"Annotation is selected: %@", [view.annotation title]);
+//    [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+{
+    LogDebug(@"Annotation is selected: %@", [view.annotation title]);
+    self.selectedStore = view.annotation;
+    [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
+}
+
+
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PropertyDetailsFromMapSegue"]) {
+        PSPropertyDetailsViewController *controller = segue.destinationViewController;
+        controller.selectedProperty = self.selectedStore;
+    }
+}
+
 
 @end

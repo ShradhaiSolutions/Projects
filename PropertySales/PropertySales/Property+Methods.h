@@ -12,4 +12,7 @@
 
 - (NSString *)getAddress;
 
+- (NSString *)title;
+- (NSString *)subtitle;
+
 @end

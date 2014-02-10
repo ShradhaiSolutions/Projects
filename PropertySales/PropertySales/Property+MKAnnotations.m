@@ -12,15 +12,6 @@
 
 @implementation Property (MKAnnotations)
 
-- (NSString *)title {
-    return self.attyName;
-}
-
-- (NSString *)subtitle {
-    
-    return [NSString stringWithFormat:@"Appraisal: %@, MinBid: %@", self.appraisal, self.minBid];
-}
-
 - (CLLocationCoordinate2D)coordinate {
     CLLocationCoordinate2D theCoordinate;
     theCoordinate.latitude = [self.addressLookup.latitude doubleValue];

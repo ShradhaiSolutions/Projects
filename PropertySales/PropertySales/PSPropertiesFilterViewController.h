@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSBaseViewController.h"
 
-@interface PSPropertiesFilterViewController : UIViewController
+@interface PSPropertiesFilterViewController : PSBaseViewController
 
 @end

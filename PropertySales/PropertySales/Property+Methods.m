@@ -30,4 +30,15 @@
             self.minBid, self.township, self.wd, self.saleData, self.lookupAddress, self.addressLookup];
 }
 
+#pragma mark - Covers Map Annotations and List Views
+- (NSString *)title {
+    return self.attyName;
+}
+
+- (NSString *)subtitle {
+    
+    return [NSString stringWithFormat:@"Appraisal: %@, MinBid: %@", self.appraisal, self.minBid];
+}
+
+
 @end

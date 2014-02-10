@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSBaseViewController.h"
 
-@interface PSPropertiesListViewController : UIViewController
+
+@interface PSPropertiesListViewController : PSBaseViewController
 
 @property(copy, nonatomic) NSArray *properties;
 

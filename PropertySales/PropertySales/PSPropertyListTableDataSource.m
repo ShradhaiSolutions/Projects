@@ -7,7 +7,7 @@
 //
 
 #import "PSPropertyListTableDataSource.h"
-#import "Property+MKAnnotations.h"
+#import "Property+Methods.h"
 
 @implementation PSPropertyListTableDataSource
 
