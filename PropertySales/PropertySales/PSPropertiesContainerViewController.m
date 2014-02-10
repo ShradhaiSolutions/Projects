@@ -67,6 +67,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 - (void)addMapViewController
 {
     PSPropertiesListViewController *mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesMapStoryboardIdentifier];
+    mapViewController.properties = self.properties;
     
     mapViewController.view.frame = self.view.bounds;
     mapViewController.view.translatesAutoresizingMaskIntoConstraints = NO;

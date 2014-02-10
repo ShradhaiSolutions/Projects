@@ -7,7 +7,7 @@
 //
 
 #import "PSPropertyListTableDataSource.h"
-#import "Property.h"
+#import "Property+MKAnnotations.h"
 
 @implementation PSPropertyListTableDataSource
 
@@ -28,8 +28,8 @@
     
     Property *p = self.properties[indexPath.row];
     
-    cell.textLabel.text = p.name;
-    cell.detailTextLabel.text = p.minBid;
+    cell.textLabel.text = p.title;
+    cell.detailTextLabel.text = p.subtitle;
     
     return cell;
 }

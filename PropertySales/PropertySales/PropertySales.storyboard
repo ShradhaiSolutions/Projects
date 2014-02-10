@@ -164,6 +164,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </mapView>
                     <navigationItem key="navigationItem" id="vyd-5U-uOa"/>
+                    <connections>
+                        <outlet property="mapView" destination="rQb-mY-Yj9" id="W1b-75-QKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jef-eP-yaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

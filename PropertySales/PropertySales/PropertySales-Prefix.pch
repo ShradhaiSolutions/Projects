@@ -17,5 +17,6 @@
     #import <Foundation/Foundation.h>
     #import "PSLogging.h"
     #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import "RACEXTScope.h"
     #import "CoreData+MagicalRecord.h"
 #endif
