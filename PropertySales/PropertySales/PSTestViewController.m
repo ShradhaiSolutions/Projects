@@ -15,6 +15,8 @@
 #import "Property+Methods.h"
 #import "AddressLookup.h"
 
+#import "PSDataImporter.h"
+
 
 @interface PSTestViewController ()
 
@@ -72,9 +74,24 @@
 //    [self testCoreDataImportForProperty];
     
 //    [self buildRelationships];
+    
+//    [self dataImport];
 
     NSArray *properties = [Property MR_findAll];
-    NSLog(@"Properties: %@", properties);
+    LogDebug(@"Properties: %@", properties);
+    
+    
+}
+
+- (void)dataImport
+{
+    PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+    [[dataImporter setupData] subscribeError:^(NSError *error) {
+        LogError(@"Error while importing the data: %@",error);
+    } completed:^{
+        NSArray *properties = [Property MR_findAll];
+        LogDebug(@"Properties: %@", properties);
+    }];
 }
 
 - (void)testCoreDataImportForProperty

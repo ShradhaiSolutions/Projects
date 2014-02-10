@@ -16,4 +16,6 @@
 -(void)saveLocationsMap:(NSDictionary *)locationCoordinatesMap;
 - (NSDictionary *)getLocationCoordinatesMap;
 
+- (NSArray *)properiesForSale;
+
 @end

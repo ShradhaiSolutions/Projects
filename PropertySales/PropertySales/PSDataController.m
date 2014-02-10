@@ -9,6 +9,8 @@
 #import "PSDataController.h"
 #import <AFNetworking/AFNetworking.h>
 #import "TFHpple.h"
+#import "Property.h"
+#import "AddressLookup.h"
 
 NSString *requestURL = @"http://apps.hcso.org/PropertySale.aspx";
 NSString *INITIAL_REQUEST_RESPONSE_HTML_FILE_NAME = @"responseData1.html";
@@ -366,6 +368,19 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
     return locationCoordinatesMap;
     
     EXIT_LOG
+}
+
+#pragma mark - Data
+- (NSArray *)properiesForSale
+{
+    ENTRY_LOG;
+    
+    NSArray *properties = [Property MR_findAll];
+
+    EXIT_LOG;
+    
+    return properties;
+    
 }
 
 @end
