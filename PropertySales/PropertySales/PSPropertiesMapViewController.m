@@ -33,7 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     LogDebug(@"Total number of displayed annotations: %d", [self.mapView.annotations count]);
 }
 

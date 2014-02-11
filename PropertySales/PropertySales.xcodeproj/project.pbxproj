@@ -291,10 +291,10 @@
 				8A4B2EF1189E0651005AEADF /* PSTestViewController.h */,
 				8A4B2EF2189E0651005AEADF /* PSTestViewController.m */,
 				8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */,
+				8A37453B18A7EEC20012E8A2 /* PropertySales.storyboard */,
 				8AFAD2A5189DE455007457B8 /* PSLogging.h */,
 				8ADD4B01189DA3AC00F1C54B /* Images.xcassets */,
 				8ADD4AF6189DA3AC00F1C54B /* Supporting Files */,
-				8A37453B18A7EEC20012E8A2 /* PropertySales.storyboard */,
 			);
 			path = PropertySales;
 			sourceTree = "<group>";
