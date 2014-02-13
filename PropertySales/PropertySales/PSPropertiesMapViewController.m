@@ -15,7 +15,6 @@
 
 @interface PSPropertiesMapViewController ()
 
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) Property *selectedStore;
 
 @end
@@ -44,11 +43,11 @@
     
     // 1
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 39.2472;
-    zoomLocation.longitude= -84.3761;
+    zoomLocation.latitude = 39.2438;
+    zoomLocation.longitude= -84.3853;
     
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 20*METERS_PER_MILE, 20*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 15*METERS_PER_MILE, 15*METERS_PER_MILE);
     
     // 3
     [self.mapView setRegion:viewRegion animated:YES];
@@ -63,8 +62,19 @@
     } error:^(NSError *error) {
         LogError(@"Error While adding Annotations: %@", error);
     }];
+}
+
+- (void)updateTheMapRegion:(CLLocationCoordinate2D)location
+{
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 39.2472;
+    zoomLocation.longitude= -84.3761;
+
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 10*METERS_PER_MILE, 10*METERS_PER_MILE);
     
-    
+    // 3
+    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

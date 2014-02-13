@@ -10,6 +10,7 @@
 #import "PSPropertiesListViewController.h"
 #import "PSPropertiesMapViewController.h"
 #import "PSDataController.h"
+#import "PSCoreLocationManagerDelegate.h"
 
 typedef enum : NSUInteger
 {
@@ -26,9 +27,14 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 @interface PSPropertiesContainerViewController ()
 
 @property (weak, nonatomic) IBOutlet UIToolbar *searchToolbar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewTypeSegmentControl;
 
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender;
+- (IBAction)navigateToCurrentLocation:(id)sender;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
 
 @property(copy, nonatomic) NSArray *properties;
 
@@ -43,7 +49,11 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     //Data Setup
 	PSDataController *dataController = [[PSDataController alloc] init];
     self.properties = [dataController properiesForSale];
-    LogDebug(@"Number of Properties: %d", [self.properties count]);
+    LogDebug(@"Number of Properties: %lu", [self.properties count]);
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
+    self.locationManager.delegate = self.locationManagerDelegate;
     
     //Add the child view controller
     [self addMapViewController];
@@ -119,4 +129,40 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender {
     [self swapChildViewControllers];
 }
+
+#pragma mark - CoreLocation
+- (IBAction)navigateToCurrentLocation:(id)sender {
+    ENTRY_LOG;
+    
+    [self.locationManager startUpdatingLocation];
+    
+    PSPropertiesMapViewController *mapViewController = (PSPropertiesMapViewController *) self.childViewControllers[0];
+
+    CLLocation *location = (CLLocation *) mapViewController.mapView.userLocation;
+    
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
+        [self showSimpleAlertWithTitle:@"Location" message:@"Location Service is disabled. Please enable it in Settings."];
+    }
+    else if (!location) {
+        [self showSimpleAlertWithTitle:@"Location" message:@"Failed to obtain location information"];
+    }
+    else {
+        LogInfo(@"Current Location: Latitude: %f, Longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
+        
+        [mapViewController updateTheMapRegion:location.coordinate];
+
+    }
+    
+    [self.locationManager stopUpdatingLocation];
+    
+    EXIT_LOG;
+}
+
+- (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"BTN_OK", "") otherButtonTitles:nil];
+    [alertView show];
+}
+
+
 @end

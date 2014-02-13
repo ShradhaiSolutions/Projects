@@ -55,6 +55,8 @@
 		8AA758DF18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758DD18A73C35006DFB84 /* AddressLookup+Methods.m */; };
 		8AA758E218A743D1006DFB84 /* Property+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758E118A743D1006DFB84 /* Property+Methods.m */; };
 		8AA758E318A743D1006DFB84 /* Property+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758E118A743D1006DFB84 /* Property+Methods.m */; };
+		8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */; };
+		8ABAAEDC18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */; };
 		8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */; };
 		8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */; };
 		8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
@@ -128,6 +130,8 @@
 		8AA758DD18A73C35006DFB84 /* AddressLookup+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddressLookup+Methods.m"; sourceTree = "<group>"; };
 		8AA758E018A743D1006DFB84 /* Property+Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+Methods.h"; sourceTree = "<group>"; };
 		8AA758E118A743D1006DFB84 /* Property+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+Methods.m"; sourceTree = "<group>"; };
+		8ABAAED918A9CE380011A12C /* PSCoreLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCoreLocationManagerDelegate.h; sourceTree = "<group>"; };
+		8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCoreLocationManagerDelegate.m; sourceTree = "<group>"; };
 		8ADD4AEC189DA3AC00F1C54B /* PropertySales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertySales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,6 +203,8 @@
 				8A37455418A858620012E8A2 /* PSPropertyListTableDataSource.m */,
 				8A795F0B18A899D900A9508B /* PSPropertyDetailsTableDataSource.h */,
 				8A795F0C18A899D900A9508B /* PSPropertyDetailsTableDataSource.m */,
+				8ABAAED918A9CE380011A12C /* PSCoreLocationManagerDelegate.h */,
+				8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 				8A37453918A7DC080012E8A2 /* PSDataImporter.m in Sources */,
 				8A37454918A7F69C0012E8A2 /* PSPropertiesMapViewController.m in Sources */,
 				8AA758C418A7304F006DFB84 /* PropertySales.xcdatamodeld in Sources */,
+				8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */,
 				8AA758DE18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */,
 				8AA758CF18A73456006DFB84 /* AddressLookup.m in Sources */,
 				8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */,
@@ -563,6 +570,7 @@
 				8A37455218A7F6D40012E8A2 /* PSBaseViewController.m in Sources */,
 				8A86CF6218A47628009048A4 /* PSProperty+LocationParser.m in Sources */,
 				8AA758D018A73456006DFB84 /* AddressLookup.m in Sources */,
+				8ABAAEDC18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */,
 				8AA758D418A73456006DFB84 /* Property.m in Sources */,
 				8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */,
 				8A795F0A18A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */,

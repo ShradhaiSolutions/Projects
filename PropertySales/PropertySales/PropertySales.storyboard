@@ -43,7 +43,11 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </barButtonItem>
-                                    <barButtonItem title="Current" id="x6U-9m-ahE"/>
+                                    <barButtonItem title="Current" id="x6U-9m-ahE">
+                                        <connections>
+                                            <action selector="navigateToCurrentLocation:" destination="dze-g7-edL" id="loc-4p-B16"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -65,6 +69,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="gbr-vB-St5"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="IH2-yf-6zV" id="C5g-kJ-qG4"/>
                         <outlet property="searchToolbar" destination="zDv-lR-8jm" id="Is5-oL-51s"/>
                         <outlet property="viewTypeSegmentControl" destination="6km-Dh-hic" id="X1q-0i-Zbe"/>
                         <segue destination="BEu-iQ-geq" kind="push" identifier="PropertiesListSegue" id="80O-T4-73U"/>

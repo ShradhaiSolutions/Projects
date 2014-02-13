@@ -14,4 +14,8 @@
 
 @property(copy, nonatomic) NSArray *properties;
 
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
+- (void)updateTheMapRegion:(CLLocationCoordinate2D)location;
+
 @end
