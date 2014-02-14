@@ -33,9 +33,12 @@
     self.tableView.delegate = self.dataSource;
     
     RAC(self.dataSource, properties) = [RACObserve(self, properties) doNext:^(id x) {
-        LogDebug(@"Number of Properties: %d", [x count]);
-        [self.tableView setScrollEnabled:YES];
-        [self.tableView reloadData];
+        LogDebug(@"Number of Properties: %ld", [x count]);
+//        [self.tableView setScrollEnabled:YES];
+//            [self.tableView reloadData];
+        [self.tableView beginUpdates];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView endUpdates];
     }];
     
     

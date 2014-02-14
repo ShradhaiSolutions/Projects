@@ -11,6 +11,10 @@
 #import "PSPropertiesMapViewController.h"
 #import "PSDataController.h"
 #import "PSCoreLocationManagerDelegate.h"
+#import "PSSearchResultsViewModel.h"
+
+#import "UISearchBar+RAC.h"
+#import "UISearchDisplayController+RAC.h"
 
 typedef enum : NSUInteger
 {
@@ -24,7 +28,7 @@ static NSString *const kPropertiesListStoryboardIdentifier = @"PropertiesList";
 static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
 
-@interface PSPropertiesContainerViewController ()
+@interface PSPropertiesContainerViewController () <UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIToolbar *searchToolbar;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -38,6 +42,8 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
 @property(copy, nonatomic) NSArray *properties;
 
+@property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
+
 @end
 
 @implementation PSPropertiesContainerViewController
@@ -49,14 +55,54 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     //Data Setup
 	PSDataController *dataController = [[PSDataController alloc] init];
     self.properties = [dataController properiesForSale];
-    LogDebug(@"Number of Properties: %lu", [self.properties count]);
+    LogDebug(@"Number of Properties: %ud", [self.properties count]);
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
     self.locationManager.delegate = self.locationManagerDelegate;
     
+    self.searchResultsViewModel = [[PSSearchResultsViewModel alloc] init];
+    self.searchResultsViewModel.properties = self.properties;
+    
+    RAC(self.searchResultsViewModel, searchString) = RACObserve(self, searchBar.text);
+    [self.searchResultsViewModel setup];
+    
+    self.searchBar.delegate = self;
+    
+//    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
+//        LogInfo(@"SearchBar text has changed");
+//    }];
+    
+    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
+        LogInfo(@"SearchBar text has changed: %@", x);
+    } error:^(NSError *error) {
+        LogError(@"Error");
+    } completed:^{
+        LogInfo(@"SearchBar has completed");
+    }];
+    
+//    [self rac_liftSelector:@selector(search:) withSignals:self.searchBar.rac_textSignal, nil];
+//    RAC(self, searching) = [[self.searchController rac_isActiveSignal] doNext:^(id x) {
+//        NSLog(@"Searching %@", x);
+//    }];
+    
+
+//    [RACObserve(self, searchBar.rac_textSignal) subscribeNext:^(id x) {
+//        LogInfo(@"SearchBar text has changed: %@", x);
+//    } error:^(NSError *error) {
+//        LogError(@"Error");
+//    } completed:^{
+//        LogInfo(@"SearchBar has completed");
+//    }];
+    
     //Add the child view controller
     [self addMapViewController];
+}
+
+- (void)search:(NSString *)searchText
+{
+    LogInfo(@"Search String: %@", searchText);
+    self.searchResultsViewModel.searchString = searchText;
 }
 
 - (void)addListViewController
@@ -106,6 +152,10 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
         LogDebug(@"Setting the properties");
         ((PSPropertiesListViewController *)childViewController).properties = self.properties;
+        
+        PSPropertiesListViewController *vc = (PSPropertiesListViewController *)childViewController;
+        
+        RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     }
     
     [self addChildViewController:childViewController];
@@ -127,6 +177,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 }
 
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender {
+    NSLog(@"Search Text: %@", self.searchBar.text);
     [self swapChildViewControllers];
 }
 
@@ -163,6 +214,67 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"BTN_OK", "") otherButtonTitles:nil];
     [alertView show];
 }
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    ENTRY_LOG;
+
+    self.searchResultsViewModel.searchString = searchBar.text;
+    
+    EXIT_LOG;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+}
+
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    ENTRY_LOG;
+    
+//    self.searchResultsViewModel.searchString = text;
+    
+    EXIT_LOG;
+    
+    return YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    ENTRY_LOG;
+    
+    [self.searchBar resignFirstResponder];
+
+    EXIT_LOG;
+}
+
+- (void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    ENTRY_LOG;
+    
+    self.searchResultsViewModel.searchString = searchText;
+    
+    EXIT_LOG;
+}
+
 
 
 @end
