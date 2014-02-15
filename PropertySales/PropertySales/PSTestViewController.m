@@ -17,6 +17,8 @@
 
 #import "PSDataImporter.h"
 
+#import "PSDataManager.h"
+
 
 @interface PSTestViewController ()
 
@@ -77,10 +79,11 @@
     
 //    [self dataImport];
 
-    NSArray *properties = [Property MR_findAll];
-    LogDebug(@"Properties: %@", properties);
+//    NSArray *properties = [Property MR_findAll];
+//    LogDebug(@"Properties: %@", properties);
     
-    
+    PSDataManager *dataManager = [[PSDataManager alloc] init];
+    [dataManager fetchData];
 }
 
 - (void)dataImport
