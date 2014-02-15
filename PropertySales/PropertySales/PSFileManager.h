@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString * const kPropertyMetaDataResponseFileName = @"PropertyMetaData.html";
+static NSString * const kPropertySaleDataResponseFileName = @"PropertySaleData";
 
 @interface PSFileManager : NSObject
 

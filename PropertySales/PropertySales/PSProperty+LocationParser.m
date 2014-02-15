@@ -21,13 +21,13 @@
         return [RACSignal empty];
     }
     
-    @weakify(self);
+//    @weakify(self);
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         
         [geocoder geocodeAddressString:address
                      completionHandler:^(NSArray *placemarks, NSError *error) {
-                         @strongify(self);
+//                         @strongify(self);
                          
                          if (error) {
                              LogError(@"Geocode failed with error: %@, for the address %@", error, address);

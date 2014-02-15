@@ -38,6 +38,281 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    PSDataManager *dataManager = [[PSDataManager alloc] init];
+    [dataManager fetchData];
+    
+//    [self testRACSignals];
+//    [self testSignalChain];
+//    [self testSignalMap];
+//    [self testMultipleSignalsWithMerge];
+//    [self testChainingIndependentOperations];
+//    [self testChainingDependentOperations];
+//    [self testChainingDependentOperationsWithErrors];
+//    [self testChainingInDependentOperationsWithErrors];
+}
+
+- (void)testRACSignals
+{
+    [[self signal1] subscribeNext:^(id x) {
+        LogInfo(@"NextValue: %@", x);
+    } error:^(NSError *error) {
+        LogError(@"Error: %@", error);
+    } completed:^{
+        LogInfo(@"Completed");
+    }];
+}
+
+/*
+ * Summary: doNext (explicit side effect) -> subscribeNext -> doComplete -> completed
+ */
+
+/*
+ * Output Log
+ *      Executing Signal1   --> Signal Block Start
+ *      NextValue: Signal1  --> subscribeNext block (following sendNext)
+ *      About to complete Signal1   --> doComplete block of Signal
+ *      Completed                   --> completed block of signal subscription
+ *      Completed Execution Block: Signal1  --> Signal Block End
+ */
+- (void)testSingleRACSignal
+{
+    [[self signal1] subscribeNext:^(id x) {
+        LogInfo(@"NextValue: %@", x);
+    } error:^(NSError *error) {
+        LogError(@"Error: %@", error);
+    } completed:^{
+        LogInfo(@"Completed");
+    }];
+}
+
+/*
+ * 1. flattenMap on a signal doesn't subscribe automatically
+ * 2. the return signal from flattenMap block is executed without subscription
+ * 3. flattenMap block is executed for every next value and it is executed synchronously (until explicit queuing is done)
+ * 4. Signal2 block is executed synchronously to Signal1  (blocks Signal1 exeuction until Signal2 block is completed).
+ * 5. subscribeNext, error and complete blocks will be executed according to signal2 events (not signal1)
+ */
+
+- (void)testSignalChain
+{
+    [[[self signal1]
+     flattenMap:^RACStream *(id value) {
+        LogInfo(@"flattenMap: %@", value);
+        return [self signal2];
+     }]subscribeNext:^(id x) {
+         LogInfo(@"NextValue: %@", x);
+     } error:^(NSError *error) {
+         LogError(@"Error: %@", error);
+     } completed:^{
+         LogInfo(@"Completed");
+     }];
+}
+
+/*
+ * This is similar to flattenMap but just does the value transformation (can't be used for signal chaining)
+ *
+ */
+
+- (void)testSignalMap
+{
+    [[[self signal1]
+      map:^id(id value) {
+          LogDebug(@"Transforming the value");
+          return @1;
+      }] subscribeNext:^(id x) {
+          LogInfo(@"NextValue: %@", x);
+      } error:^(NSError *error) {
+          LogError(@"Error: %@", error);
+      } completed:^{
+          LogInfo(@"Completed");
+      }];
+}
+
+
+- (void)testMultipleSignalsWithMerge
+{
+    NSArray *sequence = @[[self signal1], [self signal2]];
+    
+    [[RACSignal
+      merge:sequence]
+     subscribeNext:^(id x) {
+         LogInfo(@"NextValue: %@", x);
+     } error:^(NSError *error) {
+         LogError(@"Error: %@", error);
+     } completed:^{
+         LogInfo(@"Completed");
+     }];
+}
+
+
+- (void)testChainingIndependentOperations
+{
+    NSArray *sequence = @[[[self signal1] subscribeOn:[RACScheduler scheduler]],
+                           [[self signal2] subscribeOn:[RACScheduler scheduler]]];
+    
+    [[RACSignal
+      merge:[sequence reverseObjectEnumerator]]
+     subscribeNext:^(id x) {
+         LogInfo(@"NextValue: %@", x);
+     } error:^(NSError *error) {
+         LogError(@"Error: %@", error);
+     } completed:^{
+         LogInfo(@"Completed");
+     }];
+}
+
+- (void)testChainingDependentOperations
+{
+    [[[self signal2]
+      flattenMap:^RACStream *(id value) {
+          return [self signal1];
+      }] subscribeNext:^(id x) {
+          LogInfo(@"NextValue: %@", x);
+      } error:^(NSError *error) {
+          LogError(@"Error: %@", error);
+      } completed:^{
+          LogInfo(@"Completed");
+      }];
+}
+
+
+- (void)testChainingDependentOperationsWithErrors
+{
+    [[[self signal1WithError]
+      flattenMap:^RACStream *(id value) {
+          return [self signal2];
+      }] subscribeNext:^(id x) {
+          LogInfo(@"NextValue: %@", x);
+      } error:^(NSError *error) {
+          LogError(@"Error: %@", error);
+      } completed:^{
+          LogInfo(@"Completed");
+      }];
+}
+
+- (void)testChainingInDependentOperationsWithErrors
+{
+    NSArray *sequence = @[[[self signal2] subscribeOn:[RACScheduler scheduler]],
+                          [[self signal1WithError] subscribeOn:[RACScheduler scheduler]]];
+    
+    [[RACSignal
+      merge:[sequence reverseObjectEnumerator]]
+     subscribeNext:^(id x) {
+         LogInfo(@"NextValue: %@", x);
+     } error:^(NSError *error) {
+         LogError(@"Error: %@", error);
+     } completed:^{
+         LogInfo(@"Completed");
+     }];
+}
+
+- (RACSignal *)signal1
+{
+    NSString *signalName = @"Signal1";
+    
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogInfo(@"Executing %@", signalName);
+        
+        [subscriber sendNext:signalName];
+        
+        [subscriber sendNext:@"Signal1 NextValue2"];
+        
+        [subscriber sendCompleted];
+
+        LogInfo(@"Completed Execution Block: %@", signalName);
+
+        return nil;
+    }] doCompleted:^{
+        LogInfo(@"About to complete %@", signalName);
+    }];
+}
+
+- (RACSignal *)signal1WithError
+{
+    NSString *signalName = @"Signal1";
+    
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogInfo(@"Executing %@", signalName);
+        
+        [subscriber sendNext:signalName];
+        
+        [subscriber sendNext:@"Signal1 NextValue2"];
+        
+        [subscriber sendError:nil];
+        
+        LogInfo(@"Completed Execution Block: %@", signalName);
+        
+        return nil;
+    }] doCompleted:^{
+        LogInfo(@"About to complete %@", signalName);
+    }];
+}
+
+- (RACSignal *)signal2
+{
+    NSString *signalName = @"Signal2";
+    
+    return [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogInfo(@"Executing %@", signalName);
+        
+        [subscriber sendNext:signalName];
+
+        [subscriber sendCompleted];
+
+        LogInfo(@"Completed Execution Block: %@", signalName);
+        
+        return nil;
+    }] doNext:^(id x) {
+        LogError(@"Executing explicit doNext with value: %@", x);
+    }] doCompleted:^{
+        LogInfo(@"About to complete %@", signalName);
+    }];
+}
+
+- (RACSignal *)signal1Transform:(NSString *)name
+{
+    NSString *signalName = @"Signal1Transform";
+    
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogInfo(@"Executing %@", signalName);
+        
+        [subscriber sendNext:@1];
+        
+        [subscriber sendCompleted];
+        
+        LogInfo(@"Completed Execution Block: %@", signalName);
+        
+        return nil;
+    }] doCompleted:^{
+        LogInfo(@"About to complete %@", signalName);
+    }];
+}
+
+- (RACSignal *)signal2Transform:(NSString *)name
+{
+    NSString *signalName = @"Signal2Transform";
+    
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogInfo(@"Executing %@", signalName);
+        
+        [subscriber sendNext:@2];
+        
+        [subscriber sendCompleted];
+        
+        LogInfo(@"Completed Execution Block: %@", signalName);
+        
+        return nil;
+    }] doCompleted:^{
+        LogInfo(@"About to complete %@", signalName);
+    }];
+}
+
+
+
+- (void)viewDidLoadOld
+{
+    [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
 //    PSDataController *dataController = [[PSDataController alloc] init];
@@ -81,9 +356,6 @@
 
 //    NSArray *properties = [Property MR_findAll];
 //    LogDebug(@"Properties: %@", properties);
-    
-    PSDataManager *dataManager = [[PSDataManager alloc] init];
-    [dataManager fetchData];
 }
 
 - (void)dataImport
@@ -405,6 +677,51 @@
 //    NSLog(@"DICTIONARY: %@", diction);
     
     //    int *x = NULL; *x = 42;
+}
+
+- (RACSignal *)signal2Backup
+{
+    NSString *signalName = @"Signal2";
+    
+    return [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogInfo(@"Executing %@", signalName);
+        
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            LogError(@"After 1sec delay, sending 1st sendNext");
+            
+            [subscriber sendNext:signalName];
+            
+            double delayInSeconds = 1.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                LogError(@"After 1sec delay, sending completed");
+                
+                [subscriber sendCompleted];
+                
+                double delayInSeconds = 1.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    LogError(@"After 1sec delay, executing implicit doCompletion");
+                });
+                
+            });
+            
+        });
+        
+        LogInfo(@"Completed Execution Block: %@", signalName);
+        
+        return nil;
+    }] doNext:^(id x) {
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            LogError(@"After 1sec delay, executing explicit doNext with value: %@", x);
+        });
+    }] doCompleted:^{
+        LogInfo(@"About to complete %@", signalName);
+    }];
 }
 
 @end

@@ -18,13 +18,14 @@
     EXIT_LOG;
     
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
         TFHpple *parsedResponseObject = [TFHpple hppleWithHTMLData:responseData];
         
         NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithCapacity:14];
         
         [self parseInputElements:parsedResponseObject into:paramsDictionary];
+
         [self parseSelectElements:parsedResponseObject into:paramsDictionary];
+
         [self parseSaleDates:parsedResponseObject into:paramsDictionary];
         
         [subscriber sendNext:[paramsDictionary copy]];
@@ -56,25 +57,6 @@
             [paramsDictionary setObject:value forKey:[element objectForKey:@"id"]];
         }
     }
-    EXIT_LOG;
-}
-
-- (void)parseSaleDates:(TFHpple *)parsedResponseObject into:(NSMutableDictionary *)paramsDictionary
-{
-    ENTRY_LOG;
-    
-    NSMutableArray *saleDates = [NSMutableArray array];
-    
-    NSArray *propertyNodes = [parsedResponseObject searchWithXPathQuery:@"//select[@id='ddlDate']/option"];
-    
-    for (TFHppleElement *element in propertyNodes) {
-        NSString *saleDate = [element objectForKey:@"value"];
-        
-        if(saleDate != nil && ![saleDate isEqualToString:@""]) {
-            LogInfo(@"SaleDate: %@", saleDate);
-            [saleDates addObject:saleDate];
-        }
-    }
     
     EXIT_LOG;
 }
@@ -104,10 +86,31 @@
     [paramsDictionary setObject:@"" forKey:@"__EVENTARGUMENT"];
     [paramsDictionary setObject:@"" forKey:@"__LASTFOCUS"];
     
-    [paramsDictionary setObject:@"2/6/2014" forKey:@"ddlDate"];
+//    [paramsDictionary setObject:@"2/6/2014" forKey:@"ddlDate"];
     
     EXIT_LOG;
 }
 
+- (void)parseSaleDates:(TFHpple *)parsedResponseObject into:(NSMutableDictionary *)paramsDictionary
+{
+    ENTRY_LOG;
+    
+    NSMutableArray *saleDates = [NSMutableArray array];
+    
+    NSArray *propertyNodes = [parsedResponseObject searchWithXPathQuery:@"//select[@id='ddlDate']/option"];
+    
+    for (TFHppleElement *element in propertyNodes) {
+        NSString *saleDate = [element objectForKey:@"value"];
+        
+        if(saleDate != nil && ![saleDate isEqualToString:@""]) {
+            LogDebug(@"SaleDate: %@", saleDate);
+            [saleDates addObject:saleDate];
+        }
+    }
+    
+    [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
+    
+    EXIT_LOG;
+}
 
 @end

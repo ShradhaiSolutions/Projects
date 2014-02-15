@@ -44,6 +44,7 @@
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
 		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
 		8A645C1E18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
+		8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */; };
 		8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0618A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0818A8999F00A9508B /* PSPropertyDetailsViewController.m */; };
@@ -54,6 +55,7 @@
 		8A86CF5D18A47116009048A4 /* PSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF5B18A47116009048A4 /* PSProperty.m */; };
 		8A86CF6118A47628009048A4 /* PSProperty+LocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */; };
 		8A86CF6218A47628009048A4 /* PSProperty+LocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */; };
+		8AA6686618AEF2DB00C6C83A /* PSPropertySaleDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6686518AEF2DB00C6C83A /* PSPropertySaleDataRequest.m */; };
 		8AA758C418A7304F006DFB84 /* PropertySales.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758C218A7304F006DFB84 /* PropertySales.xcdatamodeld */; };
 		8AA758CF18A73456006DFB84 /* AddressLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758CE18A73456006DFB84 /* AddressLookup.m */; };
 		8AA758D018A73456006DFB84 /* AddressLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758CE18A73456006DFB84 /* AddressLookup.m */; };
@@ -136,6 +138,8 @@
 		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
 		8A645C1B18A1B1B800DCD756 /* PSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationManager.h; sourceTree = "<group>"; };
 		8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationManager.m; sourceTree = "<group>"; };
+		8A6A9B0F18AFD671004FCC37 /* PSPropertySaleDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertySaleDataParser.h; sourceTree = "<group>"; };
+		8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertySaleDataParser.m; sourceTree = "<group>"; };
 		8A795F0318A890D700A9508B /* Property+MKAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+MKAnnotations.h"; sourceTree = "<group>"; };
 		8A795F0418A890D700A9508B /* Property+MKAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+MKAnnotations.m"; sourceTree = "<group>"; };
 		8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyDetailsViewController.h; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		8A86CF5B18A47116009048A4 /* PSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSProperty.m; sourceTree = "<group>"; };
 		8A86CF5F18A47628009048A4 /* PSProperty+LocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSProperty+LocationParser.h"; sourceTree = "<group>"; };
 		8A86CF6018A47628009048A4 /* PSProperty+LocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSProperty+LocationParser.m"; sourceTree = "<group>"; };
+		8AA6686418AEF2DB00C6C83A /* PSPropertySaleDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertySaleDataRequest.h; sourceTree = "<group>"; };
+		8AA6686518AEF2DB00C6C83A /* PSPropertySaleDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertySaleDataRequest.m; sourceTree = "<group>"; };
 		8AA758C318A7304F006DFB84 /* PropertySales.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertySales.xcdatamodel; sourceTree = "<group>"; };
 		8AA758CD18A73456006DFB84 /* AddressLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressLookup.h; sourceTree = "<group>"; };
 		8AA758CE18A73456006DFB84 /* AddressLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressLookup.m; sourceTree = "<group>"; };
@@ -242,6 +248,8 @@
 			children = (
 				8A2965AB18ADD02100AA330C /* PSPropertyMetaDataRequest.h */,
 				8A2965AC18ADD02100AA330C /* PSPropertyMetaDataRequest.m */,
+				8AA6686418AEF2DB00C6C83A /* PSPropertySaleDataRequest.h */,
+				8AA6686518AEF2DB00C6C83A /* PSPropertySaleDataRequest.m */,
 				8A2965AF18ADD1B000AA330C /* PSHttpClient.h */,
 				8A2965B018ADD1B000AA330C /* PSHttpClient.m */,
 				8A2965BC18ADD49700AA330C /* PSDataCommunicator.h */,
@@ -264,6 +272,8 @@
 			children = (
 				8A2965C118ADDB6200AA330C /* PSPropertyMetadataDataParser.h */,
 				8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */,
+				8A6A9B0F18AFD671004FCC37 /* PSPropertySaleDataParser.h */,
+				8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -645,6 +655,7 @@
 				8A2965BE18ADD49700AA330C /* PSDataCommunicator.m in Sources */,
 				8AA758C418A7304F006DFB84 /* PropertySales.xcdatamodeld in Sources */,
 				8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */,
+				8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */,
 				8AA758DE18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */,
 				8AA758CF18A73456006DFB84 /* AddressLookup.m in Sources */,
 				8A2965AD18ADD02100AA330C /* PSPropertyMetaDataRequest.m in Sources */,
@@ -655,6 +666,7 @@
 				8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */,
 				8A37455118A7F6D40012E8A2 /* PSBaseViewController.m in Sources */,
 				8A795F0D18A899D900A9508B /* PSPropertyDetailsTableDataSource.m in Sources */,
+				8AA6686618AEF2DB00C6C83A /* PSPropertySaleDataRequest.m in Sources */,
 				8AF2935918AC76D000DA0D2D /* UISearchDisplayController+RAC.m in Sources */,
 				8A37454118A7F67B0012E8A2 /* PSPropertiesContainerViewController.m in Sources */,
 				8A37455518A858620012E8A2 /* PSPropertyListTableDataSource.m in Sources */,

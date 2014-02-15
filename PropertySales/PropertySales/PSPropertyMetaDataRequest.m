@@ -39,7 +39,7 @@ static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
 
              } failure:^(NSURLSessionDataTask *task, NSError *error) {
                  LogError(@"Error: %@", error);
-                 [subscriber sendCompleted];
+                 [subscriber sendError:error];
              }];
         
         return nil;
