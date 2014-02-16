@@ -33,7 +33,7 @@
 {
     [super viewWillAppear:animated];
 
-    LogDebug(@"Total number of displayed annotations: %d", [self.mapView.annotations count]);
+    LogDebug(@"Total number of displayed annotations: %lu", [self.mapView.annotations count]);
 }
 
 - (void)setupMap
@@ -54,10 +54,17 @@
     
     self.mapView.delegate = self;
     
+//    self.mapView.showsUserLocation = YES;
+//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+
+    
     @weakify(self);
-    [RACObserve(self, properties) subscribeNext:^(id x) {
+    [RACObserve(self, properties)
+     subscribeNext:^(id x) {
         @strongify(self);
-        LogDebug(@"Adding Annotations count: %d", [x count]);
+        LogDebug(@"Adding Annotations count: %lu", [x count]);
+         
+        [self removeAllAnnotations];
         [self addAnnotations:x];
     } error:^(NSError *error) {
         LogError(@"Error While adding Annotations: %@", error);
@@ -92,6 +99,14 @@
 - (void)addAnnotations:(NSArray *)annotations
 {
     [self.mapView addAnnotations:annotations];
+}
+
+- (void)removeAllAnnotations
+{
+    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy ] ;
+    [annotationsToRemove removeObject:self.mapView.userLocation ] ;
+    [self.mapView removeAnnotations:annotationsToRemove ] ;
+    [self.mapView removeAnnotations:self.mapView.annotations ];
 }
 
 

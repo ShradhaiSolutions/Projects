@@ -12,4 +12,6 @@
 
 - (void)fetchData;
 
+- (NSArray *)properiesForSale;
+
 @end

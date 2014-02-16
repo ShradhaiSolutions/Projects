@@ -199,7 +199,7 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
         }
         
         if([properties count] > 0) {
-            LogInfo(@"Property Sales are parsed successfully. Number of Properties: %u", [properties count]);
+            LogInfo(@"Property Sales are parsed successfully. Number of Properties: %lu", [properties count]);
             LogDebug(@"Properties: %@", properties);
             [self savePropertiesToFile:properties];
         } else {
@@ -211,7 +211,7 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
 - (NSUInteger)numberOfRecords:(TFHpple *)propertySalesParse
 {
     NSArray *propertyRecords = [propertySalesParse searchWithXPathQuery:@"//*[@id='GridView1']//tr"];
-    LogDebug(@"Number of Available Properties - count: %d", [propertyRecords count]);
+    LogDebug(@"Number of Available Properties - count: %lu", [propertyRecords count]);
     
     return [propertyRecords count];
 }
@@ -221,7 +221,7 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
     NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:@"//*[@id='GridView1']//tr[1]/th/font/b"];
     NSMutableArray *headers = [NSMutableArray array];
     
-    LogDebug(@"Number of Columns: %d", propertyNodes.count);
+    LogDebug(@"Number of Columns: %lu", propertyNodes.count);
     
     for (TFHppleElement *element in propertyNodes) {
         [headers addObject:[[element firstChild] content]];
@@ -232,7 +232,7 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
 
 - (NSArray *)parseTableRowData:(TFHpple *)propertySalesParse forTheRowNumber:(NSUInteger)rowNumber
 {
-    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%d]/td/font", rowNumber];
+    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%lu]/td/font", rowNumber];
     NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:xpath];
     NSMutableArray *values = [NSMutableArray array];
     
@@ -250,7 +250,7 @@ NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.
 
 - (NSMutableDictionary *)parseTableRowData:(TFHpple *)propertySalesParse forTheRowNumber:(NSUInteger)rowNumber withHeaders:(NSArray *)headers
 {
-    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%d]/td/font", rowNumber];
+    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%lu]/td/font", rowNumber];
     NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:xpath];
     
     NSMutableDictionary *propertyDictionary = [NSMutableDictionary dictionary];

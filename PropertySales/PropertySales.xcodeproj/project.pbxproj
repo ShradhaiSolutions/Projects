@@ -47,6 +47,8 @@
 		8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */; };
 		8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1318B00024004FCC37 /* PSLocationParser.m */; };
 		8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */; };
+		8A6A9B1A18B07069004FCC37 /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1818B07069004FCC37 /* AddressToGeocodeMapping.plist */; };
+		8A6A9B1B18B07069004FCC37 /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1918B07069004FCC37 /* PropertiesArray.plist */; };
 		8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0618A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0818A8999F00A9508B /* PSPropertyDetailsViewController.m */; };
@@ -63,10 +65,6 @@
 		8AA758D018A73456006DFB84 /* AddressLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758CE18A73456006DFB84 /* AddressLookup.m */; };
 		8AA758D318A73456006DFB84 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758D218A73456006DFB84 /* Property.m */; };
 		8AA758D418A73456006DFB84 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758D218A73456006DFB84 /* Property.m */; };
-		8AA758D818A73507006DFB84 /* LocationCoordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AA758D618A73507006DFB84 /* LocationCoordinates.plist */; };
-		8AA758D918A73507006DFB84 /* LocationCoordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AA758D618A73507006DFB84 /* LocationCoordinates.plist */; };
-		8AA758DA18A73507006DFB84 /* PropertiesDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AA758D718A73507006DFB84 /* PropertiesDictionary.plist */; };
-		8AA758DB18A73507006DFB84 /* PropertiesDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AA758D718A73507006DFB84 /* PropertiesDictionary.plist */; };
 		8AA758DE18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758DD18A73C35006DFB84 /* AddressLookup+Methods.m */; };
 		8AA758DF18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758DD18A73C35006DFB84 /* AddressLookup+Methods.m */; };
 		8AA758E218A743D1006DFB84 /* Property+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758E118A743D1006DFB84 /* Property+Methods.m */; };
@@ -146,6 +144,8 @@
 		8A6A9B1318B00024004FCC37 /* PSLocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationParser.m; sourceTree = "<group>"; };
 		8A6A9B1518B01443004FCC37 /* NSObject+ExecutionTimeLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ExecutionTimeLogger.h"; sourceTree = "<group>"; };
 		8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ExecutionTimeLogger.m"; sourceTree = "<group>"; };
+		8A6A9B1818B07069004FCC37 /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
+		8A6A9B1918B07069004FCC37 /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8A795F0318A890D700A9508B /* Property+MKAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+MKAnnotations.h"; sourceTree = "<group>"; };
 		8A795F0418A890D700A9508B /* Property+MKAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+MKAnnotations.m"; sourceTree = "<group>"; };
 		8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyDetailsViewController.h; sourceTree = "<group>"; };
@@ -163,8 +163,6 @@
 		8AA758CE18A73456006DFB84 /* AddressLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressLookup.m; sourceTree = "<group>"; };
 		8AA758D118A73456006DFB84 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
 		8AA758D218A73456006DFB84 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
-		8AA758D618A73507006DFB84 /* LocationCoordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LocationCoordinates.plist; sourceTree = "<group>"; };
-		8AA758D718A73507006DFB84 /* PropertiesDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesDictionary.plist; sourceTree = "<group>"; };
 		8AA758DC18A73C35006DFB84 /* AddressLookup+Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AddressLookup+Methods.h"; sourceTree = "<group>"; };
 		8AA758DD18A73C35006DFB84 /* AddressLookup+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddressLookup+Methods.m"; sourceTree = "<group>"; };
 		8AA758E018A743D1006DFB84 /* Property+Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+Methods.h"; sourceTree = "<group>"; };
@@ -345,8 +343,8 @@
 		8AA758D518A734DB006DFB84 /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
-				8AA758D618A73507006DFB84 /* LocationCoordinates.plist */,
-				8AA758D718A73507006DFB84 /* PropertiesDictionary.plist */,
+				8A6A9B1818B07069004FCC37 /* AddressToGeocodeMapping.plist */,
+				8A6A9B1918B07069004FCC37 /* PropertiesArray.plist */,
 			);
 			name = SampleData;
 			sourceTree = "<group>";
@@ -547,12 +545,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6A9B1A18B07069004FCC37 /* AddressToGeocodeMapping.plist in Resources */,
 				8A37453C18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */,
 				8ADD4AFA189DA3AC00F1C54B /* InfoPlist.strings in Resources */,
 				8ADD4B02189DA3AC00F1C54B /* Images.xcassets in Resources */,
 				8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */,
-				8AA758DA18A73507006DFB84 /* PropertiesDictionary.plist in Resources */,
-				8AA758D818A73507006DFB84 /* LocationCoordinates.plist in Resources */,
+				8A6A9B1B18B07069004FCC37 /* PropertiesArray.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,8 +560,6 @@
 			files = (
 				8A37453D18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */,
 				8ADD4B13189DA3AC00F1C54B /* InfoPlist.strings in Resources */,
-				8AA758DB18A73507006DFB84 /* PropertiesDictionary.plist in Resources */,
-				8AA758D918A73507006DFB84 /* LocationCoordinates.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

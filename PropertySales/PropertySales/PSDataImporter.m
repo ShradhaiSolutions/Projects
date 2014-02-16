@@ -36,13 +36,13 @@
 //        [self clearTheExistingData];
         
         NSArray *propertyData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]
-                                                                  pathForResource:@"PropertiesDictionary"
+                                                                  pathForResource:@"PropertiesArray"
                                                                   ofType:@"plist"]];
         NSDictionary *addressLookupData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
-                                                                                      pathForResource:@"LocationCoordinates"
+                                                                                      pathForResource:@"AddressToGeocodeMapping"
                                                                                       ofType:@"plist"]];
         
-        [self importPropertyData:propertyData addressLookData:addressLookupData];
+        [self importPropertyData:propertyData withAddressLookData:addressLookupData];
 
         [subscriber sendCompleted];
 

@@ -10,6 +10,7 @@
 #import "PSPropertiesListViewController.h"
 #import "PSPropertiesMapViewController.h"
 #import "PSDataController.h"
+#import "PSDataManager.h"
 #import "PSCoreLocationManagerDelegate.h"
 #import "PSSearchResultsViewModel.h"
 
@@ -28,7 +29,7 @@ static NSString *const kPropertiesListStoryboardIdentifier = @"PropertiesList";
 static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
 
-@interface PSPropertiesContainerViewController () <UISearchBarDelegate>
+@interface PSPropertiesContainerViewController () <UISearchBarDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIToolbar *searchToolbar;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -40,9 +41,13 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
 
-@property(copy, nonatomic) NSArray *properties;
+//@property(copy, nonatomic) NSArray *properties;
 
 @property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
+
+@property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
+@property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
+
 
 @end
 
@@ -53,33 +58,34 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [super viewDidLoad];
     
     //Data Setup
-	PSDataController *dataController = [[PSDataController alloc] init];
-    self.properties = [dataController properiesForSale];
-    LogDebug(@"Number of Properties: %ud", [self.properties count]);
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
-    self.locationManager.delegate = self.locationManagerDelegate;
+	PSDataManager *dataManager = [[PSDataManager alloc] init];
     
     self.searchResultsViewModel = [[PSSearchResultsViewModel alloc] init];
-    self.searchResultsViewModel.properties = self.properties;
+    self.searchResultsViewModel.properties = [[dataManager properiesForSale] copy];
+    
+//    self.properties = self.searchResultsViewModel.properties;
+    LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);
     
     RAC(self.searchResultsViewModel, searchString) = RACObserve(self, searchBar.text);
     [self.searchResultsViewModel setup];
     
     self.searchBar.delegate = self;
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
+    self.locationManager.delegate = self.locationManagerDelegate;
+    
 //    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
 //        LogInfo(@"SearchBar text has changed");
 //    }];
     
-    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
-        LogInfo(@"SearchBar text has changed: %@", x);
-    } error:^(NSError *error) {
-        LogError(@"Error");
-    } completed:^{
-        LogInfo(@"SearchBar has completed");
-    }];
+//    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
+//        LogInfo(@"SearchBar text has changed: %@", x);
+//    } error:^(NSError *error) {
+//        LogError(@"Error");
+//    } completed:^{
+//        LogInfo(@"SearchBar has completed");
+//    }];
     
 //    [self rac_liftSelector:@selector(search:) withSignals:self.searchBar.rac_textSignal, nil];
 //    RAC(self, searching) = [[self.searchController rac_isActiveSignal] doNext:^(id x) {
@@ -99,11 +105,11 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [self addMapViewController];
 }
 
-- (void)search:(NSString *)searchText
-{
-    LogInfo(@"Search String: %@", searchText);
-    self.searchResultsViewModel.searchString = searchText;
-}
+//- (void)search:(NSString *)searchText
+//{
+//    LogInfo(@"Search String: %@", searchText);
+//    self.searchResultsViewModel.searchString = searchText;
+//}
 
 - (void)addListViewController
 {
@@ -123,7 +129,9 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 - (void)addMapViewController
 {
     PSPropertiesListViewController *mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesMapStoryboardIdentifier];
-    mapViewController.properties = self.properties;
+    
+    mapViewController.properties = self.searchResultsViewModel.propertiesFromSearchResult;
+    RAC(mapViewController, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     
     mapViewController.view.frame = self.view.bounds;
     mapViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -147,13 +155,20 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     childViewController.view.frame = currentViewController.view.frame;
     childViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [childViewController setValue:self.properties forKeyPath:@"properties"];
+    [childViewController setValue:self.searchResultsViewModel.propertiesFromSearchResult forKeyPath:@"properties"];
     
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
-        LogDebug(@"Setting the properties");
-        ((PSPropertiesListViewController *)childViewController).properties = self.properties;
+//        LogDebug(@"Setting the properties");
+//        ((PSPropertiesListViewController *)childViewController).properties = self.properties;
         
         PSPropertiesListViewController *vc = (PSPropertiesListViewController *)childViewController;
+        
+        RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
+    } else {
+        LogDebug(@"Setting the properties");
+        ((PSPropertiesListViewController *)childViewController).properties = self.searchResultsViewModel.propertiesFromSearchResult;
+        
+        PSPropertiesMapViewController *vc = (PSPropertiesMapViewController *)childViewController;
         
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     }
@@ -220,14 +235,18 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 {
     ENTRY_LOG;
     
+    [self addGestureRecognizersToKeyWindow];
+    
     EXIT_LOG;
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     ENTRY_LOG;
+    
+    [self removeGestureRecognizersFromKeyWindow];
 
-    self.searchResultsViewModel.searchString = searchBar.text;
+//    self.searchResultsViewModel.searchString = searchBar.text;
     
     EXIT_LOG;
 }
@@ -243,7 +262,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 {
     ENTRY_LOG;
     
-//    self.searchResultsViewModel.searchString = text;
+//    self.searchResultsViewModel.searchString = [searchBar.text stringByReplacingCharactersInRange:range withString:text];;
     
     EXIT_LOG;
     
@@ -273,6 +292,59 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     self.searchResultsViewModel.searchString = searchText;
     
     EXIT_LOG;
+}
+
+#pragma mark - UIGestureRecognizer
+
+- (void)addGestureRecognizersToKeyWindow
+{
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureWhileSearching:)];
+    self.tapGestureRecognizer.delegate = self;
+    [keyWindow addGestureRecognizer:self.tapGestureRecognizer];
+    
+    self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureWhileSearching:)];
+    self.panGestureRecognizer.delegate = self;
+    [keyWindow addGestureRecognizer:self.panGestureRecognizer];
+}
+
+- (void)removeGestureRecognizersFromKeyWindow
+{
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    [keyWindow removeGestureRecognizer:self.tapGestureRecognizer];
+    [keyWindow removeGestureRecognizer:self.panGestureRecognizer];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+#pragma mark - Handling Keyboard Dismissal
+- (void)handleTapGestureWhileSearching:(UIGestureRecognizer *)recognizer
+{
+    if (recognizer == self.tapGestureRecognizer) {
+        CGPoint touchPoint = [recognizer locationInView:self.view];
+        CGRect barRect = [self.view convertRect:self.searchBar.frame fromView:self.searchBar.superview];
+        
+        // The gesture recognizer added to the key window stops the search bar's cancel button from working on iOS 5.1.
+        // Change the size of the rect to allow touches to go through to the button.
+//        barRect.size.width -= 70.0;
+        
+        if (!CGRectContainsPoint(barRect, touchPoint)) {
+            [self.searchBar resignFirstResponder];
+        }
+    }
+}
+
+- (void)handlePanGestureWhileSearching:(UIGestureRecognizer *)recognizer
+{
+    if (recognizer == self.panGestureRecognizer) {
+        CGPoint touchPoint = [recognizer locationInView:self.view];
+        if (!CGRectContainsPoint(self.searchBar.frame, touchPoint)) {
+            [self.searchBar resignFirstResponder];
+        }
+    }
 }
 
 

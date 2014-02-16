@@ -202,4 +202,32 @@
     
 }
 
+#pragma mark - Data
+- (NSArray *)properiesForSale
+{
+    ENTRY_LOG;
+    
+    NSArray *properties = [Property MR_findAll];
+    
+    if([properties count] <= 0) {
+        [self dataImport];
+    }
+    
+    EXIT_LOG;
+    
+    return properties;
+    
+}
+
+- (void)dataImport
+{
+    PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+    [[dataImporter setupData] subscribeError:^(NSError *error) {
+        LogError(@"Error while importing the data: %@",error);
+    } completed:^{
+        NSArray *properties = [Property MR_findAll];
+        LogDebug(@"Properties: %@", properties);
+    }];
+}
+
 @end

@@ -421,7 +421,7 @@
     //        }
     //    }];
     
-    NSArray *a = [Property MR_findAll];
+//    NSArray *a = [Property MR_findAll];
 //    NSLog(@"From CoreData: %@", a);
     
     [AddressLookup MR_truncateAll];
@@ -529,7 +529,7 @@
 //    LogDebug(@"Properties Array: %@", locationManager.propertiesArray);
     
     __block NSArray *propertiesModel = [locationManager createPropertiesModel];
-    LogInfo(@"Total number of properties: %u", [propertiesModel count]);
+    LogInfo(@"Total number of properties: %lu", [propertiesModel count]);
 //    LogInfo(@"Properties Model: %@", propertiesModel);
     
     RACSignal *propertiesSignal = propertiesModel.rac_sequence.signal;
@@ -653,7 +653,8 @@
     }] subscribeError:^(NSError *error) {
         LogError(@"Error: %@", error);
     } completed:^{
-        int numberOfLocationsInError = [self printSummary:propertiesModel];
+//        int numberOfLocationsInError = [self printSummary:propertiesModel];
+        [self printSummary:propertiesModel];
         [self saveLocationMapping:propertiesModel];
     }];
 }

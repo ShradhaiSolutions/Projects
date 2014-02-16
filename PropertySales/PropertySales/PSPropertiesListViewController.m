@@ -26,20 +26,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    LogDebug(@"Number of Properties: %d", [self.properties count]);
+    LogDebug(@"Number of Properties: %lu", [self.properties count]);
     
     self.dataSource  = [[PSPropertyListTableDataSource alloc] init];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
-    RAC(self.dataSource, properties) = [RACObserve(self, properties) doNext:^(id x) {
-        LogDebug(@"Number of Properties: %ld", [x count]);
-//        [self.tableView setScrollEnabled:YES];
-//            [self.tableView reloadData];
-        [self.tableView beginUpdates];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [self.tableView endUpdates];
-    }];
+    @weakify(self);
+    RAC(self.dataSource, properties) = [RACObserve(self, properties)
+                                        doNext:^(id x) {
+                                            @strongify(self);
+                                            LogDebug(@"Number of Properties: %lu", [x count]);
+                                            //        [self.tableView setScrollEnabled:YES];
+                                            [self.tableView beginUpdates];
+                                            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+                                            [self.tableView endUpdates];
+                                        }];
     
     
     EXIT_LOG;
@@ -51,7 +53,7 @@
     
     [super viewWillAppear:animated];
     
-    LogDebug(@"Number of Properties: %d", [self.properties count]);
+    LogDebug(@"Number of Properties: %lu", [self.properties count]);
 
     EXIT_LOG;
 }

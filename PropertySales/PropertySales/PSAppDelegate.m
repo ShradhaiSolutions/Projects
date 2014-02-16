@@ -33,8 +33,8 @@
     [Crashlytics startWithAPIKey:@"fae00db142eb503989a6c199d8a844b24463151f"];
 
     //Set the RootViewController after integrating all the frameworks
-    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PSTestStoryboard"
-//    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PropertySales"
+//    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PSTestStoryboard"
+    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PropertySales"
                                                                 bundle:nil]
                                       instantiateInitialViewController];
 
