@@ -15,7 +15,7 @@
     NSString *address = nil;
     
     if(self.address && self.township) {
-        address = [NSString stringWithFormat:@"%@ %@ OH", self.address, self.township];
+        address = [NSString stringWithFormat:@"%@ %@ OH USA", self.address, self.township];
     }
     
     return address;

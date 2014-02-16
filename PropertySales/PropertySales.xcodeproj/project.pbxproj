@@ -45,6 +45,8 @@
 		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
 		8A645C1E18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
 		8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */; };
+		8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1318B00024004FCC37 /* PSLocationParser.m */; };
+		8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */; };
 		8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0618A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0818A8999F00A9508B /* PSPropertyDetailsViewController.m */; };
@@ -140,6 +142,10 @@
 		8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationManager.m; sourceTree = "<group>"; };
 		8A6A9B0F18AFD671004FCC37 /* PSPropertySaleDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertySaleDataParser.h; sourceTree = "<group>"; };
 		8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertySaleDataParser.m; sourceTree = "<group>"; };
+		8A6A9B1218B00024004FCC37 /* PSLocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationParser.h; sourceTree = "<group>"; };
+		8A6A9B1318B00024004FCC37 /* PSLocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationParser.m; sourceTree = "<group>"; };
+		8A6A9B1518B01443004FCC37 /* NSObject+ExecutionTimeLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ExecutionTimeLogger.h"; sourceTree = "<group>"; };
+		8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ExecutionTimeLogger.m"; sourceTree = "<group>"; };
 		8A795F0318A890D700A9508B /* Property+MKAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+MKAnnotations.h"; sourceTree = "<group>"; };
 		8A795F0418A890D700A9508B /* Property+MKAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+MKAnnotations.m"; sourceTree = "<group>"; };
 		8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyDetailsViewController.h; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 				8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */,
 				8A6A9B0F18AFD671004FCC37 /* PSPropertySaleDataParser.h */,
 				8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */,
+				8A6A9B1218B00024004FCC37 /* PSLocationParser.h */,
+				8A6A9B1318B00024004FCC37 /* PSLocationParser.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -452,6 +460,8 @@
 				8AF2935518AC76D000DA0D2D /* UISearchBar+RAC.m */,
 				8AF2935618AC76D000DA0D2D /* UISearchDisplayController+RAC.h */,
 				8AF2935718AC76D000DA0D2D /* UISearchDisplayController+RAC.m */,
+				8A6A9B1518B01443004FCC37 /* NSObject+ExecutionTimeLogger.h */,
+				8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -643,12 +653,14 @@
 				8A2965BA18ADD3FD00AA330C /* PSDataManager.m in Sources */,
 				8AA758D318A73456006DFB84 /* Property.m in Sources */,
 				8AA758E218A743D1006DFB84 /* Property+Methods.m in Sources */,
+				8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */,
 				8A86CF6118A47628009048A4 /* PSProperty+LocationParser.m in Sources */,
 				8A37454518A7F68E0012E8A2 /* PSPropertiesListViewController.m in Sources */,
 				8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */,
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
 				8AF2935818AC76D000DA0D2D /* UISearchBar+RAC.m in Sources */,
 				8A2965B618ADD29E00AA330C /* PSFileManager.m in Sources */,
+				8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */,
 				8ADD4B00189DA3AC00F1C54B /* PSAppDelegate.m in Sources */,
 				8A37453918A7DC080012E8A2 /* PSDataImporter.m in Sources */,
 				8A37454918A7F69C0012E8A2 /* PSPropertiesMapViewController.m in Sources */,

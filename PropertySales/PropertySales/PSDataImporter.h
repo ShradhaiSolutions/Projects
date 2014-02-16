@@ -12,4 +12,6 @@
 
 - (RACSignal *)setupData;
 
+- (RACSignal *)importPropertyData:(NSArray *)propertyData withAddressLookData:(NSDictionary *)addressLookupData;
+
 @end

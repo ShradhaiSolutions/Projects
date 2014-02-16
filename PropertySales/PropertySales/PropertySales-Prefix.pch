@@ -19,4 +19,5 @@
     #import <ReactiveCocoa/ReactiveCocoa.h>
     #import "RACEXTScope.h"
     #import "CoreData+MagicalRecord.h"
+    #import "NSObject+ExecutionTimeLogger.h"
 #endif

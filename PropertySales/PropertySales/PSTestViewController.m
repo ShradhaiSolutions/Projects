@@ -19,6 +19,10 @@
 
 #import "PSDataManager.h"
 
+#import "PSFileManager.h"
+
+#import "PSLocationParser.h"
+
 
 @interface PSTestViewController ()
 
@@ -39,8 +43,39 @@
 {
     [super viewDidLoad];
     
-    PSDataManager *dataManager = [[PSDataManager alloc] init];
-    [dataManager fetchData];
+//    PSDataManager *dataManager = [[PSDataManager alloc] init];
+//    [dataManager fetchData];
+    
+//    [AddressLookup MR_truncateAll];
+//    [Property MR_truncateAll];
+//
+//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
+    NSArray *properties = [Property MR_findAll];
+    LogDebug(@"Properties: %ld", [properties count]);
+
+    NSArray *addressLookup = [AddressLookup MR_findAll];
+    LogDebug(@"AddressLookup: %ld", [addressLookup count]);
+
+    
+//    PSFileManager *fileManager = [[PSFileManager alloc] init];
+//
+//    PSLocationParser *locationParser = [[PSLocationParser alloc] init];
+//    locationParser.properties = [fileManager getProperties];
+//    locationParser.addressToGeocodeMappingDictionary = [[fileManager getAddressToGeocodeMappingCache] mutableCopy];
+    
+//    [locationParser getCoordinates];
+    
+//    for(NSMutableDictionary *property in locationParser.properties) {
+//        LogInfo(@"CaseNo: %@", [property objectForKey:@"CaseNO"]);
+//    }
+    
+//    LogInfo(@"Hash of Properties: %lu", [[locationParser.properties description] hash]);
+//    LogInfo(@"Hash Value: %lu", [@"Dhana" hash]);
+//    LogInfo(@"Hash Value: %lu", [[@"Dhana" copy] hash]);
+//    LogInfo(@"Hash Value: %lu", [[@"Dhana" mutableCopy] hash]);
+    
+
     
 //    [self testRACSignals];
 //    [self testSignalChain];

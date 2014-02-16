@@ -11,6 +11,12 @@
 #import "PSDataCommunicator.h"
 #import "PSPropertyMetadataDataParser.h"
 #import "PSPropertySaleDataParser.h"
+#import "PSFileManager.h"
+#import "PSLocationParser.h"
+#import "PSDataImporter.h"
+
+#import "Property.h"
+#import "AddressLookup.h"
 
 @interface PSDataManager ()
 
@@ -37,13 +43,7 @@
 {
     ENTRY_LOG;
     
-    NSDate *methodStart = [NSDate date];
-    
-//    [[self fetchPropertyMetaData]
-//     subscribeNext:^(id x) {
-//         self.postParams = x;
-//         LogVerbose(@"Post Params: %@", self.postParams);
-//     }];
+    NSDate *startTime = [NSDate date];
     
     NSMutableArray *properties = [NSMutableArray array];
     
@@ -59,15 +59,56 @@
      } error:^(NSError *error) {
          LogError(@"Error While execution: %@", error);
          
-         NSDate *methodFinish = [NSDate date];
-         NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
-         LogInfo(@"executionTime in seconds = %f", executionTime);
+         [self logExecutionTime:startTime];
      } completed:^{
          LogInfo(@"Completed!!!. Total Number of Properties: %lu", [properties count]);
          
-         NSDate *methodFinish = [NSDate date];
-         NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
-         LogInfo(@"executionTime in seconds = %f", executionTime);
+         PSFileManager *fileManager = [[PSFileManager alloc] init];
+         [fileManager savePropertiesToFile:properties];
+         
+         PSLocationParser *locatinParser = [[PSLocationParser alloc] init];
+         locatinParser.properties = properties;
+         
+         
+//         [[[locatinParser parseAddressesToCoordinates]
+//          flattenMap:^RACStream *(id value) {
+//              LogVerbose(@"Address to Geocode Mapping is Completed: %@", locatinParser.addressToGeocodeMappingDictionary);
+//              
+//              [fileManager saveAddressToGeocodeMappingDictionaryToFile:locatinParser.addressToGeocodeMappingDictionary];
+//
+//              PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+//              return [dataImporter importPropertyData:properties withAddressLookData:locatinParser.addressToGeocodeMappingDictionary];
+//          }] subscribeError:^(NSError *error) {
+//              LogError(@"Error While execution: %@", error);
+//          } completed:^{
+//              LogInfo(@"Data Import is Completed!!!");
+//              [self logExecutionTime:startTime];
+//              
+//              NSArray *properties = [Property MR_findAll];
+//              LogDebug(@"Properties: %ld", [properties count]);
+//              
+//              NSArray *addressLookup = [AddressLookup MR_findAll];
+//              LogDebug(@"AddressLookup: %ld", [addressLookup count]);
+//          }];
+    
+         [[locatinParser parseAddressesToCoordinates] subscribeNext:^(id x) {
+             LogInfo(@"Next Value: %@", x);
+         } error:^(NSError *error) {
+             LogError(@"Error While execution: %@", error);
+         } completed:^{
+             LogVerbose(@"Address to Geocode Mapping is Completed: %@", locatinParser.addressToGeocodeMappingDictionary);
+             
+             [fileManager saveAddressToGeocodeMappingDictionaryToFile:locatinParser.addressToGeocodeMappingDictionary];
+             
+              PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+              [[dataImporter importPropertyData:properties withAddressLookData:locatinParser.addressToGeocodeMappingDictionary]
+               subscribeError:^(NSError *error) {
+                  LogError(@"Error While execution: %@", error);
+              } completed:^{
+                  LogInfo(@"Data Import is Completed!!!");
+                  [self logExecutionTime:startTime];
+              }];
+         }];
      }];
     
     EXIT_LOG;
@@ -106,7 +147,10 @@
             LogInfo(@"Fetching the properties for the sale date: %@", saleDate);
             [postParams setObject:saleDate forKey:@"ddlDate"];
             
-            [saleDateSignals addObject:[self fetchPropertySaleDataWithPostParams:[postParams copy]]];
+            RACSignal *saleDataFetchSignal = [[self fetchPropertySaleDataWithPostParams:[postParams copy]]
+                                              subscribeOn:[RACScheduler scheduler]];
+            
+            [saleDateSignals addObject:saleDataFetchSignal];
         }
         
         return [RACSignal merge:saleDateSignals];

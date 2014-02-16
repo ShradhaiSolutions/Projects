@@ -40,8 +40,6 @@
             LogError(@"Failed to Save to %@", path);
         }
         
-//        [subscriber sendNext:responseData];
-        
         [subscriber sendCompleted];
         
         return nil;
@@ -50,39 +48,92 @@
     }];
 }
 
-//-(void)savePropertiesToFile:(NSArray *)propertiesArray
-//{
-//    ENTRY_LOG;
-//    
-//    NSString *path = [self filePathFor:PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME];
-//    
-//    BOOL succeed = [propertiesArray writeToFile:path atomically:YES];
-//    if (succeed){
-//        // Handle error here
-//        LogInfo(@"Successfully saved to %@", path);
-//    } else {
-//        LogError(@"Failed to Save to %@", path);
-//    }
-//    
-//    EXIT_LOG;
-//}
-//
-//-(void)saveLocationsMap:(NSDictionary *)locationCoordinatesMap
-//{
-//    ENTRY_LOG;
-//    
-//    NSString *path = [self filePathFor:LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME];
-//    
-//    BOOL succeed = [locationCoordinatesMap writeToFile:path atomically:YES];
-//    if (succeed){
-//        // Handle error here
-//        LogInfo(@"Successfully saved to %@", path);
-//    } else {
-//        LogError(@"Failed to Save to %@", path);
-//    }
-//    
-//    EXIT_LOG;
-//}
+- (void)savePropertiesToFile:(NSArray *)propertiesArray
+{
+    ENTRY_LOG;
+    
+    [[[self signalForSavingPropertiesToFile:propertiesArray]
+      subscribeOn:[RACScheduler scheduler]]
+     subscribeCompleted:^{
+         LogInfo(@"Done");
+     }];
+
+
+    EXIT_LOG;
+}
+
+- (RACSignal *)signalForSavingPropertiesToFile:(NSArray *)propertiesArray
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+    
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        NSString *path = [self filePathFor:kPropertySalesArrayFileName];
+        
+        BOOL succeed = [propertiesArray writeToFile:path atomically:YES];
+
+        if (succeed){
+            // Handle error here
+            LogInfo(@"Successfully saved to %@", path);
+        } else {
+            LogError(@"Failed to Save to %@", path);
+        }
+        
+        [subscriber sendCompleted];
+        
+        return nil;
+    }] doError:^(NSError *error) {
+        LogError(@"%@",error);
+    }];
+    
+    
+    EXIT_LOG;
+}
+
+- (void)saveAddressToGeocodeMappingDictionaryToFile:(NSDictionary *)addressToGeocodeMapping
+{
+    ENTRY_LOG;
+    
+    [[[self signalForSavingAddressToGeocodeMapping:addressToGeocodeMapping]
+      subscribeOn:[RACScheduler scheduler]]
+     subscribeCompleted:^{
+         LogInfo(@"Done");
+     }];
+    
+    
+    EXIT_LOG;
+}
+
+- (RACSignal *)signalForSavingAddressToGeocodeMapping:(NSDictionary *)addressToGeocodeMapping
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+    
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        NSString *path = [self filePathFor:kAddressToGeocodeMappingDictionaryFileName];
+        
+        BOOL succeed = [addressToGeocodeMapping writeToFile:path atomically:YES];
+        if (succeed){
+            // Handle error here
+            LogInfo(@"Successfully saved to %@", path);
+        } else {
+            LogError(@"Failed to Save to %@", path);
+        }
+        
+        [subscriber sendCompleted];
+        
+        return nil;
+    }] doError:^(NSError *error) {
+        LogError(@"%@",error);
+    }];
+    
+    
+    EXIT_LOG;
+}
 
 - (NSString *)filePathFor:(NSString *)fileName
 {
@@ -96,6 +147,34 @@
     EXIT_LOG;
     
     return path;
+}
+
+#pragma mark - Utility methods
+- (NSArray *)getProperties
+{
+    ENTRY_LOG;
+    
+    NSString *path = [self filePathFor:kPropertySalesArrayFileName];
+    
+    NSArray *propertiesArray = [NSArray arrayWithContentsOfFile:path];
+    
+    EXIT_LOG;
+    
+    return propertiesArray;
+    
+}
+
+- (NSDictionary *)getAddressToGeocodeMappingCache
+{
+    ENTRY_LOG
+    
+    NSString *path = [self filePathFor:kAddressToGeocodeMappingDictionaryFileName];
+    
+    NSDictionary *locationCoordinatesMap = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    return locationCoordinatesMap;
+    
+    EXIT_LOG
 }
 
 @end
