@@ -74,6 +74,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 //                                                        self.searchResultsViewModel.propertiesFromSearchResult = x;
 //                                                    }] deliverOn:[RACScheduler mainThreadScheduler]];
     [dataManager fetchData];
+    [dataManager getSaleDates];
     
 //    self.properties = self.searchResultsViewModel.properties;
     LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);
@@ -123,18 +124,13 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [childViewController setValue:self.searchResultsViewModel.propertiesFromSearchResult forKeyPath:@"properties"];
     
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
-//        LogDebug(@"Setting the properties");
-//        ((PSPropertiesListViewController *)childViewController).properties = self.properties;
-        
         PSPropertiesListViewController *vc = (PSPropertiesListViewController *)childViewController;
-        
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     } else {
-        LogDebug(@"Setting the properties");
-        ((PSPropertiesListViewController *)childViewController).properties = self.searchResultsViewModel.propertiesFromSearchResult;
+//        LogDebug(@"Setting the properties");
+//        ((PSPropertiesMapViewController *)childViewController).properties = self.searchResultsViewModel.propertiesFromSearchResult;
         
         PSPropertiesMapViewController *vc = (PSPropertiesMapViewController *)childViewController;
-        
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     }
     

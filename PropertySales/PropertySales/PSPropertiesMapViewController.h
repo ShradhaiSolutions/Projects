@@ -13,6 +13,7 @@
 @interface PSPropertiesMapViewController : PSBaseViewController <MKMapViewDelegate>
 
 @property(copy, nonatomic) NSArray *properties;
+@property(copy, nonatomic) NSArray *saleDates;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 

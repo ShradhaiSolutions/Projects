@@ -172,8 +172,8 @@
     
     EXIT_LOG;
     
-//    return self.properties;
-    return [self.properties subarrayWithRange:NSMakeRange(0, 10)];
+    return self.properties;
+//    return [self.properties subarrayWithRange:NSMakeRange(0, 10)];
 }
 
 - (void)dataImport
@@ -199,6 +199,36 @@
 {
     [Property MR_truncateAllInContext:localContext];
     [AddressLookup MR_truncateAllInContext:localContext];
+}
+
+- (NSArray *)getSaleDates
+{
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+
+    NSFetchedResultsController *fc = [Property MR_fetchAllGroupedBy:@"saleData" withPredicate:nil sortedBy:@"saleData" ascending:YES];
+    [fc.fetchRequest setPropertiesToFetch:@[@"saleData"]];
+    fc.fetchRequest.returnsDistinctResults = YES;
+    [fc.fetchRequest setResultType:NSDictionaryResultType];
+    
+    NSArray *results = [Property MR_executeFetchRequest:fc.fetchRequest inContext:localContext];
+    
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Property"];
+//    [request setResultType:NSDictionaryResultType];
+//    [request setPropertiesToFetch:@[@"saleData"]];
+//    [request setReturnsDistinctResults:YES];
+//    NSError *error;
+//    NSArray *saleDates = [localContext executeFetchRequest:request error:&error];
+//    return results;
+
+    NSMutableArray *saleDates = [NSMutableArray arrayWithCapacity:[results count]];
+    
+    for(NSDictionary *data in results) {
+        [saleDates addObject:[data objectForKey:@"saleData"]];
+    }
+    
+    LogError(@"SaleDates: %@", saleDates);
+    
+    return saleDates;
 }
 
 

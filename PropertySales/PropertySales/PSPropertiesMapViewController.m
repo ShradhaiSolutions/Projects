@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Property+MKAnnotations.h"
 #import "PSPropertyDetailsViewController.h"
+#import "PSDataManager.h"
 
 static float const kMetersPerMile = 1609.344;
 
@@ -56,6 +57,8 @@ static float const kMetersPerMile = 1609.344;
         @strongify(self);
         LogDebug(@"Adding Annotations count: %lu", [x count]);
          
+         PSDataManager *dataManager = [[PSDataManager alloc] init];
+         self.saleDates = [dataManager getSaleDates];
         [self removeAllAnnotations];
         [self addAnnotations];
     } error:^(NSError *error) {
@@ -127,8 +130,23 @@ static float const kMetersPerMile = 1609.344;
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
 //            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
-            annotationView.pinColor = MKPinAnnotationColorRed;
-//            annotationView.animatesDrop = YES;
+//            annotationView.pinColor = MKPinAnnotationColorRed;
+            
+            NSUInteger index = [self.saleDates indexOfObject:((Property *) annotation).saleData];
+//            LogError(@"SaleDate: %@, Index: %lu", ((Property *) annotation).saleData, index);
+            switch (index) {
+                case 0:
+                    annotationView.pinColor = MKPinAnnotationColorRed;
+                    break;
+
+                case 1:
+                    annotationView.pinColor = MKPinAnnotationColorPurple;
+                    break;
+                    
+                default:
+                    annotationView.pinColor = MKPinAnnotationColorGreen;
+                    break;
+            }
         } else {
             annotationView.annotation = annotation;
         }

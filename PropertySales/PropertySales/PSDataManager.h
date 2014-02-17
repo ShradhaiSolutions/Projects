@@ -15,5 +15,6 @@
 - (void)fetchData;
 
 - (NSArray *)properiesForSale;
+- (NSArray *)getSaleDates;
 
 @end
