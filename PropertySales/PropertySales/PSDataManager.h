@@ -10,6 +10,8 @@
 
 @interface PSDataManager : NSObject
 
+@property (strong, nonatomic) NSArray *properties;
+
 - (void)fetchData;
 
 - (NSArray *)properiesForSale;

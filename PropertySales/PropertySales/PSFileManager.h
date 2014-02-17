@@ -13,13 +13,19 @@ static NSString * const kPropertySaleDataResponseFileName = @"PropertySaleData";
 static NSString * const kPropertySalesArrayFileName = @"PropertiesArray.plist";
 static NSString * const kAddressToGeocodeMappingDictionaryFileName = @"AddressToGeocodeMapping.plist";
 
+static NSString * const kPropertySalesAppBundleFileName = @"PropertiesArray";
+static NSString * const kAddressToGeocodeMappingAppBundleFileName = @"AddressToGeocodeMapping";
+
 @interface PSFileManager : NSObject
 
 - (RACSignal *)saveResponseHTML:(NSData *)responseData toFile:(NSString *)fileName;
 - (void)savePropertiesToFile:(NSArray *)propertiesArray;
 - (void)saveAddressToGeocodeMappingDictionaryToFile:(NSDictionary *)addressToGeocodeMapping;
 
-- (NSArray *)getProperties;
-- (NSDictionary *)getAddressToGeocodeMappingCache;
+- (NSArray *)getPropertiesFromLocalCache;
+- (NSDictionary *)getAddressToGeocodeMappingFromLocalCache;
+
+- (NSArray *)getPropertiesFromAppBundle;
+- (NSDictionary *)getAddressToGeocodeMappingCacheFromAppBundle;
 
 @end

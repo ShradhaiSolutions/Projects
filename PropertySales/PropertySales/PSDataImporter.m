@@ -9,6 +9,7 @@
 #import "PSDataImporter.h"
 #import "Property+Methods.h"
 #import "AddressLookup+Methods.h"
+#import "PSFileManager.h"
 
 @interface PSDataImporter ()
 
@@ -31,25 +32,16 @@
 
 - (RACSignal *)setupData
 {
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        //Clear the existing data
-//        [self clearTheExistingData];
-        
-        NSArray *propertyData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]
-                                                                  pathForResource:@"PropertiesArray"
-                                                                  ofType:@"plist"]];
-        NSDictionary *addressLookupData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
-                                                                                      pathForResource:@"AddressToGeocodeMapping"
-                                                                                      ofType:@"plist"]];
-        
-        [self importPropertyData:propertyData withAddressLookData:addressLookupData];
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+    
+    PSFileManager *fileManager = [[PSFileManager alloc] init];
+    
+    NSArray *propertyData = [fileManager getPropertiesFromAppBundle];
+    NSDictionary *addressLookupData = [fileManager getAddressToGeocodeMappingCacheFromAppBundle];
 
-        [subscriber sendCompleted];
-
-        return nil;
-    }] doError:^(NSError *error) {
-        LogError(@"%@",error);
-    }];
+    return [self importPropertyData:propertyData withAddressLookData:addressLookupData];
 }
 
 - (void)clearTheExistingDataInContext:(NSManagedObjectContext *)localContext
@@ -60,6 +52,10 @@
 
 - (RACSignal *)importPropertyData:(NSArray *)propertyData withAddressLookData:(NSDictionary *)addressLookupData
 {
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         //Clear the existing data
         [self importPropertyData:propertyData addressLookData:addressLookupData];
@@ -74,9 +70,13 @@
 
 - (void)importPropertyData:(NSArray *)propertyData addressLookData:(NSDictionary *)addressLookupData
 {
+    ENTRY_LOG;
+    
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextForCurrentThread];
     
     [self clearTheExistingDataInContext:localContext];
+    
+    LogInfo(@"Importing data into CoreData. Number of Properties %lu, Number of AddressGeoCodes: %lu", [propertyData count], [addressLookupData count]);
 
     for (NSDictionary *propertyDictionary in propertyData) {
         
@@ -104,6 +104,8 @@
     }
     
     [localContext MR_saveToPersistentStoreAndWait];
+    
+    EXIT_LOG;
 }
 
 - (NSPredicate *)buildPredicateForProperty:(NSDictionary *)property

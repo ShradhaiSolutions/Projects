@@ -11,7 +11,7 @@
 #import "Property+MKAnnotations.h"
 #import "PSPropertyDetailsViewController.h"
 
-#define METERS_PER_MILE 1609.344
+static float const kMetersPerMile = 1609.344;
 
 @interface PSPropertiesMapViewController ()
 
@@ -38,26 +38,18 @@
 
 - (void)setupMap
 {
-    //Setting MKMapViewDelegate
-//    self.mapView.delegate = self;
-    
-    // 1
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.2438;
     zoomLocation.longitude= -84.3853;
     
-    // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 15*METERS_PER_MILE, 15*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 15*kMetersPerMile, 15*kMetersPerMile);
     
-    // 3
     [self.mapView setRegion:viewRegion animated:YES];
-    
     self.mapView.delegate = self;
     
 //    self.mapView.showsUserLocation = YES;
 //    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 
-    
     @weakify(self);
     [RACObserve(self, properties)
      subscribeNext:^(id x) {
@@ -65,7 +57,7 @@
         LogDebug(@"Adding Annotations count: %lu", [x count]);
          
         [self removeAllAnnotations];
-        [self addAnnotations:x];
+        [self addAnnotations];
     } error:^(NSError *error) {
         LogError(@"Error While adding Annotations: %@", error);
     }];
@@ -78,7 +70,7 @@
     zoomLocation.longitude= -84.3761;
 
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 10*METERS_PER_MILE, 10*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 10*kMetersPerMile, 10*kMetersPerMile);
     
     // 3
     [self.mapView setRegion:viewRegion animated:YES];
@@ -98,15 +90,29 @@
 
 - (void)addAnnotations:(NSArray *)annotations
 {
-    [self.mapView addAnnotations:annotations];
+    LogInfo(@"Annotations: %lu", [annotations count]);
+    LogInfo(@"Map %@", self.mapView);
+    
+    if(annotations) {
+        [self.mapView addAnnotations:annotations];
+    }
 }
+
+- (void)addAnnotations
+{
+    LogInfo(@"Annotations: %lu", [self.properties count]);
+    LogInfo(@"Map %@", self.mapView);
+    
+    [self.mapView addAnnotations:self.properties];
+}
+
 
 - (void)removeAllAnnotations
 {
     NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy ] ;
     [annotationsToRemove removeObject:self.mapView.userLocation ] ;
     [self.mapView removeAnnotations:annotationsToRemove ] ;
-    [self.mapView removeAnnotations:self.mapView.annotations ];
+//    [self.mapView removeAnnotations:self.mapView.annotations ];
 }
 
 

@@ -150,7 +150,7 @@
 }
 
 #pragma mark - Utility methods
-- (NSArray *)getProperties
+- (NSArray *)getPropertiesFromLocalCache
 {
     ENTRY_LOG;
     
@@ -164,7 +164,7 @@
     
 }
 
-- (NSDictionary *)getAddressToGeocodeMappingCache
+- (NSDictionary *)getAddressToGeocodeMappingFromLocalCache
 {
     ENTRY_LOG
     
@@ -176,5 +176,40 @@
     
     EXIT_LOG
 }
+
+- (NSArray *)getPropertiesFromAppBundle
+{
+    ENTRY_LOG;
+
+    NSArray *propertiesArray = [NSArray arrayWithContentsOfFile:
+                                [[NSBundle mainBundle]
+                                 pathForResource:kPropertySalesAppBundleFileName
+                                 ofType:@"plist"]];
+    
+    LogInfo(@"Number of Properties from App Bundle: %lu", [propertiesArray count]);
+    
+    EXIT_LOG;
+    
+    return propertiesArray;
+    
+}
+
+- (NSDictionary *)getAddressToGeocodeMappingCacheFromAppBundle
+{
+    ENTRY_LOG
+    
+    NSDictionary *locationCoordinatesMap = [NSDictionary dictionaryWithContentsOfFile:
+                                            [[NSBundle mainBundle]
+                                             pathForResource:kAddressToGeocodeMappingAppBundleFileName
+                                             ofType:@"plist"]];
+    
+    
+    LogInfo(@"Number of AddressToGeocodeMapping from App Bundle: %lu", [locationCoordinatesMap count]);
+
+    return locationCoordinatesMap;
+    
+    EXIT_LOG
+}
+
 
 @end

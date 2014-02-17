@@ -33,16 +33,16 @@
     self.tableView.delegate = self.dataSource;
     
     @weakify(self);
-    RAC(self.dataSource, properties) = [RACObserve(self, properties)
-                                        doNext:^(id x) {
-                                            @strongify(self);
-                                            LogDebug(@"Number of Properties: %lu", [x count]);
-                                            //        [self.tableView setScrollEnabled:YES];
-                                            [self.tableView beginUpdates];
-                                            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-                                            [self.tableView endUpdates];
-                                        }];
-    
+    [RACObserve(self, properties)
+     subscribeNext:^(id x) {
+         @strongify(self);
+         LogDebug(@"Number of Properties: %lu", [x count]);
+         //        [self.tableView setScrollEnabled:YES];
+         self.dataSource.properties = x;
+         [self.tableView beginUpdates];
+         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+         [self.tableView endUpdates];
+     }];
     
     EXIT_LOG;
 }

@@ -17,13 +17,17 @@
     self = [super init];
     if (self) {
         _addresses = [NSMutableArray array];
-        _addressToGeocodeMappingDictionary = [NSMutableDictionary dictionary];
         
         PSFileManager *fileManager = [[PSFileManager alloc] init];
-        _addressToGeocodeMappingDictionary = [[fileManager getAddressToGeocodeMappingCache] mutableCopy];
+        _addressToGeocodeMappingDictionary = [[fileManager getAddressToGeocodeMappingFromLocalCache] mutableCopy];
         
+        //If the Local cache is not present, use the app bundle cache
         if(_addressToGeocodeMappingDictionary == nil) {
-            _addressToGeocodeMappingDictionary = [NSMutableDictionary dictionary];
+            _addressToGeocodeMappingDictionary = [[fileManager getAddressToGeocodeMappingCacheFromAppBundle] mutableCopy];
+            
+            if(_addressToGeocodeMappingDictionary == nil) {
+                _addressToGeocodeMappingDictionary = [NSMutableDictionary dictionary];
+            }
         }
     }
     return self;

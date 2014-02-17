@@ -14,21 +14,24 @@
 {
     ENTRY_LOG;
     
+    RAC(self, propertiesFromSearchResult) = [RACObserve(self, properties) deliverOn:[RACScheduler mainThreadScheduler]];
+    
     @weakify(self);
-    [RACObserve(self, searchString) subscribeNext:^(NSString *searchString) {
-        @strongify(self);
-        LogInfo(@"Search String: %@", searchString);
-        
-        if(searchString == nil || searchString.length <= 0) {
-            self.propertiesFromSearchResult = self.properties;
-        } else {
-            self.propertiesFromSearchResult = [self.properties
-                                               filteredArrayUsingPredicate:[[self buildPredicate]
-                                                                            predicateWithSubstitutionVariables:@{@"searchString" : searchString}]];
-        }
-        
-        LogInfo(@"After filtering Search results: %lu", [self.propertiesFromSearchResult count]);
-    }];
+    [RACObserve(self, searchString)
+     subscribeNext:^(NSString *searchString) {
+         @strongify(self);
+         LogInfo(@"Search String: %@", searchString);
+         
+         if(searchString == nil || searchString.length <= 0) {
+             self.propertiesFromSearchResult = self.properties;
+         } else {
+             self.propertiesFromSearchResult = [self.properties
+                                                filteredArrayUsingPredicate:[[self buildPredicate]
+                                                                             predicateWithSubstitutionVariables:@{@"searchString" : searchString}]];
+         }
+         
+         LogInfo(@"After filtering Search results: %lu", [self.propertiesFromSearchResult count]);
+     }];
     
     EXIT_LOG;
 }

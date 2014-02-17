@@ -61,7 +61,19 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 	PSDataManager *dataManager = [[PSDataManager alloc] init];
     
     self.searchResultsViewModel = [[PSSearchResultsViewModel alloc] init];
-    self.searchResultsViewModel.properties = [[dataManager properiesForSale] copy];
+    self.searchResultsViewModel.properties = [dataManager properiesForSale];
+    
+    RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
+//    subscribeNext:^(id x) {
+//        LogInfo(@"NextSet: %lu", [x count]);
+//        self.searchResultsViewModel.properties = x;
+//    }];
+    
+//    RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
+//                                                    doNext:^(id x) {
+//                                                        self.searchResultsViewModel.propertiesFromSearchResult = x;
+//                                                    }] deliverOn:[RACScheduler mainThreadScheduler]];
+    [dataManager fetchData];
     
 //    self.properties = self.searchResultsViewModel.properties;
     LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);
@@ -75,55 +87,8 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
     self.locationManager.delegate = self.locationManagerDelegate;
     
-//    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
-//        LogInfo(@"SearchBar text has changed");
-//    }];
-    
-//    [RACObserve(self, searchBar.text) subscribeNext:^(id x) {
-//        LogInfo(@"SearchBar text has changed: %@", x);
-//    } error:^(NSError *error) {
-//        LogError(@"Error");
-//    } completed:^{
-//        LogInfo(@"SearchBar has completed");
-//    }];
-    
-//    [self rac_liftSelector:@selector(search:) withSignals:self.searchBar.rac_textSignal, nil];
-//    RAC(self, searching) = [[self.searchController rac_isActiveSignal] doNext:^(id x) {
-//        NSLog(@"Searching %@", x);
-//    }];
-    
-
-//    [RACObserve(self, searchBar.rac_textSignal) subscribeNext:^(id x) {
-//        LogInfo(@"SearchBar text has changed: %@", x);
-//    } error:^(NSError *error) {
-//        LogError(@"Error");
-//    } completed:^{
-//        LogInfo(@"SearchBar has completed");
-//    }];
-    
     //Add the child view controller
     [self addMapViewController];
-}
-
-//- (void)search:(NSString *)searchText
-//{
-//    LogInfo(@"Search String: %@", searchText);
-//    self.searchResultsViewModel.searchString = searchText;
-//}
-
-- (void)addListViewController
-{
-    PSPropertiesListViewController *listViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesListStoryboardIdentifier];
-
-    listViewController.view.frame = self.view.bounds;
-    listViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-
-    [self addChildViewController:listViewController];
-    [self.view insertSubview:listViewController.view belowSubview:self.searchToolbar];
-
-    [listViewController didMoveToParentViewController:self];
-    
-    [self constrainChildControllerView:listViewController.view];
 }
 
 - (void)addMapViewController

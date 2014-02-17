@@ -69,28 +69,6 @@
          PSLocationParser *locatinParser = [[PSLocationParser alloc] init];
          locatinParser.properties = properties;
          
-         
-//         [[[locatinParser parseAddressesToCoordinates]
-//          flattenMap:^RACStream *(id value) {
-//              LogVerbose(@"Address to Geocode Mapping is Completed: %@", locatinParser.addressToGeocodeMappingDictionary);
-//              
-//              [fileManager saveAddressToGeocodeMappingDictionaryToFile:locatinParser.addressToGeocodeMappingDictionary];
-//
-//              PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
-//              return [dataImporter importPropertyData:properties withAddressLookData:locatinParser.addressToGeocodeMappingDictionary];
-//          }] subscribeError:^(NSError *error) {
-//              LogError(@"Error While execution: %@", error);
-//          } completed:^{
-//              LogInfo(@"Data Import is Completed!!!");
-//              [self logExecutionTime:startTime];
-//              
-//              NSArray *properties = [Property MR_findAll];
-//              LogDebug(@"Properties: %ld", [properties count]);
-//              
-//              NSArray *addressLookup = [AddressLookup MR_findAll];
-//              LogDebug(@"AddressLookup: %ld", [addressLookup count]);
-//          }];
-    
          [[locatinParser parseAddressesToCoordinates] subscribeNext:^(id x) {
              LogInfo(@"Next Value: %@", x);
          } error:^(NSError *error) {
@@ -105,8 +83,9 @@
                subscribeError:^(NSError *error) {
                   LogError(@"Error While execution: %@", error);
               } completed:^{
-                  LogInfo(@"Data Import is Completed!!!");
+                  LogInfo(@"Remote Data Import is Completed!!!");
                   [self logExecutionTime:startTime];
+                  [self loadPropertiesFromCoreData];
               }];
          }];
      }];
@@ -162,32 +141,6 @@
     EXIT_LOG;
 }
 
-- (RACSignal *)fetchPropertySalesWithPasedMetadata1:(NSDictionary *)parsedData
-{
-    ENTRY_LOG;
-    
-    NSArray *saleDates =  [parsedData objectForKey:@"SaleDatesArray"];
-    LogInfo(@"SaleDates: %@", saleDates);
-    
-    if([saleDates count] > 0) {
-        NSString *saleDate = saleDates[0];
-        
-        NSMutableDictionary *saleDate1PostParams = [parsedData mutableCopy];
-        [saleDate1PostParams removeObjectForKey:@"SaleDatesArray"];
-        
-        LogInfo(@"Fetching the properties for the sale datea: %@", saleDate);
-        [saleDate1PostParams setObject:saleDate forKey:@"ddlDate"];
-        
-        return [self fetchPropertySaleDataWithPostParams:[saleDate1PostParams copy]];
-    } else {
-        LogError(@"SaleDate array is empty");
-        return [RACSignal empty];
-    }
-    
-    EXIT_LOG;
-}
-
-
 - (RACSignal *)fetchPropertySaleDataWithPostParams:(NSDictionary *)postParams
 {
     ENTRY_LOG;
@@ -207,27 +160,46 @@
 {
     ENTRY_LOG;
     
-    NSArray *properties = [Property MR_findAll];
+//    [self clearTheExistingDataInContext:[NSManagedObjectContext MR_defaultContext]];
+    [self loadPropertiesFromCoreData];
     
-    if([properties count] <= 0) {
+    if([self.properties count] <= 0) {
+        LogInfo(@"No existing properties at CoreData, hence importing from local cache");
         [self dataImport];
     }
     
+//    self.properties = [[properties copy] subarrayWithRange:NSMakeRange(0, 10)];
+    
     EXIT_LOG;
     
-    return properties;
-    
+//    return self.properties;
+    return [self.properties subarrayWithRange:NSMakeRange(0, 10)];
 }
 
 - (void)dataImport
 {
     PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
-    [[dataImporter setupData] subscribeError:^(NSError *error) {
-        LogError(@"Error while importing the data: %@",error);
-    } completed:^{
-        NSArray *properties = [Property MR_findAll];
-        LogDebug(@"Properties: %@", properties);
-    }];
+    [[dataImporter setupData]
+     subscribeError:^(NSError *error) {
+         LogError(@"Error while importing the data: %@",error);
+     } completed:^{
+         [self loadPropertiesFromCoreData];
+         LogDebug(@"Local Cache is successfull imported into Core Data. Number of Properties: %lu", [self.properties count]);
+     }];
 }
+
+- (void)loadPropertiesFromCoreData
+{
+    //Always Load the data using Main Thread Context
+    NSArray *props = [Property MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
+    self.properties = [props copy];
+}
+
+- (void)clearTheExistingDataInContext:(NSManagedObjectContext *)localContext
+{
+    [Property MR_truncateAllInContext:localContext];
+    [AddressLookup MR_truncateAllInContext:localContext];
+}
+
 
 @end
