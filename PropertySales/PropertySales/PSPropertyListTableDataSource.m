@@ -8,6 +8,7 @@
 
 #import "PSPropertyListTableDataSource.h"
 #import "Property+Methods.h"
+#import "PSPropertyListTableViewCell.h"
 
 @implementation PSPropertyListTableDataSource
 
@@ -24,14 +25,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * const cellIdentifier = @"PropertyListCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    PSPropertyListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     Property *p = self.properties[indexPath.row];
     
-    cell.textLabel.text = p.title;
-    cell.detailTextLabel.text = p.subtitle;
+    [cell configureCell:p];
     
     return cell;
 }
+
+#pragma mark UITableViewDelegate
+
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//}
 
 @end

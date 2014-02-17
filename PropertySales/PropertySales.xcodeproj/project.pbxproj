@@ -85,6 +85,8 @@
 		8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */; };
 		8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
 		8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
+		8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */; };
+		8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */; };
 		8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */; };
 		8AF2935818AC76D000DA0D2D /* UISearchBar+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2935518AC76D000DA0D2D /* UISearchBar+RAC.m */; };
 		8AF2935918AC76D000DA0D2D /* UISearchDisplayController+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2935718AC76D000DA0D2D /* UISearchDisplayController+RAC.m */; };
@@ -187,6 +189,10 @@
 		8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertySalesTests.m; sourceTree = "<group>"; };
 		8AE1458018A05B2D0051E912 /* PSDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataController.h; sourceTree = "<group>"; };
 		8AE1458118A05B2D0051E912 /* PSDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataController.m; sourceTree = "<group>"; };
+		8AE7587618B2757F00879C2E /* PSPropertyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyListTableViewCell.h; sourceTree = "<group>"; };
+		8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyListTableViewCell.m; sourceTree = "<group>"; };
+		8AE7587E18B2931B00879C2E /* PSPropertyFilterTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyFilterTableDataSource.h; sourceTree = "<group>"; };
+		8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyFilterTableDataSource.m; sourceTree = "<group>"; };
 		8AF2934A18AC66A200DA0D2D /* PSSearchResultsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSearchResultsViewModel.h; sourceTree = "<group>"; };
 		8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSearchResultsViewModel.m; sourceTree = "<group>"; };
 		8AF2935418AC76D000DA0D2D /* UISearchBar+RAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+RAC.h"; sourceTree = "<group>"; };
@@ -295,6 +301,8 @@
 				8A37454418A7F68E0012E8A2 /* PSPropertiesListViewController.m */,
 				8A37454718A7F69C0012E8A2 /* PSPropertiesMapViewController.h */,
 				8A37454818A7F69C0012E8A2 /* PSPropertiesMapViewController.m */,
+				8AE7587618B2757F00879C2E /* PSPropertyListTableViewCell.h */,
+				8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */,
 				8A37454B18A7F6AD0012E8A2 /* PSPropertiesFilterViewController.h */,
 				8A37454C18A7F6AD0012E8A2 /* PSPropertiesFilterViewController.m */,
 				8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */,
@@ -303,6 +311,8 @@
 				8A37455418A858620012E8A2 /* PSPropertyListTableDataSource.m */,
 				8A795F0B18A899D900A9508B /* PSPropertyDetailsTableDataSource.h */,
 				8A795F0C18A899D900A9508B /* PSPropertyDetailsTableDataSource.m */,
+				8AE7587E18B2931B00879C2E /* PSPropertyFilterTableDataSource.h */,
+				8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */,
 				8ABAAED918A9CE380011A12C /* PSCoreLocationManagerDelegate.h */,
 				8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */,
 				8AF2934A18AC66A200DA0D2D /* PSSearchResultsViewModel.h */,
@@ -654,6 +664,7 @@
 				8A37454518A7F68E0012E8A2 /* PSPropertiesListViewController.m in Sources */,
 				8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */,
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
+				8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */,
 				8AF2935818AC76D000DA0D2D /* UISearchBar+RAC.m in Sources */,
 				8A2965B618ADD29E00AA330C /* PSFileManager.m in Sources */,
 				8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */,
@@ -664,6 +675,7 @@
 				8AA758C418A7304F006DFB84 /* PropertySales.xcdatamodeld in Sources */,
 				8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */,
 				8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */,
+				8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */,
 				8AA758DE18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */,
 				8AA758CF18A73456006DFB84 /* AddressLookup.m in Sources */,
 				8A2965AD18ADD02100AA330C /* PSPropertyMetaDataRequest.m in Sources */,

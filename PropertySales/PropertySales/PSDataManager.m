@@ -212,23 +212,37 @@
     
     NSArray *results = [Property MR_executeFetchRequest:fc.fetchRequest inContext:localContext];
     
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Property"];
-//    [request setResultType:NSDictionaryResultType];
-//    [request setPropertiesToFetch:@[@"saleData"]];
-//    [request setReturnsDistinctResults:YES];
-//    NSError *error;
-//    NSArray *saleDates = [localContext executeFetchRequest:request error:&error];
-//    return results;
-
     NSMutableArray *saleDates = [NSMutableArray arrayWithCapacity:[results count]];
     
     for(NSDictionary *data in results) {
         [saleDates addObject:[data objectForKey:@"saleData"]];
     }
     
-    LogError(@"SaleDates: %@", saleDates);
+    LogDebug(@"SaleDates: %@", saleDates);
     
-    return saleDates;
+    return [saleDates copy];
+}
+
+- (NSArray *)getSaleDatesStrings
+{
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+    
+    NSFetchedResultsController *fc = [Property MR_fetchAllGroupedBy:@"saleData" withPredicate:nil sortedBy:@"saleData" ascending:YES];
+    [fc.fetchRequest setPropertiesToFetch:@[@"saleData"]];
+    fc.fetchRequest.returnsDistinctResults = YES;
+    [fc.fetchRequest setResultType:NSDictionaryResultType];
+    
+    NSArray *results = [Property MR_executeFetchRequest:fc.fetchRequest inContext:localContext];
+    
+    NSMutableArray *saleDates = [NSMutableArray arrayWithCapacity:[results count]];
+    
+    for(NSDictionary *data in results) {
+        [saleDates addObject:[data objectForKey:@"saleData"]];
+    }
+    
+    LogDebug(@"SaleDates: %@", saleDates);
+    
+    return [saleDates copy];
 }
 
 

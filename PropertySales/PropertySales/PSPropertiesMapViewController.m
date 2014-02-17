@@ -130,10 +130,8 @@ static float const kMetersPerMile = 1609.344;
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
 //            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
-//            annotationView.pinColor = MKPinAnnotationColorRed;
             
             NSUInteger index = [self.saleDates indexOfObject:((Property *) annotation).saleData];
-//            LogError(@"SaleDate: %@, Index: %lu", ((Property *) annotation).saleData, index);
             switch (index) {
                 case 0:
                     annotationView.pinColor = MKPinAnnotationColorRed;

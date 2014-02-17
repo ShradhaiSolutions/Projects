@@ -23,8 +23,6 @@ typedef enum : NSUInteger
     viewTypeSegmentIndexList
 } viewTypeSegmentIndex;
 
-static NSString *const kMapFilterSegueIdentifier = @"MapFilterSegue";
-static NSString *const kMapFilterStoryboardIdentifier = @"PropertiesFilter";
 static NSString *const kPropertiesListStoryboardIdentifier = @"PropertiesList";
 static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
@@ -73,7 +71,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 //                                                    doNext:^(id x) {
 //                                                        self.searchResultsViewModel.propertiesFromSearchResult = x;
 //                                                    }] deliverOn:[RACScheduler mainThreadScheduler]];
-    [dataManager fetchData];
+//    [dataManager fetchData];
     [dataManager getSaleDates];
     
 //    self.properties = self.searchResultsViewModel.properties;

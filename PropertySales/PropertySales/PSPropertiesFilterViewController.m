@@ -7,26 +7,27 @@
 //
 
 #import "PSPropertiesFilterViewController.h"
+#import "PSPropertyFilterTableDataSource.h"
 
 @interface PSPropertiesFilterViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)dismiss:(id)sender;
+
+@property (strong, nonatomic) PSPropertyFilterTableDataSource *dataSource;
 
 @end
 
 @implementation PSPropertiesFilterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.dataSource = [[PSPropertyFilterTableDataSource alloc] init];
+    self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self.dataSource;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
