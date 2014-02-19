@@ -33,13 +33,13 @@
 - (RACSignal *)setupData
 {
     ENTRY_LOG;
-    
-    EXIT_LOG;
-    
+
     PSFileManager *fileManager = [[PSFileManager alloc] init];
     
     NSArray *propertyData = [fileManager getPropertiesFromAppBundle];
     NSDictionary *addressLookupData = [fileManager getAddressToGeocodeMappingCacheFromAppBundle];
+    
+    EXIT_LOG;
 
     return [self importPropertyData:propertyData withAddressLookData:addressLookupData];
 }

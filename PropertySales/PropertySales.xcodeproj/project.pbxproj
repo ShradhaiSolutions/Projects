@@ -85,6 +85,7 @@
 		8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */; };
 		8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
 		8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
+		8AE27D1718B464820074A3FF /* PSPropertyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE27D1618B464820074A3FF /* PSPropertyAnnotation.m */; };
 		8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */; };
 		8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */; };
 		8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */; };
@@ -189,6 +190,8 @@
 		8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertySalesTests.m; sourceTree = "<group>"; };
 		8AE1458018A05B2D0051E912 /* PSDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataController.h; sourceTree = "<group>"; };
 		8AE1458118A05B2D0051E912 /* PSDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataController.m; sourceTree = "<group>"; };
+		8AE27D1518B464820074A3FF /* PSPropertyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyAnnotation.h; sourceTree = "<group>"; };
+		8AE27D1618B464820074A3FF /* PSPropertyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyAnnotation.m; sourceTree = "<group>"; };
 		8AE7587618B2757F00879C2E /* PSPropertyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyListTableViewCell.h; sourceTree = "<group>"; };
 		8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyListTableViewCell.m; sourceTree = "<group>"; };
 		8AE7587E18B2931B00879C2E /* PSPropertyFilterTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyFilterTableDataSource.h; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				8AA758DD18A73C35006DFB84 /* AddressLookup+Methods.m */,
 				8AA758CD18A73456006DFB84 /* AddressLookup.h */,
 				8AA758CE18A73456006DFB84 /* AddressLookup.m */,
+				8AE27D1518B464820074A3FF /* PSPropertyAnnotation.h */,
+				8AE27D1618B464820074A3FF /* PSPropertyAnnotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -691,6 +696,7 @@
 				8A37454118A7F67B0012E8A2 /* PSPropertiesContainerViewController.m in Sources */,
 				8A37455518A858620012E8A2 /* PSPropertyListTableDataSource.m in Sources */,
 				8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */,
+				8AE27D1718B464820074A3FF /* PSPropertyAnnotation.m in Sources */,
 				8A86CF5C18A47116009048A4 /* PSProperty.m in Sources */,
 				8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */,
 				8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */,

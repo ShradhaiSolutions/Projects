@@ -11,6 +11,8 @@
 #import "Property+MKAnnotations.h"
 #import "PSPropertyDetailsViewController.h"
 #import "PSDataManager.h"
+#import "AddressLookup.h"
+#import "PSPropertyAnnotation.h"
 
 static float const kMetersPerMile = 1609.344;
 
@@ -33,6 +35,8 @@ static float const kMetersPerMile = 1609.344;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+//    [self setupMap];
 
     LogDebug(@"Total number of displayed annotations: %lu", [self.mapView.annotations count]);
 }
@@ -50,9 +54,12 @@ static float const kMetersPerMile = 1609.344;
     
 //    self.mapView.showsUserLocation = YES;
 //    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    
+    RACSignal *willDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 
     @weakify(self);
-    [RACObserve(self, properties)
+    [[RACObserve(self, properties)
+      takeUntil:willDisappear]
      subscribeNext:^(id x) {
         @strongify(self);
         LogDebug(@"Adding Annotations count: %lu", [x count]);
@@ -86,36 +93,80 @@ static float const kMetersPerMile = 1609.344;
 }
 
 #pragma mark - Annotations
-- (void)addAnnotation:(Property *)annotation
-{
-    [self.mapView addAnnotation:annotation];
-}
+//- (void)addAnnotation:(Property *)annotation
+//{
+//    [self.mapView addAnnotation:annotation];
+//}
+//
+//- (void)addAnnotations:(NSArray *)annotations
+//{
+//    LogInfo(@"Annotations: %lu", [annotations count]);
+//    LogInfo(@"Map %@", self.mapView);
+//    
+//    if(annotations) {
+//        [self.mapView addAnnotations:annotations];
+//    }
+//}
 
-- (void)addAnnotations:(NSArray *)annotations
+- (void)addAnnotations
 {
-    LogInfo(@"Annotations: %lu", [annotations count]);
-    LogInfo(@"Map %@", self.mapView);
-    
-    if(annotations) {
-        [self.mapView addAnnotations:annotations];
+    [self removeExistingAnnotations];
+
+    @autoreleasepool {
+        for (Property *property in self.properties) {
+            PSPropertyAnnotation *annotation = [[PSPropertyAnnotation alloc] init];
+            [annotation setPropertyDetails:property];
+            
+            [self.mapView addAnnotation:annotation];
+        }
     }
 }
 
-- (void)addAnnotations
+- (void)removeExistingAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray array];
+    [self.mapView.annotations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[PSPropertyAnnotation class]]) {
+            [annotations addObject:obj];
+        }
+    }];
+    
+    [self.mapView removeAnnotations:annotations];
+}
+
+
+- (void)addAnnotationsOld
 {
     LogInfo(@"Annotations: %lu", [self.properties count]);
     LogInfo(@"Map %@", self.mapView);
     
-    [self.mapView addAnnotations:self.properties];
+    int i = 0;
+    int j = 0;
+    
+    for(Property *property in self.properties) {
+//        LogDebug(@"{latitude: %f, longitude: %f}", [property.addressLookup.latitude doubleValue], [property.addressLookup.longitude doubleValue]);
+        if (property.caseNo != nil
+            && [property.addressLookup.latitude doubleValue] != 0
+            && [property.addressLookup.longitude doubleValue] != 0) {
+            [self.mapView addAnnotation:property];
+            i++;
+        } else {
+            j++;
+        }
+    }
+    
+    LogError(@"Good:%d Bad:%d", i, j);
+    
+//    [self.mapView addAnnotations:self.properties];
 }
 
 
 - (void)removeAllAnnotations
 {
-    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy ] ;
-    [annotationsToRemove removeObject:self.mapView.userLocation ] ;
-    [self.mapView removeAnnotations:annotationsToRemove ] ;
-//    [self.mapView removeAnnotations:self.mapView.annotations ];
+//    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy ] ;
+//    [annotationsToRemove removeObject:self.mapView.userLocation ] ;
+//    [self.mapView removeAnnotations:annotationsToRemove ] ;
+    [self.mapView removeAnnotations:self.mapView.annotations ];
 }
 
 
@@ -123,15 +174,15 @@ static float const kMetersPerMile = 1609.344;
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     static NSString *identifier = @"PropertyAnnotation";
-    if ([annotation isKindOfClass:[Property class]]) {
-        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if ([annotation isKindOfClass:[PSPropertyAnnotation class]]) {
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (annotationView == nil) {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
 //            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
             
-            NSUInteger index = [self.saleDates indexOfObject:((Property *) annotation).saleData];
+            NSUInteger index = [self.saleDates indexOfObject:((PSPropertyAnnotation *) annotation).property.saleData];
             switch (index) {
                 case 0:
                     annotationView.pinColor = MKPinAnnotationColorRed;
@@ -167,7 +218,7 @@ static float const kMetersPerMile = 1609.344;
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 {
     LogDebug(@"Annotation is selected: %@", [view.annotation title]);
-    self.selectedStore = view.annotation;
+    self.selectedStore = ((PSPropertyAnnotation *) view.annotation).property;
     [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
 }
 
@@ -181,5 +232,9 @@ static float const kMetersPerMile = 1609.344;
     }
 }
 
+- (void)dealloc
+{
+    self.mapView.delegate = nil;
+}
 
 @end

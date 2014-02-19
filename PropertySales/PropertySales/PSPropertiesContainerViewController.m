@@ -67,11 +67,20 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 //        self.searchResultsViewModel.properties = x;
 //    }];
     
+//    @weakify(self);
+//    [RACObserve(dataManager, properties)
+//     subscribeNext:^(id x) {
+//         @strongify(self);
+//         LogError(@"Data into ViewModel: isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
+//         self.searchResultsViewModel.properties = x;
+//     }];
+//    
 //    RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
 //                                                    doNext:^(id x) {
 //                                                        self.searchResultsViewModel.propertiesFromSearchResult = x;
 //                                                    }] deliverOn:[RACScheduler mainThreadScheduler]];
-//    [dataManager fetchData];
+    [dataManager fetchData];
+//    [dataManager reload];
     [dataManager getSaleDates];
     
 //    self.properties = self.searchResultsViewModel.properties;
@@ -92,10 +101,18 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
 - (void)addMapViewController
 {
-    PSPropertiesListViewController *mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesMapStoryboardIdentifier];
+    PSPropertiesMapViewController *mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesMapStoryboardIdentifier];
+//    [mapViewController setupMap];
     
-    mapViewController.properties = self.searchResultsViewModel.propertiesFromSearchResult;
+//    mapViewController.properties = self.searchResultsViewModel.propertiesFromSearchResult;
     RAC(mapViewController, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
+    
+//    [RACObserve(self.searchResultsViewModel, propertiesFromSearchResult)
+//     subscribeNext:^(id x) {
+//         LogError(@"Data into Map VC. isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
+//         mapViewController.properties = x;
+//     }];
+
     
     mapViewController.view.frame = self.view.bounds;
     mapViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -119,7 +136,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     childViewController.view.frame = currentViewController.view.frame;
     childViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [childViewController setValue:self.searchResultsViewModel.propertiesFromSearchResult forKeyPath:@"properties"];
+//    [childViewController setValue:self.searchResultsViewModel.propertiesFromSearchResult forKeyPath:@"properties"];
     
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
         PSPropertiesListViewController *vc = (PSPropertiesListViewController *)childViewController;

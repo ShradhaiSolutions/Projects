@@ -16,6 +16,14 @@
     
     RAC(self, propertiesFromSearchResult) = [RACObserve(self, properties) deliverOn:[RACScheduler mainThreadScheduler]];
     
+    
+//    [[RACObserve(self, properties)
+//      deliverOn:[RACScheduler mainThreadScheduler]]
+//     subscribeNext:^(id x) {
+//         LogError(@"ViewModel - data into search result array. isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
+//         self.propertiesFromSearchResult = x;
+//    }];
+    
     @weakify(self);
     [RACObserve(self, searchString)
      subscribeNext:^(NSString *searchString) {
