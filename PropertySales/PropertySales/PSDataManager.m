@@ -24,6 +24,7 @@
 
 @property (strong, nonatomic) NSDictionary *postParams;
 @property (strong, nonatomic) NSArray *saleDates;
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -35,6 +36,9 @@
     self = [super init];
     if (self) {
         _communicator = [[PSDataCommunicator alloc] init];
+        
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateFormat:@"MM/dd/yyyy"];
     }
     return self;
 }
@@ -292,24 +296,16 @@
 
 - (NSArray *)getSaleDatesStrings
 {
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+    NSArray *saleDates = [self getSaleDates];
+    NSMutableArray *saleDateStrings = [NSMutableArray arrayWithCapacity:[saleDates count]];
     
-    NSFetchedResultsController *fc = [Property MR_fetchAllGroupedBy:@"saleData" withPredicate:nil sortedBy:@"saleData" ascending:YES];
-    [fc.fetchRequest setPropertiesToFetch:@[@"saleData"]];
-    fc.fetchRequest.returnsDistinctResults = YES;
-    [fc.fetchRequest setResultType:NSDictionaryResultType];
-    
-    NSArray *results = [Property MR_executeFetchRequest:fc.fetchRequest inContext:localContext];
-    
-    NSMutableArray *saleDates = [NSMutableArray arrayWithCapacity:[results count]];
-    
-    for(NSDictionary *data in results) {
-        [saleDates addObject:[data objectForKey:@"saleData"]];
+    for(NSDate *saleDate in saleDates) {
+        [saleDateStrings addObject:[self.dateFormatter stringFromDate:saleDate]];
     }
     
-    LogDebug(@"SaleDates: %@", saleDates);
+    LogDebug(@"SaleDates: %@", saleDateStrings);
     
-    return [saleDates copy];
+    return saleDateStrings;
 }
 
 

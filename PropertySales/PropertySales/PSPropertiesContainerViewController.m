@@ -79,7 +79,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 //                                                    doNext:^(id x) {
 //                                                        self.searchResultsViewModel.propertiesFromSearchResult = x;
 //                                                    }] deliverOn:[RACScheduler mainThreadScheduler]];
-    [dataManager fetchData];
+//    [dataManager fetchData];
 //    [dataManager reload];
     [dataManager getSaleDates];
     

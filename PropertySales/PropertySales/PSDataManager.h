@@ -16,5 +16,6 @@
 
 - (NSArray *)properiesForSale;
 - (NSArray *)getSaleDates;
+- (NSArray *)getSaleDatesStrings;
 
 @end

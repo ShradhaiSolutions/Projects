@@ -37,6 +37,7 @@
 }
 
 - (IBAction)dismiss:(id)sender {
+    LogInfo(@"Selected Dates: %@", self.dataSource.selectedDates);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
