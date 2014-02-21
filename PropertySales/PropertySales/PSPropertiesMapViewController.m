@@ -27,7 +27,7 @@ static float const kMetersPerMile = 1609.344;
 - (void)viewDidLoad
 {
     ENTRY_LOG;
-
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -39,7 +39,7 @@ static float const kMetersPerMile = 1609.344;
     ENTRY_LOG;
     
     [super viewWillAppear:animated];
-
+    
     [self setupMap];
     LogDebug(@"Total number of displayed annotations: %lu", [self.mapView.annotations count]);
     
@@ -59,25 +59,24 @@ static float const kMetersPerMile = 1609.344;
     [self.mapView setRegion:viewRegion animated:YES];
     self.mapView.delegate = self;
     
-//    self.mapView.showsUserLocation = YES;
-//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    //    self.mapView.showsUserLocation = YES;
+    //    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     RACSignal *willDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
-
+    
     @weakify(self);
     [[RACObserve(self, properties)
       takeUntil:willDisappear]
      subscribeNext:^(id x) {
-        @strongify(self);
-        LogDebug(@"Adding Annotations count: %lu", [x count]);
+         @strongify(self);
+         LogDebug(@"Adding Annotations count: %lu", [x count]);
          
          PSDataManager *dataManager = [[PSDataManager alloc] init];
          self.saleDates = [dataManager getSaleDates];
-        [self removeAllAnnotations];
-        [self addAnnotations];
-    } error:^(NSError *error) {
-        LogError(@"Error While adding Annotations: %@", error);
-    }];
+         [self addAnnotations];
+     } error:^(NSError *error) {
+         LogError(@"Error While adding Annotations: %@", error);
+     }];
     
     EXIT_LOG;
 }
@@ -87,7 +86,7 @@ static float const kMetersPerMile = 1609.344;
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.2472;
     zoomLocation.longitude= -84.3761;
-
+    
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 10*kMetersPerMile, 10*kMetersPerMile);
     
@@ -102,25 +101,10 @@ static float const kMetersPerMile = 1609.344;
 }
 
 #pragma mark - Annotations
-//- (void)addAnnotation:(Property *)annotation
-//{
-//    [self.mapView addAnnotation:annotation];
-//}
-//
-//- (void)addAnnotations:(NSArray *)annotations
-//{
-//    LogInfo(@"Annotations: %lu", [annotations count]);
-//    LogInfo(@"Map %@", self.mapView);
-//    
-//    if(annotations) {
-//        [self.mapView addAnnotations:annotations];
-//    }
-//}
-
 - (void)addAnnotations
 {
     [self removeExistingAnnotations];
-
+    
     @autoreleasepool {
         for (Property *property in self.properties) {
             PSPropertyAnnotation *annotation = [[PSPropertyAnnotation alloc] init];
@@ -144,41 +128,6 @@ static float const kMetersPerMile = 1609.344;
 }
 
 
-- (void)addAnnotationsOld
-{
-    LogInfo(@"Annotations: %lu", [self.properties count]);
-    LogInfo(@"Map %@", self.mapView);
-    
-    int i = 0;
-    int j = 0;
-    
-    for(Property *property in self.properties) {
-//        LogDebug(@"{latitude: %f, longitude: %f}", [property.addressLookup.latitude doubleValue], [property.addressLookup.longitude doubleValue]);
-        if (property.caseNo != nil
-            && [property.addressLookup.latitude doubleValue] != 0
-            && [property.addressLookup.longitude doubleValue] != 0) {
-            [self.mapView addAnnotation:property];
-            i++;
-        } else {
-            j++;
-        }
-    }
-    
-    LogError(@"Good:%d Bad:%d", i, j);
-    
-//    [self.mapView addAnnotations:self.properties];
-}
-
-
-- (void)removeAllAnnotations
-{
-//    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy ] ;
-//    [annotationsToRemove removeObject:self.mapView.userLocation ] ;
-//    [self.mapView removeAnnotations:annotationsToRemove ] ;
-    [self.mapView removeAnnotations:self.mapView.annotations ];
-}
-
-
 #pragma mark - MKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -189,28 +138,29 @@ static float const kMetersPerMile = 1609.344;
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-//            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
+            //            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
             
-            NSUInteger index = [self.saleDates indexOfObject:((PSPropertyAnnotation *) annotation).property.saleData];
-            switch (index) {
-                case 0:
-                    annotationView.pinColor = MKPinAnnotationColorRed;
-                    break;
-
-                case 1:
-                    annotationView.pinColor = MKPinAnnotationColorPurple;
-                    break;
-                    
-                default:
-                    annotationView.pinColor = MKPinAnnotationColorGreen;
-                    break;
-            }
+            //Left Accessory
+            annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         } else {
             annotationView.annotation = annotation;
         }
         
-        //Left Accessory
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        NSUInteger index = [self.saleDates indexOfObject:((PSPropertyAnnotation *) annotation).property.saleData];
+        switch (index) {
+            case 0:
+                annotationView.pinColor = MKPinAnnotationColorRed;
+                break;
+                
+            case 1:
+                annotationView.pinColor = MKPinAnnotationColorPurple;
+                break;
+                
+            default:
+                annotationView.pinColor = MKPinAnnotationColorGreen;
+                break;
+        }
+        
         
         return annotationView;
     }
@@ -221,7 +171,6 @@ static float const kMetersPerMile = 1609.344;
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     LogDebug(@"Annotation is selected: %@", [view.annotation title]);
-//    [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;

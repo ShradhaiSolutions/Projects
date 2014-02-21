@@ -55,7 +55,7 @@
             break;
             
         default:
-            cell.textLabel.textColor = [UIColor blackColor];
+            cell.textLabel.textColor = [UIColor brownColor];
             break;
     }
     
