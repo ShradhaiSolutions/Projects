@@ -61,6 +61,7 @@
     
     if([self.selectedDates containsObject:self.saleDates[indexPath.row]]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
         
     return cell;
