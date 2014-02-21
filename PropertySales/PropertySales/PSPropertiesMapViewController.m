@@ -53,14 +53,16 @@ static float const kMetersPerMile = 1609.344;
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.2438;
     zoomLocation.longitude= -84.3853;
+//    zoomLocation.latitude = self.mapView.userLocation.location.coordinate.latitude;
+//    zoomLocation.longitude = self.mapView.userLocation.location.coordinate.longitude;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 15*kMetersPerMile, 15*kMetersPerMile);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
     [self.mapView setRegion:viewRegion animated:YES];
     self.mapView.delegate = self;
     
-    //    self.mapView.showsUserLocation = YES;
-    //    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    self.mapView.showsUserLocation = YES;
+//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     RACSignal *willDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
     
@@ -170,6 +172,7 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
+    self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
     LogDebug(@"Annotation is selected: %@", [view.annotation title]);
 }
 
@@ -180,6 +183,43 @@ static float const kMetersPerMile = 1609.344;
     [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
 }
 
+#pragma mark - Directions
+- (void)addDirectionsFromCurrentLocation
+{
+    MKDirectionsRequest *request = [MKDirectionsRequest new];
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    LogInfo(@"MapItem: %@", self.selectedProperty.mapItem);
+    request.destination = self.selectedProperty.mapItem;
+    request.requestsAlternateRoutes = YES;
+    
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    [directions calculateDirectionsWithCompletionHandler: ^(MKDirectionsResponse *response, NSError *error) {
+        LogInfo(@"MKDirectionsResponse: %@", response);
+        if (error) {
+            NSLog(@"Error is %@",error);
+        } else {
+            [self showDirections:response]; 
+        } 
+    }];
+}
+
+- (void)showDirections:(MKDirectionsResponse *)response
+{
+    ENTRY_LOG;
+    for (MKRoute *route in response.routes) {
+        LogDebug(@"Route: %@", route);
+        [self.mapView addOverlay:route.polyline];
+    }
+    EXIT_LOG;
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+    renderer.strokeColor = [UIColor redColor];
+    renderer.lineWidth = 4.0;
+    return  renderer;
+}
 
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

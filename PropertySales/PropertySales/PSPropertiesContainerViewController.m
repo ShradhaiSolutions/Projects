@@ -47,6 +47,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 @property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
 @property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
 
+- (IBAction)directionsFromCurrentLocation:(id)sender;
 
 @end
 
@@ -97,7 +98,27 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     self.locationManager.delegate = self.locationManagerDelegate;
     
     //Add the child view controller
+//    [self addListViewController];
     [self addMapViewController];
+}
+
+- (void)addListViewController
+{
+    PSPropertiesListViewController *listViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesListStoryboardIdentifier];
+    
+    RAC(listViewController, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
+    
+//    listViewController.view.backgroundColor = [UIColor greenColor];
+    
+//    listViewController.view.frame = self.view.bounds;
+    listViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self addChildViewController:listViewController];
+    [self.view insertSubview:listViewController.view belowSubview:self.searchToolbar];
+    
+    [listViewController didMoveToParentViewController:self];
+    
+    [self constrainChildControllerView:listViewController.view];
 }
 
 - (void)addMapViewController
@@ -134,9 +155,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     
     UIViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:storyboardIdentifier];
     
-    childViewController.view.frame = currentViewController.view.frame;
-    childViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
 //    [childViewController setValue:self.searchResultsViewModel.propertiesFromSearchResult forKeyPath:@"properties"];
     
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
@@ -149,6 +167,9 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
         PSPropertiesMapViewController *vc = (PSPropertiesMapViewController *)childViewController;
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     }
+    
+    //    childViewController.view.frame = currentViewController.view.frame;
+    childViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self addChildViewController:childViewController];
     [currentViewController willMoveToParentViewController:nil];
@@ -334,4 +355,9 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 }
 
 
+- (IBAction)directionsFromCurrentLocation:(id)sender
+{
+    PSPropertiesMapViewController *currentViewController = [self childViewControllers][0];
+    [currentViewController addDirectionsFromCurrentLocation];
+}
 @end

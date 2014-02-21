@@ -32,16 +32,19 @@
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
+//    [self performSelector:@selector(applyContentOffsetToTableview) withObject:nil afterDelay:0.0f];
+    
     @weakify(self);
     [RACObserve(self, properties)
      subscribeNext:^(id x) {
          @strongify(self);
          LogDebug(@"Number of Properties: %lu", [x count]);
-         //        [self.tableView setScrollEnabled:YES];
+//         [self.tableView setScrollEnabled:YES];
          self.dataSource.properties = x;
          [self.tableView beginUpdates];
          [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
          [self.tableView endUpdates];
+//         [self performSelector:@selector(applyContentOffsetToTableview) withObject:nil afterDelay:0.1f];
      }];
     
     EXIT_LOG;
@@ -53,9 +56,18 @@
     
     [super viewWillAppear:animated];
     
+    //TODO: Temp solution. We must find the root cause of content inset issue and resolve it completely
+    [self performSelector:@selector(applyContentOffsetToTableview) withObject:nil afterDelay:0.1f];
+    
     LogDebug(@"Number of Properties: %lu", [self.properties count]);
 
     EXIT_LOG;
+}
+
+- (void)applyContentOffsetToTableview
+{
+//    self.tableView.contentInset = UIEdgeInsetsZero;
+    self.tableView.contentOffset = CGPointZero;
 }
 
 - (void)didReceiveMemoryWarning
