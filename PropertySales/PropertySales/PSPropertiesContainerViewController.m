@@ -9,6 +9,7 @@
 #import "PSPropertiesContainerViewController.h"
 #import "PSPropertiesListViewController.h"
 #import "PSPropertiesMapViewController.h"
+#import "PSPropertiesFilterViewController.h"
 #import "PSDataController.h"
 #import "PSDataManager.h"
 #import "PSCoreLocationManagerDelegate.h"
@@ -168,7 +169,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 }
 
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender {
-    NSLog(@"Search Text: %@", self.searchBar.text);
+    LogDebug(@"Search Text: %@", self.searchBar.text);
     [self swapChildViewControllers];
 }
 
@@ -323,6 +324,14 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     }
 }
 
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PropertiesFilterSegue"]) {
+        PSPropertiesFilterViewController *controller = [segue.destinationViewController childViewControllers][0];
+        controller.searchResultsViewModel = self.searchResultsViewModel;
+    }
+}
 
 
 @end

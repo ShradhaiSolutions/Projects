@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PSBaseViewController.h"
+#import "PSSearchResultsViewModel.h"
 
 @interface PSPropertiesFilterViewController : PSBaseViewController
+
+@property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
 
 @end

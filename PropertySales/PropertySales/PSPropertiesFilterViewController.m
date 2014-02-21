@@ -22,12 +22,17 @@
 
 - (void)viewDidLoad
 {
+    ENTRY_LOG;
+    
     [super viewDidLoad];
 	
     self.dataSource = [[PSPropertyFilterTableDataSource alloc] init];
+    self.dataSource.selectedDates = [self.searchResultsViewModel.selectedSaleDatesForFiltering mutableCopy]; //[NSMutableSet set]; //[NSMutableSet setWithSet:self.searchResultsViewModel.selectedSaleDatesForFiltering]; //
+    
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
+    EXIT_LOG;
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +43,7 @@
 
 - (IBAction)dismiss:(id)sender {
     LogInfo(@"Selected Dates: %@", self.dataSource.selectedDates);
+    self.searchResultsViewModel.selectedSaleDatesForFiltering = self.dataSource.selectedDates;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

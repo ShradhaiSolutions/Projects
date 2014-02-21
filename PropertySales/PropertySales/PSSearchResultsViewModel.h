@@ -11,6 +11,7 @@
 @interface PSSearchResultsViewModel : NSObject
 
 @property (strong, nonatomic) NSString *searchString;
+@property (copy, nonatomic) NSSet *selectedSaleDatesForFiltering;
 
 @property (strong, nonatomic) NSArray *properties;
 @property (strong, nonatomic) NSArray *propertiesFromSearchResult;

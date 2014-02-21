@@ -25,7 +25,6 @@
         PSDataManager *dataManager = [[PSDataManager alloc] init];
         _saleDates = [dataManager getSaleDates];
         _saleDateStrings = [dataManager getSaleDatesStrings];
-        _selectedDates = [NSMutableSet set];
     }
     return self;
 }
@@ -59,6 +58,10 @@
             cell.textLabel.textColor = [UIColor blackColor];
             break;
     }
+    
+    if([self.selectedDates containsObject:self.saleDates[indexPath.row]]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
         
     return cell;
 }
@@ -68,8 +71,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LogDebug(@"Selected Date: %@", self.saleDates[indexPath.row]);
-    //    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-    [self tableView:tableView setRowAtIndexPath:indexPath selected:YES];
+//    //    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     [self.selectedDates addObject:self.saleDates[indexPath.row]];
 }
 
@@ -80,16 +83,16 @@
     [self.selectedDates removeObject:self.saleDates[indexPath.row]];
 }
 
-- (void)tableView:(UITableView *)tableView setRowAtIndexPath:(NSIndexPath *)indexPath selected:(BOOL)selected
-{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self setCellAccessory:selected forCell:cell];
-    cell.selectedBackgroundView = nil;
-}
-
-- (void)setCellAccessory:(BOOL)checked forCell:(UITableViewCell *)cell
-{
-    cell.accessoryType = checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-}
+//- (void)tableView:(UITableView *)tableView setRowAtIndexPath:(NSIndexPath *)indexPath selected:(BOOL)selected
+//{
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    [self setCellAccessory:selected forCell:cell];
+//    cell.selectedBackgroundView = nil;
+//}
+//
+//- (void)setCellAccessory:(BOOL)checked forCell:(UITableViewCell *)cell
+//{
+//    cell.accessoryType = checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+//}
 
 @end

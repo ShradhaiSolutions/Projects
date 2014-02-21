@@ -10,10 +10,19 @@
 
 @implementation PSSearchResultsViewModel
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _selectedSaleDatesForFiltering = [NSSet set];
+    }
+    return self;
+}
+
 - (void)setup
 {
     ENTRY_LOG;
-    
+
     RAC(self, propertiesFromSearchResult) = [RACObserve(self, properties) deliverOn:[RACScheduler mainThreadScheduler]];
     
     
@@ -24,21 +33,33 @@
 //         self.propertiesFromSearchResult = x;
 //    }];
     
+//    NSDateFormatter *dateFormmater = [[NSDateFormatter alloc] init];
+//    [dateFormmater setDateFormat:@"MM/dd/yyyy"];
+//    
+//    self.selectedSaleDatesForFiltering = [NSSet setWithArray:@[[dateFormmater dateFromString:@"02/20/2014"],
+//                                                               [dateFormmater dateFromString:@"02/27/2014"]]];
+    
     @weakify(self);
-    [RACObserve(self, searchString)
-     subscribeNext:^(NSString *searchString) {
+    [[RACSignal
+     combineLatest:@[RACObserve(self, searchString), RACObserve(self, selectedSaleDatesForFiltering)]
+     reduce:^id(NSString *searchString, NSSet *selectedSaleDatesForFiltering){
          @strongify(self);
-         LogInfo(@"Search String: %@", searchString);
+         LogInfo(@"Search String: %@, SelectedSaleDates: %@", searchString, selectedSaleDatesForFiltering);
          
-         if(searchString == nil || searchString.length <= 0) {
-             self.propertiesFromSearchResult = self.properties;
-         } else {
+         if(searchString.length > 0 || [selectedSaleDatesForFiltering count] > 0) {
              self.propertiesFromSearchResult = [self.properties
                                                 filteredArrayUsingPredicate:[[self buildPredicate]
-                                                                             predicateWithSubstitutionVariables:@{@"searchString" : searchString}]];
+                                                                             predicateWithSubstitutionVariables:@{@"searchString" : searchString, @"searchDates" : selectedSaleDatesForFiltering}]];
+         } else {
+             self.propertiesFromSearchResult = self.properties;
          }
          
          LogInfo(@"After filtering Search results: %lu", [self.propertiesFromSearchResult count]);
+         
+         return nil;
+         
+     }] subscribeCompleted:^{
+         LogInfo(@"Done Filtering...");
      }];
     
     EXIT_LOG;
@@ -54,6 +75,7 @@
             "OR (appraisal CONTAINS[cd] $searchString)"
             "OR (minBid CONTAINS[cd] $searchString)"
             "OR (township CONTAINS[cd] $searchString)"
+            "OR (saleData IN $searchDates)"
      ];
     
     return searchPredicate;

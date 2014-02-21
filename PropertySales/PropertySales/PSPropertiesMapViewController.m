@@ -18,7 +18,7 @@ static float const kMetersPerMile = 1609.344;
 
 @interface PSPropertiesMapViewController ()
 
-@property (weak, nonatomic) Property *selectedStore;
+@property (weak, nonatomic) Property *selectedProperty;
 
 @end
 
@@ -26,23 +26,30 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)viewDidLoad
 {
+    ENTRY_LOG;
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self setupMap];
+    EXIT_LOG;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    ENTRY_LOG;
     
-//    [self setupMap];
+    [super viewWillAppear:animated];
 
+    [self setupMap];
     LogDebug(@"Total number of displayed annotations: %lu", [self.mapView.annotations count]);
+    
+    EXIT_LOG;
 }
 
 - (void)setupMap
 {
+    ENTRY_LOG;
+    
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.2438;
     zoomLocation.longitude= -84.3853;
@@ -71,6 +78,8 @@ static float const kMetersPerMile = 1609.344;
     } error:^(NSError *error) {
         LogError(@"Error While adding Annotations: %@", error);
     }];
+    
+    EXIT_LOG;
 }
 
 - (void)updateTheMapRegion:(CLLocationCoordinate2D)location
@@ -218,7 +227,7 @@ static float const kMetersPerMile = 1609.344;
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 {
     LogDebug(@"Annotation is selected: %@", [view.annotation title]);
-    self.selectedStore = ((PSPropertyAnnotation *) view.annotation).property;
+    self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
     [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
 }
 
@@ -228,7 +237,7 @@ static float const kMetersPerMile = 1609.344;
 {
     if ([segue.identifier isEqualToString:@"PropertyDetailsFromMapSegue"]) {
         PSPropertyDetailsViewController *controller = segue.destinationViewController;
-        controller.selectedProperty = self.selectedStore;
+        controller.selectedProperty = self.selectedProperty;
     }
 }
 

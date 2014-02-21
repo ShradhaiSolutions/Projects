@@ -66,20 +66,6 @@
 
 #pragma mark - View Controller Containment
 
-//- (void)willMoveToParentViewController:(UIViewController *)parent
-//{
-//    if (parent && [parent conformsToProtocol:@protocol(KRStoreLocatorChildViewControllerDelegate)])
-//    {
-//        __weak KRStoresViewController *weakSelf = self;
-//        [self.childDelegate setCompletionBlockWithSuccess:^(NSArray *stores, NSArray *services, CLLocation *location) {
-//            weakSelf.stores = stores;
-//            [weakSelf.tableView reloadData];
-//        } failure:^(NSError *error) {
-//            [weakSelf handleSearchError];
-//        }];
-//    }
-//}
-
 - (void)didMoveToParentViewController:(UIViewController *)parent
 {
     if (parent && self.properties)

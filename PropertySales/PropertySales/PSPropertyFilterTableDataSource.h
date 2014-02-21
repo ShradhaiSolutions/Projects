@@ -10,6 +10,6 @@
 
 @interface PSPropertyFilterTableDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-@property (copy, nonatomic) NSMutableSet *selectedDates;
+@property (strong, nonatomic) NSMutableSet *selectedDates;
 
 @end
