@@ -15,6 +15,8 @@
 #import "PSPropertyAnnotation.h"
 #import "PSGoogleMapsManager.h"
 #import "PSAppleMapsManager.h"
+#import "PSCoreLocationManagerDelegate.h"
+
 
 typedef NS_ENUM(NSUInteger, CalloutAccessoryViewType) {
     CalloutAccessoryViewTypeLeft = 1,
@@ -36,6 +38,9 @@ static float const kMetersPerMile = 1609.344;
 @property (strong, nonatomic) PSGoogleMapsManager *googleMapsManager;
 @property (strong, nonatomic) PSAppleMapsManager *appleMapsManager;
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
+
 @end
 
 @implementation PSPropertiesMapViewController
@@ -49,6 +54,16 @@ static float const kMetersPerMile = 1609.344;
     
     self.googleMapsManager = [[PSGoogleMapsManager alloc] init];
     self.appleMapsManager = [[PSAppleMapsManager alloc] init];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
+    self.locationManager.delegate = self.locationManagerDelegate;
+    
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    
+    [self addCurrentLocationButton];
+    [self navigateToCurrentLocation];
     
     EXIT_LOG;
 }
@@ -65,22 +80,80 @@ static float const kMetersPerMile = 1609.344;
     EXIT_LOG;
 }
 
+- (void)addCurrentLocationButton
+{
+    UIImage *image = [UIImage imageNamed:@"CurrentLocation"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+    iv.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8];
+    iv.contentMode = UIViewContentModeCenter;
+    iv.layer.cornerRadius = 5.0f;
+    
+    iv.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigateToCurrentLocation)];
+    [iv addGestureRecognizer:tap];
+    
+    iv.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.mapView addSubview:iv];
+
+    
+    [self constrainCurrentLocationButton:iv];
+}
+
+- (void)constrainCurrentLocationButton:(UIView *)button
+{
+    [self.mapView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[button(40)]-(10)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:@{@"button":button}]];
+    
+    [self.mapView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button(40)]-(10)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:@{@"button": button}]];
+}
+
+#pragma mark - CoreLocation
+- (void)navigateToCurrentLocation {
+    ENTRY_LOG;
+    
+    [self.locationManager startUpdatingLocation];
+    
+    CLLocation *location = (CLLocation *) self.mapView.userLocation;
+    
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
+        [self showSimpleAlertWithTitle:@"Location" message:@"Location Service is disabled. Please enable it in Settings."];
+    }
+    else if (!location) {
+        [self showSimpleAlertWithTitle:@"Location" message:@"Failed to obtain location information"];
+    }
+    else {
+        LogInfo(@"Current Location: Latitude: %f, Longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
+        
+        [self updateTheMapRegion:location.coordinate];
+        
+    }
+    
+    [self.locationManager stopUpdatingLocation];
+    
+    EXIT_LOG;
+}
+
+- (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"BTN_OK", "") otherButtonTitles:nil];
+    [alertView show];
+}
+
 - (void)setupMap
 {
     ENTRY_LOG;
     
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 39.2438;
-    zoomLocation.longitude= -84.3853;
-//    zoomLocation.latitude = self.mapView.userLocation.location.coordinate.latitude;
-//    zoomLocation.longitude = self.mapView.userLocation.location.coordinate.longitude;
+//    CLLocationCoordinate2D zoomLocation;
+//    zoomLocation.latitude = 39.2438;
+//    zoomLocation.longitude= -84.3853;
+////    zoomLocation.latitude = self.mapView.userLocation.location.coordinate.latitude;
+////    zoomLocation.longitude = self.mapView.userLocation.location.coordinate.longitude;
+//    
+//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
-    
-    [self.mapView setRegion:viewRegion animated:YES];
-    self.mapView.delegate = self;
-    
-    self.mapView.showsUserLocation = YES;
+//    [self.mapView setRegion:viewRegion animated:YES];
 //    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     RACSignal *willDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
@@ -104,12 +177,20 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)updateTheMapRegion:(CLLocationCoordinate2D)location
 {
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 39.2472;
-    zoomLocation.longitude= -84.3761;
+    CLLocationCoordinate2D currentLocation;
+    
+    if(location.latitude != 0 && location.longitude != 0) {
+        currentLocation.latitude = location.latitude;
+        currentLocation.longitude= location.longitude;
+    } else {
+        LogError(@"Couldn't obtain the curent Location");
+
+        currentLocation.latitude = 39.2438;
+        currentLocation.longitude= -84.3853;
+    }
     
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 10*kMetersPerMile, 10*kMetersPerMile);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
     // 3
     [self.mapView setRegion:viewRegion animated:YES];
@@ -205,7 +286,7 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 {
-    LogInfo(@"View Tag: %d", view.tag);
+    LogInfo(@"View Tag: %ld", view.tag);
     
     if(view.tag == CalloutAccessoryViewTypeRight) {
         LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
@@ -274,12 +355,7 @@ static float const kMetersPerMile = 1609.344;
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    long i = buttonIndex;
-    
-    double latitude = [self.selectedProperty.addressLookup.latitude doubleValue];
-    double longitude = [self.selectedProperty.addressLookup.longitude doubleValue];
-
-    switch(i)
+    switch(buttonIndex)
     {
         case MapDirectionsDestinationTypeInBuilt:
             LogInfo(@"InBuilt Directions Type is selected");
@@ -292,8 +368,6 @@ static float const kMetersPerMile = 1609.344;
             break;
         case MapDirectionsDestinationTypeInApple:
             LogInfo(@"Apple App Directions Type is selected");
-            
-//            [self.appleMapsManager openGoogleMapsWithDestinationLatitude:latitude longitude:longitude];
             
             [self.selectedProperty.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
             
