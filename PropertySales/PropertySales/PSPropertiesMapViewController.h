@@ -10,7 +10,7 @@
 #import "PSBaseViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface PSPropertiesMapViewController : PSBaseViewController <MKMapViewDelegate>
+@interface PSPropertiesMapViewController : PSBaseViewController <MKMapViewDelegate, UIActionSheetDelegate>
 
 @property(copy, nonatomic) NSArray *properties;
 @property(copy, nonatomic) NSArray *saleDates;
@@ -18,6 +18,6 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 - (void)updateTheMapRegion:(CLLocationCoordinate2D)location;
-- (void)addDirectionsFromCurrentLocation;
+- (void)showDirectionsFromCurrentLocation;
 
 @end

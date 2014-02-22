@@ -23,6 +23,8 @@
 		8A2965BF18ADD49700AA330C /* PSDataCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2965BD18ADD49700AA330C /* PSDataCommunicator.m */; };
 		8A2965C318ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */; };
 		8A2965C418ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */; };
+		8A2A3D5C18B84B6100078596 /* PSGoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */; };
+		8A2A3D5F18B854F100078596 /* PSAppleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A3D5E18B854F100078596 /* PSAppleMapsManager.m */; };
 		8A37453918A7DC080012E8A2 /* PSDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A37453818A7DC080012E8A2 /* PSDataImporter.m */; };
 		8A37453A18A7DC080012E8A2 /* PSDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A37453818A7DC080012E8A2 /* PSDataImporter.m */; };
 		8A37453C18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A37453B18A7EEC20012E8A2 /* PropertySales.storyboard */; };
@@ -120,6 +122,10 @@
 		8A2965BD18ADD49700AA330C /* PSDataCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataCommunicator.m; sourceTree = "<group>"; };
 		8A2965C118ADDB6200AA330C /* PSPropertyMetadataDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyMetadataDataParser.h; sourceTree = "<group>"; };
 		8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyMetadataDataParser.m; sourceTree = "<group>"; };
+		8A2A3D5A18B84B6100078596 /* PSGoogleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSGoogleMapsManager.h; sourceTree = "<group>"; };
+		8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSGoogleMapsManager.m; sourceTree = "<group>"; };
+		8A2A3D5D18B854F100078596 /* PSAppleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAppleMapsManager.h; sourceTree = "<group>"; };
+		8A2A3D5E18B854F100078596 /* PSAppleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAppleMapsManager.m; sourceTree = "<group>"; };
 		8A37453718A7DC080012E8A2 /* PSDataImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataImporter.h; sourceTree = "<group>"; };
 		8A37453818A7DC080012E8A2 /* PSDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataImporter.m; sourceTree = "<group>"; };
 		8A37453B18A7EEC20012E8A2 /* PropertySales.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PropertySales.storyboard; sourceTree = "<group>"; };
@@ -320,6 +326,10 @@
 				8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */,
 				8AF2934A18AC66A200DA0D2D /* PSSearchResultsViewModel.h */,
 				8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */,
+				8A2A3D5A18B84B6100078596 /* PSGoogleMapsManager.h */,
+				8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */,
+				8A2A3D5D18B854F100078596 /* PSAppleMapsManager.h */,
+				8A2A3D5E18B854F100078596 /* PSAppleMapsManager.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -661,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2A3D5F18B854F100078596 /* PSAppleMapsManager.m in Sources */,
 				8A2965BA18ADD3FD00AA330C /* PSDataManager.m in Sources */,
 				8AA758D318A73456006DFB84 /* Property.m in Sources */,
 				8AA758E218A743D1006DFB84 /* Property+Methods.m in Sources */,
@@ -668,6 +679,7 @@
 				8A86CF6118A47628009048A4 /* PSProperty+LocationParser.m in Sources */,
 				8A37454518A7F68E0012E8A2 /* PSPropertiesListViewController.m in Sources */,
 				8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */,
+				8A2A3D5C18B84B6100078596 /* PSGoogleMapsManager.m in Sources */,
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
 				8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */,
 				8AF2935818AC76D000DA0D2D /* UISearchBar+RAC.m in Sources */,

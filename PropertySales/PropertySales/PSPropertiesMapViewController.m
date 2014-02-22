@@ -13,12 +13,28 @@
 #import "PSDataManager.h"
 #import "AddressLookup.h"
 #import "PSPropertyAnnotation.h"
+#import "PSGoogleMapsManager.h"
+#import "PSAppleMapsManager.h"
+
+typedef NS_ENUM(NSUInteger, CalloutAccessoryViewType) {
+    CalloutAccessoryViewTypeLeft = 1,
+    CalloutAccessoryViewTypeRight = 2
+};
+
+typedef NS_ENUM(NSUInteger, MapDirectionsDestinationType) {
+    MapDirectionsDestinationTypeInBuilt = 0,
+    MapDirectionsDestinationTypeInGoogle = 1,
+    MapDirectionsDestinationTypeInApple = 2
+};
+
 
 static float const kMetersPerMile = 1609.344;
 
 @interface PSPropertiesMapViewController ()
 
 @property (weak, nonatomic) Property *selectedProperty;
+@property (strong, nonatomic) PSGoogleMapsManager *googleMapsManager;
+@property (strong, nonatomic) PSAppleMapsManager *appleMapsManager;
 
 @end
 
@@ -30,6 +46,9 @@ static float const kMetersPerMile = 1609.344;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.googleMapsManager = [[PSGoogleMapsManager alloc] init];
+    self.appleMapsManager = [[PSAppleMapsManager alloc] init];
     
     EXIT_LOG;
 }
@@ -140,10 +159,18 @@ static float const kMetersPerMile = 1609.344;
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            //            annotationView.image = [UIImage imageNamed:@"ic-mappin-red-JI"];//here we use a nice image instead of the default pins
             
+            //Right Accessory
+            UIButton *rightAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            rightAccessory.tag = CalloutAccessoryViewTypeRight;
+            
+            annotationView.rightCalloutAccessoryView = rightAccessory;
+
             //Left Accessory
-            annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            UIImageView *leftAccessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MapDirectionsArrow"]];
+            leftAccessoryView.tag = CalloutAccessoryViewTypeLeft;
+//            leftAccessoryView.tintColor = [UIColor greenColor];
+            annotationView.leftCalloutAccessoryView = leftAccessoryView;
         } else {
             annotationView.annotation = annotation;
         }
@@ -178,13 +205,27 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 {
-    LogDebug(@"Annotation is selected: %@", [view.annotation title]);
-    self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
-    [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
+    LogInfo(@"View Tag: %d", view.tag);
+    
+    if(view.tag == CalloutAccessoryViewTypeRight) {
+        LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
+        self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
+        [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
+    } else {
+        LogDebug(@"Left Accessory View is selected for Annotation: %@", [view.annotation title]);
+        
+        UIActionSheet *directionOptions = [[UIActionSheet alloc] initWithTitle:@"Choose the type"
+                                                                      delegate:self
+                                                             cancelButtonTitle:@"Cancel"
+                                                        destructiveButtonTitle:nil
+                                                             otherButtonTitles:@"In Built", @"Google Maps", @"Apple Maps", nil];
+        
+        [directionOptions showInView:self.view];
+    }
 }
 
 #pragma mark - Directions
-- (void)addDirectionsFromCurrentLocation
+- (void)showDirectionsFromCurrentLocation
 {
     MKDirectionsRequest *request = [MKDirectionsRequest new];
     request.source = [MKMapItem mapItemForCurrentLocation];
@@ -227,6 +268,39 @@ static float const kMetersPerMile = 1609.344;
     if ([segue.identifier isEqualToString:@"PropertyDetailsFromMapSegue"]) {
         PSPropertyDetailsViewController *controller = segue.destinationViewController;
         controller.selectedProperty = self.selectedProperty;
+    }
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    long i = buttonIndex;
+    
+    double latitude = [self.selectedProperty.addressLookup.latitude doubleValue];
+    double longitude = [self.selectedProperty.addressLookup.longitude doubleValue];
+
+    switch(i)
+    {
+        case MapDirectionsDestinationTypeInBuilt:
+            LogInfo(@"InBuilt Directions Type is selected");
+            [self showDirectionsFromCurrentLocation];
+            break;
+        case MapDirectionsDestinationTypeInGoogle:
+            LogInfo(@"Google Map Directions Type is selected");
+            
+            [self.googleMapsManager openGoogleMapsWithDestinationAddress:self.selectedProperty.lookupAddress];
+            break;
+        case MapDirectionsDestinationTypeInApple:
+            LogInfo(@"Apple App Directions Type is selected");
+            
+//            [self.appleMapsManager openGoogleMapsWithDestinationLatitude:latitude longitude:longitude];
+            
+            [self.selectedProperty.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
+            
+            break;
+        default:
+            // Do Nothing.........
+            break;
     }
 }
 

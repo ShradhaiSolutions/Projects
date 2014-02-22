@@ -358,6 +358,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 - (IBAction)directionsFromCurrentLocation:(id)sender
 {
     PSPropertiesMapViewController *currentViewController = [self childViewControllers][0];
-    [currentViewController addDirectionsFromCurrentLocation];
+    [currentViewController showDirectionsFromCurrentLocation];
 }
 @end
