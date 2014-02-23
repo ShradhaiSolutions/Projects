@@ -8,6 +8,7 @@
 
 #import "PSPropertyFilterTableDataSource.h"
 #import "PSDataManager.h"
+#import "UIColor+Theme.h"
 
 @interface PSPropertyFilterTableDataSource ()
 
@@ -55,7 +56,7 @@
             break;
             
         default:
-            cell.textLabel.textColor = [UIColor brownColor];
+            cell.textLabel.textColor = [UIColor greenTintColor];
             break;
     }
     

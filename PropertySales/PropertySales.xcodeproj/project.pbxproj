@@ -52,6 +52,7 @@
 		8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */; };
 		8A6A9B1A18B07069004FCC37 /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1818B07069004FCC37 /* AddressToGeocodeMapping.plist */; };
 		8A6A9B1B18B07069004FCC37 /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1918B07069004FCC37 /* PropertiesArray.plist */; };
+		8A718B3418BA5D9000B71CE9 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */; };
 		8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0618A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0818A8999F00A9508B /* PSPropertyDetailsViewController.m */; };
@@ -92,8 +93,6 @@
 		8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */; };
 		8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */; };
 		8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */; };
-		8AF2935818AC76D000DA0D2D /* UISearchBar+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2935518AC76D000DA0D2D /* UISearchBar+RAC.m */; };
-		8AF2935918AC76D000DA0D2D /* UISearchDisplayController+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2935718AC76D000DA0D2D /* UISearchDisplayController+RAC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +157,8 @@
 		8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ExecutionTimeLogger.m"; sourceTree = "<group>"; };
 		8A6A9B1818B07069004FCC37 /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
 		8A6A9B1918B07069004FCC37 /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
+		8A718B3218BA5D9000B71CE9 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
+		8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
 		8A795F0318A890D700A9508B /* Property+MKAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+MKAnnotations.h"; sourceTree = "<group>"; };
 		8A795F0418A890D700A9508B /* Property+MKAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+MKAnnotations.m"; sourceTree = "<group>"; };
 		8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyDetailsViewController.h; sourceTree = "<group>"; };
@@ -207,10 +208,6 @@
 		8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyFilterTableDataSource.m; sourceTree = "<group>"; };
 		8AF2934A18AC66A200DA0D2D /* PSSearchResultsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSearchResultsViewModel.h; sourceTree = "<group>"; };
 		8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSearchResultsViewModel.m; sourceTree = "<group>"; };
-		8AF2935418AC76D000DA0D2D /* UISearchBar+RAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+RAC.h"; sourceTree = "<group>"; };
-		8AF2935518AC76D000DA0D2D /* UISearchBar+RAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+RAC.m"; sourceTree = "<group>"; };
-		8AF2935618AC76D000DA0D2D /* UISearchDisplayController+RAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchDisplayController+RAC.h"; sourceTree = "<group>"; };
-		8AF2935718AC76D000DA0D2D /* UISearchDisplayController+RAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchDisplayController+RAC.m"; sourceTree = "<group>"; };
 		8AFAD2A5189DE455007457B8 /* PSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLogging.h; sourceTree = "<group>"; };
 		A6414AA82B044257923D8A23 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		AE1B0038DC8245B09D11F7E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,7 +419,7 @@
 				8AE1457F18A05B010051E912 /* Data */,
 				8AA758D518A734DB006DFB84 /* SampleData */,
 				8A645C1A18A1B19700DCD756 /* Location */,
-				8AF2935018AC762A00DA0D2D /* Extensions */,
+				8AF2935018AC762A00DA0D2D /* Object+Categories */,
 				8A37453E18A7F6520012E8A2 /* ViewController */,
 				8ADD4AF6189DA3AC00F1C54B /* Supporting Files */,
 				8ADD4AFE189DA3AC00F1C54B /* PSAppDelegate.h */,
@@ -481,17 +478,15 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		8AF2935018AC762A00DA0D2D /* Extensions */ = {
+		8AF2935018AC762A00DA0D2D /* Object+Categories */ = {
 			isa = PBXGroup;
 			children = (
-				8AF2935418AC76D000DA0D2D /* UISearchBar+RAC.h */,
-				8AF2935518AC76D000DA0D2D /* UISearchBar+RAC.m */,
-				8AF2935618AC76D000DA0D2D /* UISearchDisplayController+RAC.h */,
-				8AF2935718AC76D000DA0D2D /* UISearchDisplayController+RAC.m */,
+				8A718B3218BA5D9000B71CE9 /* UIColor+Theme.h */,
+				8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */,
 				8A6A9B1518B01443004FCC37 /* NSObject+ExecutionTimeLogger.h */,
 				8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */,
 			);
-			name = Extensions;
+			name = "Object+Categories";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -687,7 +682,6 @@
 				8A2A3D5C18B84B6100078596 /* PSGoogleMapsManager.m in Sources */,
 				8ADD4AFC189DA3AC00F1C54B /* main.m in Sources */,
 				8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */,
-				8AF2935818AC76D000DA0D2D /* UISearchBar+RAC.m in Sources */,
 				8A2965B618ADD29E00AA330C /* PSFileManager.m in Sources */,
 				8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */,
 				8ADD4B00189DA3AC00F1C54B /* PSAppDelegate.m in Sources */,
@@ -708,8 +702,8 @@
 				8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */,
 				8A37455118A7F6D40012E8A2 /* PSBaseViewController.m in Sources */,
 				8A795F0D18A899D900A9508B /* PSPropertyDetailsTableDataSource.m in Sources */,
+				8A718B3418BA5D9000B71CE9 /* UIColor+Theme.m in Sources */,
 				8AA6686618AEF2DB00C6C83A /* PSPropertySaleDataRequest.m in Sources */,
-				8AF2935918AC76D000DA0D2D /* UISearchDisplayController+RAC.m in Sources */,
 				8A37454118A7F67B0012E8A2 /* PSPropertiesContainerViewController.m in Sources */,
 				8A37455518A858620012E8A2 /* PSPropertyListTableDataSource.m in Sources */,
 				8A0F87BE18B8710E0082D2D3 /* PSCoreLocationManager.m in Sources */,

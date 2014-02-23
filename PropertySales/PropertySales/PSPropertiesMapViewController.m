@@ -16,6 +16,7 @@
 #import "PSGoogleMapsManager.h"
 #import "PSAppleMapsManager.h"
 #import "PSCoreLocationManager.h"
+#import "UIColor+Theme.h"
 
 
 typedef NS_ENUM(NSUInteger, MapDirectionsDestinationType) {
@@ -224,8 +225,10 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
-    LogDebug(@"Annotation is selected: %@", view);
+    if([view isKindOfClass:[MKPinAnnotationView class]]) {
+        self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
+        LogDebug(@"Annotation is selected: %@", view);
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
@@ -286,9 +289,9 @@ static float const kMetersPerMile = 1609.344;
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
-    renderer.strokeColor = [UIColor redColor];
+    renderer.strokeColor = [UIColor blueTintColor];
     renderer.lineWidth = 4.0;
-    return  renderer;
+    return renderer;
 }
 
 #pragma mark - Segue

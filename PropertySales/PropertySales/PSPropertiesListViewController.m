@@ -42,7 +42,8 @@
 //         [self.tableView setScrollEnabled:YES];
          self.dataSource.properties = x;
          [self.tableView beginUpdates];
-         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                       withRowAnimation:UITableViewRowAnimationAutomatic];
          [self.tableView endUpdates];
 //         [self performSelector:@selector(applyContentOffsetToTableview) withObject:nil afterDelay:0.1f];
      }];

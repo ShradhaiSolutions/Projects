@@ -15,9 +15,6 @@
 #import "PSCoreLocationManagerDelegate.h"
 #import "PSSearchResultsViewModel.h"
 
-#import "UISearchBar+RAC.h"
-#import "UISearchDisplayController+RAC.h"
-
 typedef enum : NSUInteger
 {
     viewTypeSegmentIndexMap = 0,
