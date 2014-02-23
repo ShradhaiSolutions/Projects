@@ -315,9 +315,14 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Select Sale Date" id="loB-C4-4AJ">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="M8z-IV-WXD">
+                            <connections>
+                                <action selector="clearSelectedDates:" destination="rdP-br-JrM" id="dKF-hs-ts6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="iWc-sR-TyI">
                             <connections>
-                                <action selector="dismiss:" destination="rdP-br-JrM" id="6x8-SB-opM"/>
+                                <action selector="applyFilter:" destination="rdP-br-JrM" id="Vb1-K2-5HI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

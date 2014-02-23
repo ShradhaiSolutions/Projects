@@ -12,9 +12,10 @@
 @interface PSPropertiesFilterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)dismiss:(id)sender;
-
 @property (strong, nonatomic) PSPropertyFilterTableDataSource *dataSource;
+
+- (IBAction)clearSelectedDates:(id)sender;
+- (IBAction)applyFilter:(id)sender;
 
 @end
 
@@ -41,9 +42,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)dismiss:(id)sender {
+- (IBAction)clearSelectedDates:(id)sender
+{
+    ENTRY_LOG;
+    
+    self.dataSource.selectedDates = [NSMutableSet set];
+    [self.tableView beginUpdates];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                  withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+    
+    EXIT_LOG;
+}
+
+- (IBAction)applyFilter:(id)sender
+{
+    ENTRY_LOG;
+    
     LogInfo(@"Selected Dates: %@", self.dataSource.selectedDates);
     self.searchResultsViewModel.selectedSaleDatesForFiltering = self.dataSource.selectedDates;
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    EXIT_LOG;
 }
 @end
