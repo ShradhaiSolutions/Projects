@@ -18,11 +18,6 @@
 #import "PSCoreLocationManager.h"
 
 
-typedef NS_ENUM(NSUInteger, CalloutAccessoryViewType) {
-    CalloutAccessoryViewTypeLeft = 1,
-    CalloutAccessoryViewTypeRight = 2
-};
-
 typedef NS_ENUM(NSUInteger, MapDirectionsDestinationType) {
     MapDirectionsDestinationTypeInBuilt = 0,
     MapDirectionsDestinationTypeInGoogle = 1,
@@ -80,23 +75,14 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)addCurrentLocationButton
 {
-    UIImage *image = [UIImage imageNamed:@"CurrentLocation"];
-    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImageView *currentLocationImageView = [self imageViewWithImageNamed:@"CurrentLocation" tapGesture:@selector(navigateToCurrentLocation)];
+    currentLocationImageView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8];
+    currentLocationImageView.layer.cornerRadius = 5.0f;
     
-    UIImageView *iv = [[UIImageView alloc] initWithImage:image];
-    iv.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8];
-    iv.contentMode = UIViewContentModeCenter;
-    iv.layer.cornerRadius = 5.0f;
+    currentLocationImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.mapView addSubview:currentLocationImageView];
     
-    iv.userInteractionEnabled = YES;
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigateToCurrentLocation)];
-    [iv addGestureRecognizer:tap];
-    
-    iv.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.mapView addSubview:iv];
-    
-    [self constrainCurrentLocationButton:iv];
+    [self constrainCurrentLocationButton:currentLocationImageView];
 }
 
 - (void)constrainCurrentLocationButton:(UIView *)button
@@ -107,26 +93,11 @@ static float const kMetersPerMile = 1609.344;
 }
 
 #pragma mark - CoreLocation
-- (void)navigateToCurrentLocation {
+- (void)navigateToCurrentLocation
+{
     ENTRY_LOG;
+
     [self.locationManager startUpdatingCurrentLocation];
-    
-//    CLLocation *location = (CLLocation *) self.mapView.userLocation;
-//    
-//    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-//        [self showSimpleAlertWithTitle:@"Location" message:@"Location Service is disabled. Please enable it in Settings."];
-//    }
-//    else if (!location) {
-//        [self showSimpleAlertWithTitle:@"Location" message:@"Failed to obtain location information"];
-//    }
-//    else {
-//        LogInfo(@"Current Location: Latitude: %f, Longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
-//        
-//        [self updateTheMapRegion:location.coordinate];
-//        
-//    }
-    
-//    [self.locationManager stopUpdatingCurrentLocation];
     
     EXIT_LOG;
 }
@@ -134,17 +105,6 @@ static float const kMetersPerMile = 1609.344;
 - (void)setupMap
 {
     ENTRY_LOG;
-    
-//    CLLocationCoordinate2D zoomLocation;
-//    zoomLocation.latitude = 39.2438;
-//    zoomLocation.longitude= -84.3853;
-////    zoomLocation.latitude = self.mapView.userLocation.location.coordinate.latitude;
-////    zoomLocation.longitude = self.mapView.userLocation.location.coordinate.longitude;
-//    
-//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
-    
-//    [self.mapView setRegion:viewRegion animated:YES];
-//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     RACSignal *willDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
     
@@ -230,28 +190,12 @@ static float const kMetersPerMile = 1609.344;
             annotationView.canShowCallout = YES;
             
             //Left Accessory
-            UIImageView *leftAccessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MapDirectionsArrow"]];
-            leftAccessoryView.tag = CalloutAccessoryViewTypeLeft;
-            leftAccessoryView.userInteractionEnabled = YES;
-//            leftAccessoryView.tintColor = [UIColor greenColor];
-//            annotationView.leftCalloutAccessoryView = leftAccessoryView;
-            
-
-            UIButton *leftAccessory = [UIButton buttonWithType:UIButtonTypeCustom];
-            [leftAccessory setBackgroundImage:[UIImage imageNamed:@"MapDirectionsArrow"] forState:UIControlStateNormal];
-//            leftAccessory.contentMode = UIViewContentModeCenter;
-            leftAccessory.tag = CalloutAccessoryViewTypeLeft;
-            annotationView.leftCalloutAccessoryView = leftAccessory;
-            
-            [annotationView bringSubviewToFront:leftAccessory];
+            UIImageView *leftAccessoryView = [self imageViewWithImageNamed:@"MapDirectionsArrow" tapGesture:@selector(leftCalloutAccessoryViewTapped)];
+            annotationView.leftCalloutAccessoryView = leftAccessoryView;
             
             //Right Accessory
             UIButton *rightAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            rightAccessory.tag = CalloutAccessoryViewTypeRight;
-            
             annotationView.rightCalloutAccessoryView = rightAccessory;
-            
-
         } else {
             annotationView.annotation = annotation;
         }
@@ -281,36 +225,32 @@ static float const kMetersPerMile = 1609.344;
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
-    LogDebug(@"Annotation is selected: %@", [view.annotation title]);
+    LogDebug(@"Annotation is selected: %@", view);
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 {
-    LogInfo(@"View Tag: %ld", control.tag);
+    ENTRY_LOG;
     
-    if(control == view.leftCalloutAccessoryView) {
-        LogDebug(@"Left Accessory View is selected for Annotation: %@", [view.annotation title]);
-    } else if(control == view.rightCalloutAccessoryView) {
-        LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
-    } else {
-        LogDebug(@"Center Accessory View is selected for Annotation: %@", [view.annotation title]);
-    }
+    self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
+    [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
     
-//    if(view.tag == CalloutAccessoryViewTypeRight) {
-//        LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
-//        self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
-//        [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
-//    } else {
-//        LogDebug(@"Left Accessory View is selected for Annotation: %@", [view.annotation title]);
-//        
-//        UIActionSheet *directionOptions = [[UIActionSheet alloc] initWithTitle:@"Choose the type"
-//                                                                      delegate:self
-//                                                             cancelButtonTitle:@"Cancel"
-//                                                        destructiveButtonTitle:nil
-//                                                             otherButtonTitles:@"In Built", @"Google Maps", @"Apple Maps", nil];
-//        
-//        [directionOptions showInView:self.view];
-//    }
+    EXIT_LOG;
+}
+
+- (void)leftCalloutAccessoryViewTapped
+{
+    ENTRY_LOG;
+    
+    UIActionSheet *directionOptions = [[UIActionSheet alloc] initWithTitle:@"Choose the type"
+                                                                  delegate:self
+                                                         cancelButtonTitle:@"Cancel"
+                                                    destructiveButtonTitle:nil
+                                                         otherButtonTitles:@"In Built", @"Google Maps", @"Apple Maps", nil];
+    
+    [directionOptions showInView:self.view];
+
+    EXIT_LOG;
 }
 
 #pragma mark - Directions
@@ -395,6 +335,21 @@ static float const kMetersPerMile = 1609.344;
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
+}
+
+- (UIImageView *)imageViewWithImageNamed:(NSString *)name tapGesture:(SEL)action
+{
+    UIImage *image = [UIImage imageNamed:name];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+    iv.contentMode = UIViewContentModeCenter;
+    iv.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
+    [iv addGestureRecognizer:tap];
+    
+    return iv;
 }
 
 - (void)dealloc

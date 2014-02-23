@@ -35,7 +35,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewTypeSegmentControl;
 
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender;
-- (IBAction)navigateToCurrentLocation:(id)sender;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
@@ -194,40 +193,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [self swapChildViewControllers];
 }
 
-#pragma mark - CoreLocation
-- (IBAction)navigateToCurrentLocation:(id)sender {
-    ENTRY_LOG;
-    
-    [self.locationManager startUpdatingLocation];
-    
-    PSPropertiesMapViewController *mapViewController = (PSPropertiesMapViewController *) self.childViewControllers[0];
-
-    CLLocation *location = (CLLocation *) mapViewController.mapView.userLocation;
-    
-    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-        [self showSimpleAlertWithTitle:@"Location" message:@"Location Service is disabled. Please enable it in Settings."];
-    }
-    else if (!location) {
-        [self showSimpleAlertWithTitle:@"Location" message:@"Failed to obtain location information"];
-    }
-    else {
-        LogInfo(@"Current Location: Latitude: %f, Longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
-        
-        [mapViewController updateTheMapRegion:location.coordinate];
-
-    }
-    
-    [self.locationManager stopUpdatingLocation];
-    
-    EXIT_LOG;
-}
-
-- (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"BTN_OK", "") otherButtonTitles:nil];
-    [alertView show];
-}
-
 #pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -243,28 +208,8 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     ENTRY_LOG;
     
     [self removeGestureRecognizersFromKeyWindow];
-
-//    self.searchResultsViewModel.searchString = searchBar.text;
     
     EXIT_LOG;
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    ENTRY_LOG;
-    
-    EXIT_LOG;
-}
-
-- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    ENTRY_LOG;
-    
-//    self.searchResultsViewModel.searchString = [searchBar.text stringByReplacingCharactersInRange:range withString:text];;
-    
-    EXIT_LOG;
-    
-    return YES;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -273,13 +218,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     
     [self.searchBar resignFirstResponder];
 
-    EXIT_LOG;
-}
-
-- (void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar
-{
-    ENTRY_LOG;
-    
     EXIT_LOG;
 }
 
@@ -324,10 +262,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     if (recognizer == self.tapGestureRecognizer) {
         CGPoint touchPoint = [recognizer locationInView:self.view];
         CGRect barRect = [self.view convertRect:self.searchBar.frame fromView:self.searchBar.superview];
-        
-        // The gesture recognizer added to the key window stops the search bar's cancel button from working on iOS 5.1.
-        // Change the size of the rect to allow touches to go through to the button.
-//        barRect.size.width -= 70.0;
         
         if (!CGRectContainsPoint(barRect, touchPoint)) {
             [self.searchBar resignFirstResponder];
