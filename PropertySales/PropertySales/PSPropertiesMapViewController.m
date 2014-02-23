@@ -192,6 +192,9 @@ static float const kMetersPerMile = 1609.344;
             
             //Left Accessory
             UIImageView *leftAccessoryView = [self imageViewWithImageNamed:@"MapDirectionsArrow" tapGesture:@selector(leftCalloutAccessoryViewTapped)];
+            CGRect rect = leftAccessoryView.frame;
+            rect.size = CGSizeMake(40, 40);
+            leftAccessoryView.frame = rect;
             annotationView.leftCalloutAccessoryView = leftAccessoryView;
             
             //Right Accessory

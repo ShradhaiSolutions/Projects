@@ -74,12 +74,12 @@
     //TODO: research to find a away for executing file manager asynchronoulsy
     return [[request invokeRequestWithPostParams:postParams]
             map:^id(id responseHtml) {
+#if TARGET_IPHONE_SIMULATOR
                 //Saving the data to Disk
                 NSString *saleDate = [postParams objectForKey:@"ddlDate"];
                 NSString *fileNameSuffix = [self.outputFormatter stringFromDate:[self.inputFormatter dateFromString:saleDate]];
                 NSString *fileName = [NSString stringWithFormat:@"%@_%@.html",kPropertySaleDataResponseFileName, fileNameSuffix];
 
-#if TARGET_IPHONE_SIMULATOR
                 [[self.fileManager saveResponseHTML:responseHtml toFile:fileName]
                  subscribeError:^(NSError *error) {
                      LogError(@"Error While Saving the data %@", error);
