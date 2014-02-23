@@ -15,12 +15,6 @@
 #import "PSCoreLocationManagerDelegate.h"
 #import "PSSearchResultsViewModel.h"
 
-typedef enum : NSUInteger
-{
-    viewTypeSegmentIndexMap = 0,
-    viewTypeSegmentIndexList
-} viewTypeSegmentIndex;
-
 static NSString *const kPropertiesListStoryboardIdentifier = @"PropertiesList";
 static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
@@ -36,14 +30,10 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
 
-//@property(copy, nonatomic) NSArray *properties;
-
 @property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
 
 @property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
 @property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
-
-- (IBAction)directionsFromCurrentLocation:(id)sender;
 
 @end
 
@@ -60,28 +50,11 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     self.searchResultsViewModel.properties = [dataManager properiesForSale];
     
     RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
-//    subscribeNext:^(id x) {
-//        LogInfo(@"NextSet: %lu", [x count]);
-//        self.searchResultsViewModel.properties = x;
-//    }];
-    
-//    @weakify(self);
-//    [RACObserve(dataManager, properties)
-//     subscribeNext:^(id x) {
-//         @strongify(self);
-//         LogError(@"Data into ViewModel: isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
-//         self.searchResultsViewModel.properties = x;
-//     }];
-//    
-//    RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
-//                                                    doNext:^(id x) {
-//                                                        self.searchResultsViewModel.propertiesFromSearchResult = x;
-//                                                    }] deliverOn:[RACScheduler mainThreadScheduler]];
-//    [dataManager fetchData];
-//    [dataManager reload];
+
+    [dataManager properiesForSale];
+    [dataManager fetchData];
     [dataManager getSaleDates];
     
-//    self.properties = self.searchResultsViewModel.properties;
     LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);
     
     RAC(self.searchResultsViewModel, searchString) = RACObserve(self, searchBar.text);
@@ -94,43 +67,14 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     self.locationManager.delegate = self.locationManagerDelegate;
     
     //Add the child view controller
-//    [self addListViewController];
     [self addMapViewController];
-}
-
-- (void)addListViewController
-{
-    PSPropertiesListViewController *listViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesListStoryboardIdentifier];
-    
-    RAC(listViewController, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
-    
-//    listViewController.view.backgroundColor = [UIColor greenColor];
-    
-//    listViewController.view.frame = self.view.bounds;
-    listViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self addChildViewController:listViewController];
-    [self.view insertSubview:listViewController.view belowSubview:self.searchToolbar];
-    
-    [listViewController didMoveToParentViewController:self];
-    
-    [self constrainChildControllerView:listViewController.view];
 }
 
 - (void)addMapViewController
 {
     PSPropertiesMapViewController *mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:kPropertiesMapStoryboardIdentifier];
-//    [mapViewController setupMap];
     
-//    mapViewController.properties = self.searchResultsViewModel.propertiesFromSearchResult;
     RAC(mapViewController, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
-    
-//    [RACObserve(self.searchResultsViewModel, propertiesFromSearchResult)
-//     subscribeNext:^(id x) {
-//         LogError(@"Data into Map VC. isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
-//         mapViewController.properties = x;
-//     }];
-
     
     mapViewController.view.frame = self.view.bounds;
     mapViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -151,20 +95,14 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     
     UIViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:storyboardIdentifier];
     
-//    [childViewController setValue:self.searchResultsViewModel.propertiesFromSearchResult forKeyPath:@"properties"];
-    
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
         PSPropertiesListViewController *vc = (PSPropertiesListViewController *)childViewController;
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     } else {
-//        LogDebug(@"Setting the properties");
-//        ((PSPropertiesMapViewController *)childViewController).properties = self.searchResultsViewModel.propertiesFromSearchResult;
-        
         PSPropertiesMapViewController *vc = (PSPropertiesMapViewController *)childViewController;
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
     }
     
-    //    childViewController.view.frame = currentViewController.view.frame;
     childViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self addChildViewController:childViewController];
@@ -285,10 +223,4 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     }
 }
 
-
-- (IBAction)directionsFromCurrentLocation:(id)sender
-{
-    PSPropertiesMapViewController *currentViewController = [self childViewControllers][0];
-    [currentViewController showDirectionsFromCurrentLocation];
-}
 @end

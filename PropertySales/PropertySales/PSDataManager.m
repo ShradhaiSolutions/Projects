@@ -98,13 +98,6 @@
                   LogInfo(@"Remote Data Import is Completed!!!");
                   [self logExecutionTime:startTime];
                   [self loadPropertiesFromCoreData];
-                  
-//                  [[self loadPropertiesFromCoreDataSignal]
-//                   subscribeCompleted:^{
-//                       LogError(@"Data is Refreshed: isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", self.properties[0]);
-//                   }];
-//                  
-//                  
               }];
          }];
      }];
@@ -179,7 +172,6 @@
 {
     ENTRY_LOG;
     
-//    [self clearTheExistingDataInContext:[NSManagedObjectContext MR_defaultContext]];
     [self loadPropertiesFromCoreData];
     
     if([self.properties count] <= 0) {
@@ -187,12 +179,9 @@
         [self dataImport];
     }
     
-//    self.properties = [[properties copy] subarrayWithRange:NSMakeRange(0, 10)];
-    
     EXIT_LOG;
     
     return self.properties;
-//    return [self.properties subarrayWithRange:NSMakeRange(0, 10)];
 }
 
 - (void)dataImport
@@ -210,59 +199,13 @@
 - (void)loadPropertiesFromCoreData
 {
     ENTRY_LOG;
+
     //Always Load the data using Main Thread Context
     NSArray *props = [Property MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
     self.properties = [props copy];
     
-//    if([props count] > 0) {
-//        self.properties = props;
-//    } else {
-//        self.properties = nil;
-//    }
-    
     EXIT_LOG;
 }
-
-- (RACSignal *)loadPropertiesFromCoreDataSignal
-{
-    ENTRY_LOG;
-    
-    EXIT_LOG;
-    
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        LogError(@"Data is being Refreshed: isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", self.properties[0]);
-
-        //Always Load the data using Main Thread Context
-        NSArray *props = [Property MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
-        self.properties = [props copy];
-        
-        
-        [subscriber sendCompleted];
-        
-        return nil;
-    }] deliverOn:[RACScheduler mainThreadScheduler]];
-}
-
-- (void)reload
-{
-    double delayInSeconds = 4.0f;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        LogError(@"Data reload: isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-        
-//        self.properties = nil;
-
-        
-        [self clearTheExistingDataInContext:[NSManagedObjectContext MR_defaultContext]];
-        
-        [self dataImport];
-//        [self properiesForSale];
-        
-    });
-
-}
-
 
 - (void)clearTheExistingDataInContext:(NSManagedObjectContext *)localContext
 {

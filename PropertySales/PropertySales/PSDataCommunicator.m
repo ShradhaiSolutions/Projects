@@ -46,22 +46,11 @@
     
     EXIT_LOG;
     
-//    return [[[request invokeRequest]
-//             deliverOn:[RACScheduler scheduler] ]
-//            doNext:^(id responseHtml) {
-//                //Saving the data to Disk independently
-//                [[self.fileManager saveResponseHTML:responseHtml toFile:kPropertyMetaDataResponseFileName]
-//                 subscribeError:^(NSError *error) {
-//                     LogError(@"Error While Saving the data %@", error);
-//                 } completed:^{
-//                     LogInfo(@"Data is successfully saved");
-//                 }];
-//                return;
-//            }];
-    
     //TODO: research to find a away for executing file manager asynchronoulsy
     return [[request invokeRequest]
             map:^id(id responseHtml) {
+
+#if TARGET_IPHONE_SIMULATOR
                 //Saving the data to Disk
                 [[self.fileManager saveResponseHTML:responseHtml toFile:kPropertyMetaDataResponseFileName]
                  subscribeError:^(NSError *error) {
@@ -69,7 +58,7 @@
                  } completed:^{
                      LogInfo(@"Data is successfully saved");
                  }];
-                
+#endif
                 return responseHtml;
             }];
 }
@@ -89,12 +78,15 @@
                 NSString *saleDate = [postParams objectForKey:@"ddlDate"];
                 NSString *fileNameSuffix = [self.outputFormatter stringFromDate:[self.inputFormatter dateFromString:saleDate]];
                 NSString *fileName = [NSString stringWithFormat:@"%@_%@.html",kPropertySaleDataResponseFileName, fileNameSuffix];
+
+#if TARGET_IPHONE_SIMULATOR
                 [[self.fileManager saveResponseHTML:responseHtml toFile:fileName]
                  subscribeError:^(NSError *error) {
                      LogError(@"Error While Saving the data %@", error);
                  } completed:^{
                      LogInfo(@"Data is successfully saved");
                  }];
+#endif
                 
                 return responseHtml;
             }];

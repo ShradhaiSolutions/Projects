@@ -142,7 +142,7 @@ static float const kMetersPerMile = 1609.344;
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
-    [self.mapView setRegion:viewRegion animated:NO];
+    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

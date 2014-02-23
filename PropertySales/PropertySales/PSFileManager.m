@@ -8,12 +8,6 @@
 
 #import "PSFileManager.h"
 
-//NSString *PROPERTY_SALES_RESPONSE_HTML_FILE_NAME = @"responseData2.html";
-//NSString *PROPERTY_SALES_DATA_ARRAY_FILE_NAME = @"PropertiesArray.plist";
-//NSString *PROPERTY_SALES_DATA_DICTIONARY_FILE_NAME = @"PropertiesDictionary.plist";
-//NSString *LOCATION_COORDINATES_MAP_DICTIONARY_FILE_NAME = @"LocationCoordinates.plist";
-
-
 @implementation PSFileManager
 
 
