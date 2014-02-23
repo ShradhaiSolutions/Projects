@@ -317,7 +317,8 @@ static float const kMetersPerMile = 1609.344;
         case MapDirectionsDestinationTypeInApple:
             LogInfo(@"Apple App Directions Type is selected");
             
-            [self.selectedProperty.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
+            [self.selectedProperty.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey:
+                                                                             MKLaunchOptionsDirectionsModeDriving}];
             
             break;
         default:

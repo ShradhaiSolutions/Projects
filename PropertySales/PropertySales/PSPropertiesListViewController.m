@@ -60,6 +60,8 @@
     [self performSelector:@selector(applyContentOffsetToTableview) withObject:nil afterDelay:0.1f];
     
     LogDebug(@"Number of Properties: %lu", [self.properties count]);
+    
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated: YES];
 
     EXIT_LOG;
 }
