@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PSPropertiesMapViewController.h"
 
 @interface PSCoreLocationManager : NSObject <CLLocationManagerDelegate>
+
+@property (weak, nonatomic) PSPropertiesMapViewController *mapController;
 
 + (BOOL)locationServicesAuthorized;
 

@@ -15,7 +15,7 @@
 #import "PSPropertyAnnotation.h"
 #import "PSGoogleMapsManager.h"
 #import "PSAppleMapsManager.h"
-#import "PSCoreLocationManagerDelegate.h"
+#import "PSCoreLocationManager.h"
 
 
 typedef NS_ENUM(NSUInteger, CalloutAccessoryViewType) {
@@ -38,8 +38,7 @@ static float const kMetersPerMile = 1609.344;
 @property (strong, nonatomic) PSGoogleMapsManager *googleMapsManager;
 @property (strong, nonatomic) PSAppleMapsManager *appleMapsManager;
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
+@property (strong, nonatomic) PSCoreLocationManager *locationManager;
 
 @end
 
@@ -55,9 +54,8 @@ static float const kMetersPerMile = 1609.344;
     self.googleMapsManager = [[PSGoogleMapsManager alloc] init];
     self.appleMapsManager = [[PSAppleMapsManager alloc] init];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
-    self.locationManager.delegate = self.locationManagerDelegate;
+    self.locationManager = [[PSCoreLocationManager alloc] init];
+    self.locationManager.mapController = self;
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
@@ -97,7 +95,6 @@ static float const kMetersPerMile = 1609.344;
     
     iv.translatesAutoresizingMaskIntoConstraints = NO;
     [self.mapView addSubview:iv];
-
     
     [self constrainCurrentLocationButton:iv];
 }
@@ -112,33 +109,26 @@ static float const kMetersPerMile = 1609.344;
 #pragma mark - CoreLocation
 - (void)navigateToCurrentLocation {
     ENTRY_LOG;
+    [self.locationManager startUpdatingCurrentLocation];
     
-    [self.locationManager startUpdatingLocation];
+//    CLLocation *location = (CLLocation *) self.mapView.userLocation;
+//    
+//    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
+//        [self showSimpleAlertWithTitle:@"Location" message:@"Location Service is disabled. Please enable it in Settings."];
+//    }
+//    else if (!location) {
+//        [self showSimpleAlertWithTitle:@"Location" message:@"Failed to obtain location information"];
+//    }
+//    else {
+//        LogInfo(@"Current Location: Latitude: %f, Longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
+//        
+//        [self updateTheMapRegion:location.coordinate];
+//        
+//    }
     
-    CLLocation *location = (CLLocation *) self.mapView.userLocation;
-    
-    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-        [self showSimpleAlertWithTitle:@"Location" message:@"Location Service is disabled. Please enable it in Settings."];
-    }
-    else if (!location) {
-        [self showSimpleAlertWithTitle:@"Location" message:@"Failed to obtain location information"];
-    }
-    else {
-        LogInfo(@"Current Location: Latitude: %f, Longitude: %f", location.coordinate.latitude, location.coordinate.longitude);
-        
-        [self updateTheMapRegion:location.coordinate];
-        
-    }
-    
-    [self.locationManager stopUpdatingLocation];
+//    [self.locationManager stopUpdatingCurrentLocation];
     
     EXIT_LOG;
-}
-
-- (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"BTN_OK", "") otherButtonTitles:nil];
-    [alertView show];
 }
 
 - (void)setupMap
@@ -189,10 +179,8 @@ static float const kMetersPerMile = 1609.344;
         currentLocation.longitude= -84.3853;
     }
     
-    // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
-    // 3
     [self.mapView setRegion:viewRegion animated:YES];
 }
 
@@ -241,17 +229,29 @@ static float const kMetersPerMile = 1609.344;
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             
+            //Left Accessory
+            UIImageView *leftAccessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MapDirectionsArrow"]];
+            leftAccessoryView.tag = CalloutAccessoryViewTypeLeft;
+            leftAccessoryView.userInteractionEnabled = YES;
+//            leftAccessoryView.tintColor = [UIColor greenColor];
+//            annotationView.leftCalloutAccessoryView = leftAccessoryView;
+            
+
+            UIButton *leftAccessory = [UIButton buttonWithType:UIButtonTypeCustom];
+            [leftAccessory setBackgroundImage:[UIImage imageNamed:@"MapDirectionsArrow"] forState:UIControlStateNormal];
+//            leftAccessory.contentMode = UIViewContentModeCenter;
+            leftAccessory.tag = CalloutAccessoryViewTypeLeft;
+            annotationView.leftCalloutAccessoryView = leftAccessory;
+            
+            [annotationView bringSubviewToFront:leftAccessory];
+            
             //Right Accessory
             UIButton *rightAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             rightAccessory.tag = CalloutAccessoryViewTypeRight;
             
             annotationView.rightCalloutAccessoryView = rightAccessory;
+            
 
-            //Left Accessory
-            UIImageView *leftAccessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MapDirectionsArrow"]];
-            leftAccessoryView.tag = CalloutAccessoryViewTypeLeft;
-//            leftAccessoryView.tintColor = [UIColor greenColor];
-            annotationView.leftCalloutAccessoryView = leftAccessoryView;
         } else {
             annotationView.annotation = annotation;
         }
@@ -286,23 +286,31 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 {
-    LogInfo(@"View Tag: %ld", view.tag);
+    LogInfo(@"View Tag: %ld", control.tag);
     
-    if(view.tag == CalloutAccessoryViewTypeRight) {
-        LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
-        self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
-        [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
-    } else {
+    if(control == view.leftCalloutAccessoryView) {
         LogDebug(@"Left Accessory View is selected for Annotation: %@", [view.annotation title]);
-        
-        UIActionSheet *directionOptions = [[UIActionSheet alloc] initWithTitle:@"Choose the type"
-                                                                      delegate:self
-                                                             cancelButtonTitle:@"Cancel"
-                                                        destructiveButtonTitle:nil
-                                                             otherButtonTitles:@"In Built", @"Google Maps", @"Apple Maps", nil];
-        
-        [directionOptions showInView:self.view];
+    } else if(control == view.rightCalloutAccessoryView) {
+        LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
+    } else {
+        LogDebug(@"Center Accessory View is selected for Annotation: %@", [view.annotation title]);
     }
+    
+//    if(view.tag == CalloutAccessoryViewTypeRight) {
+//        LogDebug(@"Right Accessory View is selected for Annotation: %@", [view.annotation title]);
+//        self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
+//        [self performSegueWithIdentifier:@"PropertyDetailsFromMapSegue" sender:self];
+//    } else {
+//        LogDebug(@"Left Accessory View is selected for Annotation: %@", [view.annotation title]);
+//        
+//        UIActionSheet *directionOptions = [[UIActionSheet alloc] initWithTitle:@"Choose the type"
+//                                                                      delegate:self
+//                                                             cancelButtonTitle:@"Cancel"
+//                                                        destructiveButtonTitle:nil
+//                                                             otherButtonTitles:@"In Built", @"Google Maps", @"Apple Maps", nil];
+//        
+//        [directionOptions showInView:self.view];
+//    }
 }
 
 #pragma mark - Directions
@@ -318,7 +326,7 @@ static float const kMetersPerMile = 1609.344;
     [directions calculateDirectionsWithCompletionHandler: ^(MKDirectionsResponse *response, NSError *error) {
         LogInfo(@"MKDirectionsResponse: %@", response);
         if (error) {
-            NSLog(@"Error is %@",error);
+            LogError(@"Error is %@",error);
         } else {
             [self showDirections:response]; 
         } 
@@ -376,6 +384,17 @@ static float const kMetersPerMile = 1609.344;
             // Do Nothing.........
             break;
     }
+}
+
+#pragma mark - Utility Methods
+- (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 - (void)dealloc

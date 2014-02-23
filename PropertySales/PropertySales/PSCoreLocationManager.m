@@ -20,51 +20,77 @@
 
 + (BOOL)locationServicesAuthorized
 {
+    ENTRY_LOG;
+    EXIT_LOG;
+    
     return ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusRestricted);
 }
 
 - (void)configureLocationManager
 {
+    ENTRY_LOG;
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    EXIT_LOG;
 }
 
 - (void)startUpdatingCurrentLocation
 {
+    ENTRY_LOG;
+    
     if ([PSCoreLocationManager locationServicesAuthorized]) {
         [self configureLocationManager];
         [self.locationManager startMonitoringSignificantLocationChanges];
-    }
-    else
-    {
+    } else {
         [self showSimpleAlertWithTitle:@"Enable Location Service"
                                message:@"Turn On Location Services to Allow the app to Determine Your Location"];
     }
+    
+    EXIT_LOG;
 }
 
 - (void)stopUpdatingCurrentLocation
 {
+    ENTRY_LOG;
+    
     [self.locationManager stopMonitoringSignificantLocationChanges];
+    
+    EXIT_LOG;
 }
 
 #pragma mark - CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
+    ENTRY_LOG;
+    
+    LogDebug(@"didUpdateToLocation: %@", locations[0]);
+    CLLocation *newLocation = locations[0];
     
     [self stopUpdatingCurrentLocation];
     
-    if (currentLocation != nil) {
-        LogInfo(@"Latitude: %f, Longitude: %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
+    if (newLocation != nil
+        && newLocation.coordinate.latitude != 0.0
+        && newLocation.coordinate.longitude != 0.0) {
+        LogInfo(@"Latitude: %f, Longitude: %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+        
+        [self.mapController updateTheMapRegion:newLocation.coordinate];
     } else {
         LogError(@"Error While fetching the current Location");
+        
+        [self showSimpleAlertWithTitle:@"Location Error"
+                               message:@"Couldn't fetch the current Location"];
     }
+    
+    EXIT_LOG;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    ENTRY_LOG;
+    
     NSString *errorDesc = @"";
     
     switch (error.code) {
@@ -82,6 +108,8 @@
     
     [self showSimpleAlertWithTitle:@"Location Error"
                            message:errorDesc];
+    
+    EXIT_LOG;
 }
 
 - (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message
@@ -89,7 +117,7 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:message
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"BTN_OK", "")
+                                              cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
 }
