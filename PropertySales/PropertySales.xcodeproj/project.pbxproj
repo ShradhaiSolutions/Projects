@@ -87,8 +87,6 @@
 		8ADD4B0B189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
 		8ADD4B13189DA3AC00F1C54B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ADD4B11189DA3AC00F1C54B /* InfoPlist.strings */; };
 		8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */; };
-		8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
-		8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1458118A05B2D0051E912 /* PSDataController.m */; };
 		8AE27D1718B464820074A3FF /* PSPropertyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE27D1618B464820074A3FF /* PSPropertyAnnotation.m */; };
 		8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */; };
 		8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */; };
@@ -198,8 +196,6 @@
 		8ADD4B10189DA3AC00F1C54B /* PropertySalesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PropertySalesTests-Info.plist"; sourceTree = "<group>"; };
 		8ADD4B12189DA3AC00F1C54B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8ADD4B14189DA3AC00F1C54B /* PropertySalesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertySalesTests.m; sourceTree = "<group>"; };
-		8AE1458018A05B2D0051E912 /* PSDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataController.h; sourceTree = "<group>"; };
-		8AE1458118A05B2D0051E912 /* PSDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataController.m; sourceTree = "<group>"; };
 		8AE27D1518B464820074A3FF /* PSPropertyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyAnnotation.h; sourceTree = "<group>"; };
 		8AE27D1618B464820074A3FF /* PSPropertyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyAnnotation.m; sourceTree = "<group>"; };
 		8AE7587618B2757F00879C2E /* PSPropertyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyListTableViewCell.h; sourceTree = "<group>"; };
@@ -254,8 +250,6 @@
 		8A2965A918ADCDD100AA330C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8AE1458018A05B2D0051E912 /* PSDataController.h */,
-				8AE1458118A05B2D0051E912 /* PSDataController.m */,
 				8A2965B818ADD3FD00AA330C /* PSDataManager.h */,
 				8A2965B918ADD3FD00AA330C /* PSDataManager.m */,
 			);
@@ -710,7 +704,6 @@
 				8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */,
 				8AE27D1718B464820074A3FF /* PSPropertyAnnotation.m in Sources */,
 				8A86CF5C18A47116009048A4 /* PSProperty.m in Sources */,
-				8AE1458218A05B2D0051E912 /* PSDataController.m in Sources */,
 				8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,7 +724,6 @@
 				8AA758D018A73456006DFB84 /* AddressLookup.m in Sources */,
 				8ABAAEDC18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */,
 				8AA758D418A73456006DFB84 /* Property.m in Sources */,
-				8AE1458318A05B2D0051E912 /* PSDataController.m in Sources */,
 				8A2965C418ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */,
 				8A795F0A18A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */,
 				8ADD4B15189DA3AC00F1C54B /* PropertySalesTests.m in Sources */,

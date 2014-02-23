@@ -10,7 +10,6 @@
 #import "PSPropertiesListViewController.h"
 #import "PSPropertiesMapViewController.h"
 #import "PSPropertiesFilterViewController.h"
-#import "PSDataController.h"
 #import "PSDataManager.h"
 #import "PSCoreLocationManagerDelegate.h"
 #import "PSSearchResultsViewModel.h"
@@ -52,7 +51,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
 
     [dataManager properiesForSale];
-    [dataManager fetchData];
+//    [dataManager fetchData];
     [dataManager getSaleDates];
     
     LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);

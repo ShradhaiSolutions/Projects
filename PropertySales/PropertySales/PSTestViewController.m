@@ -8,7 +8,6 @@
 
 #import "PSTestViewController.h"
 #import <Crashlytics/Crashlytics.h>
-#import "PSDataController.h"
 #import "PSLocationManager.h"
 #import "PSProperty+LocationParser.h"
 
@@ -343,56 +342,6 @@
     }];
 }
 
-
-
-- (void)viewDidLoadOld
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-//    PSDataController *dataController = [[PSDataController alloc] init];
-//    [dataController fetchData];
-    
-//    PSLocationManager *locationManager = [[PSLocationManager alloc] init];
-//    locationManager.propertiesArray = [dataController getProperties];
-//    LogDebug(@"Properties Array: %@", locationManager.propertiesArray);
-//    [locationManager getCoordinates];
-    
-//    __block PSProperty *property = [[PSProperty alloc] init];
-//    property.address = @"2540 HIGHWOOD LN";
-//    property.township = @"COLERAIN TWSP";
-//
-//    LogDebug(@"Address: %@", [property getAddress]);
-//    
-//    [[property convertAddressToCoordinate] subscribeError:^(NSError *error) {
-//        LogError(@"Error Happened");
-//    } completed:^{
-//        LogInfo(@"Latitude = %f, Longitude = %f", property.coordinates.latitude, property.coordinates.longitude);
-//    }];
-
-//    [self testMultipleProperties];
-//    [self testPropertyParsing];
-
-//    PSDataController *dataController = [[PSDataController alloc] init];
-//    NSDictionary *locationCoordinatesMap = [dataController getLocationCoordinatesMap];
-//    
-//    for (NSString *key in locationCoordinatesMap) {
-//        NSDictionary *coordinateDictionary = [locationCoordinatesMap objectForKey:key];
-//        
-////        LogDebug(@"Address: %@ Coordinates: %@", key, [NSValue valueWithMKCoordinate:[self dictionaryToCoordinate:coordinateDictionary]]);
-//        LogDebug(@"Address: %@ Coordinates: {%@, %@}", key, coordinateDictionary[@"lat"], coordinateDictionary[@"long"]);
-//    }
-//    [self testCoreDataImport];
-//    [self testCoreDataImportForProperty];
-    
-//    [self buildRelationships];
-    
-//    [self dataImport];
-
-//    NSArray *properties = [Property MR_findAll];
-//    LogDebug(@"Properties: %@", properties);
-}
-
 - (void)dataImport
 {
     PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
@@ -524,10 +473,6 @@
     
     PSLocationManager *locationManager = [[PSLocationManager alloc] init];
 
-    PSDataController *dataController = [[PSDataController alloc] init];
-    locationManager.propertiesArray = [dataController getProperties];
-//    LogDebug(@"Properties Array: %@", locationManager.propertiesArray);
-    
     __block NSArray *propertiesModel = [locationManager createPropertiesModel];
     LogInfo(@"Total number of properties: %lu", [propertiesModel count]);
 //    LogInfo(@"Properties Model: %@", propertiesModel);
@@ -597,27 +542,6 @@
     return numberOfLocationsInError;
 }
 
-- (void)saveLocationMapping:(NSArray *)propertiesModel
-{
-    ENTRY_LOG;
-    
-    NSMutableDictionary *locationCoordinatesMap = [NSMutableDictionary dictionary];
-    
-    for (PSProperty *property in propertiesModel) {
-        if([property getAddress] != nil && CLLocationCoordinate2DIsValid(property.coordinates)) {
-            [locationCoordinatesMap setObject:[self coordinateToDictionary:property.coordinates]
-                                       forKey:[property getAddress]];
-        }
-    }
-    
-    LogInfo(@"Location Coordinates Map: %@", locationCoordinatesMap);
-    
-    PSDataController *dataController = [[PSDataController alloc] init];
-    [dataController saveLocationsMap:locationCoordinatesMap];
-    
-    EXIT_LOG;
-}
-
 - (NSDictionary *)coordinateToDictionary:(CLLocationCoordinate2D)coordinate
 {
     NSNumber *lat = [NSNumber numberWithDouble:coordinate.latitude];
@@ -655,7 +579,7 @@
     } completed:^{
 //        int numberOfLocationsInError = [self printSummary:propertiesModel];
         [self printSummary:propertiesModel];
-        [self saveLocationMapping:propertiesModel];
+//        [self saveLocationMapping:propertiesModel];
     }];
 }
 
