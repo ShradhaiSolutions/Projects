@@ -95,4 +95,17 @@
     [MagicalRecord cleanUp];
 }
 
+#pragma mark - Custom URL Scheme
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    LogInfo(@"Source Application: %@, url: %@", sourceApplication, url);
+    
+    if (url) {
+        //Handle the url
+    }
+    
+    return YES;
+}
+
+
 @end
