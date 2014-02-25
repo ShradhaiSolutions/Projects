@@ -23,6 +23,10 @@
 #define LogWarn(frmt, ...) DDLogWarn(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 #define LogError(frmt, ...) DDLogError(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 
+//With whether the current thread is Main thread or not
+#define LogDetails(frmt, ...) DDLogInfo(@"%s: MainThread - %@:  " frmt, __PRETTY_FUNCTION__, [NSThread isMainThread] ? @"YES" : @"NO", ##__VA_ARGS__);
+
+
 #ifdef DEBUG
 static int ddLogLevel = LOG_LEVEL_DEBUG;
 #else

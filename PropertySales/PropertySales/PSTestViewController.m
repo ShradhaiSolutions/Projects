@@ -50,13 +50,12 @@
 //
 //    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     
-    NSArray *properties = [Property MR_findAll];
-    LogDebug(@"Properties: %ld", [properties count]);
+//    NSArray *properties = [Property MR_findAll];
+//    LogDebug(@"Properties: %ld", [properties count]);
+//
+//    NSArray *addressLookup = [AddressLookup MR_findAll];
+//    LogDebug(@"AddressLookup: %ld", [addressLookup count]);
 
-    NSArray *addressLookup = [AddressLookup MR_findAll];
-    LogDebug(@"AddressLookup: %ld", [addressLookup count]);
-
-    
 //    PSFileManager *fileManager = [[PSFileManager alloc] init];
 //
 //    PSLocationParser *locationParser = [[PSLocationParser alloc] init];
@@ -84,17 +83,79 @@
 //    [self testChainingDependentOperations];
 //    [self testChainingDependentOperationsWithErrors];
 //    [self testChainingInDependentOperationsWithErrors];
+    
+    LogDetails(@"Details");
+    [self testRACSignals];
+    
 }
 
 - (void)testRACSignals
 {
-    [[self signal1] subscribeNext:^(id x) {
-        LogInfo(@"NextValue: %@", x);
-    } error:^(NSError *error) {
-        LogError(@"Error: %@", error);
-    } completed:^{
-        LogInfo(@"Completed");
-    }];
+    LogError(@"1. isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
+    
+//    [[[[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+//        return [self signal1];
+//    }] executionSignals]
+//     subscribeNext:^(id x) {
+//         LogDetails(@"NextValue: %@", x);
+//     } error:^(NSError *error) {
+//         LogDetails(@"Error: %@", error);
+//     } completed:^{
+//         LogDetails(@"Completed");
+//     }];
+    
+    
+//    [[[[self signal1] sequence] signalWithScheduler:[RACScheduler scheduler]]
+//     subscribeNext:^(id x) {
+//         LogDetails(@"NextValue: %@", x);
+//     } error:^(NSError *error) {
+//         LogDetails(@"Error: %@", error);
+//     } completed:^{
+//         LogDetails(@"Completed");
+//     }];
+    
+//    [self signal1];
+    
+//    [[[self signal1] deliverOn:[RACScheduler mainThreadScheduler] ]
+//     subscribeNext:^(id x) {
+//        LogDetails(@"NextValue: %@", x);
+//    } error:^(NSError *error) {
+//        LogDetails(@"Error: %@", error);
+//    } completed:^{
+//        LogDetails(@"Completed");
+//    }];
+    
+    RACSignal *signal = [[self signal1] deliverOn:[RACScheduler mainThreadScheduler] ];
+    
+    [signal
+     subscribeNext:^(id x) {
+         LogDetails(@"NextValue: %@", x);
+     } error:^(NSError *error) {
+         LogDetails(@"Error: %@", error);
+     } completed:^{
+         LogDetails(@"Completed");
+     }];
+    
+    [signal
+     subscribeNext:^(id x) {
+         LogDetails(@"NextValue2: %@", x);
+     } error:^(NSError *error) {
+         LogDetails(@"Error2: %@", error);
+     } completed:^{
+         LogDetails(@"Completed2");
+         
+         [signal
+          subscribeNext:^(id x) {
+              LogDetails(@"NextValue3: %@", x);
+          } error:^(NSError *error) {
+              LogDetails(@"Error3: %@", error);
+          } completed:^{
+              LogDetails(@"Completed3");
+          }];
+
+     }];
+
+
 }
 
 /*
@@ -245,8 +306,82 @@
 {
     NSString *signalName = @"Signal1";
     
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        LogInfo(@"Executing %@", signalName);
+    return [[RACSignal startLazilyWithScheduler:[RACScheduler scheduler] block:^(id<RACSubscriber> subscriber) {
+        LogDetails(@"Executing %@", signalName);
+        
+        [subscriber sendNext:signalName];
+        
+        LogDetails(@"Sent first value");
+        
+        [subscriber sendNext:@"Signal1 NextValue2"];
+        
+        LogDetails(@"Sent second value");
+        
+        [subscriber sendCompleted];
+        
+        LogDetails(@"Completed Execution Block: %@", signalName);
+
+    }]
+            doCompleted:^{
+                LogDetails(@"About to complete %@", signalName);
+            }];
+
+    
+//    return [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+//        LogDetails(@"Executing %@", signalName);
+//        
+//        [subscriber sendNext:signalName];
+//        
+//        LogDetails(@"Sent first value");
+//        
+//        [subscriber sendNext:@"Signal1 NextValue2"];
+//        
+//        LogDetails(@"Sent second value");
+//        
+//        [subscriber sendCompleted];
+//        
+//        LogDetails(@"Completed Execution Block: %@", signalName);
+//        
+//        return nil;
+//    }] deliverOn:[RACScheduler scheduler]]
+//            doCompleted:^{
+//                LogDetails(@"About to complete %@", signalName);
+//            }];
+}
+
+
+- (RACSignal *)signal1New
+{
+    NSString *signalName = @"Signal1";
+    
+    return [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogDetails(@"Executing %@", signalName);
+        
+        [subscriber sendNext:signalName];
+        
+        LogDetails(@"Sent first value");
+        
+        [subscriber sendNext:@"Signal1 NextValue2"];
+        
+        LogDetails(@"Sent second value");
+        
+        [subscriber sendCompleted];
+        
+        LogDetails(@"Completed Execution Block: %@", signalName);
+        
+        return nil;
+    }] deliverOn:[RACScheduler scheduler]]
+    doCompleted:^{
+        LogDetails(@"About to complete %@", signalName);
+    }];
+}
+
+- (RACSignal *)signal1Old
+{
+    NSString *signalName = @"Signal1";
+    
+    return [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogDetails(@"Executing %@", signalName);
         
         [subscriber sendNext:signalName];
         
@@ -254,11 +389,11 @@
         
         [subscriber sendCompleted];
 
-        LogInfo(@"Completed Execution Block: %@", signalName);
+        LogDetails(@"Completed Execution Block: %@", signalName);
 
         return nil;
-    }] doCompleted:^{
-        LogInfo(@"About to complete %@", signalName);
+    }] deliverOn:[RACScheduler scheduler]]  doCompleted:^{
+        LogDetails(@"About to complete %@", signalName);
     }];
 }
 
