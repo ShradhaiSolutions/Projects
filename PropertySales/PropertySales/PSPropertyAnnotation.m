@@ -14,7 +14,7 @@
 - (void)setPropertyDetails:(Property *)property
 {
     self.property = property;
-    self.title = property.attyName;
+    self.title = [property getAddress];
     self.subtitle = [NSString stringWithFormat:@"Appraisal: %@, MinBid: %@", property.appraisal, property.minBid];;
     
     CLLocationCoordinate2D coordinate;

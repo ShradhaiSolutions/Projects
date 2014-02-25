@@ -16,4 +16,6 @@
 + (UIColor *)blueTintColor;
 + (UIColor *)redTintColor;
 + (UIColor*)greenTintColor;
+
++ (UIColor*)differentTintColor;
 @end

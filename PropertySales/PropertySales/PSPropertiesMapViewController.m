@@ -155,6 +155,7 @@ static float const kMetersPerMile = 1609.344;
 - (void)addAnnotations
 {
     [self removeExistingAnnotations];
+    [self removeExistingOverlays];
     
     @autoreleasepool {
         for (Property *property in self.properties) {
@@ -178,6 +179,10 @@ static float const kMetersPerMile = 1609.344;
     [self.mapView removeAnnotations:annotations];
 }
 
+- (void)removeExistingOverlays
+{
+    [self.mapView removeOverlays:self.mapView.overlays];
+}
 
 #pragma mark - MKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -229,6 +234,7 @@ static float const kMetersPerMile = 1609.344;
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     if([view isKindOfClass:[MKPinAnnotationView class]]) {
+        [self removeExistingOverlays];
         self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
         LogDebug(@"Annotation is selected: %@", view);
     }
@@ -264,13 +270,13 @@ static float const kMetersPerMile = 1609.344;
 {
     MKDirectionsRequest *request = [MKDirectionsRequest new];
     request.source = [MKMapItem mapItemForCurrentLocation];
-    LogInfo(@"MapItem: %@", self.selectedProperty.mapItem);
+    LogDebug(@"MapItem: %@", self.selectedProperty.mapItem);
     request.destination = self.selectedProperty.mapItem;
     request.requestsAlternateRoutes = YES;
     
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler: ^(MKDirectionsResponse *response, NSError *error) {
-        LogInfo(@"MKDirectionsResponse: %@", response);
+        LogDebug(@"MKDirectionsResponse: %@", response);
         if (error) {
             LogError(@"Error is %@",error);
         } else {
@@ -292,7 +298,7 @@ static float const kMetersPerMile = 1609.344;
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
-    renderer.strokeColor = [UIColor blueTintColor];
+    renderer.strokeColor = [UIColor differentTintColor];
     renderer.lineWidth = 4.0;
     return renderer;
 }

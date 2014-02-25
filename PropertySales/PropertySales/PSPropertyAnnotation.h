@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "Property.h"
+#import "Property+Methods.h"
 
 @interface PSPropertyAnnotation : NSObject <MKAnnotation>
 

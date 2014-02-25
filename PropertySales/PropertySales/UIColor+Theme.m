@@ -71,4 +71,36 @@
     return greenColor;
 }
 
++ (UIColor*)differentTintColor {
+    static int i = 0;
+    
+    UIColor *color = nil;
+    
+    switch (i) {
+        case 0:
+            color = [UIColor blueTintColor];
+            break;
+
+        case 1:
+            color = [UIColor redTintColor];
+            break;
+
+        case 2:
+            color = [UIColor greenTintColor];
+            break;
+
+        default:
+            color = [UIColor blueTintColor];
+            break;
+    }
+    
+    i++;
+    
+    if(i>=3) {
+        i = 0;
+    }
+    
+    return color;
+}
+
 @end
