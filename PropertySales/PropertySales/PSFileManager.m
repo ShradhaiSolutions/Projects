@@ -18,7 +18,7 @@
     EXIT_LOG;
 
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
+        LogDebug(@"Saving html response to disk");
         NSString *responseDataString  = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         LogVerbose(@"ResponseData: %@", responseDataString);
         

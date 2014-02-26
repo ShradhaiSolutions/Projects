@@ -49,6 +49,7 @@
     //TODO: research to find a away for executing file manager asynchronoulsy
     return [[request invokeRequest]
             map:^id(id responseHtml) {
+                LogDebug(@"Http Response is received for Property Metadata");
 
 #if TARGET_IPHONE_SIMULATOR
                 //Saving the data to Disk
@@ -56,9 +57,11 @@
                  subscribeError:^(NSError *error) {
                      LogError(@"Error While Saving the data %@", error);
                  } completed:^{
-                     LogInfo(@"Data is successfully saved");
+                     LogInfo(@"Html Response is successfully saved to disk");
                  }];
 #endif
+                LogDebug(@"Http Response map block is completed");
+                
                 return responseHtml;
             }];
 }
@@ -74,6 +77,8 @@
     //TODO: research to find a away for executing file manager asynchronoulsy
     return [[request invokeRequestWithPostParams:postParams]
             map:^id(id responseHtml) {
+                LogDebug(@"Http Response is received for Property Sales Data");
+                
 #if TARGET_IPHONE_SIMULATOR
                 //Saving the data to Disk
                 NSString *saleDate = [postParams objectForKey:@"ddlDate"];
@@ -87,6 +92,8 @@
                      LogInfo(@"Data is successfully saved");
                  }];
 #endif
+                
+                LogDebug(@"Http Response map block is completed");
                 
                 return responseHtml;
             }];

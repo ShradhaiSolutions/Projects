@@ -21,6 +21,7 @@
 @interface PSDataManager ()
 
 @property (strong, nonatomic) PSDataCommunicator *communicator;
+@property (strong, nonatomic) PSLocationParser *locationParser;
 
 @property (strong, nonatomic) NSDictionary *postParams;
 @property (strong, nonatomic) NSArray *saleDates;
@@ -36,6 +37,7 @@
     self = [super init];
     if (self) {
         _communicator = [[PSDataCommunicator alloc] init];
+        _locationParser = [[PSLocationParser alloc] init];
         
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateFormat:@"MM/dd/yyyy"];
@@ -47,64 +49,62 @@
 {
     ENTRY_LOG;
     
-//    LogError(@"isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-    
     NSDate *startTime = [NSDate date];
     
     NSMutableArray *properties = [NSMutableArray array];
     
-    [[[[self fetchPropertyMetaData] deliverOn:[RACScheduler scheduler]]
-     flattenMap:^RACStream *(id value) {
-//         LogError(@"1. isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-         
-         LogVerbose(@"Parsed Metadata: %@", value);
-         
-         return [self fetchPropertySalesWithPasedMetadata:value];
-     }] subscribeNext:^(id x) {
-//         LogError(@"2. isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-//         LogDebug(@"Next Value: %@", x);
-         [properties addObjectsFromArray:x];
-         LogInfo(@"Next Value is received");
-     } error:^(NSError *error) {
-         LogError(@"Error While execution: %@", error);
-         
-         [self logExecutionTime:startTime];
-     } completed:^{
-//         LogError(@"4. isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-         LogInfo(@"Completed!!!. Total Number of Properties: %lu", [properties count]);
-         
-         PSFileManager *fileManager = [[PSFileManager alloc] init];
-         [fileManager savePropertiesToFile:properties];
-         
-         PSLocationParser *locatinParser = [[PSLocationParser alloc] init];
-         locatinParser.properties = properties;
-         
-         [[locatinParser parseAddressesToCoordinates] subscribeNext:^(id x) {
-//             LogError(@"5. isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-             LogInfo(@"Next Value: %@", x);
-         } error:^(NSError *error) {
-             LogError(@"Error While execution: %@", error);
-         } completed:^{
-//             LogError(@"6. isMainThread: %@", [NSThread isMainThread] ? @"YES" : @"NO");
-             LogVerbose(@"Address to Geocode Mapping is Completed: %@", locatinParser.addressToGeocodeMappingDictionary);
-             
-             [fileManager saveAddressToGeocodeMappingDictionaryToFile:locatinParser.addressToGeocodeMappingDictionary];
-             
-              PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
-              [[dataImporter importPropertyData:properties withAddressLookData:locatinParser.addressToGeocodeMappingDictionary]
-               subscribeError:^(NSError *error) {
-                  LogError(@"Error While execution: %@", error);
-              } completed:^{
-                  LogInfo(@"Remote Data Import is Completed!!!");
-                  [self logExecutionTime:startTime];
-                  [self loadPropertiesFromCoreData];
-              }];
-         }];
-     }];
+    @weakify(self);
+    [[[[[[self fetchPropertyMetaData]
+      flattenMap:^RACStream *(id metaDataDictionary) {
+          LogDebug(@"Property Meta Data is received");
+          LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
+          
+          return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
+      }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
+          LogDebug(@"Property Sale Data is received");
+          LogVerbose(@"Parsed Metadata: %@", propertiesOfASaleDate);
+          
+          [properties addObjectsFromArray:propertiesOfASaleDate];
+          
+          //After receiving all the properties information send an empty signal so that the "block" will be executed
+          return [RACSignal empty];
+      }] then:^RACSignal *{
+          @strongify(self);
+          LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", [properties count]);
+          [self logExecutionTime:startTime];
+          
+          PSFileManager *fileManager = [[PSFileManager alloc] init];
+          [fileManager savePropertiesToFile:properties];
+          
+          self.locationParser.properties = properties;
+          
+          return [self.locationParser parseAddressesToCoordinates];
+      }] then:^RACSignal *{
+          LogInfo(@"Addresses are parsed to Coordinates successfully");
+          [self logExecutionTime:startTime];
+          
+          PSFileManager *fileManager = [[PSFileManager alloc] init];
+          [fileManager saveAddressToGeocodeMappingDictionaryToFile:self.locationParser.addressToGeocodeMappingDictionary];
+          
+          PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+          
+          return [dataImporter importPropertyData:properties withAddressLookData:self.locationParser.addressToGeocodeMappingDictionary];
+      }] subscribeNext:^(id x) {
+          LogDebug(@"2. Property Sale Data is received for a given sale date");
+          LogVerbose(@"Next Value: %@", x);
+      } error:^(NSError *error) {
+          LogError(@"Error While execution: %@", error);
+          [self logExecutionTime:startTime];
+      } completed:^{
+          [self logExecutionTime:startTime];
+          [self loadPropertiesFromCoreDataOnMainThread];
+          LogInfo(@"Remote Data Import is Completed!!!");
+      }];
     
     EXIT_LOG;
 }
 
+#pragma mark - Fetch Property Metadata
 - (RACSignal *)fetchPropertyMetaData
 {
     ENTRY_LOG;
@@ -113,12 +113,14 @@
     
     return [[self.communicator fetchPropertyMetaData]
             flattenMap:^RACStream *(id responseData) {
+                LogDebug(@"Property Metadata response is received");
                 PSPropertyMetadataDataParser *parser = [[PSPropertyMetadataDataParser alloc] init];
                 return [parser parsePropertySalesInitialRequest:responseData];
             }];
     
 }
 
+#pragma mark - Fetch Property Saledata
 - (RACSignal *)fetchPropertySalesWithPasedMetadata:(NSDictionary *)parsedData
 {
     ENTRY_LOG;
@@ -138,8 +140,7 @@
             LogInfo(@"Fetching the properties for the sale date: %@", saleDate);
             [postParams setObject:saleDate forKey:@"ddlDate"];
             
-            RACSignal *saleDataFetchSignal = [[self fetchPropertySaleDataWithPostParams:[postParams copy]]
-                                              subscribeOn:[RACScheduler scheduler]];
+            RACSignal *saleDataFetchSignal = [self fetchPropertySaleDataWithPostParams:[postParams copy]];
             
             [saleDateSignals addObject:saleDataFetchSignal];
         }
@@ -161,6 +162,7 @@
     
     return [[self.communicator fetchPropertySaleDataWithPostParams:postParams]
             flattenMap:^RACStream *(id responseData) {
+                LogDebug(@"Property Sale Data response is received");
                 PSPropertySaleDataParser *parser = [[PSPropertySaleDataParser alloc] init];
                 return [parser parsePropertySalesInformation:responseData];
             }];
@@ -194,6 +196,22 @@
          [self loadPropertiesFromCoreData];
          LogDebug(@"Local Cache is successfull imported into Core Data. Number of Properties: %lu", [self.properties count]);
      }];
+}
+
+- (void)loadPropertiesFromCoreDataOnMainThread
+{
+    ENTRY_LOG;
+    
+    [[RACSignal startEagerlyWithScheduler:[RACScheduler mainThreadScheduler]
+                                    block:^(id<RACSubscriber> subscriber) {
+                                        LogDebug(@"Loading properties from Core Data on Main thread - Start");
+                                        //Always Load the data using Main Thread Context
+                                        NSArray *props = [Property MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
+                                        self.properties = [props copy];
+                                        LogDebug(@"Loading properties from Core Data on Main thread - End");
+                                    }] subscribeOn:[RACScheduler mainThreadScheduler]];
+    
+    EXIT_LOG;
 }
 
 - (void)loadPropertiesFromCoreData

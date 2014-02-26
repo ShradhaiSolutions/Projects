@@ -18,9 +18,12 @@
     EXIT_LOG;
     
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogDebug(@"Parsing the Property Sale data response - Start");
+        
         TFHpple *propertySalesParse = [TFHpple hppleWithHTMLData:responseData];
         NSUInteger totalNumberOfProperties = [self numberOfRecords:propertySalesParse];
         
+        //TODO: Optimize
         NSArray *headers = [self parseTableHeader:propertySalesParse];
         LogVerbose(@"Headers: %@", headers);
         
@@ -37,15 +40,14 @@
             if([properties count] > 0) {
                 LogInfo(@"Property Sales are parsed successfully. Number of Properties: %lu", [properties count]);
                 LogVerbose(@"Properties: %@", properties);
-//                [self savePropertiesToFile:properties];
             } else {
                 LogError(@"There is some problem in parsing the Property Sales html response");
-//                [subscriber sendError:[NSError errorWithDomain:@"SaleDataParseError" code:100 userInfo:nil]];
             }
         }
         
-        [subscriber sendNext:[properties copy]];
+        LogDebug(@"Parsing the Property Sale data response - End");
         
+        [subscriber sendNext:[properties copy]];
         [subscriber sendCompleted];
         
         return nil;

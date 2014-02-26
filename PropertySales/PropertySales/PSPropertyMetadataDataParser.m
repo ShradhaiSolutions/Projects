@@ -18,6 +18,8 @@
     EXIT_LOG;
     
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogDebug(@"Parsing the Property Metadata response - Start");
+        
         TFHpple *parsedResponseObject = [TFHpple hppleWithHTMLData:responseData];
         
         NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithCapacity:14];
@@ -28,8 +30,9 @@
 
         [self parseSaleDates:parsedResponseObject into:paramsDictionary];
         
-        [subscriber sendNext:[paramsDictionary copy]];
+        LogDebug(@"Parsing the Property Metadata response - Completed");
         
+        [subscriber sendNext:[paramsDictionary copy]];
         [subscriber sendCompleted];
         
         return nil;

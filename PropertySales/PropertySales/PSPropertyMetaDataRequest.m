@@ -23,29 +23,32 @@ static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
     ENTRY_LOG;
 
     EXIT_LOG;
+    
+    RACScheduler *scheduler = [RACScheduler scheduler];
+    
+    return [[RACSignal startLazilyWithScheduler:scheduler
+                                          block:^(id<RACSubscriber> subscriber) {
+                                              LogDebug(@"Sending HTTP Request for Property Metadata");
+                                              
+                                              AFHTTPSessionManager *manager = [PSHttpClient httpClient];
+                                              
+                                              [manager GET:kRequestURL
+                                                parameters:nil
+                                                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                                                       LogDebug(@"Http response is received for Property Metadata");
+                                                       LogVerbose(@"ResponseObject: %@", responseObject);
+                                                       
+                                                       [subscriber sendNext:responseObject];
+                                                       
+                                                       [subscriber sendCompleted];
+                                                       
+                                                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                                       LogError(@"Error: %@", error);
+                                                       [subscriber sendError:error];
+                                                   }];
+                                              
+                                          }] deliverOn:scheduler];
 
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        AFHTTPSessionManager *manager = [PSHttpClient httpClient];
-                
-        [manager GET:kRequestURL
-          parameters:nil
-             success:^(NSURLSessionDataTask *task, id responseObject) {
-                 LogVerbose(@"ResponseObject: %@", responseObject);
-                 
-                 [subscriber sendNext:responseObject];
-
-                 [subscriber sendCompleted];
-
-             } failure:^(NSURLSessionDataTask *task, NSError *error) {
-                 LogError(@"Error: %@", error);
-                 [subscriber sendError:error];
-             }];
-        
-        return nil;
-    }] doError:^(NSError *error) {
-        LogError(@"%@",error);
-    }];
 }
 
 @end
