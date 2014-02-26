@@ -51,7 +51,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
 
     [dataManager properiesForSale];
-    [dataManager fetchData];
+//    [dataManager fetchData];
     [dataManager getSaleDates];
     
     LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);
@@ -79,7 +79,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     mapViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self addChildViewController:mapViewController];
-    [self.view insertSubview:mapViewController.view belowSubview:self.searchToolbar];
+    [self.view addSubview:mapViewController.view];
     
     [mapViewController didMoveToParentViewController:self];
     
@@ -107,7 +107,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [self addChildViewController:childViewController];
     [currentViewController willMoveToParentViewController:nil];
     
-    [self.view insertSubview:childViewController.view belowSubview:self.searchToolbar];
+    [self.view addSubview:childViewController.view];
     [childViewController didMoveToParentViewController:self];
     [self constrainChildControllerView:childViewController.view];
     
