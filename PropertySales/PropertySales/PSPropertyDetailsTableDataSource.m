@@ -33,7 +33,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -43,46 +43,56 @@
     
     switch (indexPath.row) {
         case 0:
-            cell.textLabel.text = @"Attorney";
-            cell.detailTextLabel.text = self.selectedProperty.attyName;
-
-            break;
-        case 1:
-            cell.textLabel.text = @"Appraisal";
-            cell.detailTextLabel.text = self.selectedProperty.appraisal;
-            
-            break;
-        case 2:
-            cell.textLabel.text = @"MinBid";
-            cell.detailTextLabel.text = self.selectedProperty.minBid;
-            
-            break;
-        case 3:
             cell.textLabel.text = @"CaseNo";
             cell.detailTextLabel.text = self.selectedProperty.caseNo;
             
             break;
-        case 4:
+        case 1:
+            cell.textLabel.text = @"Plaintiff";
+            cell.detailTextLabel.text = self.selectedProperty.plaintiff;
+            
+            break;
+        case 2:
+            cell.textLabel.text = @"Name";
+            cell.detailTextLabel.text = self.selectedProperty.name;
+            
+            break;
+        case 3:
             cell.textLabel.text = @"Address";
             cell.detailTextLabel.text = self.selectedProperty.address;
             
             break;
-        case 5:
-            cell.textLabel.text = @"Township";
-            cell.detailTextLabel.text = self.selectedProperty.township;
-            
+        case 4:
+            cell.textLabel.text = @"Attorney";
+            cell.detailTextLabel.text = self.selectedProperty.attyName;
+
             break;
-        case 6:
+        case 5:
             cell.textLabel.text = @"AttyPhone";
             cell.detailTextLabel.text = self.selectedProperty.attyPhone;
             
             break;
+        case 6:
+            cell.textLabel.text = @"Appraisal";
+            cell.detailTextLabel.text = self.selectedProperty.appraisal;
+            
+            break;
         case 7:
-            cell.textLabel.text = @"Sale Data";
+            cell.textLabel.text = @"MinBid";
+            cell.detailTextLabel.text = self.selectedProperty.minBid;
+            
+            break;
+        case 8:
+            cell.textLabel.text = @"Township";
+            cell.detailTextLabel.text = self.selectedProperty.township;
+            
+            break;
+        case 9:
+            cell.textLabel.text = @"Sale Date";
             cell.detailTextLabel.text = [self.dateFormatter stringFromDate:self.selectedProperty.saleData];
             
             break;
-            
+ 
         default:
             break;
     }
