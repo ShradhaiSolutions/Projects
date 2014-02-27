@@ -68,13 +68,13 @@
 - (NSPredicate *)buildPredicate
 {
     NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"(caseNo CONTAINS[cd] $searchString)"
-            "OR (plaintiff CONTAINS[cd] $searchString)"
-            "OR (name CONTAINS[cd] $searchString)"
-            "OR (address CONTAINS[cd] $searchString)"
-            "OR (attyName CONTAINS[cd] $searchString)"
-            "OR (appraisal CONTAINS[cd] $searchString)"
-            "OR (minBid CONTAINS[cd] $searchString)"
-            "OR (township CONTAINS[cd] $searchString)"
+            "OR (plaintiff CONTAINS[c] $searchString)"
+            "OR (name CONTAINS[c] $searchString)"
+            "OR (address CONTAINS[c] $searchString)"
+            "OR (attyName CONTAINS[c] $searchString)"
+            "OR (appraisal CONTAINS[c] $searchString)"
+            "OR (minBid CONTAINS[c] $searchString)"
+            "OR (township CONTAINS[c] $searchString)"
             "OR (saleData IN $searchDates)"
      ];
     
