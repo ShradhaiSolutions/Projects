@@ -69,7 +69,7 @@ static float const kMetersPerMile = 1609.344;
     [super viewWillAppear:animated];
     
     [self setupMap];
-    LogDebug(@"Total number of displayed annotations: %lu", [self.mapView.annotations count]);
+    LogDebug(@"Total number of displayed annotations: %d", [self.mapView.annotations count]);
     
     EXIT_LOG;
 }
@@ -114,7 +114,7 @@ static float const kMetersPerMile = 1609.344;
       takeUntil:willDisappear]
      subscribeNext:^(id x) {
          @strongify(self);
-         LogDebug(@"Adding Annotations count: %lu", [x count]);
+         LogDebug(@"Adding Annotations count: %d", [x count]);
          
          PSDataManager *dataManager = [[PSDataManager alloc] init];
          self.saleDates = [dataManager getSaleDates];

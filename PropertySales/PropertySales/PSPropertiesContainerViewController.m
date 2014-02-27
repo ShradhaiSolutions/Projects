@@ -51,10 +51,10 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     RAC(self, searchResultsViewModel.properties) = RACObserve(dataManager, properties);
 
     [dataManager properiesForSale];
-//    [dataManager fetchData];
+    [dataManager fetchData];
     [dataManager getSaleDates];
     
-    LogDebug(@"Number of Properties: %lu", [self.searchResultsViewModel.propertiesFromSearchResult count]);
+    LogDebug(@"Number of Properties: %d", [self.searchResultsViewModel.propertiesFromSearchResult count]);
     
     RAC(self.searchResultsViewModel, searchString) = RACObserve(self, searchBar.text);
     [self.searchResultsViewModel setup];
