@@ -274,6 +274,7 @@ static float const kMetersPerMile = 1609.344;
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler: ^(MKDirectionsResponse *response, NSError *error) {
         LogDebug(@"MKDirectionsResponse: %@", response);
+        [SVProgressHUD dismiss];
         if (error) {
             LogError(@"Error is %@",error);
         } else {
@@ -316,6 +317,7 @@ static float const kMetersPerMile = 1609.344;
     {
         case MapDirectionsDestinationTypeInBuilt:
             LogInfo(@"InBuilt Directions Type is selected");
+            [SVProgressHUD showWithStatus:@"Calculating Routes" maskType:SVProgressHUDMaskTypeGradient];
             [self showDirectionsFromCurrentLocation];
             break;
         case MapDirectionsDestinationTypeInGoogle:
