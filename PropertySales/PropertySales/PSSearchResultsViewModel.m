@@ -24,21 +24,7 @@
     ENTRY_LOG;
 
     RAC(self, propertiesFromSearchResult) = [RACObserve(self, properties) deliverOn:[RACScheduler mainThreadScheduler]];
-    
-    
-//    [[RACObserve(self, properties)
-//      deliverOn:[RACScheduler mainThreadScheduler]]
-//     subscribeNext:^(id x) {
-//         LogError(@"ViewModel - data into search result array. isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
-//         self.propertiesFromSearchResult = x;
-//    }];
-    
-//    NSDateFormatter *dateFormmater = [[NSDateFormatter alloc] init];
-//    [dateFormmater setDateFormat:@"MM/dd/yyyy"];
-//    
-//    self.selectedSaleDatesForFiltering = [NSSet setWithArray:@[[dateFormmater dateFromString:@"02/20/2014"],
-//                                                               [dateFormmater dateFromString:@"02/27/2014"]]];
-    
+
     @weakify(self);
     [[RACSignal
      combineLatest:@[RACObserve(self, searchString), RACObserve(self, selectedSaleDatesForFiltering)]

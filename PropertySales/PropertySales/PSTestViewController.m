@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
     
-//    PSDataManager *dataManager = [[PSDataManager alloc] init];
+//    PSDataManager *dataManager = [PSDataManager sharedInstance];
 //    [dataManager fetchData];
     
 //    [AddressLookup MR_truncateAll];

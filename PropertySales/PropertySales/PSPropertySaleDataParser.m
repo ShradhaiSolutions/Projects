@@ -24,8 +24,12 @@
         NSUInteger totalNumberOfProperties = [self numberOfRecords:propertySalesParse];
         
         //TODO: Optimize
-        NSArray *headers = [self parseTableHeader:propertySalesParse];
-        LogVerbose(@"Headers: %@", headers);
+        static NSArray *headers;
+        
+        if([headers count] == 0) {
+            LogDebug(@"Parsing the Table Header");
+            headers = [self parseTableHeader:propertySalesParse];
+        }
         
         NSMutableArray *properties = [NSMutableArray array];
         
@@ -49,6 +53,8 @@
         
         [subscriber sendNext:[properties copy]];
         [subscriber sendCompleted];
+        
+        properties = nil;
         
         return nil;
     }] doError:^(NSError *error) {

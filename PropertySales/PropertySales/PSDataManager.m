@@ -24,20 +24,30 @@
 @property (strong, nonatomic) PSLocationParser *locationParser;
 
 @property (strong, nonatomic) NSDictionary *postParams;
-@property (strong, nonatomic) NSArray *saleDates;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+    
+@property (strong, nonatomic) NSArray *saleDates;
+@property (strong, nonatomic) NSArray *saleDateStrings;
 
 @end
 
 
 @implementation PSDataManager
+    
++ (instancetype)sharedInstance
+{
+    static dispatch_once_t once;
+    static PSDataManager *sharedManagerInstance;
+    dispatch_once(&once, ^ {
+        sharedManagerInstance = [[self alloc] init];
+    });
+    return sharedManagerInstance;
+}
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        _communicator = [[PSDataCommunicator alloc] init];
-        _locationParser = [[PSLocationParser alloc] init];
         
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateFormat:@"MM/dd/yyyy"];
@@ -51,7 +61,8 @@
     
     NSDate *startTime = [NSDate date];
     
-    NSMutableArray *properties = [NSMutableArray array];
+    __block NSMutableArray *properties = [NSMutableArray array];
+    self.communicator = [[PSDataCommunicator alloc] init];
     
     @weakify(self);
     [[[[[[self fetchPropertyMetaData]
@@ -73,9 +84,12 @@
           LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", [properties count]);
           [self logExecutionTime:startTime];
           
+          self.communicator = nil;
+          
           PSFileManager *fileManager = [[PSFileManager alloc] init];
           [fileManager savePropertiesToFile:properties];
           
+          self.locationParser = [[PSLocationParser alloc] init];
           self.locationParser.properties = properties;
           
           return [self.locationParser parseAddressesToCoordinates];
@@ -96,6 +110,9 @@
           LogError(@"Error While execution: %@", error);
           [self logExecutionTime:startTime];
       } completed:^{
+          properties = nil;
+          self.locationParser = nil;
+          
           [self logExecutionTime:startTime];
           [self loadPropertiesFromCoreDataOnMainThread];
           LogInfo(@"Remote Data Import is Completed!!!");
@@ -141,7 +158,6 @@
             [postParams setObject:saleDate forKey:@"ddlDate"];
             
             RACSignal *saleDataFetchSignal = [self fetchPropertySaleDataWithPostParams:[postParams copy]];
-            
             [saleDateSignals addObject:saleDataFetchSignal];
         }
         
@@ -180,6 +196,8 @@
         LogInfo(@"No existing properties at CoreData, hence importing from local cache");
         [self dataImport];
     }
+    
+    [self fetchSaleDatesFromCoreData];
     
     EXIT_LOG;
     
@@ -222,6 +240,8 @@
     NSArray *props = [Property MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
     self.properties = [props copy];
     
+    [self fetchSaleDatesFromCoreData];
+    
     EXIT_LOG;
 }
 
@@ -235,8 +255,17 @@
 
 - (NSArray *)getSaleDates
 {
+    if(self.saleDates == nil) {
+        [self fetchSaleDatesFromCoreData];
+    }
+    
+    return self.saleDates;
+}
+    
+- (void)fetchSaleDatesFromCoreData
+{
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
-
+    
     NSFetchedResultsController *fc = [Property MR_fetchAllGroupedBy:@"saleData" withPredicate:nil sortedBy:@"saleData" ascending:YES];
     [fc.fetchRequest setPropertiesToFetch:@[@"saleData"]];
     fc.fetchRequest.returnsDistinctResults = YES;
@@ -245,28 +274,27 @@
     NSArray *results = [Property MR_executeFetchRequest:fc.fetchRequest inContext:localContext];
     
     NSMutableArray *saleDates = [NSMutableArray arrayWithCapacity:[results count]];
+    NSMutableArray *saleDateStrings = [NSMutableArray arrayWithCapacity:[results count]];
     
     for(NSDictionary *data in results) {
-        [saleDates addObject:[data objectForKey:@"saleData"]];
+        NSDate *saleDate = [data objectForKey:@"saleData"];
+        [saleDates addObject:saleDate];
+        [saleDateStrings addObject:[self.dateFormatter stringFromDate:saleDate]];
     }
     
-    LogDebug(@"SaleDates: %@", saleDates);
+    LogDebug(@"SaleDate Stringss: %@", saleDateStrings);
     
-    return [saleDates copy];
+    self.saleDates = [saleDates copy];
+    self.saleDateStrings = [saleDateStrings copy];
 }
 
 - (NSArray *)getSaleDatesStrings
 {
-    NSArray *saleDates = [self getSaleDates];
-    NSMutableArray *saleDateStrings = [NSMutableArray arrayWithCapacity:[saleDates count]];
-    
-    for(NSDate *saleDate in saleDates) {
-        [saleDateStrings addObject:[self.dateFormatter stringFromDate:saleDate]];
+    if(self.saleDateStrings == nil) {
+        [self fetchSaleDatesFromCoreData];
     }
-    
-    LogDebug(@"SaleDates: %@", saleDateStrings);
-    
-    return saleDateStrings;
+
+    return self.saleDateStrings;
 }
 
 

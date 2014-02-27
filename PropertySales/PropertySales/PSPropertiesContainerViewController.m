@@ -26,9 +26,6 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender;
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) PSCoreLocationManagerDelegate *locationManagerDelegate;
-
 @property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
 
 @property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
@@ -43,7 +40,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [super viewDidLoad];
     
     //Data Setup
-	PSDataManager *dataManager = [[PSDataManager alloc] init];
+	PSDataManager *dataManager = [PSDataManager sharedInstance];
     
     self.searchResultsViewModel = [[PSSearchResultsViewModel alloc] init];
     self.searchResultsViewModel.properties = [dataManager properiesForSale];
@@ -54,16 +51,12 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [dataManager fetchData];
     [dataManager getSaleDates];
     
-    LogDebug(@"Number of Properties: %d", [self.searchResultsViewModel.propertiesFromSearchResult count]);
+    LogDebug(@"Number of Properties: %lu", (unsigned long)[self.searchResultsViewModel.propertiesFromSearchResult count]);
     
     RAC(self.searchResultsViewModel, searchString) = RACObserve(self, searchBar.text);
     [self.searchResultsViewModel setup];
     
     self.searchBar.delegate = self;
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManagerDelegate = [[PSCoreLocationManagerDelegate alloc] init];
-    self.locationManager.delegate = self.locationManagerDelegate;
     
     //Add the child view controller
     [self addMapViewController];

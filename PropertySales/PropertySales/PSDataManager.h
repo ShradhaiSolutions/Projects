@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) NSArray *properties;
 
++ (instancetype)sharedInstance;
+    
 - (void)fetchData;
 
 - (NSArray *)properiesForSale;

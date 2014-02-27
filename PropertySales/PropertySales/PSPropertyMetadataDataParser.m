@@ -25,10 +25,10 @@
         NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithCapacity:14];
         
         [self parseInputElements:parsedResponseObject into:paramsDictionary];
-
         [self parseSelectElements:parsedResponseObject into:paramsDictionary];
-
         [self parseSaleDates:parsedResponseObject into:paramsDictionary];
+        
+        parsedResponseObject = nil;
         
         LogDebug(@"Parsing the Property Metadata response - Completed");
         
@@ -61,6 +61,8 @@
         }
     }
     
+    propertyNodes = nil;
+    
     EXIT_LOG;
 }
 
@@ -84,12 +86,12 @@
         }
     }
     
+    propertyNodes = nil;
+    
     //Extra parameters for next request
     [paramsDictionary setObject:@"ddlDate" forKey:@"__EVENTTARGET"];
     [paramsDictionary setObject:@"" forKey:@"__EVENTARGUMENT"];
     [paramsDictionary setObject:@"" forKey:@"__LASTFOCUS"];
-    
-//    [paramsDictionary setObject:@"2/6/2014" forKey:@"ddlDate"];
     
     EXIT_LOG;
 }
@@ -110,6 +112,8 @@
             [saleDates addObject:saleDate];
         }
     }
+    
+    propertyNodes = nil;
     
     [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
     

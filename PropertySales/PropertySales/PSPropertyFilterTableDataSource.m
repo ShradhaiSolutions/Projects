@@ -23,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        PSDataManager *dataManager = [[PSDataManager alloc] init];
+        PSDataManager *dataManager = [PSDataManager sharedInstance];
         _saleDates = [dataManager getSaleDates];
         _saleDateStrings = [dataManager getSaleDatesStrings];
     }

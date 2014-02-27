@@ -43,6 +43,8 @@ static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
                   LogError(@"Error: %@", error);
                   [subscriber sendError:error];
               }];
+        
+        manager = nil;
 
         return nil;
     }] doError:^(NSError *error) {

@@ -27,6 +27,8 @@
         BOOL succeed = [responseDataString writeToFile:path
                                             atomically:YES
                                               encoding:NSUTF8StringEncoding error:&error];
+        responseDataString = nil;
+        
         if (succeed){
             // Handle error here
             LogInfo(@"Successfully saved to %@", path);

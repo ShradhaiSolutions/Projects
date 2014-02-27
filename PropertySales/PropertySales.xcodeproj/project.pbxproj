@@ -25,7 +25,6 @@
 		8A2965C318ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */; };
 		8A2965C418ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */; };
 		8A2A3D5C18B84B6100078596 /* PSGoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */; };
-		8A2A3D5F18B854F100078596 /* PSAppleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A3D5E18B854F100078596 /* PSAppleMapsManager.m */; };
 		8A37453918A7DC080012E8A2 /* PSDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A37453818A7DC080012E8A2 /* PSDataImporter.m */; };
 		8A37453A18A7DC080012E8A2 /* PSDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A37453818A7DC080012E8A2 /* PSDataImporter.m */; };
 		8A37453C18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A37453B18A7EEC20012E8A2 /* PropertySales.storyboard */; };
@@ -51,8 +50,6 @@
 		8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1318B00024004FCC37 /* PSLocationParser.m */; };
 		8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */; };
 		8A718B3418BA5D9000B71CE9 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */; };
-		8A718B3718BA698700B71CE9 /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A718B3518BA698700B71CE9 /* AddressToGeocodeMapping.plist */; };
-		8A718B3818BA698700B71CE9 /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A718B3618BA698700B71CE9 /* PropertiesArray.plist */; };
 		8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0618A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0818A8999F00A9508B /* PSPropertyDetailsViewController.m */; };
@@ -75,6 +72,8 @@
 		8AA758E318A743D1006DFB84 /* Property+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA758E118A743D1006DFB84 /* Property+Methods.m */; };
 		8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */; };
 		8ABAAEDC18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */; };
+		8AD10B4418BF033700B0CB0E /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AD10B4218BF033700B0CB0E /* AddressToGeocodeMapping.plist */; };
+		8AD10B4518BF033700B0CB0E /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AD10B4318BF033700B0CB0E /* PropertiesArray.plist */; };
 		8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */; };
 		8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */; };
 		8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
@@ -124,8 +123,6 @@
 		8A2965C218ADDB6200AA330C /* PSPropertyMetadataDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyMetadataDataParser.m; sourceTree = "<group>"; };
 		8A2A3D5A18B84B6100078596 /* PSGoogleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSGoogleMapsManager.h; sourceTree = "<group>"; };
 		8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSGoogleMapsManager.m; sourceTree = "<group>"; };
-		8A2A3D5D18B854F100078596 /* PSAppleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAppleMapsManager.h; sourceTree = "<group>"; };
-		8A2A3D5E18B854F100078596 /* PSAppleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAppleMapsManager.m; sourceTree = "<group>"; };
 		8A37453718A7DC080012E8A2 /* PSDataImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataImporter.h; sourceTree = "<group>"; };
 		8A37453818A7DC080012E8A2 /* PSDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDataImporter.m; sourceTree = "<group>"; };
 		8A37453B18A7EEC20012E8A2 /* PropertySales.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PropertySales.storyboard; sourceTree = "<group>"; };
@@ -155,8 +152,6 @@
 		8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ExecutionTimeLogger.m"; sourceTree = "<group>"; };
 		8A718B3218BA5D9000B71CE9 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
-		8A718B3518BA698700B71CE9 /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
-		8A718B3618BA698700B71CE9 /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8A795F0318A890D700A9508B /* Property+MKAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+MKAnnotations.h"; sourceTree = "<group>"; };
 		8A795F0418A890D700A9508B /* Property+MKAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+MKAnnotations.m"; sourceTree = "<group>"; };
 		8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyDetailsViewController.h; sourceTree = "<group>"; };
@@ -180,6 +175,8 @@
 		8AA758E118A743D1006DFB84 /* Property+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+Methods.m"; sourceTree = "<group>"; };
 		8ABAAED918A9CE380011A12C /* PSCoreLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCoreLocationManagerDelegate.h; sourceTree = "<group>"; };
 		8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCoreLocationManagerDelegate.m; sourceTree = "<group>"; };
+		8AD10B4218BF033700B0CB0E /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
+		8AD10B4318BF033700B0CB0E /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8ADD4AEC189DA3AC00F1C54B /* PropertySales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertySales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -247,13 +244,13 @@
 			name = Importer;
 			sourceTree = "<group>";
 		};
-		8A2965A918ADCDD100AA330C /* Controller */ = {
+		8A2965A918ADCDD100AA330C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				8A2965B818ADD3FD00AA330C /* PSDataManager.h */,
 				8A2965B918ADD3FD00AA330C /* PSDataManager.m */,
 			);
-			name = Controller;
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		8A2965AA18ADCE8500AA330C /* Communicator */ = {
@@ -324,8 +321,6 @@
 				8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */,
 				8A2A3D5A18B84B6100078596 /* PSGoogleMapsManager.h */,
 				8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */,
-				8A2A3D5D18B854F100078596 /* PSAppleMapsManager.h */,
-				8A2A3D5E18B854F100078596 /* PSAppleMapsManager.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -364,8 +359,8 @@
 		8AA758D518A734DB006DFB84 /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
-				8A718B3518BA698700B71CE9 /* AddressToGeocodeMapping.plist */,
-				8A718B3618BA698700B71CE9 /* PropertiesArray.plist */,
+				8AD10B4218BF033700B0CB0E /* AddressToGeocodeMapping.plist */,
+				8AD10B4318BF033700B0CB0E /* PropertiesArray.plist */,
 			);
 			name = SampleData;
 			sourceTree = "<group>";
@@ -462,7 +457,7 @@
 			children = (
 				8A2965C018ADDB3000AA330C /* Parser */,
 				8A2965B318ADD28C00AA330C /* FileManager */,
-				8A2965A918ADCDD100AA330C /* Controller */,
+				8A2965A918ADCDD100AA330C /* Manager */,
 				8A2965AA18ADCE8500AA330C /* Communicator */,
 				8A2965A818ADCDC900AA330C /* Importer */,
 				8A86CF5E18A4711C009048A4 /* Model */,
@@ -536,6 +531,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Shradha iSolutions";
 				TargetAttributes = {
+					8ADD4AEB189DA3AC00F1C54B = {
+						DevelopmentTeam = 4624S9SBJP;
+					};
 					8ADD4B06189DA3AC00F1C54B = {
 						TestTargetID = 8ADD4AEB189DA3AC00F1C54B;
 					};
@@ -564,12 +562,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A718B3718BA698700B71CE9 /* AddressToGeocodeMapping.plist in Resources */,
+				8AD10B4418BF033700B0CB0E /* AddressToGeocodeMapping.plist in Resources */,
 				8A37453C18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */,
 				8ADD4AFA189DA3AC00F1C54B /* InfoPlist.strings in Resources */,
 				8ADD4B02189DA3AC00F1C54B /* Images.xcassets in Resources */,
 				8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */,
-				8A718B3818BA698700B71CE9 /* PropertiesArray.plist in Resources */,
+				8AD10B4518BF033700B0CB0E /* PropertiesArray.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +663,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A2A3D5F18B854F100078596 /* PSAppleMapsManager.m in Sources */,
 				8A2965BA18ADD3FD00AA330C /* PSDataManager.m in Sources */,
 				8AA758D318A73456006DFB84 /* Property.m in Sources */,
 				8AA758E218A743D1006DFB84 /* Property+Methods.m in Sources */,
@@ -850,6 +847,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/kon2740/Dhana/GitHubProjects/PropertySales,
@@ -868,6 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/kon2740/Dhana/GitHubProjects/PropertySales,
