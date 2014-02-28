@@ -15,7 +15,7 @@
 @interface PSAboutTableDataSource ()
 
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) UIButton *refresh;
+@property (weak, nonatomic) UIButton *refreshButton;
 
 @end
 @implementation PSAboutTableDataSource
@@ -49,9 +49,9 @@
         UIButton *refresh = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [refresh addTarget:self action:@selector(toggleActivityIndicator) forControlEvents:UIControlEventTouchUpInside];
 
-        refresh.frame = CGRectMake(180, 0, 30, 30);
+        refresh.frame = CGRectMake(180, -2, 35, 35);
         refresh.tintColor = [UIColor blueTintColor];
-        self.refresh = refresh;
+        self.refreshButton = refresh;
         
         [view addSubview:refresh];
         
@@ -159,9 +159,8 @@
                                                 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [activityInd stopAnimating];
         activityInd.color = [UIColor blueTintColor];
-        
-//        activityInd.center = CGPointMake(18, 18);
-        activityInd.frame = self.refresh.bounds;
+
+        activityInd.frame = self.refreshButton.bounds;
         [activityInd setUserInteractionEnabled:NO];
         
         self.activityIndicator = activityInd;
@@ -172,11 +171,11 @@
 
     if([self.activityIndicator isAnimating]) {
         [self.activityIndicator stopAnimating];
-        [self.refresh setBackgroundImage:image forState:UIControlStateNormal];
+        [self.refreshButton setBackgroundImage:image forState:UIControlStateNormal];
     } else {
         [self.activityIndicator startAnimating];
-        [self.refresh setBackgroundImage:nil forState:UIControlStateNormal];
-        [self.refresh addSubview:self.activityIndicator];
+        [self.refreshButton setBackgroundImage:nil forState:UIControlStateNormal];
+        [self.refreshButton addSubview:self.activityIndicator];
     }
 }
 
