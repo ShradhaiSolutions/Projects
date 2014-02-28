@@ -10,7 +10,14 @@
 #import "PSApplicationContext.h"
 #import "PSDataManager.h"
 #import "NSDate+Utilities.h"
+#import "UIColor+Theme.h"
 
+@interface PSAboutTableDataSource ()
+
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) UIButton *refresh;
+
+@end
 @implementation PSAboutTableDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -30,15 +37,25 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 2) {
-        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 25)];
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
         
-        UILabel *headerText = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, tableView.frame.size.width, 20)];
+        UILabel *headerText = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, 160, 20)];
         headerText.backgroundColor = [UIColor clearColor];
         headerText.font = [UIFont systemFontOfSize:15];
         [headerText setText:@"Current Refresh Status"];
 
         [view addSubview:headerText];
         
+        UIButton *refresh = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [refresh addTarget:self action:@selector(toggleActivityIndicator) forControlEvents:UIControlEventTouchUpInside];
+
+        refresh.frame = CGRectMake(180, 0, 30, 30);
+        refresh.tintColor = [UIColor blueTintColor];
+        self.refresh = refresh;
+        
+        [view addSubview:refresh];
+        
+        [self toggleActivityIndicator];
         return view;
     }
     return nil;
@@ -133,6 +150,34 @@
     }
     
     self.lastSuccessfulDataSyncLabel.text = timeStampString;
+}
+
+- (void)toggleActivityIndicator
+{
+    if(self.activityIndicator == nil) {
+        UIActivityIndicatorView *activityInd = [[UIActivityIndicatorView alloc]
+                                                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [activityInd stopAnimating];
+        activityInd.color = [UIColor blueTintColor];
+        
+//        activityInd.center = CGPointMake(18, 18);
+        activityInd.frame = self.refresh.bounds;
+        [activityInd setUserInteractionEnabled:NO];
+        
+        self.activityIndicator = activityInd;
+    }
+    
+    UIImage *image = [UIImage imageNamed:@"RefreshIcon"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+
+    if([self.activityIndicator isAnimating]) {
+        [self.activityIndicator stopAnimating];
+        [self.refresh setBackgroundImage:image forState:UIControlStateNormal];
+    } else {
+        [self.activityIndicator startAnimating];
+        [self.refresh setBackgroundImage:nil forState:UIControlStateNormal];
+        [self.refresh addSubview:self.activityIndicator];
+    }
 }
 
 @end
