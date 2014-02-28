@@ -11,6 +11,7 @@
 @interface PSDataManager : NSObject
 
 @property (strong, nonatomic) NSArray *properties;
+@property (strong, nonatomic) NSNumber *dataFetchProgress;
 
 + (instancetype)sharedInstance;
     

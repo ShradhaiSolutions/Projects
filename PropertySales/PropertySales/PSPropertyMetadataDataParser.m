@@ -115,7 +115,9 @@
     
     propertyNodes = nil;
     
-    [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
+    //Todo: make this configurable
+    //Fetch the properties for only first five sale dates
+    [paramsDictionary setObject:[[saleDates copy] subarrayWithRange:NSMakeRange(0, 5)] forKey:@"SaleDatesArray"];
     
     EXIT_LOG;
 }

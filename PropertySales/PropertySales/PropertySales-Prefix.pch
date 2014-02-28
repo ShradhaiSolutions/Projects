@@ -20,4 +20,5 @@
     #import "RACEXTScope.h"
     #import "CoreData+MagicalRecord.h"
     #import "NSObject+ExecutionTimeLogger.h"
+    #import "SVProgressHUD.h"
 #endif

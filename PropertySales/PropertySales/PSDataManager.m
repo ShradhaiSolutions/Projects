@@ -51,6 +51,7 @@
         
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateFormat:@"MM/dd/yyyy"];
+        _dataFetchProgress = @1.0;
     }
     return self;
 }
@@ -64,11 +65,15 @@
     __block NSMutableArray *properties = [NSMutableArray array];
     self.communicator = [[PSDataCommunicator alloc] init];
     
+    self.dataFetchProgress = @0.0;
+    
     @weakify(self);
     [[[[[[self fetchPropertyMetaData]
       flattenMap:^RACStream *(id metaDataDictionary) {
           LogDebug(@"Property Meta Data is received");
           LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
+          
+          self.dataFetchProgress = @0.1;
           
           return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
       }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
@@ -76,6 +81,8 @@
           LogVerbose(@"Parsed Metadata: %@", propertiesOfASaleDate);
           
           [properties addObjectsFromArray:propertiesOfASaleDate];
+          
+          self.dataFetchProgress = @([self.dataFetchProgress floatValue] + 0.1);
           
           //After receiving all the properties information send an empty signal so that the "block" will be executed
           return [RACSignal empty];
@@ -97,6 +104,8 @@
           LogInfo(@"Addresses are parsed to Coordinates successfully");
           [self logExecutionTime:startTime];
           
+          self.dataFetchProgress = @0.8;
+          
           PSFileManager *fileManager = [[PSFileManager alloc] init];
           [fileManager saveAddressToGeocodeMappingDictionaryToFile:self.locationParser.addressToGeocodeMappingDictionary];
           
@@ -104,14 +113,18 @@
           
           return [dataImporter importPropertyData:properties withAddressLookData:self.locationParser.addressToGeocodeMappingDictionary];
       }] subscribeNext:^(id x) {
-          LogDebug(@"2. Property Sale Data is received for a given sale date");
           LogVerbose(@"Next Value: %@", x);
       } error:^(NSError *error) {
           LogError(@"Error While execution: %@", error);
+          
+          self.dataFetchProgress = @1.0;
+          
           [self logExecutionTime:startTime];
       } completed:^{
           properties = nil;
           self.locationParser = nil;
+    
+          self.dataFetchProgress = @1.0;
           
           [self logExecutionTime:startTime];
           [self loadPropertiesFromCoreDataOnMainThread];
@@ -226,6 +239,7 @@
                                         //Always Load the data using Main Thread Context
                                         NSArray *props = [Property MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
                                         self.properties = [props copy];
+                                        [self fetchSaleDatesFromCoreData];
                                         LogDebug(@"Loading properties from Core Data on Main thread - End");
                                     }] subscribeOn:[RACScheduler mainThreadScheduler]];
     
@@ -255,15 +269,21 @@
 
 - (NSArray *)getSaleDates
 {
+    ENTRY_LOG;
+    
     if(self.saleDates == nil) {
         [self fetchSaleDatesFromCoreData];
     }
+    
+    EXIT_LOG;
     
     return self.saleDates;
 }
     
 - (void)fetchSaleDatesFromCoreData
 {
+    ENTRY_LOG;
+    
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     
     NSFetchedResultsController *fc = [Property MR_fetchAllGroupedBy:@"saleData" withPredicate:nil sortedBy:@"saleData" ascending:YES];
@@ -286,6 +306,8 @@
     
     self.saleDates = [saleDates copy];
     self.saleDateStrings = [saleDateStrings copy];
+    
+    EXIT_LOG;
 }
 
 - (NSArray *)getSaleDatesStrings
