@@ -8,7 +8,12 @@
 
 #import "PSApplicationContext.h"
 
+
+static NSString * const kLastSuccessfulDataFetch = @"lastSuccessfulDataFetch";
+
 @interface PSApplicationContext ()
+
+@property (strong, nonatomic) NSUserDefaults *userDefaults;
 
 @end
 
@@ -32,9 +37,21 @@
         
         _appVersionNumber = infoDictionary[@"CFBundleShortVersionString"];
         _buildNumber = infoDictionary[(NSString *)kCFBundleVersionKey];
+        _userDefaults = [NSUserDefaults standardUserDefaults];
 
     }
     return self;
+}
+
+- (NSDate *)lastSuccessfulDataFetchTimestamp
+{
+    return [self.userDefaults objectForKey:kLastSuccessfulDataFetch];
+}
+
+- (void)saveSuccessfulDataFetchTimestamp
+{
+    [self.userDefaults setObject:[NSDate date] forKey:kLastSuccessfulDataFetch];
+    [self.userDefaults synchronize];
 }
 
 @end

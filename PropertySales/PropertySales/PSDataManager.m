@@ -18,6 +18,8 @@
 #import "Property.h"
 #import "AddressLookup.h"
 
+#import "PSApplicationContext.h"
+
 @interface PSDataManager ()
 
 @property (strong, nonatomic) PSDataCommunicator *communicator;
@@ -123,7 +125,9 @@
       } completed:^{
           properties = nil;
           self.locationParser = nil;
-    
+
+          [[PSApplicationContext sharedInstance] saveSuccessfulDataFetchTimestamp];
+
           self.dataFetchProgress = @1.0;
           
           [self logExecutionTime:startTime];

@@ -10,9 +10,12 @@
 
 @interface PSApplicationContext : NSObject
 
-+ (instancetype)sharedInstance;
-
 @property (strong, nonatomic) NSString *appVersionNumber;
 @property (strong, nonatomic) NSString *buildNumber;
+
++ (instancetype)sharedInstance;
+
+- (NSDate *)lastSuccessfulDataFetchTimestamp;
+- (void)saveSuccessfulDataFetchTimestamp;
 
 @end

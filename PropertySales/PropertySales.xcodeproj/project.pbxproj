@@ -77,6 +77,7 @@
 		8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */; };
 		8ABAAEDC18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */; };
 		8AD10B4418BF033700B0CB0E /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AD10B4218BF033700B0CB0E /* AddressToGeocodeMapping.plist */; };
+		8AD25BB218C1103C00A4475F /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD25BB118C1103C00A4475F /* NSDate+Utilities.m */; };
 		8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */; };
 		8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */; };
 		8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */; };
@@ -186,6 +187,8 @@
 		8ABAAED918A9CE380011A12C /* PSCoreLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCoreLocationManagerDelegate.h; sourceTree = "<group>"; };
 		8ABAAEDA18A9CE380011A12C /* PSCoreLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCoreLocationManagerDelegate.m; sourceTree = "<group>"; };
 		8AD10B4218BF033700B0CB0E /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
+		8AD25BB018C1103C00A4475F /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		8AD25BB118C1103C00A4475F /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		8ADD4AEC189DA3AC00F1C54B /* PropertySales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertySales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -497,6 +500,8 @@
 				8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */,
 				8A6A9B1518B01443004FCC37 /* NSObject+ExecutionTimeLogger.h */,
 				8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */,
+				8AD25BB018C1103C00A4475F /* NSDate+Utilities.h */,
+				8AD25BB118C1103C00A4475F /* NSDate+Utilities.m */,
 			);
 			name = "Object+Categories";
 			sourceTree = "<group>";
@@ -715,6 +720,7 @@
 				8A2965C318ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */,
 				8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */,
 				8A1215BE18BFF05A00468925 /* PSAboutTableDataSource.m in Sources */,
+				8AD25BB218C1103C00A4475F /* NSDate+Utilities.m in Sources */,
 				8A37454D18A7F6AD0012E8A2 /* PSPropertiesFilterViewController.m in Sources */,
 				8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */,
 				8A37455118A7F6D40012E8A2 /* PSBaseViewController.m in Sources */,

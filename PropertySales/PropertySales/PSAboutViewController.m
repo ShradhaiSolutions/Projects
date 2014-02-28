@@ -44,6 +44,10 @@
          
          [self.dataSource.progressView setProgress:[progress floatValue] animated:YES];
          
+         if([progress floatValue] == 1.0) {
+             [self.dataSource displayLastSuccessfulDataSyncTimestamp];
+         }
+         
      } error:^(NSError *error) {
          LogError(@"Error While getting fetch progress: %@", error);
          [self.dataSource.progressView setProgress:1.0 animated:YES];

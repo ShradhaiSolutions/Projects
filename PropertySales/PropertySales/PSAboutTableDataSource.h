@@ -11,5 +11,8 @@
 @interface PSAboutTableDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) UIProgressView *progressView;
+@property (weak, nonatomic) UILabel *lastSuccessfulDataSyncLabel;
+
+- (void)displayLastSuccessfulDataSyncTimestamp;
 
 @end

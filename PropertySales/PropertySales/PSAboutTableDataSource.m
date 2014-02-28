@@ -9,6 +9,7 @@
 #import "PSAboutTableDataSource.h"
 #import "PSApplicationContext.h"
 #import "PSDataManager.h"
+#import "NSDate+Utilities.h"
 
 @implementation PSAboutTableDataSource
 
@@ -19,7 +20,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 30.0;
+    if(section == 2) {
+        return 40.0;
+    } else {
+        return 30.0;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -27,7 +32,7 @@
     if (section == 2) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 25)];
         
-        UILabel *headerText = [[UILabel alloc]initWithFrame:CGRectMake(15, 1, tableView.frame.size.width, 20)];
+        UILabel *headerText = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, tableView.frame.size.width, 20)];
         headerText.backgroundColor = [UIColor clearColor];
         headerText.font = [UIFont systemFontOfSize:15];
         [headerText setText:@"Current Fetch Status"];
@@ -79,8 +84,8 @@
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = @"Last Successful Fetch";
-                cell.detailTextLabel.text = @"Today 10:00AM";
-                
+                self.lastSuccessfulDataSyncLabel = cell.detailTextLabel;
+                [self displayLastSuccessfulDataSyncTimestamp];
                 break;
             case 1:
                 cell.textLabel.text = @"Fetch Refresh Policty";
@@ -97,6 +102,37 @@
     }
     
     return cell;
+}
+
+- (void)displayLastSuccessfulDataSyncTimestamp
+{
+    static NSDateFormatter *dateFormatter;
+    static NSDateFormatter *timeFormatter;
+    
+    if(dateFormatter == nil) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MMM dd hh:mm a"];
+    }
+
+    if(timeFormatter == nil) {
+        timeFormatter = [[NSDateFormatter alloc] init];
+        [timeFormatter setDateFormat:@"hh:mm a"];
+    }
+
+    NSDate *timeStamp = [[PSApplicationContext sharedInstance] lastSuccessfulDataFetchTimestamp];
+    NSString *timeStampString;
+    
+    if(timeStamp) {
+        if([timeStamp isTodaysDate]) {
+            timeStampString = [NSString stringWithFormat:@"Today %@", [timeFormatter stringFromDate:timeStamp]];
+        } else {
+            timeStampString = [dateFormatter stringFromDate:timeStamp];
+        }
+    } else {
+        timeStampString = @"";
+    }
+    
+    self.lastSuccessfulDataSyncLabel.text = timeStampString;
 }
 
 @end
