@@ -35,7 +35,7 @@
         UILabel *headerText = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, tableView.frame.size.width, 20)];
         headerText.backgroundColor = [UIColor clearColor];
         headerText.font = [UIFont systemFontOfSize:15];
-        [headerText setText:@"Current Fetch Status"];
+        [headerText setText:@"Current Refresh Status"];
 
         [view addSubview:headerText];
         
@@ -83,12 +83,12 @@
         cell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier forIndexPath:indexPath];
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"Last Successful Fetch";
+                cell.textLabel.text = @"Last Successful Refresh";
                 self.lastSuccessfulDataSyncLabel = cell.detailTextLabel;
                 [self displayLastSuccessfulDataSyncTimestamp];
                 break;
             case 1:
-                cell.textLabel.text = @"Fetch Refresh Policty";
+                cell.textLabel.text = @"Data Refresh Policy";
                 cell.detailTextLabel.text = @"4 hours";
                 
                 break;

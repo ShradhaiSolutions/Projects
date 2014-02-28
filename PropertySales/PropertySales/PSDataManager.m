@@ -62,6 +62,11 @@
 {
     ENTRY_LOG;
     
+    if([self shouldRefreshTheData] == NO) {
+        LogInfo(@"Data Refresh Interval is not crossed, hence skipping");
+        return;
+    }
+    
     NSDate *startTime = [NSDate date];
     
     __block NSMutableArray *properties = [NSMutableArray array];
@@ -323,5 +328,33 @@
     return self.saleDateStrings;
 }
 
+#pragma mark - Should Refresh
+- (BOOL)shouldRefreshTheData
+{
+    BOOL refreshRequired = YES;
+    
+    NSDate *lastSuccessfulRefreshDate = [[PSApplicationContext sharedInstance] lastSuccessfulDataFetchTimestamp];
+    
+    if(lastSuccessfulRefreshDate) {
+        NSUInteger interval = [[PSApplicationContext sharedInstance] refreshIntervalInSeconds];
+
+        NSTimeInterval elapstedTime = fabs([lastSuccessfulRefreshDate timeIntervalSinceNow]);
+        
+        LogDebug(@"{elapstedTime: %f, refreshInterval:%lu}", elapstedTime, interval);
+        
+        if(elapstedTime > interval) {
+            refreshRequired = YES;
+        } else {
+            refreshRequired = NO;
+        }
+    } else {
+        LogDebug(@"Last Successful Refresh Date is not present, hence data should be fetched");
+        refreshRequired = YES;
+    }
+    
+    LogInfo(@"ShouldRefreshData: %@", refreshRequired ? @"YES" : @"NO");
+    
+    return refreshRequired;
+}
 
 @end

@@ -17,5 +17,6 @@
 
 - (NSDate *)lastSuccessfulDataFetchTimestamp;
 - (void)saveSuccessfulDataFetchTimestamp;
+- (NSUInteger)refreshIntervalInSeconds;
 
 @end

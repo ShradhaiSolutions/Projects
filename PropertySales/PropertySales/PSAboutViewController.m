@@ -23,16 +23,22 @@
 
 - (void)viewDidLoad
 {
+    ENTRY_LOG;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
     self.dataSource  = [[PSAboutTableDataSource alloc] init];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
+    
+    EXIT_LOG;
 }
 
 -  (void)viewWillAppear:(BOOL)animated
 {
+    ENTRY_LOG;
+    
     RACSignal *willDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
     
     @weakify(self);
@@ -52,7 +58,8 @@
          LogError(@"Error While getting fetch progress: %@", error);
          [self.dataSource.progressView setProgress:1.0 animated:YES];
      }];
-
+    
+    EXIT_LOG;
 }
 
 - (void)didReceiveMemoryWarning
