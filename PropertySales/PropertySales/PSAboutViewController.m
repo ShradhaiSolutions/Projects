@@ -50,18 +50,19 @@
          @strongify(self);
          LogDebug(@"Data Fetch Progress Value: %@", progress);
          
-         [self.dataSource.progressView setProgress:[progress floatValue] animated:YES];
-         
-         if([progress floatValue] == 1.0) {
+         if([progress floatValue] == kDataFetchSuccess) {
              [self.dataSource displayLastSuccessfulDataSyncTimestamp];
-             [self stopActivityIndicator];
+             [self stopActivityIndicator:YES];
+         } else if([progress floatValue] == kDataFetchFailure) {
+             [self stopActivityIndicator:NO];
          } else {
-             [self startActivityIndicator];
+             [self.dataSource.progressView setProgress:[progress floatValue] animated:YES];
+             [self startActivityIndicatorIfNecessary];
          }
          
      } error:^(NSError *error) {
          LogError(@"Error While getting fetch progress: %@", error);
-         [self.dataSource.progressView setProgress:1.0 animated:YES];
+         [self stopActivityIndicator:NO];
      }];
     
     EXIT_LOG;
@@ -78,7 +79,7 @@
 }
 
 #pragma mark - Activity Indicator
-- (void)startActivityIndicator
+- (void)startActivityIndicatorIfNecessary
 {
     if([self.activityIndicator isAnimating]) {
         return;
@@ -99,9 +100,10 @@
     [self.activityIndicator startAnimating];
     [self.dataSource.refreshButton setBackgroundImage:nil forState:UIControlStateNormal];
     [self.dataSource.refreshButton addSubview:self.activityIndicator];
+    self.dataSource.progressView.progressTintColor = [UIColor blueTintColor];
 }
 
-- (void)stopActivityIndicator
+- (void)stopActivityIndicator:(BOOL)success
 {
     if(self.activityIndicator != nil) {
         UIImage *image = [UIImage imageNamed:@"RefreshIcon"];
@@ -110,7 +112,14 @@
         [self.activityIndicator stopAnimating];
         [self.dataSource.refreshButton setBackgroundImage:image forState:UIControlStateNormal];
     }
+    
+    if(success) {
+        self.dataSource.progressView.progressTintColor = [UIColor blueTintColor];
+    } else {
+        self.dataSource.progressView.progressTintColor = [UIColor redTintColor];
+    }
+    
+    [self.dataSource.progressView setProgress:1.0 animated:YES];
 }
-
 
 @end

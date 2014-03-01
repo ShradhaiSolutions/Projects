@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern double kDataFetchFailure;
+extern double kDataFetchSuccess;
+
 @interface PSDataManager : NSObject
 
 @property (strong, nonatomic) NSArray *properties;

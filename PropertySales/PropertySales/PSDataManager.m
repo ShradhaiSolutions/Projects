@@ -20,6 +20,9 @@
 
 #import "PSApplicationContext.h"
 
+double kDataFetchFailure = -1.0;
+double kDataFetchSuccess = 1.0;
+
 @interface PSDataManager ()
 
 @property (strong, nonatomic) PSDataCommunicator *communicator;
@@ -32,7 +35,6 @@
 @property (strong, nonatomic) NSArray *saleDateStrings;
 
 @end
-
 
 @implementation PSDataManager
     
@@ -119,7 +121,8 @@
          } error:^(NSError *error) {
              LogError(@"Error While execution: %@", error);
              
-             self.dataFetchProgress = @1.0;
+             //Failure
+             self.dataFetchProgress = @(kDataFetchFailure);
              
              [self logExecutionTime:startTime];
          } completed:^{
@@ -128,7 +131,7 @@
              
              [[PSApplicationContext sharedInstance] saveSuccessfulDataFetchTimestamp];
              
-             self.dataFetchProgress = @1.0;
+             self.dataFetchProgress = @(kDataFetchSuccess);
              
              [self logExecutionTime:startTime];
              [self loadPropertiesFromCoreDataOnMainThread];
