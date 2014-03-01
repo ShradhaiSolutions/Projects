@@ -15,10 +15,11 @@
 
 + (instancetype)sharedInstance;
     
-- (void)fetchData;
-
 - (NSArray *)properiesForSale;
 - (NSArray *)getSaleDates;
 - (NSArray *)getSaleDatesStrings;
+
+- (void)fetchData;
+- (void)forceDataFetch;
 
 @end

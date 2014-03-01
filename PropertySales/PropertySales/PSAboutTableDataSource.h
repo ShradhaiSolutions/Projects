@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) UIProgressView *progressView;
 @property (weak, nonatomic) UILabel *lastSuccessfulDataSyncLabel;
+@property (weak, nonatomic) UIButton *refreshButton;
 
 - (void)displayLastSuccessfulDataSyncTimestamp;
 

@@ -11,13 +11,13 @@
 #import "PSDataManager.h"
 #import "NSDate+Utilities.h"
 #import "UIColor+Theme.h"
+#import "RIButtonItem.h"
+#import "UIAlertView+Blocks.h"
 
 @interface PSAboutTableDataSource ()
 
-@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) UIButton *refreshButton;
-
 @end
+
 @implementation PSAboutTableDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -45,17 +45,21 @@
         [headerText setText:@"Current Refresh Status"];
 
         [view addSubview:headerText];
-        
+
+        UIImage *image = [UIImage imageNamed:@"RefreshIcon"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+
         UIButton *refresh = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [refresh addTarget:self action:@selector(toggleActivityIndicator) forControlEvents:UIControlEventTouchUpInside];
+        [refresh setBackgroundImage:image forState:UIControlStateNormal];
 
         refresh.frame = CGRectMake(180, -2, 35, 35);
         refresh.tintColor = [UIColor blueTintColor];
+        
+        [refresh addTarget:self action:@selector(forceDataFetch) forControlEvents:UIControlEventTouchUpInside];
+        
         self.refreshButton = refresh;
         
         [view addSubview:refresh];
-        
-        [self toggleActivityIndicator];
         return view;
     }
     return nil;
@@ -152,31 +156,23 @@
     self.lastSuccessfulDataSyncLabel.text = timeStampString;
 }
 
-- (void)toggleActivityIndicator
+#pragma mark - Force Data Fetch
+- (void)forceDataFetch
 {
-    if(self.activityIndicator == nil) {
-        UIActivityIndicatorView *activityInd = [[UIActivityIndicatorView alloc]
-                                                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        [activityInd stopAnimating];
-        activityInd.color = [UIColor blueTintColor];
-
-        activityInd.frame = self.refreshButton.bounds;
-        [activityInd setUserInteractionEnabled:NO];
-        
-        self.activityIndicator = activityInd;
-    }
+    RIButtonItem *okItem = [RIButtonItem itemWithLabel:@"OK" action:^{
+        [[PSDataManager sharedInstance] forceDataFetch];
+    }];
     
-    UIImage *image = [UIImage imageNamed:@"RefreshIcon"];
-    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-
-    if([self.activityIndicator isAnimating]) {
-        [self.activityIndicator stopAnimating];
-        [self.refreshButton setBackgroundImage:image forState:UIControlStateNormal];
-    } else {
-        [self.activityIndicator startAnimating];
-        [self.refreshButton setBackgroundImage:nil forState:UIControlStateNormal];
-        [self.refreshButton addSubview:self.activityIndicator];
-    }
+    RIButtonItem *cancelItem = [RIButtonItem itemWithLabel:@"Cancel" action:^{
+        //Do Nothing
+    }];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Data Fetch"
+                                                        message:@"Do you want to force the data fetch?"
+                                               cancelButtonItem:cancelItem
+                                               otherButtonItems:okItem, nil];
+    [alertView show];
 }
+
 
 @end

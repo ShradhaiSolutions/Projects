@@ -9,6 +9,7 @@ pod 'SVProgressHUD', '~> 1.0'
 pod 'ReactiveCocoa', '~> 2.2.3'
 #pod 'libextobjc', '~> 0.3'
 #pod 'AFNetworking-ReactiveCocoa', '~> 0.0.2'
+pod 'UIAlertView-Blocks', '~> 1.0'
 
 target 'PropertySalesTests' do
   link_with 'PropertySalesTests'

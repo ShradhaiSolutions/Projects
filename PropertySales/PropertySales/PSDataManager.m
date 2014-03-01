@@ -58,14 +58,9 @@
     return self;
 }
 
-- (void)fetchData
+- (void)forceDataFetch
 {
     ENTRY_LOG;
-    
-    if([self shouldRefreshTheData] == NO) {
-        LogInfo(@"Data Refresh Interval is not crossed, hence skipping");
-        return;
-    }
     
     NSDate *startTime = [NSDate date];
     
@@ -76,69 +71,82 @@
     
     @weakify(self);
     [[[[[[self fetchPropertyMetaData]
-      flattenMap:^RACStream *(id metaDataDictionary) {
-          LogDebug(@"Property Meta Data is received");
-          LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
-          
-          self.dataFetchProgress = @0.1;
-          
-          return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
-      }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
-          LogDebug(@"Property Sale Data is received");
-          LogVerbose(@"Parsed Metadata: %@", propertiesOfASaleDate);
-          
-          [properties addObjectsFromArray:propertiesOfASaleDate];
-          
-          self.dataFetchProgress = @([self.dataFetchProgress floatValue] + 0.1);
-          
-          //After receiving all the properties information send an empty signal so that the "block" will be executed
-          return [RACSignal empty];
-      }] then:^RACSignal *{
-          @strongify(self);
-          LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", [properties count]);
-          [self logExecutionTime:startTime];
-          
-          self.communicator = nil;
-          
-          PSFileManager *fileManager = [[PSFileManager alloc] init];
-          [fileManager savePropertiesToFile:properties];
-          
-          self.locationParser = [[PSLocationParser alloc] init];
-          self.locationParser.properties = properties;
-          
-          return [self.locationParser parseAddressesToCoordinates];
-      }] then:^RACSignal *{
-          LogInfo(@"Addresses are parsed to Coordinates successfully");
-          [self logExecutionTime:startTime];
-          
-          self.dataFetchProgress = @0.8;
-          
-          PSFileManager *fileManager = [[PSFileManager alloc] init];
-          [fileManager saveAddressToGeocodeMappingDictionaryToFile:self.locationParser.addressToGeocodeMappingDictionary];
-          
-          PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
-          
-          return [dataImporter importPropertyData:properties withAddressLookData:self.locationParser.addressToGeocodeMappingDictionary];
-      }] subscribeNext:^(id x) {
-          LogVerbose(@"Next Value: %@", x);
-      } error:^(NSError *error) {
-          LogError(@"Error While execution: %@", error);
-          
-          self.dataFetchProgress = @1.0;
-          
-          [self logExecutionTime:startTime];
-      } completed:^{
-          properties = nil;
-          self.locationParser = nil;
+         flattenMap:^RACStream *(id metaDataDictionary) {
+             LogDebug(@"Property Meta Data is received");
+             LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
+             
+             self.dataFetchProgress = @0.1;
+             
+             return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
+         }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
+             LogDebug(@"Property Sale Data is received");
+             LogVerbose(@"Parsed Metadata: %@", propertiesOfASaleDate);
+             
+             [properties addObjectsFromArray:propertiesOfASaleDate];
+             
+             self.dataFetchProgress = @([self.dataFetchProgress floatValue] + 0.1);
+             
+             //After receiving all the properties information send an empty signal so that the "block" will be executed
+             return [RACSignal empty];
+         }] then:^RACSignal *{
+             @strongify(self);
+             LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", [properties count]);
+             [self logExecutionTime:startTime];
+             
+             self.communicator = nil;
+             
+             PSFileManager *fileManager = [[PSFileManager alloc] init];
+             [fileManager savePropertiesToFile:properties];
+             
+             self.locationParser = [[PSLocationParser alloc] init];
+             self.locationParser.properties = properties;
+             
+             return [self.locationParser parseAddressesToCoordinates];
+         }] then:^RACSignal *{
+             LogInfo(@"Addresses are parsed to Coordinates successfully");
+             [self logExecutionTime:startTime];
+             
+             self.dataFetchProgress = @0.8;
+             
+             PSFileManager *fileManager = [[PSFileManager alloc] init];
+             [fileManager saveAddressToGeocodeMappingDictionaryToFile:self.locationParser.addressToGeocodeMappingDictionary];
+             
+             PSDataImporter *dataImporter = [[PSDataImporter alloc] init];
+             
+             return [dataImporter importPropertyData:properties withAddressLookData:self.locationParser.addressToGeocodeMappingDictionary];
+         }] subscribeNext:^(id x) {
+             LogVerbose(@"Next Value: %@", x);
+         } error:^(NSError *error) {
+             LogError(@"Error While execution: %@", error);
+             
+             self.dataFetchProgress = @1.0;
+             
+             [self logExecutionTime:startTime];
+         } completed:^{
+             properties = nil;
+             self.locationParser = nil;
+             
+             [[PSApplicationContext sharedInstance] saveSuccessfulDataFetchTimestamp];
+             
+             self.dataFetchProgress = @1.0;
+             
+             [self logExecutionTime:startTime];
+             [self loadPropertiesFromCoreDataOnMainThread];
+             LogInfo(@"Remote Data Import is Completed!!!");
+         }];
+    
+    EXIT_LOG;
+}
 
-          [[PSApplicationContext sharedInstance] saveSuccessfulDataFetchTimestamp];
-
-          self.dataFetchProgress = @1.0;
-          
-          [self logExecutionTime:startTime];
-          [self loadPropertiesFromCoreDataOnMainThread];
-          LogInfo(@"Remote Data Import is Completed!!!");
-      }];
+- (void)fetchData
+{
+    ENTRY_LOG;
+    
+    if([self shouldRefreshTheData]) {
+        [self forceDataFetch];
+    } else {
+        LogInfo(@"Data Refresh Interval is not crossed, hence skipping");
+    }
     
     EXIT_LOG;
 }

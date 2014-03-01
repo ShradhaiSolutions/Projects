@@ -117,7 +117,12 @@
     
     //Todo: make this configurable
     //Fetch the properties for only first five sale dates
-    [paramsDictionary setObject:[[saleDates copy] subarrayWithRange:NSMakeRange(0, 5)] forKey:@"SaleDatesArray"];
+    if([saleDates count] > 5) {
+        [paramsDictionary setObject:[[saleDates copy] subarrayWithRange:NSMakeRange(0, 5)] forKey:@"SaleDatesArray"];
+    } else {
+        [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
+    }
+
     
     EXIT_LOG;
 }
