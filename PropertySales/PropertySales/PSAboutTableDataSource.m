@@ -13,6 +13,7 @@
 #import "UIColor+Theme.h"
 #import "RIButtonItem.h"
 #import "UIAlertView+Blocks.h"
+#import "PSAboutRefreshPolicyCell.h"
 
 @interface PSAboutTableDataSource ()
 
@@ -101,16 +102,20 @@
                 break;
         }
     } else if(indexPath.section == 1) {
-        cell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier forIndexPath:indexPath];
         switch (indexPath.row) {
             case 0:
+                cell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier forIndexPath:indexPath];
+
                 cell.textLabel.text = @"Last Successful Refresh";
                 self.lastSuccessfulDataSyncLabel = cell.detailTextLabel;
                 [self displayLastSuccessfulDataSyncTimestamp];
                 break;
             case 1:
-                cell.textLabel.text = @"Data Refresh Policy";
-                cell.detailTextLabel.text = @"4 hours";
+                cell = [tableView dequeueReusableCellWithIdentifier:@"AboutRefreshPolicyCellIdentifier" forIndexPath:indexPath];
+                
+                self.stepper = ((PSAboutRefreshPolicyCell *) cell).stepper;
+                self.stepper.value = ([[PSApplicationContext sharedInstance] refreshIntervalInSeconds])/(1 * 60 *60);
+                [((PSAboutRefreshPolicyCell *) cell) displayRefreshPolicyValue];
                 
                 break;
             default:

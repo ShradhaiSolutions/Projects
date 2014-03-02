@@ -18,6 +18,7 @@
 - (NSDate *)lastSuccessfulDataFetchTimestamp;
 - (void)saveSuccessfulDataFetchTimestamp;
 - (NSUInteger)refreshIntervalInSeconds;
+- (void)updateRefreshInterval:(NSNumber *)intervalInSeconds;
 
 - (NSDictionary *)appKeys;
 

@@ -46,6 +46,7 @@
 		8A38027818C2B0520055041F /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027618C2B0520055041F /* AddressToGeocodeMapping.plist */; };
 		8A38027918C2B0520055041F /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027718C2B0520055041F /* PropertiesArray.plist */; };
 		8A38027B18C2C32C0055041F /* Application-Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027A18C2C32C0055041F /* Application-Keys.plist */; };
+		8A38027E18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A38027D18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m */; };
 		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
 		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
@@ -149,6 +150,8 @@
 		8A38027618C2B0520055041F /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
 		8A38027718C2B0520055041F /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8A38027A18C2C32C0055041F /* Application-Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Keys.plist"; sourceTree = "<group>"; };
+		8A38027C18C2EC3F0055041F /* PSAboutRefreshPolicyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAboutRefreshPolicyCell.h; sourceTree = "<group>"; };
+		8A38027D18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAboutRefreshPolicyCell.m; sourceTree = "<group>"; };
 		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
 		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
 		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 				8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */,
 				8A2A3D5A18B84B6100078596 /* PSGoogleMapsManager.h */,
 				8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */,
+				8A38027C18C2EC3F0055041F /* PSAboutRefreshPolicyCell.h */,
+				8A38027D18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 				8A2965B618ADD29E00AA330C /* PSFileManager.m in Sources */,
 				8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */,
 				8ADD4B00189DA3AC00F1C54B /* PSAppDelegate.m in Sources */,
+				8A38027E18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m in Sources */,
 				8A37453918A7DC080012E8A2 /* PSDataImporter.m in Sources */,
 				8A37454918A7F69C0012E8A2 /* PSPropertiesMapViewController.m in Sources */,
 				8A1215BB18BFF03C00468925 /* PSAboutViewController.m in Sources */,

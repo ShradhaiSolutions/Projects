@@ -10,6 +10,7 @@
 #import "PSAboutTableDataSource.h"
 #import "PSDataManager.h"
 #import "UIColor+Theme.h"
+#import "PSApplicationContext.h"
 
 @interface PSAboutViewController ()
 
@@ -66,6 +67,13 @@
      }];
     
     EXIT_LOG;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    int numberOfHours = self.dataSource.stepper.value;
+    
+    [[PSApplicationContext sharedInstance] updateRefreshInterval:@(numberOfHours * 60 * 60)];
 }
 
 - (void)didReceiveMemoryWarning
