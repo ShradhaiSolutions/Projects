@@ -55,9 +55,24 @@ double kDataFetchSuccess = 1.0;
         
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateFormat:@"MM/dd/yyyy"];
-        _dataFetchProgress = @1.0;
+        _dataFetchProgress = @(kDataFetchSuccess);
     }
     return self;
+}
+
+- (void)fetchData
+{
+    ENTRY_LOG;
+    
+    if([self shouldRefreshTheData]
+       && (([self.dataFetchProgress doubleValue] == kDataFetchSuccess)
+           || ([self.dataFetchProgress doubleValue] == kDataFetchFailure))) {
+           [self forceDataFetch];
+       } else {
+           LogInfo(@"Data Refresh Interval is not crossed, hence skipping");
+       }
+    
+    EXIT_LOG;
 }
 
 - (void)forceDataFetch
@@ -137,19 +152,6 @@ double kDataFetchSuccess = 1.0;
              [self loadPropertiesFromCoreDataOnMainThread];
              LogInfo(@"Remote Data Import is Completed!!!");
          }];
-    
-    EXIT_LOG;
-}
-
-- (void)fetchData
-{
-    ENTRY_LOG;
-    
-    if([self shouldRefreshTheData]) {
-        [self forceDataFetch];
-    } else {
-        LogInfo(@"Data Refresh Interval is not crossed, hence skipping");
-    }
     
     EXIT_LOG;
 }

@@ -16,6 +16,7 @@
 
 #import "PSTestViewController.h"
 #import "PSApplicationContext.h"
+#import "PSDataManager.h"
 
 static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
 
@@ -88,6 +89,9 @@ static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    //To refresh the data
+    [[PSDataManager sharedInstance] fetchData];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
