@@ -10,6 +10,7 @@
 
 static NSString * const kLastSuccessfulDataFetch = @"lastSuccessfulDataFetch";
 static NSString * const kDataRefreshInterval = @"dataRefreshInterval";
+static NSString * const kApplicationKeysPlistName = @"Application-Keys";
 
 @interface PSApplicationContext ()
 
@@ -83,6 +84,17 @@ static NSString * const kDataRefreshInterval = @"dataRefreshInterval";
 {
     [self.userDefaults setObject:intervalInSeconds forKey:kDataRefreshInterval];
     [self.userDefaults synchronize];
+}
+
+#pragma mark - API Keys
+- (NSDictionary *)appKeys
+{
+    NSDictionary *infoDictionary = [NSDictionary dictionaryWithContentsOfFile:
+                                            [[NSBundle mainBundle]
+                                             pathForResource:kApplicationKeysPlistName
+                                             ofType:@"plist"]];
+
+    return infoDictionary;
 }
 
 @end

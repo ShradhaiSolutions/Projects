@@ -49,3 +49,5 @@ static int ddLogLevel = LOG_LEVEL_ERROR;
 #define LogDetails(frmt, ...) DDLogInfo(@"%s: " frmt, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 
 #endif
+
+#endif

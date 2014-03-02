@@ -45,6 +45,7 @@
 		8A37455618A858620012E8A2 /* PSPropertyListTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A37455418A858620012E8A2 /* PSPropertyListTableDataSource.m */; };
 		8A38027818C2B0520055041F /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027618C2B0520055041F /* AddressToGeocodeMapping.plist */; };
 		8A38027918C2B0520055041F /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027718C2B0520055041F /* PropertiesArray.plist */; };
+		8A38027B18C2C32C0055041F /* Application-Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027A18C2C32C0055041F /* Application-Keys.plist */; };
 		8A4B2EF0189E04C8005AEADF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */; };
 		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
@@ -148,6 +149,7 @@
 		8A37455418A858620012E8A2 /* PSPropertyListTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyListTableDataSource.m; sourceTree = "<group>"; };
 		8A38027618C2B0520055041F /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
 		8A38027718C2B0520055041F /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
+		8A38027A18C2C32C0055041F /* Application-Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Keys.plist"; sourceTree = "<group>"; };
 		8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
 		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				8ADD4AFB189DA3AC00F1C54B /* main.m */,
 				8AFAD2A5189DE455007457B8 /* PSLogging.h */,
 				8ADD4AFD189DA3AC00F1C54B /* PropertySales-Prefix.pch */,
+				8A38027A18C2C32C0055041F /* Application-Keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				8A38027818C2B0520055041F /* AddressToGeocodeMapping.plist in Resources */,
 				8A37453C18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */,
 				8ADD4AFA189DA3AC00F1C54B /* InfoPlist.strings in Resources */,
+				8A38027B18C2C32C0055041F /* Application-Keys.plist in Resources */,
 				8ADD4B02189DA3AC00F1C54B /* Images.xcassets in Resources */,
 				8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */,
 				8A38027918C2B0520055041F /* PropertiesArray.plist in Resources */,

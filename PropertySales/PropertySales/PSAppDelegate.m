@@ -12,8 +12,12 @@
 #import "DDTTYLogger.h"
 
 #import <Crashlytics/Crashlytics.h>
+#import <CrashlyticsLumberjack/CrashlyticsLogger.h>
 
 #import "PSTestViewController.h"
+#import "PSApplicationContext.h"
+
+static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
 
 @implementation PSAppDelegate
 
@@ -30,7 +34,7 @@
     //DDLogger must be configured before setting the rootViewController
     [self setupLoggerFramework];
     
-    [Crashlytics startWithAPIKey:@"fae00db142eb503989a6c199d8a844b24463151f"];
+    [Crashlytics startWithAPIKey:[[[PSApplicationContext sharedInstance] appKeys] objectForKey:kCrashlyticsAPIKey]];
 
     //Set the RootViewController after integrating all the frameworks
 //    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PSTestStoryboard"
@@ -46,6 +50,9 @@
     //CocoaLumberjack Log framework integration
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    //Crashlytics Logger
+    [DDLog addLogger:[CrashlyticsLogger sharedInstance]];
     
     // And we also enable colors
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];

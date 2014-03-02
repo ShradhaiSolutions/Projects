@@ -15,11 +15,8 @@
 #import "AddressLookup.h"
 
 #import "PSDataImporter.h"
-
 #import "PSDataManager.h"
-
 #import "PSFileManager.h"
-
 #import "PSLocationParser.h"
 
 
@@ -85,7 +82,7 @@
 //    [self testChainingInDependentOperationsWithErrors];
     
     LogDetails(@"Details");
-    [self testRACSignals];
+//    [self testRACSignals];
     
 }
 
@@ -758,18 +755,18 @@
 - (IBAction)crashMe:(id)sender {
     //    [[Crashlytics sharedInstance] crash];
     
-    DDLogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
-    DDLogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
-    DDLogInfo(@"%s Info ", __PRETTY_FUNCTION__);
-    DDLogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
-    DDLogError(@"%s Error ", __PRETTY_FUNCTION__);
+    LogVerbose(@"%s Verbose ", __PRETTY_FUNCTION__);
+    LogDebug(@"%s Debug ", __PRETTY_FUNCTION__);
+    LogInfo(@"%s Info ", __PRETTY_FUNCTION__);
+    LogWarn(@"%s Warn ", __PRETTY_FUNCTION__);
+    LogError(@"%s Error ", __PRETTY_FUNCTION__);
     
-//    NSString *string = nil;
-//    
-//    NSDictionary *diction = @{@"key":@"value",
-//                              @"key1":string};
-//    
-//    NSLog(@"DICTIONARY: %@", diction);
+    NSString *string = nil;
+    
+    NSDictionary *diction = @{@"key":@"value",
+                              @"key1":string};
+    
+    NSLog(@"DICTIONARY: %@", diction);
     
     //    int *x = NULL; *x = 42;
 }
