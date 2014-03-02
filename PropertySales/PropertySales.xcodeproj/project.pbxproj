@@ -46,7 +46,6 @@
 		8A38027818C2B0520055041F /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027618C2B0520055041F /* AddressToGeocodeMapping.plist */; };
 		8A38027918C2B0520055041F /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027718C2B0520055041F /* PropertiesArray.plist */; };
 		8A38027B18C2C32C0055041F /* Application-Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A38027A18C2C32C0055041F /* Application-Keys.plist */; };
-		8A4B2EF0189E04C8005AEADF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */; };
 		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
 		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
@@ -150,7 +149,6 @@
 		8A38027618C2B0520055041F /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
 		8A38027718C2B0520055041F /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8A38027A18C2C32C0055041F /* Application-Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Keys.plist"; sourceTree = "<group>"; };
-		8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
 		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
 		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				8A0349F218A1B2B200963A2F /* MapKit.framework in Frameworks */,
 				8A0349F018A1B28500963A2F /* AddressBook.framework in Frameworks */,
 				8ADD4AF2189DA3AC00F1C54B /* CoreGraphics.framework in Frameworks */,
-				8A4B2EF0189E04C8005AEADF /* Crashlytics.framework in Frameworks */,
 				8ADD4AF4189DA3AC00F1C54B /* UIKit.framework in Frameworks */,
 				8ADD4AF0189DA3AC00F1C54B /* Foundation.framework in Frameworks */,
 				7EA81D9150D64BB9A3A04909 /* libPods.a in Frameworks */,
@@ -418,7 +415,6 @@
 			children = (
 				8A0349F118A1B2B200963A2F /* MapKit.framework */,
 				8A0349EF18A1B28500963A2F /* AddressBook.framework */,
-				8A4B2EEF189E04C8005AEADF /* Crashlytics.framework */,
 				8ADD4AEF189DA3AC00F1C54B /* Foundation.framework */,
 				8ADD4AF1189DA3AC00F1C54B /* CoreGraphics.framework */,
 				8ADD4AF3189DA3AC00F1C54B /* UIKit.framework */,
@@ -656,7 +652,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run fae00db142eb503989a6c199d8a844b24463151f";
+			shellScript = "./Pods/CrashlyticsFramework/Crashlytics.framework/run fae00db142eb503989a6c199d8a844b24463151f";
 		};
 		9D1F1A8F389C4FA3BD26B35E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

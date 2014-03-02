@@ -54,10 +54,10 @@ static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
     //Crashlytics Logger
     [DDLog addLogger:[CrashlyticsLogger sharedInstance]];
     
+#ifdef DEBUG
     // And we also enable colors
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     
-#ifdef DEBUG
     UIColor *gray = [UIColor darkGrayColor];
     UIColor *blue = [UIColor colorWithRed:(32/255.0) green:(32/255.0) blue:(192/255.0) alpha:1.0];
     UIColor *green = [UIColor colorWithRed:(32/255.0) green:(192/255.0) blue:(32/255.0) alpha:1.0];
