@@ -12,8 +12,13 @@
 #import "DDTTYLogger.h"
 
 #import <Crashlytics/Crashlytics.h>
+#import <CrashlyticsLumberjack/CrashlyticsLogger.h>
 
 #import "PSTestViewController.h"
+#import "PSApplicationContext.h"
+#import "PSDataManager.h"
+
+static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
 
 @implementation PSAppDelegate
 
@@ -30,7 +35,7 @@
     //DDLogger must be configured before setting the rootViewController
     [self setupLoggerFramework];
     
-    [Crashlytics startWithAPIKey:@"fae00db142eb503989a6c199d8a844b24463151f"];
+    [Crashlytics startWithAPIKey:[[[PSApplicationContext sharedInstance] appKeys] objectForKey:kCrashlyticsAPIKey]];
 
     //Set the RootViewController after integrating all the frameworks
 //    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PSTestStoryboard"
@@ -47,10 +52,13 @@
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
+    //Crashlytics Logger
+    [DDLog addLogger:[CrashlyticsLogger sharedInstance]];
+    
+#ifdef DEBUG
     // And we also enable colors
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     
-#ifdef DEBUG
     UIColor *gray = [UIColor darkGrayColor];
     UIColor *blue = [UIColor colorWithRed:(32/255.0) green:(32/255.0) blue:(192/255.0) alpha:1.0];
     UIColor *green = [UIColor colorWithRed:(32/255.0) green:(192/255.0) blue:(32/255.0) alpha:1.0];
@@ -81,6 +89,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    //To refresh the data
+    [[PSDataManager sharedInstance] fetchData];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

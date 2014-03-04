@@ -8,14 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+extern double kDataFetchFailure;
+extern double kDataFetchSuccess;
+
 @interface PSDataManager : NSObject
 
 @property (strong, nonatomic) NSArray *properties;
+@property (strong, nonatomic) NSNumber *dataFetchProgress;
 
-- (void)fetchData;
-
++ (instancetype)sharedInstance;
+    
 - (NSArray *)properiesForSale;
 - (NSArray *)getSaleDates;
 - (NSArray *)getSaleDatesStrings;
+
+- (void)fetchData;
+- (void)forceDataFetch;
 
 @end

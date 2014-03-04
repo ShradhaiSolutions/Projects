@@ -4,1518 +4,6 @@
 <array>
 	<dict>
 		<key>Address</key>
-		<string>1159 CORONADO AVE</string>
-		<key>Appraisal</key>
-		<string>$69,000</string>
-		<key>AttyName</key>
-		<string>LUPER NEIDENTHAL &amp; LOGAN</string>
-		<key>AttyPhone</key>
-		<string>614-221-7663</string>
-		<key>CaseNO</key>
-		<string>A1203917</string>
-		<key>MinBid</key>
-		<string>$46,000</string>
-		<key>Name</key>
-		<string>BOWLING, CHASTITY</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>4/10/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>378 THREE RIVERS PKWY</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A0910641</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>BYESS, HOWARD</string>
-		<key>Plaintiff</key>
-		<string>DEUTSCHE BANK</string>
-		<key>SaleDate</key>
-		<string>4/10/2014</string>
-		<key>Township</key>
-		<string>ADDYSTON</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>796 NORTHLAND BLVD</string>
-		<key>Appraisal</key>
-		<string>$117,000</string>
-		<key>AttyName</key>
-		<string>LUPER NEIDENTHAL &amp; LOGAN</string>
-		<key>AttyPhone</key>
-		<string>614-221-7663</string>
-		<key>CaseNO</key>
-		<string>A1207848</string>
-		<key>MinBid</key>
-		<string>$78,000</string>
-		<key>Name</key>
-		<string>JACQUELINE BELL EXEC OF ESTATE OF LOUIS GARDNER, .</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>4/10/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1471 BLUE ORCHARD DR</string>
-		<key>Appraisal</key>
-		<string>$78,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A0907936</string>
-		<key>MinBid</key>
-		<string>$52,000</string>
-		<key>Name</key>
-		<string>ADDIS, BRIAN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>ANDERSON TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>303 PRINCEWOOD CT</string>
-		<key>Appraisal</key>
-		<string>$84,000</string>
-		<key>AttyName</key>
-		<string>GERNER &amp; KEARNS</string>
-		<key>AttyPhone</key>
-		<string>241-7722</string>
-		<key>CaseNO</key>
-		<string>A1205955</string>
-		<key>MinBid</key>
-		<string>$56,000</string>
-		<key>Name</key>
-		<string>BALL, RONALD</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>SPRINGDALE</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2623 PIPPIN CT</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>LAURITO &amp; LAURITO</string>
-		<key>AttyPhone</key>
-		<string>937-743-4878</string>
-		<key>CaseNO</key>
-		<string>A1200437</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>BERING, JULIE</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1050 RUTLEDGE AVE</string>
-		<key>Appraisal</key>
-		<string>$87,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1304254</string>
-		<key>MinBid</key>
-		<string>$58,000</string>
-		<key>Name</key>
-		<string>BOATWRIGHT, CHRISTINE</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10040 DALY RD</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1205147</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>BROOKS, DEBBIE</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2469 CLOVERCREST DR</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1203948</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>BRUNCK, LINDA</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10637 TOULON DR</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1304086</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>BYRD, JOHNNY</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3035 PENROSE PL</string>
-		<key>Appraisal</key>
-		<string>$63,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1204650</string>
-		<key>MinBid</key>
-		<string>$42,000</string>
-		<key>Name</key>
-		<string>ECKNER, HEATHER</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>8436 FONTAINEBLEAU CT</string>
-		<key>Appraisal</key>
-		<string>$297,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1100043</string>
-		<key>MinBid</key>
-		<string>$198,000</string>
-		<key>Name</key>
-		<string>ELDRIDGE, JAMES</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NY MELLON</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>MIAMI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7821 BUCKEYE CRESCENT</string>
-		<key>Appraisal</key>
-		<string>$129,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1304202</string>
-		<key>MinBid</key>
-		<string>$86,000</string>
-		<key>Name</key>
-		<string>ELLSWORTH, PATRICIA</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>MADEIRA</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1411 SUTTON AVE</string>
-		<key>Appraisal</key>
-		<string>$90,000</string>
-		<key>AttyName</key>
-		<string>ROBBINS KELLY PATTERSON &amp;</string>
-		<key>AttyPhone</key>
-		<string>721-3330</string>
-		<key>CaseNO</key>
-		<string>A1302329</string>
-		<key>MinBid</key>
-		<string>$60,000</string>
-		<key>Name</key>
-		<string>GERRARD, RALPH</string>
-		<key>Plaintiff</key>
-		<string>ROBERT A. GOERING, TREASURER HAMILTON CO. OHIO</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>ANDERSON TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>8938 APPLEWOOD DR</string>
-		<key>Appraisal</key>
-		<string>$96,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1208506</string>
-		<key>MinBid</key>
-		<string>$64,000</string>
-		<key>Name</key>
-		<string>NUXOLL, DANNY</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>SYCAMORE TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6727 SALEM RD</string>
-		<key>Appraisal</key>
-		<string>$69,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1105971</string>
-		<key>MinBid</key>
-		<string>$46,000</string>
-		<key>Name</key>
-		<string>RIEHLE, JOHN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>ANDERSON TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4421 TOWER AVE</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1304673</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>VAN PROYEN, JANET</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>4/3/2014</string>
-		<key>Township</key>
-		<string>ST BERNARD</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>12066 HITCHCOCK DR</string>
-		<key>Appraisal</key>
-		<string>$75,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302481</string>
-		<key>MinBid</key>
-		<string>$50,000</string>
-		<key>Name</key>
-		<string>ALLOWAY DECEASED, MORGAN</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3428 HARVEY AVE</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302482</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>ANDRONE, SEMION</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1318 KOENIG ST</string>
-		<key>Appraisal</key>
-		<string>$57,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1301194</string>
-		<key>MinBid</key>
-		<string>$38,000</string>
-		<key>Name</key>
-		<string>ART, JOANN</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>READING</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5404 WHITMORE DR</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1305983</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>ASKINS JR, MICHAEL</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>DELHI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10298 OWL CREEK RD</string>
-		<key>Appraisal</key>
-		<string>$51,000</string>
-		<key>AttyName</key>
-		<string>REISENFELD &amp; ASSOC</string>
-		<key>AttyPhone</key>
-		<string>322-7000</string>
-		<key>CaseNO</key>
-		<string>A1004376</string>
-		<key>MinBid</key>
-		<string>$34,000</string>
-		<key>Name</key>
-		<string>BARGER, NATE</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NY MELLON</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2925 AQUADALE LN</string>
-		<key>Appraisal</key>
-		<string>$39,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1203231</string>
-		<key>MinBid</key>
-		<string>$26,000</string>
-		<key>Name</key>
-		<string>BOBO, ALLEN</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3024 STRATFORD CT #119</string>
-		<key>Appraisal</key>
-		<string>$93,000</string>
-		<key>AttyName</key>
-		<string>FINNEY STAGNARO SABA</string>
-		<key>AttyPhone</key>
-		<string>533-2705</string>
-		<key>CaseNO</key>
-		<string>A1302882</string>
-		<key>MinBid</key>
-		<string>$62,000</string>
-		<key>Name</key>
-		<string>BOWMAN, ELSA</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>LOVELAND</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3431 HOLLYGLEN CT</string>
-		<key>Appraisal</key>
-		<string>$39,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1203552</string>
-		<key>MinBid</key>
-		<string>$26,000</string>
-		<key>Name</key>
-		<string>BREWER, BEVERLY</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NY MELLON</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1242 THURNRIDGE DR</string>
-		<key>Appraisal</key>
-		<string>$111,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1307019</string>
-		<key>MinBid</key>
-		<string>$74,000</string>
-		<key>Name</key>
-		<string>BREWSTER, JAMES</string>
-		<key>Plaintiff</key>
-		<string>HUNTINGTON NATIONAL BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>READING</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1135-37 GREGORY ST</string>
-		<key>Appraisal</key>
-		<string>$150,000</string>
-		<key>AttyName</key>
-		<string>MEYER &amp; KERSCHNER</string>
-		<key>AttyPhone</key>
-		<string>419-447-5132</string>
-		<key>CaseNO</key>
-		<string>A1300999</string>
-		<key>MinBid</key>
-		<string>$100,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>SUTTON BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5030 ROLLMAN ESTATES DR</string>
-		<key>Appraisal</key>
-		<string>$390,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1107598</string>
-		<key>MinBid</key>
-		<string>$260,000</string>
-		<key>Name</key>
-		<string>CHEEK, RONALD</string>
-		<key>Plaintiff</key>
-		<string>ROBERT A. GOERING, TREASURER HAMILTON CO. OHIO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>AMBERLEY VILLAGE</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>9640 CROSLEY FARM DR UNIT #57</string>
-		<key>Appraisal</key>
-		<string>$45,000</string>
-		<key>AttyName</key>
-		<string>FINNEY STAGNARO SABA</string>
-		<key>AttyPhone</key>
-		<string>533-2705</string>
-		<key>CaseNO</key>
-		<string>A1303385</string>
-		<key>MinBid</key>
-		<string>$30,000</string>
-		<key>Name</key>
-		<string>DEARINGER, ANGELA</string>
-		<key>Plaintiff</key>
-		<string>CROSLEY FARM AT THE VILLAGES OF NORTHGATE CONDOMINIUM UNIT OWNERS ASSOC</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4501 ELLMAN AVE</string>
-		<key>Appraisal</key>
-		<string>$90,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1303445</string>
-		<key>MinBid</key>
-		<string>$60,000</string>
-		<key>Name</key>
-		<string>EDGINGTON, JOSEPH</string>
-		<key>Plaintiff</key>
-		<string>EVERBANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>BLUE ASH</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>12152 THIRD ST</string>
-		<key>Appraisal</key>
-		<string>$48,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1301606</string>
-		<key>MinBid</key>
-		<string>$32,000</string>
-		<key>Name</key>
-		<string>EDWARDS, JASON</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>SYCAMORE TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1184 CORONADO AVE</string>
-		<key>Appraisal</key>
-		<string>$69,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1302929</string>
-		<key>MinBid</key>
-		<string>$46,000</string>
-		<key>Name</key>
-		<string>ELLIS, GARY</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3771 HUBBLE RD</string>
-		<key>Appraisal</key>
-		<string>$75,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1206998</string>
-		<key>MinBid</key>
-		<string>$50,000</string>
-		<key>Name</key>
-		<string>ERNST, KEVIN</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6238 ASHTABULA ST</string>
-		<key>Appraisal</key>
-		<string>$54,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1205315</string>
-		<key>MinBid</key>
-		<string>$36,000</string>
-		<key>Name</key>
-		<string>FORSCHBACH II, STEPHEN</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6604 HEARNE RD UNIT 52</string>
-		<key>Appraisal</key>
-		<string>$30,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1305992</string>
-		<key>MinBid</key>
-		<string>$20,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6504 MERWIN AVE</string>
-		<key>Appraisal</key>
-		<string>$69,000</string>
-		<key>AttyName</key>
-		<string>REISENFELD &amp; ASSOC</string>
-		<key>AttyPhone</key>
-		<string>322-7000</string>
-		<key>CaseNO</key>
-		<string>A1101501</string>
-		<key>MinBid</key>
-		<string>$46,000</string>
-		<key>Name</key>
-		<string>GRAVER, MARGARET</string>
-		<key>Plaintiff</key>
-		<string>REVERSE MORTGAGE SOLUTIONS INC</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4608 CARTER AVE</string>
-		<key>Appraisal</key>
-		<string>$78,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1305699</string>
-		<key>MinBid</key>
-		<string>$52,000</string>
-		<key>Name</key>
-		<string>GRAY, KAREN</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>NORWOOD</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11981 KENN RD</string>
-		<key>Appraisal</key>
-		<string>$99,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1305412</string>
-		<key>MinBid</key>
-		<string>$66,000</string>
-		<key>Name</key>
-		<string>GRAY SR, CARLOS</string>
-		<key>Plaintiff</key>
-		<string>CENTRAL MORTGAGE CO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>SPRINGDALE</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>9461 HADDINGTON CT #233</string>
-		<key>Appraisal</key>
-		<string>$48,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1300337</string>
-		<key>MinBid</key>
-		<string>$32,000</string>
-		<key>Name</key>
-		<string>HAMBERG, JUDITH</string>
-		<key>Plaintiff</key>
-		<string>FEDERAL NATIONAL MORTGAGE ASSOC.</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5415 STEWART AVE</string>
-		<key>Appraisal</key>
-		<string>$84,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1300590</string>
-		<key>MinBid</key>
-		<string>$56,000</string>
-		<key>Name</key>
-		<string>HARRIS, EURIE</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5227 PARMALEE PL</string>
-		<key>Appraisal</key>
-		<string>$108,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1301982</string>
-		<key>MinBid</key>
-		<string>$72,000</string>
-		<key>Name</key>
-		<string>HESS, CHARLES</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>NORWOOD</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6747 SAMPSON LN</string>
-		<key>Appraisal</key>
-		<string>$87,000</string>
-		<key>AttyName</key>
-		<string>STATMAN HARRIS EYRICH</string>
-		<key>AttyPhone</key>
-		<string>621-2666</string>
-		<key>CaseNO</key>
-		<string>A1301724</string>
-		<key>MinBid</key>
-		<string>$58,000</string>
-		<key>Name</key>
-		<string>HILL, ROBIN</string>
-		<key>Plaintiff</key>
-		<string>GENERAL ELECTRIC CREDIT UNION</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>SILVERTON</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2219 HARRISON AVE</string>
-		<key>Appraisal</key>
-		<string>$30,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1300356</string>
-		<key>MinBid</key>
-		<string>$20,000</string>
-		<key>Name</key>
-		<string>KOUYATE, MASSIRE</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1050 ACADEMY AVE</string>
-		<key>Appraisal</key>
-		<string>$57,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1200345</string>
-		<key>MinBid</key>
-		<string>$38,000</string>
-		<key>Name</key>
-		<string>KROMMER, SHAWN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10264 OCTOBER DR</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>GAMMELL ROSS &amp; HOSHER</string>
-		<key>AttyPhone</key>
-		<string>937-433-4090</string>
-		<key>CaseNO</key>
-		<string>A1302590</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>LANGENBAHN, ARTHUR</string>
-		<key>Plaintiff</key>
-		<string>WOODS COVE II</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11140 LEBANON AVE</string>
-		<key>Appraisal</key>
-		<string>$78,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1206331</string>
-		<key>MinBid</key>
-		<string>$52,000</string>
-		<key>Name</key>
-		<string>MCCONNELL, TERRY</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>BLUE ASH</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1418 RIVERSIDE DR</string>
-		<key>Appraisal</key>
-		<string>$480,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1307319</string>
-		<key>MinBid</key>
-		<string>$320,000</string>
-		<key>Name</key>
-		<string>MENNINGER, RICHARD</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3454 JESSUP RD</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303564</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>MONTAG, ROBERT</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2431 MONTANA AVE #3</string>
-		<key>Appraisal</key>
-		<string>$30,000</string>
-		<key>AttyName</key>
-		<string>CUNI FERGUSON &amp; LEVAY</string>
-		<key>AttyPhone</key>
-		<string>771-6768</string>
-		<key>CaseNO</key>
-		<string>A1300263</string>
-		<key>MinBid</key>
-		<string>$20,000</string>
-		<key>Name</key>
-		<string>MUMIN, MALIKAH</string>
-		<key>Plaintiff</key>
-		<string>SUR LA MONT CONDOMINIUMS UNIT OWNERS ASOC I</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1230 THURNRIDGE DR</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1105688</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>MUSSEL WHITE, SHERRIE</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>READING</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11419 FRAMINGHAM DR</string>
-		<key>Appraisal</key>
-		<string>$84,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1201556</string>
-		<key>MinBid</key>
-		<string>$56,000</string>
-		<key>Name</key>
-		<string>NARED, TIMOTHY</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6063 TRIDALE CT</string>
-		<key>Appraisal</key>
-		<string>$90,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1204410</string>
-		<key>MinBid</key>
-		<string>$60,000</string>
-		<key>Name</key>
-		<string>NEWTON, AMY</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>451 WARNER ST</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303579</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>ORTMAN, JOHN</string>
-		<key>Plaintiff</key>
-		<string>WILMINGTON TRUST CO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5675 KIRBY RD</string>
-		<key>Appraisal</key>
-		<string>$78,000</string>
-		<key>AttyName</key>
-		<string>REISENFELD &amp; ASSOC</string>
-		<key>AttyPhone</key>
-		<string>322-7000</string>
-		<key>CaseNO</key>
-		<string>A1300975</string>
-		<key>MinBid</key>
-		<string>$52,000</string>
-		<key>Name</key>
-		<string>RIEDLINGER, ROBERT</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>57 MULBERRY ST</string>
-		<key>Appraisal</key>
-		<string>$99,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1203151</string>
-		<key>MinBid</key>
-		<string>$66,000</string>
-		<key>Name</key>
-		<string>ROSE, SHANNON</string>
-		<key>Plaintiff</key>
-		<string>HSBC</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6222 COLERIDGE AVE</string>
-		<key>Appraisal</key>
-		<string>$24,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1207202</string>
-		<key>MinBid</key>
-		<string>$16,000</string>
-		<key>Name</key>
-		<string>SCOTT, MESHELL</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7320 TICONDEROGA CT</string>
-		<key>Appraisal</key>
-		<string>$108,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1203338</string>
-		<key>MinBid</key>
-		<string>$72,000</string>
-		<key>Name</key>
-		<string>SEDGWICK, SHARON</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NY MELLON</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>ANDERSON TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4561 LAMONT AVE</string>
-		<key>Appraisal</key>
-		<string>$78,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1301508</string>
-		<key>MinBid</key>
-		<string>$52,000</string>
-		<key>Name</key>
-		<string>STEVENS, TROY</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>SYCAMORE TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11286 HANOVER RD</string>
-		<key>Appraisal</key>
-		<string>$99,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302965</string>
-		<key>MinBid</key>
-		<string>$66,000</string>
-		<key>Name</key>
-		<string>SUMLER, DOUGLAS</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11917 WINSTON CIR</string>
-		<key>Appraisal</key>
-		<string>$150,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1205338</string>
-		<key>MinBid</key>
-		<string>$100,000</string>
-		<key>Name</key>
-		<string>THOMAS, ROSETTA</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NY MELLON</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3850 ENTERPRISE CIR</string>
-		<key>Appraisal</key>
-		<string>$90,000</string>
-		<key>AttyName</key>
-		<string>FINNEY STAGNARO SABA</string>
-		<key>AttyPhone</key>
-		<string>533-2705</string>
-		<key>CaseNO</key>
-		<string>A1303805</string>
-		<key>MinBid</key>
-		<string>$60,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>THE YACHT CLUB</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3192 RIVER RD</string>
-		<key>Appraisal</key>
-		<string>$30,000</string>
-		<key>AttyName</key>
-		<string>LAURITO &amp; LAURITO</string>
-		<key>AttyPhone</key>
-		<string>937-743-4878</string>
-		<key>CaseNO</key>
-		<string>A1206841</string>
-		<key>MinBid</key>
-		<string>$20,000</string>
-		<key>Name</key>
-		<string>WEAVER, KIPLIN</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7108 MAYFIELD AVE</string>
-		<key>Appraisal</key>
-		<string>$120,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1205430</string>
-		<key>MinBid</key>
-		<string>$80,000</string>
-		<key>Name</key>
-		<string>WINTER, ERIC</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>2/27/2014</string>
-		<key>Township</key>
-		<string>MADEIRA</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
 		<string>4719 RIDGEWAY AVE</string>
 		<key>Appraisal</key>
 		<string>$60,000</string>
@@ -2446,2532 +934,6 @@ NATIONSTAR MORTGAGE LLC</string>
 		<string>THIRD FEDERAL</string>
 		<key>SaleDate</key>
 		<string>3/13/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1358 SECTION RD</string>
-		<key>Appraisal</key>
-		<string>$57,000</string>
-		<key>AttyName</key>
-		<string>STEPHEN MILES</string>
-		<key>AttyPhone</key>
-		<string>937-461-1900</string>
-		<key>CaseNO</key>
-		<string>A1300850</string>
-		<key>MinBid</key>
-		<string>$38,000</string>
-		<key>Name</key>
-		<string>ADAMS, JEANNINE</string>
-		<key>Plaintiff</key>
-		<string>CHACO CREDIT UNION</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1529 JACKS WAY DR</string>
-		<key>Appraisal</key>
-		<string>$570,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303798</string>
-		<key>MinBid</key>
-		<string>$380,000</string>
-		<key>Name</key>
-		<string>AHERN, J</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2784 MONTANA AVE</string>
-		<key>Appraisal</key>
-		<string>$45,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1304373</string>
-		<key>MinBid</key>
-		<string>$30,000</string>
-		<key>Name</key>
-		<string>AHERN, KATHLEEN</string>
-		<key>Plaintiff</key>
-		<string>CENLAR FSB</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6637 LEBANON ST</string>
-		<key>Appraisal</key>
-		<string>$27,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1304477</string>
-		<key>MinBid</key>
-		<string>$18,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>CADENCE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5505 DAVIES PL</string>
-		<key>Appraisal</key>
-		<string>$57,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303884</string>
-		<key>MinBid</key>
-		<string>$38,000</string>
-		<key>Name</key>
-		<string>BAKER, ELLIOT</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10253 JASMINE CT</string>
-		<key>Appraisal</key>
-		<string>$54,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1205102</string>
-		<key>MinBid</key>
-		<string>$36,000</string>
-		<key>Name</key>
-		<string>BARNETT, CARLIS</string>
-		<key>Plaintiff</key>
-		<string>DEUTSCHE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>WOODLAWN</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3024 STRATFORD CT</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302882</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>BOWMAN, ELSA</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>LOVELAND</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5425 BLUEBIRD LN</string>
-		<key>Appraisal</key>
-		<string>$87,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1303073</string>
-		<key>MinBid</key>
-		<string>$58,000</string>
-		<key>Name</key>
-		<string>BROWN, DAVID</string>
-		<key>Plaintiff</key>
-		<string>HOUSEHOLD REALTY CORP</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3900 ROSE HILL AVE #201A</string>
-		<key>Appraisal</key>
-		<string>$54,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1305932</string>
-		<key>MinBid</key>
-		<string>$36,000</string>
-		<key>Name</key>
-		<string>BUCKHALTER JR, JOE</string>
-		<key>Plaintiff</key>
-		<string>P H H MORTGAGE CORP</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4016 GLENWAY AVE</string>
-		<key>Appraisal</key>
-		<string>$84,000</string>
-		<key>AttyName</key>
-		<string>ROBBINS KELLY PATTERSON &amp;</string>
-		<key>AttyPhone</key>
-		<string>721-3330</string>
-		<key>CaseNO</key>
-		<string>A1302863</string>
-		<key>MinBid</key>
-		<string>$56,000</string>
-		<key>Name</key>
-		<string>COLE, TIMOTHY</string>
-		<key>Plaintiff</key>
-		<string>MERCHANTS BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3432 LYLEBURN PL</string>
-		<key>Appraisal</key>
-		<string>$201,000</string>
-		<key>AttyName</key>
-		<string>STATMAN HARRIS EYRICH</string>
-		<key>AttyPhone</key>
-		<string>621-2666</string>
-		<key>CaseNO</key>
-		<string>A1207377</string>
-		<key>MinBid</key>
-		<string>$134,000</string>
-		<key>Name</key>
-		<string>COOK, CHRISTINE</string>
-		<key>Plaintiff</key>
-		<string>US ALLIANCE FEDERAL CREDIT UNION</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>12087 5TH AVE</string>
-		<key>Appraisal</key>
-		<string>$48,000</string>
-		<key>AttyName</key>
-		<string>SHAPIRO VAN ESS PHILLIPS</string>
-		<key>AttyPhone</key>
-		<string>396-8100</string>
-		<key>CaseNO</key>
-		<string>A1202792</string>
-		<key>MinBid</key>
-		<string>$32,000</string>
-		<key>Name</key>
-		<string>CRISP, JEREMY</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SYCAMORE TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3672 CRESTNOLL DR</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302699</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>DORNBUSCH, FERD</string>
-		<key>Plaintiff</key>
-		<string>NATIONSTAR MORTGAGE LLC
-NATIONSTAR MORTGAGE LLC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>9457 RIDGEMOOR AVE</string>
-		<key>Appraisal</key>
-		<string>$54,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1207527</string>
-		<key>MinBid</key>
-		<string>$36,000</string>
-		<key>Name</key>
-		<string>DUNN SR, JOHN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5803 HAWTHORNE AVE</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302915</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>DUTTON, SHERI</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>FAIRFAX</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3322 EPWORTH AVE</string>
-		<key>Appraisal</key>
-		<string>$48,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1305731</string>
-		<key>MinBid</key>
-		<string>$32,000</string>
-		<key>Name</key>
-		<string>EBERLY, THERESA</string>
-		<key>Plaintiff</key>
-		<string>THIRD FEDERAL</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>9467 WILLOWGATE DR</string>
-		<key>Appraisal</key>
-		<string>$24,000</string>
-		<key>AttyName</key>
-		<string>RICHARDS &amp; CO</string>
-		<key>AttyPhone</key>
-		<string>871-8755</string>
-		<key>CaseNO</key>
-		<string>A1300857</string>
-		<key>MinBid</key>
-		<string>$16,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1605 ROSS AVE</string>
-		<key>Appraisal</key>
-		<string>$33,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1307473</string>
-		<key>MinBid</key>
-		<string>$22,000</string>
-		<key>Name</key>
-		<string>FICHLIE, PAUL</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5862 CHAPEL HILL DR</string>
-		<key>Appraisal</key>
-		<string>$150,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1203190</string>
-		<key>MinBid</key>
-		<string>$100,000</string>
-		<key>Name</key>
-		<string>FINLEY, MICHAEL</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>DELHI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>102 KNOLL WIND DR</string>
-		<key>Appraisal</key>
-		<string>$144,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1307174</string>
-		<key>MinBid</key>
-		<string>$96,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>FEDERAL NATIONAL MORTGAGE ASSOC.</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>LOVELAND</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5001 KELLOG AVE SLIP #C2A</string>
-		<key>Appraisal</key>
-		<string>$900</string>
-		<key>AttyName</key>
-		<string>RICHARDS &amp; CO</string>
-		<key>AttyPhone</key>
-		<string>871-8755</string>
-		<key>CaseNO</key>
-		<string>A1303044</string>
-		<key>MinBid</key>
-		<string>$600</string>
-		<key>Name</key>
-		<string>FREEMAN, CLARENCE</string>
-		<key>Plaintiff</key>
-		<string>HARBOUR TOWNE YACHT CLUB CONDOMINIUM UNIT OWNERS ASSOC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3743 DARWIN AVE</string>
-		<key>Appraisal</key>
-		<string>$69,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1306519</string>
-		<key>MinBid</key>
-		<string>$46,000</string>
-		<key>Name</key>
-		<string>GAFFNEY, WILLIAM</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CHEVIOT</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1042 PINEHOLLOW LN</string>
-		<key>Appraisal</key>
-		<string>$90,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1302886</string>
-		<key>MinBid</key>
-		<string>$60,000</string>
-		<key>Name</key>
-		<string>GALIOTO, JOHN</string>
-		<key>Plaintiff</key>
-		<string>EVERBANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4693 ALPINE AVE</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1204166</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>GARCIA, ROBELIO</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>BLUE ASH</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>35-37 GAHL TER</string>
-		<key>Appraisal</key>
-		<string>$132,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1303910</string>
-		<key>MinBid</key>
-		<string>$88,000</string>
-		<key>Name</key>
-		<string>GEISER, LARRY</string>
-		<key>Plaintiff</key>
-		<string>ADVANTAGE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>READING</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10240 PENDERY DR</string>
-		<key>Appraisal</key>
-		<string>$480,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1004648</string>
-		<key>MinBid</key>
-		<string>$320,000</string>
-		<key>Name</key>
-		<string>GINDELE, JAMIE</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NY MELLON</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>MONTGOMERY</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11709 HOLLINGSWORTH WAY</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1306854</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>GLOYESKE, WILLIAM</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1666 TREMONT ST</string>
-		<key>Appraisal</key>
-		<string>$21,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303408</string>
-		<key>MinBid</key>
-		<string>$14,000</string>
-		<key>Name</key>
-		<string>GRAU, STEVEN</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3422 ANACONDA DR</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1302101</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>GRAY, TAMIEKA</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1309 PADDOCK HILLS AVE</string>
-		<key>Appraisal</key>
-		<string>$36,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1303278</string>
-		<key>MinBid</key>
-		<string>$24,000</string>
-		<key>Name</key>
-		<string>GREENE, CHRISTIE</string>
-		<key>Plaintiff</key>
-		<string>OCWEN LOAN SERVICING</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4230 CREEK RD</string>
-		<key>Appraisal</key>
-		<string>$120,000</string>
-		<key>AttyName</key>
-		<string>SHAPIRO VAN ESS PHILLIPS</string>
-		<key>AttyPhone</key>
-		<string>396-8100</string>
-		<key>CaseNO</key>
-		<string>A1207462</string>
-		<key>MinBid</key>
-		<string>$80,000</string>
-		<key>Name</key>
-		<string>GRIFFITHS, GAIL</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>BLUE ASH</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3580 LOCUST LN</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A0904089</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>HARNIST, AIMEE</string>
-		<key>Plaintiff</key>
-		<string>COUNTRYWIDE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1528 NATHANIEL DR</string>
-		<key>Appraisal</key>
-		<string>$102,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1304111</string>
-		<key>MinBid</key>
-		<string>$68,000</string>
-		<key>Name</key>
-		<string>HARRIS, BRIAN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1723 ASPENHILL DR</string>
-		<key>Appraisal</key>
-		<string>$123,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1303520</string>
-		<key>MinBid</key>
-		<string>$82,000</string>
-		<key>Name</key>
-		<string>HEARLDSON, RAELENE</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3663 CHALLEN ST</string>
-		<key>Appraisal</key>
-		<string>$51,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1305892</string>
-		<key>MinBid</key>
-		<string>$34,000</string>
-		<key>Name</key>
-		<string>HENSON, BRITTIANY</string>
-		<key>Plaintiff</key>
-		<string>LIBERTY SAVING BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5734 SECTION AVE</string>
-		<key>Appraisal</key>
-		<string>$42,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1300617</string>
-		<key>MinBid</key>
-		<string>$28,000</string>
-		<key>Name</key>
-		<string>HERRING, GREGORY</string>
-		<key>Plaintiff</key>
-		<string>MIDFIRST BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>NORWOOD</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1036 DEL MONTE PL</string>
-		<key>Appraisal</key>
-		<string>$36,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1209768</string>
-		<key>MinBid</key>
-		<string>$24,000</string>
-		<key>Name</key>
-		<string>HIGGINS, ANNETTE</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4153 PITTS ST</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1305997</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>HOEKSTRA, KIM</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3983 WARWICK AVE</string>
-		<key>Appraisal</key>
-		<string>$75,000</string>
-		<key>AttyName</key>
-		<string>SHAPIRO VAN ESS PHILLIPS</string>
-		<key>AttyPhone</key>
-		<string>396-8100</string>
-		<key>CaseNO</key>
-		<string>A1300601</string>
-		<key>MinBid</key>
-		<string>$50,000</string>
-		<key>Name</key>
-		<string>HOOD, TIFFANIE</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1038 GILSEY AVE</string>
-		<key>Appraisal</key>
-		<string>$39,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1306120</string>
-		<key>MinBid</key>
-		<string>$26,000</string>
-		<key>Name</key>
-		<string>HORN, ANNIE</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4191 RACE RD</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1209836</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>HOUSTON, TERRENCE</string>
-		<key>Plaintiff</key>
-		<string>DEUTSCHE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4004 MANTELL AVE</string>
-		<key>Appraisal</key>
-		<string>$117,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1304639</string>
-		<key>MinBid</key>
-		<string>$78,000</string>
-		<key>Name</key>
-		<string>JACKSON, LAWRENCE</string>
-		<key>Plaintiff</key>
-		<string>FLAGSTAR BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SYCAMORE TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2640 MELROSE AVE</string>
-		<key>Appraisal</key>
-		<string>$21,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1300663</string>
-		<key>MinBid</key>
-		<string>$14,000</string>
-		<key>Name</key>
-		<string>JOHNSON, ROBERT</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6751 PARKLAND AVE</string>
-		<key>Appraisal</key>
-		<string>$51,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1105907</string>
-		<key>MinBid</key>
-		<string>$34,000</string>
-		<key>Name</key>
-		<string>JONES, MARIAN</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6305 SIMPSON AVE</string>
-		<key>Appraisal</key>
-		<string>$27,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1303274</string>
-		<key>MinBid</key>
-		<string>$18,000</string>
-		<key>Name</key>
-		<string>JONES JR, LEE</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2458 TIVERTON LN</string>
-		<key>Appraisal</key>
-		<string>$78,000</string>
-		<key>AttyName</key>
-		<string>WELTMAN WEINBERG &amp; REIS</string>
-		<key>AttyPhone</key>
-		<string>800-910-4249</string>
-		<key>CaseNO</key>
-		<string>A1302238</string>
-		<key>MinBid</key>
-		<string>$52,000</string>
-		<key>Name</key>
-		<string>KAEHLER, DIANE</string>
-		<key>Plaintiff</key>
-		<string>NATIONSTAR MORTGAGE LLC
-NATIONSTAR MORTGAGE LLC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5146 FOLEY RD</string>
-		<key>Appraisal</key>
-		<string>$75,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1303480</string>
-		<key>MinBid</key>
-		<string>$50,000</string>
-		<key>Name</key>
-		<string>KLOEPFER, LAWRENCE</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>DELHI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3241 HERITAGE SQUARE DR #72</string>
-		<key>Appraisal</key>
-		<string>$45,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A0611129</string>
-		<key>MinBid</key>
-		<string>$30,000</string>
-		<key>Name</key>
-		<string>KNIGHT, JULIANN</string>
-		<key>Plaintiff</key>
-		<string>COUNTRYWIDE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2882 W TOWER AVE</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1305926</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>LAWSON, TERRY</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>8742 WELLER RD</string>
-		<key>Appraisal</key>
-		<string>$240,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A0708840</string>
-		<key>MinBid</key>
-		<string>$160,000</string>
-		<key>Name</key>
-		<string>LAZAE, MARK</string>
-		<key>Plaintiff</key>
-		<string>COUNTRYWIDE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>MONTGOMERY</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2516 IMPALA DR</string>
-		<key>Appraisal</key>
-		<string>$57,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1209327</string>
-		<key>MinBid</key>
-		<string>$38,000</string>
-		<key>Name</key>
-		<string>LIVERING, RONALD</string>
-		<key>Plaintiff</key>
-		<string>GMAC MORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>10771 LEMARIE DR</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>ALLBERY CROSS FOGARTY</string>
-		<key>AttyPhone</key>
-		<string>937-228-5912</string>
-		<key>CaseNO</key>
-		<string>A1206534</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>LONG, MARILYN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SHARONVILLE</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1163 HOLLYWOOD AVE</string>
-		<key>Appraisal</key>
-		<string>$102,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1306283</string>
-		<key>MinBid</key>
-		<string>$68,000</string>
-		<key>Name</key>
-		<string>LONG, SHAWN</string>
-		<key>Plaintiff</key>
-		<string>NATIONSTAR MORTGAGE LLC
-NATIONSTAR MORTGAGE LLC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7313 OSCEOLA DR</string>
-		<key>Appraisal</key>
-		<string>$45,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1306299</string>
-		<key>MinBid</key>
-		<string>$30,000</string>
-		<key>Name</key>
-		<string>LONG, JAMES</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>MADEIRA</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1169 MARKLEY RD</string>
-		<key>Appraisal</key>
-		<string>$99,000</string>
-		<key>AttyName</key>
-		<string>LAURITO &amp; LAURITO</string>
-		<key>AttyPhone</key>
-		<string>937-743-4878</string>
-		<key>CaseNO</key>
-		<string>A1301369</string>
-		<key>MinBid</key>
-		<string>$66,000</string>
-		<key>Name</key>
-		<string>MABERRY, CHRISTOPHER</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>ANDERSON TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1040 LOCKMAN AVE</string>
-		<key>Appraisal</key>
-		<string>$45,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1203134</string>
-		<key>MinBid</key>
-		<string>$30,000</string>
-		<key>Name</key>
-		<string>MARCUM, TERRI</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4611 CARTER AVE</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1205864</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>MARTIN, ABRAHAM</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>NORWOOD</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5597 BISCAYNE AVE</string>
-		<key>Appraisal</key>
-		<string>$75,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1306439</string>
-		<key>MinBid</key>
-		<string>$50,000</string>
-		<key>Name</key>
-		<string>MCVEY, JOSHUA</string>
-		<key>Plaintiff</key>
-		<string>MIDFIRST BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2494 DUNAWAY CT</string>
-		<key>Appraisal</key>
-		<string>$48,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1305775</string>
-		<key>MinBid</key>
-		<string>$32,000</string>
-		<key>Name</key>
-		<string>MENGISTU, MIHERET</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6040 JESSUP RD</string>
-		<key>Appraisal</key>
-		<string>$114,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A0605161</string>
-		<key>MinBid</key>
-		<string>$76,000</string>
-		<key>Name</key>
-		<string>MERS, MIKE</string>
-		<key>Plaintiff</key>
-		<string>ABN AMRO MORTGAGE GROUP</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6839 KENBYRNE CT</string>
-		<key>Appraisal</key>
-		<string>$84,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1303006</string>
-		<key>MinBid</key>
-		<string>$56,000</string>
-		<key>Name</key>
-		<string>MEYER, CRAIG</string>
-		<key>Plaintiff</key>
-		<string>FEDERAL HOME LOAN  MORTGAGE CORP</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3508 BEVIS AVE</string>
-		<key>Appraisal</key>
-		<string>$42,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1305516</string>
-		<key>MinBid</key>
-		<string>$28,000</string>
-		<key>Name</key>
-		<string>MILLER JR, OTIS</string>
-		<key>Plaintiff</key>
-		<string>NATIONSTAR MORTGAGE LLC
-NATIONSTAR MORTGAGE LLC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1031 W KEMPER RD</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1104243</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>MOSLEY, JUDY</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>521 W MCMILLAN AVE</string>
-		<key>Appraisal</key>
-		<string>$156,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1307556</string>
-		<key>MinBid</key>
-		<string>$104,000</string>
-		<key>Name</key>
-		<string>NETTLER, JOHN</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>466 FEATHERWOOD DR</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>SHAPIRO VAN ESS PHILLIPS</string>
-		<key>AttyPhone</key>
-		<string>396-8100</string>
-		<key>CaseNO</key>
-		<string>A1300201</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>NEUKAM, WILLIAM</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>HARRISON</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5557 TWINLAKES CT #10</string>
-		<key>Appraisal</key>
-		<string>$102,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1203361</string>
-		<key>MinBid</key>
-		<string>$68,000</string>
-		<key>Name</key>
-		<string>OBRIEN, JASON</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4619 GLENSHADE AVE</string>
-		<key>Appraisal</key>
-		<string>$45,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1306238</string>
-		<key>MinBid</key>
-		<string>$30,000</string>
-		<key>Name</key>
-		<string>PELLE, DIANE</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1873 BEECH GROVE DR</string>
-		<key>Appraisal</key>
-		<string>$252,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1304433</string>
-		<key>MinBid</key>
-		<string>$168,000</string>
-		<key>Name</key>
-		<string>PFANDER, ROBERT</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>GREEN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>177 WYOMING WOODS LN</string>
-		<key>Appraisal</key>
-		<string>$570,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302122</string>
-		<key>MinBid</key>
-		<string>$380,000</string>
-		<key>Name</key>
-		<string>PIOCOS, ELIZABETH</string>
-		<key>Plaintiff</key>
-		<string>HUDSON CITY SAVINGS BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>WYOMING</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>5054 ORANGE LAWN DR</string>
-		<key>Appraisal</key>
-		<string>$108,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302814</string>
-		<key>MinBid</key>
-		<string>$72,000</string>
-		<key>Name</key>
-		<string>POLING, GARY</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>DELHI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1175 TOLUCA CT</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1302225</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>PORTER, KIMBERLY</string>
-		<key>Plaintiff</key>
-		<string>J P MORGAN CHASE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3376 HAGEMAN AVE</string>
-		<key>Appraisal</key>
-		<string>$39,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302486</string>
-		<key>MinBid</key>
-		<string>$26,000</string>
-		<key>Name</key>
-		<string>REED, PATRICIA</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SHARONVILLE</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>8210 LITTLE HARBOR DR</string>
-		<key>Appraisal</key>
-		<string>$303,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1303769</string>
-		<key>MinBid</key>
-		<string>$202,000</string>
-		<key>Name</key>
-		<string>RITTER, STEVEN</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>ANDERSON TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3025 HYANNIS DR</string>
-		<key>Appraisal</key>
-		<string>$42,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1300879</string>
-		<key>MinBid</key>
-		<string>$28,000</string>
-		<key>Name</key>
-		<string>RITZE, HELEN</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4233 FERGUS ST</string>
-		<key>Appraisal</key>
-		<string>$27,000</string>
-		<key>AttyName</key>
-		<string>DENNIS REIMER</string>
-		<key>AttyPhone</key>
-		<string>440-600-5500</string>
-		<key>CaseNO</key>
-		<string>A1206986</string>
-		<key>MinBid</key>
-		<string>$18,000</string>
-		<key>Name</key>
-		<string>SANTOS-MADDOX, ANA</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7955 MORGAN RD</string>
-		<key>Appraisal</key>
-		<string>$54,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1207157</string>
-		<key>MinBid</key>
-		<string>$36,000</string>
-		<key>Name</key>
-		<string>SCHAIBLE, GUY</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>WHITEWATER TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4234 CENTURY LN</string>
-		<key>Appraisal</key>
-		<string>$69,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1306133</string>
-		<key>MinBid</key>
-		<string>$46,000</string>
-		<key>Name</key>
-		<string>SCHWAB, WILLIAM</string>
-		<key>Plaintiff</key>
-		<string>THIRD FEDERAL</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1735 DE ARMAND AVE (VAC LAND)</string>
-		<key>Appraisal</key>
-		<string>$12,000</string>
-		<key>AttyName</key>
-		<string>SHAPIRO VAN ESS PHILLIPS</string>
-		<key>AttyPhone</key>
-		<string>396-8100</string>
-		<key>CaseNO</key>
-		<string>A1207018</string>
-		<key>MinBid</key>
-		<string>$8,000</string>
-		<key>Name</key>
-		<string>SPARROW, LATONYA</string>
-		<key>Plaintiff</key>
-		<string>NATIONSTAR MORTGAGE LLC
-NATIONSTAR MORTGAGE LLC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>N C H</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6276 COLLEGEVUE PL</string>
-		<key>Appraisal</key>
-		<string>$63,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A0804721</string>
-		<key>MinBid</key>
-		<string>$42,000</string>
-		<key>Name</key>
-		<string>SPIKES, CYNTHIA</string>
-		<key>Plaintiff</key>
-		<string>E M C MORTGAGE CORP</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4322 VIRGINIA AVE</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302815</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>STOKES, KEVIN</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7226 THOMAS DR</string>
-		<key>Appraisal</key>
-		<string>$132,000</string>
-		<key>AttyName</key>
-		<string>JOHN CLUNK</string>
-		<key>AttyPhone</key>
-		<string>330-436-0300</string>
-		<key>CaseNO</key>
-		<string>A1205767</string>
-		<key>MinBid</key>
-		<string>$88,000</string>
-		<key>Name</key>
-		<string>STORK, CAROLINE</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>MADEIRA</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11132 LEBANON AVE</string>
-		<key>Appraisal</key>
-		<string>$81,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1307495</string>
-		<key>MinBid</key>
-		<string>$54,000</string>
-		<key>Name</key>
-		<string>SURYADEVARA, SREENIVASA</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>BLUE ASH</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>8715 MONSANTO DR</string>
-		<key>Appraisal</key>
-		<string>$66,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1306101</string>
-		<key>MinBid</key>
-		<string>$44,000</string>
-		<key>Name</key>
-		<string>TAYLOR, LAKISHA</string>
-		<key>Plaintiff</key>
-		<string>THIRD FEDERAL</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>504 DELTA AVE</string>
-		<key>Appraisal</key>
-		<string>$57,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1302223</string>
-		<key>MinBid</key>
-		<string>$38,000</string>
-		<key>Name</key>
-		<string>TEDRICK, MARVIN</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>221 THISBE AVE</string>
-		<key>Appraisal</key>
-		<string>$48,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303939</string>
-		<key>MinBid</key>
-		<string>$32,000</string>
-		<key>Name</key>
-		<string>THOMPSON, DONNA</string>
-		<key>Plaintiff</key>
-		<string>PNC BANK N A</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2786 QUEEN CITY AVE</string>
-		<key>Appraisal</key>
-		<string>$54,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1304292</string>
-		<key>MinBid</key>
-		<string>$36,000</string>
-		<key>Name</key>
-		<string>THOMPSON, ROLANDO</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3041 OBERVATORY AVE</string>
-		<key>Appraisal</key>
-		<string>$1,200,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1303533</string>
-		<key>MinBid</key>
-		<string>$800,000</string>
-		<key>Name</key>
-		<string>THURNER, CANDACE</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1756 PULTE ST</string>
-		<key>Appraisal</key>
-		<string>$18,000</string>
-		<key>AttyName</key>
-		<string>CARLISLE  McNELLIE RINI</string>
-		<key>AttyPhone</key>
-		<string>216-360-7200</string>
-		<key>CaseNO</key>
-		<string>A1306531</string>
-		<key>MinBid</key>
-		<string>$12,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>GENERATION MORTGAGE CO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>120 CARRINGTON PL #103</string>
-		<key>Appraisal</key>
-		<string>$63,000</string>
-		<key>AttyName</key>
-		<string>CUNI FERGUSON &amp; LEVAY</string>
-		<key>AttyPhone</key>
-		<string>771-6768</string>
-		<key>CaseNO</key>
-		<string>A1301796</string>
-		<key>MinBid</key>
-		<string>$42,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>CARRINGTON CROSSING CONDOMINIUM OWNERS ASSOC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>LOVELAND</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6053 KENNEDY AVE</string>
-		<key>Appraisal</key>
-		<string>$36,000</string>
-		<key>AttyName</key>
-		<string>GERNER &amp; KEARNS</string>
-		<key>AttyPhone</key>
-		<string>241-7722</string>
-		<key>CaseNO</key>
-		<string>A1305623</string>
-		<key>MinBid</key>
-		<string>$24,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1189 INNER CIRCLE DR</string>
-		<key>Appraisal</key>
-		<string>$123,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1209009</string>
-		<key>MinBid</key>
-		<string>$82,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>MIDFIRST BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>6451 MEIS AVE</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>LAURITO &amp; LAURITO</string>
-		<key>AttyPhone</key>
-		<string>937-743-4878</string>
-		<key>CaseNO</key>
-		<string>A1203477</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>UPSHAW, VALERIE</string>
-		<key>Plaintiff</key>
-		<string>BANK OF AMERICA</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>N C H</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1959 KINNEY AVE</string>
-		<key>Appraisal</key>
-		<string>$39,000</string>
-		<key>AttyName</key>
-		<string>WELTMAN WEINBERG &amp; REIS</string>
-		<key>AttyPhone</key>
-		<string>800-910-4249</string>
-		<key>CaseNO</key>
-		<string>A1305113</string>
-		<key>MinBid</key>
-		<string>$26,000</string>
-		<key>Name</key>
-		<string>VAN EATON, JAMES</string>
-		<key>Plaintiff</key>
-		<string>NATIONSTAR MORTGAGE LLC
-NATIONSTAR MORTGAGE LLC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>318 BROOKFOREST DR</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>GRIFFIN FLETHCHER &amp; HERNDON</string>
-		<key>AttyPhone</key>
-		<string>421-1313</string>
-		<key>CaseNO</key>
-		<string>A1305542</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string> </string>
-		<key>Plaintiff</key>
-		<string>CINCINNATI FEDERAL SAVINGS &amp; LOAN</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>DELHI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>7220 CREEKVIEW DR #5</string>
-		<key>Appraisal</key>
-		<string>$36,000</string>
-		<key>AttyName</key>
-		<string>CUNI FERGUSON &amp; LEVAY</string>
-		<key>AttyPhone</key>
-		<string>771-6768</string>
-		<key>CaseNO</key>
-		<string>A1209885</string>
-		<key>MinBid</key>
-		<string>$24,000</string>
-		<key>Name</key>
-		<string>WADDELL, FREDERICK</string>
-		<key>Plaintiff</key>
-		<string>TAYLOR CREEK CONDOMINIUM ASSOCIATION</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4513 BARBARA PL</string>
-		<key>Appraisal</key>
-		<string>$39,000</string>
-		<key>AttyName</key>
-		<string>FELTY &amp; LEMBRIGHT</string>
-		<key>AttyPhone</key>
-		<string>216-588-1500</string>
-		<key>CaseNO</key>
-		<string>A1306696</string>
-		<key>MinBid</key>
-		<string>$26,000</string>
-		<key>Name</key>
-		<string>WALKER, TRACEY</string>
-		<key>Plaintiff</key>
-		<string>FIFTH THIRD MORTGAGE COMPANY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>2729 LEOTA LN</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>ALLBERY CROSS FOGARTY</string>
-		<key>AttyPhone</key>
-		<string>937-228-5912</string>
-		<key>CaseNO</key>
-		<string>A1306861</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>WALKO, JOHN</string>
-		<key>Plaintiff</key>
-		<string>DEUTSCHE BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>COLERAIN TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>1924 TRUITT AVE</string>
-		<key>Appraisal</key>
-		<string>$27,000</string>
-		<key>AttyName</key>
-		<string>LAURITO &amp; LAURITO</string>
-		<key>AttyPhone</key>
-		<string>937-743-4878</string>
-		<key>CaseNO</key>
-		<string>A1206845</string>
-		<key>MinBid</key>
-		<string>$18,000</string>
-		<key>Name</key>
-		<string>WARREN, RONALD</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>8643 MOCKINGBIRD LN</string>
-		<key>Appraisal</key>
-		<string>$60,000</string>
-		<key>AttyName</key>
-		<string>LUPER NEIDENTHAL &amp; LOGAN</string>
-		<key>AttyPhone</key>
-		<string>614-221-7663</string>
-		<key>CaseNO</key>
-		<string>A0806498</string>
-		<key>MinBid</key>
-		<string>$40,000</string>
-		<key>Name</key>
-		<string>WEBSTER, ROBERT</string>
-		<key>Plaintiff</key>
-		<string>BANK OF NEW YORK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SPRINGFIELD TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3812 INDIANVIEW AVE</string>
-		<key>Appraisal</key>
-		<string>$261,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1209648</string>
-		<key>MinBid</key>
-		<string>$174,000</string>
-		<key>Name</key>
-		<string>WEINLAND, MATTHEW</string>
-		<key>Plaintiff</key>
-		<string>WELLS  FARGO</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>MARIEMONT</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11169 MAPLE ST</string>
-		<key>Appraisal</key>
-		<string>$72,000</string>
-		<key>AttyName</key>
-		<string>ADAMS STEPNER WOLTERMAN &amp;</string>
-		<key>AttyPhone</key>
-		<string>216-621-0040</string>
-		<key>CaseNO</key>
-		<string>A1304532</string>
-		<key>MinBid</key>
-		<string>$48,000</string>
-		<key>Name</key>
-		<string>WERNER, DAVID</string>
-		<key>Plaintiff</key>
-		<string>BANK OF KENTUCKY</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>SHARONVILLE</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>4438 MT ALVERNO RD</string>
-		<key>Appraisal</key>
-		<string>$93,000</string>
-		<key>AttyName</key>
-		<string>LAURITO &amp; LAURITO</string>
-		<key>AttyPhone</key>
-		<string>937-743-4878</string>
-		<key>CaseNO</key>
-		<string>A1306269</string>
-		<key>MinBid</key>
-		<string>$62,000</string>
-		<key>Name</key>
-		<string>WESTFELT, DENNIS</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>DELHI TWSP</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3223 VINE ST</string>
-		<key>Appraisal</key>
-		<string>$99,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1209683</string>
-		<key>MinBid</key>
-		<string>$66,000</string>
-		<key>Name</key>
-		<string>WILKINS, DWIGHT</string>
-		<key>Plaintiff</key>
-		<string>HSBC</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>CINTI</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>11596 NEW HOPE DR</string>
-		<key>Appraisal</key>
-		<string>$93,000</string>
-		<key>AttyName</key>
-		<string>LERNER SAMPSON ROTHFUSS</string>
-		<key>AttyPhone</key>
-		<string>241-3100</string>
-		<key>CaseNO</key>
-		<string>A1205198</string>
-		<key>MinBid</key>
-		<string>$62,000</string>
-		<key>Name</key>
-		<string>WILLIAMSON, LOGAN</string>
-		<key>Plaintiff</key>
-		<string>U S  BANK</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
-		<key>Township</key>
-		<string>FOREST PARK</string>
-		<key>WD</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Address</key>
-		<string>3303 BEREDITH PL</string>
-		<key>Appraisal</key>
-		<string>$162,000</string>
-		<key>AttyName</key>
-		<string>MANLEY DEAS KOCHALSKI</string>
-		<key>AttyPhone</key>
-		<string>614-220-5611</string>
-		<key>CaseNO</key>
-		<string>A1307223</string>
-		<key>MinBid</key>
-		<string>$108,000</string>
-		<key>Name</key>
-		<string>WILSON, DWAYNE</string>
-		<key>Plaintiff</key>
-		<string>CITIMORTGAGE</string>
-		<key>SaleDate</key>
-		<string>3/20/2014</string>
 		<key>Township</key>
 		<string>CINTI</string>
 		<key>WD</key>
@@ -6054,6 +2016,1254 @@ NATIONSTAR MORTGAGE LLC</string>
 		<string>3/6/2014</string>
 		<key>Township</key>
 		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1471 BLUE ORCHARD DR</string>
+		<key>Appraisal</key>
+		<string>$78,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A0907936</string>
+		<key>MinBid</key>
+		<string>$52,000</string>
+		<key>Name</key>
+		<string>ADDIS, BRIAN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>ANDERSON TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1258 JEREMY CT</string>
+		<key>Appraisal</key>
+		<string>$150,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1204456</string>
+		<key>MinBid</key>
+		<string>$100,000</string>
+		<key>Name</key>
+		<string>ADI, FRANCIS</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>303 PRINCEWOOD CT</string>
+		<key>Appraisal</key>
+		<string>$84,000</string>
+		<key>AttyName</key>
+		<string>GERNER &amp; KEARNS</string>
+		<key>AttyPhone</key>
+		<string>241-7722</string>
+		<key>CaseNO</key>
+		<string>A1205955</string>
+		<key>MinBid</key>
+		<string>$56,000</string>
+		<key>Name</key>
+		<string>BALL, RONALD</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SPRINGDALE</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2623 PIPPIN CT</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1200437</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>BERING, JULIE</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1050 RUTLEDGE AVE</string>
+		<key>Appraisal</key>
+		<string>$87,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304254</string>
+		<key>MinBid</key>
+		<string>$58,000</string>
+		<key>Name</key>
+		<string>BOATWRIGHT, CHRISTINE</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>10040 DALY RD</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1205147</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>BROOKS, DEBBIE</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>12130 REGENCY RUN CT</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1306914</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>BROOKS SR, DAMON</string>
+		<key>Plaintiff</key>
+		<string>EVERBANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2469 CLOVERCREST DR</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1203948</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>BRUNCK, LINDA</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>807 GREENWICH AVE</string>
+		<key>Appraisal</key>
+		<string>$75,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1302513</string>
+		<key>MinBid</key>
+		<string>$50,000</string>
+		<key>Name</key>
+		<string>BRYANT, MICHELLE</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>10637 TOULON DR</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304086</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>BYRD, JOHNNY</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>649 CLEMMER AVE</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1301338</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>CHAMBERS, FLOYD</string>
+		<key>Plaintiff</key>
+		<string>CHAMPION MORTGAGE CO</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1812 SANDCLIFF DR</string>
+		<key>Appraisal</key>
+		<string>$165,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1207954</string>
+		<key>MinBid</key>
+		<string>$110,000</string>
+		<key>Name</key>
+		<string>CONE, JOEL</string>
+		<key>Plaintiff</key>
+		<string>BANK OF NY MELLON</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>ANDERSON TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3923 TREVOR AVE</string>
+		<key>Appraisal</key>
+		<string>$75,000</string>
+		<key>AttyName</key>
+		<string>ALLBERY CROSS FOGARTY</string>
+		<key>AttyPhone</key>
+		<string>937-228-5912</string>
+		<key>CaseNO</key>
+		<string>A1307328</string>
+		<key>MinBid</key>
+		<string>$50,000</string>
+		<key>Name</key>
+		<string>DANGEL, ANTHONY</string>
+		<key>Plaintiff</key>
+		<string>PNC BANK N A</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CHEVIOT</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1508 CLOVERNOLL DR</string>
+		<key>Appraisal</key>
+		<string>$69,000</string>
+		<key>AttyName</key>
+		<string>LUPER NEIDENTHAL &amp; LOGAN</string>
+		<key>AttyPhone</key>
+		<string>614-221-7663</string>
+		<key>CaseNO</key>
+		<string>A1205893</string>
+		<key>MinBid</key>
+		<string>$46,000</string>
+		<key>Name</key>
+		<string>DESEMBLY, CHRIS</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>N C H</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3035 PENROSE PL</string>
+		<key>Appraisal</key>
+		<string>$63,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1204650</string>
+		<key>MinBid</key>
+		<string>$42,000</string>
+		<key>Name</key>
+		<string>ECKNER, HEATHER</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>8436 FONTAINEBLEAU CT</string>
+		<key>Appraisal</key>
+		<string>$297,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1100043</string>
+		<key>MinBid</key>
+		<string>$198,000</string>
+		<key>Name</key>
+		<string>ELDRIDGE, JAMES</string>
+		<key>Plaintiff</key>
+		<string>BANK OF NY MELLON</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>MIAMI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>7821 BUCKEYE CRESCENT</string>
+		<key>Appraisal</key>
+		<string>$129,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304202</string>
+		<key>MinBid</key>
+		<string>$86,000</string>
+		<key>Name</key>
+		<string>ELLSWORTH, PATRICIA</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>MADEIRA</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2631 KIPLING AVE</string>
+		<key>Appraisal</key>
+		<string>$54,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1305946</string>
+		<key>MinBid</key>
+		<string>$36,000</string>
+		<key>Name</key>
+		<string>FRANK, RODNEY</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>844 WINDHAM AVE</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1206991</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>FRAZIER, LYDIA</string>
+		<key>Plaintiff</key>
+		<string>HSBC</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1411 SUTTON AVE</string>
+		<key>Appraisal</key>
+		<string>$90,000</string>
+		<key>AttyName</key>
+		<string>ROBBINS KELLY PATTERSON &amp;</string>
+		<key>AttyPhone</key>
+		<string>721-3330</string>
+		<key>CaseNO</key>
+		<string>A1302329</string>
+		<key>MinBid</key>
+		<string>$60,000</string>
+		<key>Name</key>
+		<string>GERRARD, RALPH</string>
+		<key>Plaintiff</key>
+		<string>ROBERT A. GOERING, TREASURER HAMILTON CO. OHIO</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>ANDERSON TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3966 PARKER PL</string>
+		<key>Appraisal</key>
+		<string>$102,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1306900</string>
+		<key>MinBid</key>
+		<string>$68,000</string>
+		<key>Name</key>
+		<string>GRIFFITH, MARGARET</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>9773 OVERVIEW LN</string>
+		<key>Appraisal</key>
+		<string>$111,000</string>
+		<key>AttyName</key>
+		<string>DEMERS &amp; ADAMS</string>
+		<key>AttyPhone</key>
+		<string>614-939-0930</string>
+		<key>CaseNO</key>
+		<string>A1305044</string>
+		<key>MinBid</key>
+		<string>$74,000</string>
+		<key>Name</key>
+		<string>HARDEN, TIMOTHY</string>
+		<key>Plaintiff</key>
+		<string>BANK OF NY MELLON</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3507 JESSUP RD</string>
+		<key>Appraisal</key>
+		<string>$114,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1209829</string>
+		<key>MinBid</key>
+		<string>$76,000</string>
+		<key>Name</key>
+		<string>JENNINGS, STEFFAN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4629 ASHTREE DR</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>GERNER &amp; KEARNS</string>
+		<key>AttyPhone</key>
+		<string>241-7722</string>
+		<key>CaseNO</key>
+		<string>A1306086</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>JEROME CHANCELLOR AS ADMIN OF ESTATE OF LILLIE C KIMBLE, .</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6609 VINE ST</string>
+		<key>Appraisal</key>
+		<string>$27,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1300480</string>
+		<key>MinBid</key>
+		<string>$18,000</string>
+		<key>Name</key>
+		<string>JORDAN, MARYANN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1326 WAYCROSS RD</string>
+		<key>Appraisal</key>
+		<string>$93,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1301904</string>
+		<key>MinBid</key>
+		<string>$62,000</string>
+		<key>Name</key>
+		<string>KEBEDE, HUDA</string>
+		<key>Plaintiff</key>
+		<string>DEUTSCHE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1011 W KEMPER RD</string>
+		<key>Appraisal</key>
+		<string>$57,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1303834</string>
+		<key>MinBid</key>
+		<string>$38,000</string>
+		<key>Name</key>
+		<string>KENNEDY, JENNIFER</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2110 QUATMAN AVE</string>
+		<key>Appraisal</key>
+		<string>$42,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1200549</string>
+		<key>MinBid</key>
+		<string>$28,000</string>
+		<key>Name</key>
+		<string>KUCHEY, MARY</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>NORWOOD</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3617 SEMLOH AVE</string>
+		<key>Appraisal</key>
+		<string>$105,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1203112</string>
+		<key>MinBid</key>
+		<string>$70,000</string>
+		<key>Name</key>
+		<string>LAMONICA, PATRICIA</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4954 ALVERNO VALLEY CT</string>
+		<key>Appraisal</key>
+		<string>$120,000</string>
+		<key>AttyName</key>
+		<string>ROBBINS KELLY PATTERSON &amp;</string>
+		<key>AttyPhone</key>
+		<string>721-3330</string>
+		<key>CaseNO</key>
+		<string>A1307022</string>
+		<key>MinBid</key>
+		<string>$80,000</string>
+		<key>Name</key>
+		<string>MCGOWAN, ANDREW</string>
+		<key>Plaintiff</key>
+		<string>EAGLE SAVINGS</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>DELHI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>8938 APPLEWOOD DR</string>
+		<key>Appraisal</key>
+		<string>$96,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1208506</string>
+		<key>MinBid</key>
+		<string>$64,000</string>
+		<key>Name</key>
+		<string>NUXOLL, DANNY</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SYCAMORE TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3854 OLIVETTE AVE</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1300137</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>OLIVER, JASON</string>
+		<key>Plaintiff</key>
+		<string>OCWEN LOAN SERVICING</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CHEVIOT</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1793 CREST HILL AVE</string>
+		<key>Appraisal</key>
+		<string>$51,000</string>
+		<key>AttyName</key>
+		<string>ALLBERY CROSS FOGARTY</string>
+		<key>AttyPhone</key>
+		<string>937-228-5912</string>
+		<key>CaseNO</key>
+		<string>A1303674</string>
+		<key>MinBid</key>
+		<string>$34,000</string>
+		<key>Name</key>
+		<string>OLIVER JR, WILLIE</string>
+		<key>Plaintiff</key>
+		<string>PNC BANK N A</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6494 BETTS AVE</string>
+		<key>Appraisal</key>
+		<string>$51,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1304309</string>
+		<key>MinBid</key>
+		<string>$34,000</string>
+		<key>Name</key>
+		<string>PASTOR, RASHAWNA</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>N C H</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5112 RAVENNA ST</string>
+		<key>Appraisal</key>
+		<string>$48,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1304513</string>
+		<key>MinBid</key>
+		<string>$32,000</string>
+		<key>Name</key>
+		<string>PEARSON, TAWONA</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>817 DELTA AVE</string>
+		<key>Appraisal</key>
+		<string>$180,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1301421</string>
+		<key>MinBid</key>
+		<string>$120,000</string>
+		<key>Name</key>
+		<string>RANDALL N ELAM AS TRUSTEE OF THE RANDALL N ELAM TRUST, .</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2509 CORNWALL DR</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1307547</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>REEB, KEITH</string>
+		<key>Plaintiff</key>
+		<string>MIDFIRST BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6727 SALEM RD</string>
+		<key>Appraisal</key>
+		<string>$69,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1105971</string>
+		<key>MinBid</key>
+		<string>$46,000</string>
+		<key>Name</key>
+		<string>RIEHLE, JOHN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>ANDERSON TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>13 WOODSVIEW LN #13</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>REISENFELD &amp; ASSOC</string>
+		<key>AttyPhone</key>
+		<string>322-7000</string>
+		<key>CaseNO</key>
+		<string>A1207736</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>RUSSELL, MITCHELL</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SHARONVILLE</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1624 KELLYWOOD AVE</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304508</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>SANDERS, KRISTAL</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5568 DRY RIDGE RD</string>
+		<key>Appraisal</key>
+		<string>$480,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1302246</string>
+		<key>MinBid</key>
+		<string>$320,000</string>
+		<key>Name</key>
+		<string>SIPES, KERRY</string>
+		<key>Plaintiff</key>
+		<string>JPMC SPECIALTY MORTGAGE</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4220 LOWRY AVE</string>
+		<key>Appraisal</key>
+		<string>$57,000</string>
+		<key>AttyName</key>
+		<string>LUPER NEIDENTHAL &amp; LOGAN</string>
+		<key>AttyPhone</key>
+		<string>614-221-7663</string>
+		<key>CaseNO</key>
+		<string>A1206221</string>
+		<key>MinBid</key>
+		<string>$38,000</string>
+		<key>Name</key>
+		<string>STRANGE, BRENDA</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>NORWOOD</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6140 KENNEDY AVE</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1110497</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>STUART, SEAN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>202 MARION AVE</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A0807013</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>TEEPLE, RICK</string>
+		<key>Plaintiff</key>
+		<string>HSBC</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SYCAMORE TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5405 FAYRIDGE CT</string>
+		<key>Appraisal</key>
+		<string>$69,000</string>
+		<key>AttyName</key>
+		<string>REISENFELD &amp; ASSOC</string>
+		<key>AttyPhone</key>
+		<string>322-7000</string>
+		<key>CaseNO</key>
+		<string>A1303741</string>
+		<key>MinBid</key>
+		<string>$46,000</string>
+		<key>Name</key>
+		<string>TEPE, CHRISTINA</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>11419 LINCOLNSHIRE DR</string>
+		<key>Appraisal</key>
+		<string>$99,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1304537</string>
+		<key>MinBid</key>
+		<string>$66,000</string>
+		<key>Name</key>
+		<string>THOMAS, MICHAEL</string>
+		<key>Plaintiff</key>
+		<string>MIDFIRST BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>144 WESTERN RIDGE DR</string>
+		<key>Appraisal</key>
+		<string>$84,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1106598</string>
+		<key>MinBid</key>
+		<string>$56,000</string>
+		<key>Name</key>
+		<string>TURNER, JAMES</string>
+		<key>Plaintiff</key>
+		<string>DEUTSCHE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>MIAMI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4421 TOWER AVE</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304673</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>VAN PROYEN, JANET</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>ST BERNARD</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1621 OTTE AVE</string>
+		<key>Appraisal</key>
+		<string>$21,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1100495</string>
+		<key>MinBid</key>
+		<string>$14,000</string>
+		<key>Name</key>
+		<string>WATSON, YVONNE</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6017 BRAMBLE AVE</string>
+		<key>Appraisal</key>
+		<string>$75,000</string>
+		<key>AttyName</key>
+		<string>DINSMORE &amp; SHOHL</string>
+		<key>AttyPhone</key>
+		<string>937-912-8910</string>
+		<key>CaseNO</key>
+		<string>A1305498</string>
+		<key>MinBid</key>
+		<string>$50,000</string>
+		<key>Name</key>
+		<string>WATSON, COMER</string>
+		<key>Plaintiff</key>
+		<string>WRIGHT PATT CREDIT UNION INC</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>174 E CREST DR</string>
+		<key>Appraisal</key>
+		<string>$96,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1305732</string>
+		<key>MinBid</key>
+		<string>$64,000</string>
+		<key>Name</key>
+		<string>WATSON, HEATHER</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>SYCAMORE TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1391 KALMAR DR</string>
+		<key>Appraisal</key>
+		<string>$93,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1209951</string>
+		<key>MinBid</key>
+		<string>$62,000</string>
+		<key>Name</key>
+		<string>WHITTLE, RENEA</string>
+		<key>Plaintiff</key>
+		<string>ONEWEST BANK</string>
+		<key>SaleDate</key>
+		<string>4/3/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
 		<key>WD</key>
 		<string></string>
 	</dict>
@@ -7904,6 +5114,2532 @@ NATIONSTAR MORTGAGE LLC</string>
 		<string>3/27/2014</string>
 		<key>Township</key>
 		<string>LINCOLN HGTS</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1358 SECTION RD</string>
+		<key>Appraisal</key>
+		<string>$57,000</string>
+		<key>AttyName</key>
+		<string>STEPHEN MILES</string>
+		<key>AttyPhone</key>
+		<string>937-461-1900</string>
+		<key>CaseNO</key>
+		<string>A1300850</string>
+		<key>MinBid</key>
+		<string>$38,000</string>
+		<key>Name</key>
+		<string>ADAMS, JEANNINE</string>
+		<key>Plaintiff</key>
+		<string>CHACO CREDIT UNION</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1529 JACKS WAY DR</string>
+		<key>Appraisal</key>
+		<string>$570,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1303798</string>
+		<key>MinBid</key>
+		<string>$380,000</string>
+		<key>Name</key>
+		<string>AHERN, J</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2784 MONTANA AVE</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304373</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>AHERN, KATHLEEN</string>
+		<key>Plaintiff</key>
+		<string>CENLAR FSB</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6637 LEBANON ST</string>
+		<key>Appraisal</key>
+		<string>$27,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1304477</string>
+		<key>MinBid</key>
+		<string>$18,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>CADENCE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5505 DAVIES PL</string>
+		<key>Appraisal</key>
+		<string>$57,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1303884</string>
+		<key>MinBid</key>
+		<string>$38,000</string>
+		<key>Name</key>
+		<string>BAKER, ELLIOT</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>10253 JASMINE CT</string>
+		<key>Appraisal</key>
+		<string>$54,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1205102</string>
+		<key>MinBid</key>
+		<string>$36,000</string>
+		<key>Name</key>
+		<string>BARNETT, CARLIS</string>
+		<key>Plaintiff</key>
+		<string>DEUTSCHE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>WOODLAWN</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3024 STRATFORD CT</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302882</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>BOWMAN, ELSA</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>LOVELAND</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5425 BLUEBIRD LN</string>
+		<key>Appraisal</key>
+		<string>$87,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1303073</string>
+		<key>MinBid</key>
+		<string>$58,000</string>
+		<key>Name</key>
+		<string>BROWN, DAVID</string>
+		<key>Plaintiff</key>
+		<string>HOUSEHOLD REALTY CORP</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3900 ROSE HILL AVE #201A</string>
+		<key>Appraisal</key>
+		<string>$54,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1305932</string>
+		<key>MinBid</key>
+		<string>$36,000</string>
+		<key>Name</key>
+		<string>BUCKHALTER JR, JOE</string>
+		<key>Plaintiff</key>
+		<string>P H H MORTGAGE CORP</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4016 GLENWAY AVE</string>
+		<key>Appraisal</key>
+		<string>$84,000</string>
+		<key>AttyName</key>
+		<string>ROBBINS KELLY PATTERSON &amp;</string>
+		<key>AttyPhone</key>
+		<string>721-3330</string>
+		<key>CaseNO</key>
+		<string>A1302863</string>
+		<key>MinBid</key>
+		<string>$56,000</string>
+		<key>Name</key>
+		<string>COLE, TIMOTHY</string>
+		<key>Plaintiff</key>
+		<string>MERCHANTS BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3432 LYLEBURN PL</string>
+		<key>Appraisal</key>
+		<string>$201,000</string>
+		<key>AttyName</key>
+		<string>STATMAN HARRIS EYRICH</string>
+		<key>AttyPhone</key>
+		<string>621-2666</string>
+		<key>CaseNO</key>
+		<string>A1207377</string>
+		<key>MinBid</key>
+		<string>$134,000</string>
+		<key>Name</key>
+		<string>COOK, CHRISTINE</string>
+		<key>Plaintiff</key>
+		<string>US ALLIANCE FEDERAL CREDIT UNION</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>12087 5TH AVE</string>
+		<key>Appraisal</key>
+		<string>$48,000</string>
+		<key>AttyName</key>
+		<string>SHAPIRO VAN ESS PHILLIPS</string>
+		<key>AttyPhone</key>
+		<string>396-8100</string>
+		<key>CaseNO</key>
+		<string>A1202792</string>
+		<key>MinBid</key>
+		<string>$32,000</string>
+		<key>Name</key>
+		<string>CRISP, JEREMY</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SYCAMORE TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3672 CRESTNOLL DR</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302699</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>DORNBUSCH, FERD</string>
+		<key>Plaintiff</key>
+		<string>NATIONSTAR MORTGAGE LLC
+NATIONSTAR MORTGAGE LLC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>9457 RIDGEMOOR AVE</string>
+		<key>Appraisal</key>
+		<string>$54,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1207527</string>
+		<key>MinBid</key>
+		<string>$36,000</string>
+		<key>Name</key>
+		<string>DUNN SR, JOHN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5803 HAWTHORNE AVE</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302915</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>DUTTON, SHERI</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>FAIRFAX</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3322 EPWORTH AVE</string>
+		<key>Appraisal</key>
+		<string>$48,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1305731</string>
+		<key>MinBid</key>
+		<string>$32,000</string>
+		<key>Name</key>
+		<string>EBERLY, THERESA</string>
+		<key>Plaintiff</key>
+		<string>THIRD FEDERAL</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>9467 WILLOWGATE DR</string>
+		<key>Appraisal</key>
+		<string>$24,000</string>
+		<key>AttyName</key>
+		<string>RICHARDS &amp; CO</string>
+		<key>AttyPhone</key>
+		<string>871-8755</string>
+		<key>CaseNO</key>
+		<string>A1300857</string>
+		<key>MinBid</key>
+		<string>$16,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1605 ROSS AVE</string>
+		<key>Appraisal</key>
+		<string>$33,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1307473</string>
+		<key>MinBid</key>
+		<string>$22,000</string>
+		<key>Name</key>
+		<string>FICHLIE, PAUL</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5862 CHAPEL HILL DR</string>
+		<key>Appraisal</key>
+		<string>$150,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1203190</string>
+		<key>MinBid</key>
+		<string>$100,000</string>
+		<key>Name</key>
+		<string>FINLEY, MICHAEL</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>DELHI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>102 KNOLL WIND DR</string>
+		<key>Appraisal</key>
+		<string>$144,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1307174</string>
+		<key>MinBid</key>
+		<string>$96,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>FEDERAL NATIONAL MORTGAGE ASSOC.</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>LOVELAND</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5001 KELLOG AVE SLIP #C2A</string>
+		<key>Appraisal</key>
+		<string>$900</string>
+		<key>AttyName</key>
+		<string>RICHARDS &amp; CO</string>
+		<key>AttyPhone</key>
+		<string>871-8755</string>
+		<key>CaseNO</key>
+		<string>A1303044</string>
+		<key>MinBid</key>
+		<string>$600</string>
+		<key>Name</key>
+		<string>FREEMAN, CLARENCE</string>
+		<key>Plaintiff</key>
+		<string>HARBOUR TOWNE YACHT CLUB CONDOMINIUM UNIT OWNERS ASSOC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3743 DARWIN AVE</string>
+		<key>Appraisal</key>
+		<string>$69,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1306519</string>
+		<key>MinBid</key>
+		<string>$46,000</string>
+		<key>Name</key>
+		<string>GAFFNEY, WILLIAM</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CHEVIOT</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1042 PINEHOLLOW LN</string>
+		<key>Appraisal</key>
+		<string>$90,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1302886</string>
+		<key>MinBid</key>
+		<string>$60,000</string>
+		<key>Name</key>
+		<string>GALIOTO, JOHN</string>
+		<key>Plaintiff</key>
+		<string>EVERBANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4693 ALPINE AVE</string>
+		<key>Appraisal</key>
+		<string>$66,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1204166</string>
+		<key>MinBid</key>
+		<string>$44,000</string>
+		<key>Name</key>
+		<string>GARCIA, ROBELIO</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>BLUE ASH</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>35-37 GAHL TER</string>
+		<key>Appraisal</key>
+		<string>$132,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1303910</string>
+		<key>MinBid</key>
+		<string>$88,000</string>
+		<key>Name</key>
+		<string>GEISER, LARRY</string>
+		<key>Plaintiff</key>
+		<string>ADVANTAGE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>READING</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>10240 PENDERY DR</string>
+		<key>Appraisal</key>
+		<string>$480,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1004648</string>
+		<key>MinBid</key>
+		<string>$320,000</string>
+		<key>Name</key>
+		<string>GINDELE, JAMIE</string>
+		<key>Plaintiff</key>
+		<string>BANK OF NY MELLON</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>MONTGOMERY</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>11709 HOLLINGSWORTH WAY</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1306854</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>GLOYESKE, WILLIAM</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1666 TREMONT ST</string>
+		<key>Appraisal</key>
+		<string>$21,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1303408</string>
+		<key>MinBid</key>
+		<string>$14,000</string>
+		<key>Name</key>
+		<string>GRAU, STEVEN</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3422 ANACONDA DR</string>
+		<key>Appraisal</key>
+		<string>$66,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1302101</string>
+		<key>MinBid</key>
+		<string>$44,000</string>
+		<key>Name</key>
+		<string>GRAY, TAMIEKA</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1309 PADDOCK HILLS AVE</string>
+		<key>Appraisal</key>
+		<string>$36,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1303278</string>
+		<key>MinBid</key>
+		<string>$24,000</string>
+		<key>Name</key>
+		<string>GREENE, CHRISTIE</string>
+		<key>Plaintiff</key>
+		<string>OCWEN LOAN SERVICING</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4230 CREEK RD</string>
+		<key>Appraisal</key>
+		<string>$120,000</string>
+		<key>AttyName</key>
+		<string>SHAPIRO VAN ESS PHILLIPS</string>
+		<key>AttyPhone</key>
+		<string>396-8100</string>
+		<key>CaseNO</key>
+		<string>A1207462</string>
+		<key>MinBid</key>
+		<string>$80,000</string>
+		<key>Name</key>
+		<string>GRIFFITHS, GAIL</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>BLUE ASH</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3580 LOCUST LN</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A0904089</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>HARNIST, AIMEE</string>
+		<key>Plaintiff</key>
+		<string>COUNTRYWIDE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1528 NATHANIEL DR</string>
+		<key>Appraisal</key>
+		<string>$102,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1304111</string>
+		<key>MinBid</key>
+		<string>$68,000</string>
+		<key>Name</key>
+		<string>HARRIS, BRIAN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1723 ASPENHILL DR</string>
+		<key>Appraisal</key>
+		<string>$123,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1303520</string>
+		<key>MinBid</key>
+		<string>$82,000</string>
+		<key>Name</key>
+		<string>HEARLDSON, RAELENE</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3663 CHALLEN ST</string>
+		<key>Appraisal</key>
+		<string>$51,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1305892</string>
+		<key>MinBid</key>
+		<string>$34,000</string>
+		<key>Name</key>
+		<string>HENSON, BRITTIANY</string>
+		<key>Plaintiff</key>
+		<string>LIBERTY SAVING BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5734 SECTION AVE</string>
+		<key>Appraisal</key>
+		<string>$42,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1300617</string>
+		<key>MinBid</key>
+		<string>$28,000</string>
+		<key>Name</key>
+		<string>HERRING, GREGORY</string>
+		<key>Plaintiff</key>
+		<string>MIDFIRST BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>NORWOOD</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1036 DEL MONTE PL</string>
+		<key>Appraisal</key>
+		<string>$36,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1209768</string>
+		<key>MinBid</key>
+		<string>$24,000</string>
+		<key>Name</key>
+		<string>HIGGINS, ANNETTE</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4153 PITTS ST</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1305997</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>HOEKSTRA, KIM</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3983 WARWICK AVE</string>
+		<key>Appraisal</key>
+		<string>$75,000</string>
+		<key>AttyName</key>
+		<string>SHAPIRO VAN ESS PHILLIPS</string>
+		<key>AttyPhone</key>
+		<string>396-8100</string>
+		<key>CaseNO</key>
+		<string>A1300601</string>
+		<key>MinBid</key>
+		<string>$50,000</string>
+		<key>Name</key>
+		<string>HOOD, TIFFANIE</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1038 GILSEY AVE</string>
+		<key>Appraisal</key>
+		<string>$39,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1306120</string>
+		<key>MinBid</key>
+		<string>$26,000</string>
+		<key>Name</key>
+		<string>HORN, ANNIE</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4191 RACE RD</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1209836</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>HOUSTON, TERRENCE</string>
+		<key>Plaintiff</key>
+		<string>DEUTSCHE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4004 MANTELL AVE</string>
+		<key>Appraisal</key>
+		<string>$117,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1304639</string>
+		<key>MinBid</key>
+		<string>$78,000</string>
+		<key>Name</key>
+		<string>JACKSON, LAWRENCE</string>
+		<key>Plaintiff</key>
+		<string>FLAGSTAR BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SYCAMORE TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2640 MELROSE AVE</string>
+		<key>Appraisal</key>
+		<string>$21,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1300663</string>
+		<key>MinBid</key>
+		<string>$14,000</string>
+		<key>Name</key>
+		<string>JOHNSON, ROBERT</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6751 PARKLAND AVE</string>
+		<key>Appraisal</key>
+		<string>$51,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1105907</string>
+		<key>MinBid</key>
+		<string>$34,000</string>
+		<key>Name</key>
+		<string>JONES, MARIAN</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6305 SIMPSON AVE</string>
+		<key>Appraisal</key>
+		<string>$27,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1303274</string>
+		<key>MinBid</key>
+		<string>$18,000</string>
+		<key>Name</key>
+		<string>JONES JR, LEE</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2458 TIVERTON LN</string>
+		<key>Appraisal</key>
+		<string>$78,000</string>
+		<key>AttyName</key>
+		<string>WELTMAN WEINBERG &amp; REIS</string>
+		<key>AttyPhone</key>
+		<string>800-910-4249</string>
+		<key>CaseNO</key>
+		<string>A1302238</string>
+		<key>MinBid</key>
+		<string>$52,000</string>
+		<key>Name</key>
+		<string>KAEHLER, DIANE</string>
+		<key>Plaintiff</key>
+		<string>NATIONSTAR MORTGAGE LLC
+NATIONSTAR MORTGAGE LLC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5146 FOLEY RD</string>
+		<key>Appraisal</key>
+		<string>$75,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1303480</string>
+		<key>MinBid</key>
+		<string>$50,000</string>
+		<key>Name</key>
+		<string>KLOEPFER, LAWRENCE</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>DELHI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3241 HERITAGE SQUARE DR #72</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A0611129</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>KNIGHT, JULIANN</string>
+		<key>Plaintiff</key>
+		<string>COUNTRYWIDE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2882 W TOWER AVE</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1305926</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>LAWSON, TERRY</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>8742 WELLER RD</string>
+		<key>Appraisal</key>
+		<string>$240,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A0708840</string>
+		<key>MinBid</key>
+		<string>$160,000</string>
+		<key>Name</key>
+		<string>LAZAE, MARK</string>
+		<key>Plaintiff</key>
+		<string>COUNTRYWIDE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>MONTGOMERY</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2516 IMPALA DR</string>
+		<key>Appraisal</key>
+		<string>$57,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1209327</string>
+		<key>MinBid</key>
+		<string>$38,000</string>
+		<key>Name</key>
+		<string>LIVERING, RONALD</string>
+		<key>Plaintiff</key>
+		<string>GMAC MORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>10771 LEMARIE DR</string>
+		<key>Appraisal</key>
+		<string>$66,000</string>
+		<key>AttyName</key>
+		<string>ALLBERY CROSS FOGARTY</string>
+		<key>AttyPhone</key>
+		<string>937-228-5912</string>
+		<key>CaseNO</key>
+		<string>A1206534</string>
+		<key>MinBid</key>
+		<string>$44,000</string>
+		<key>Name</key>
+		<string>LONG, MARILYN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SHARONVILLE</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1163 HOLLYWOOD AVE</string>
+		<key>Appraisal</key>
+		<string>$102,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1306283</string>
+		<key>MinBid</key>
+		<string>$68,000</string>
+		<key>Name</key>
+		<string>LONG, SHAWN</string>
+		<key>Plaintiff</key>
+		<string>NATIONSTAR MORTGAGE LLC
+NATIONSTAR MORTGAGE LLC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>7313 OSCEOLA DR</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1306299</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>LONG, JAMES</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>MADEIRA</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1169 MARKLEY RD</string>
+		<key>Appraisal</key>
+		<string>$99,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1301369</string>
+		<key>MinBid</key>
+		<string>$66,000</string>
+		<key>Name</key>
+		<string>MABERRY, CHRISTOPHER</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>ANDERSON TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1040 LOCKMAN AVE</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1203134</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>MARCUM, TERRI</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4611 CARTER AVE</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1205864</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>MARTIN, ABRAHAM</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>NORWOOD</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5597 BISCAYNE AVE</string>
+		<key>Appraisal</key>
+		<string>$75,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1306439</string>
+		<key>MinBid</key>
+		<string>$50,000</string>
+		<key>Name</key>
+		<string>MCVEY, JOSHUA</string>
+		<key>Plaintiff</key>
+		<string>MIDFIRST BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2494 DUNAWAY CT</string>
+		<key>Appraisal</key>
+		<string>$48,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1305775</string>
+		<key>MinBid</key>
+		<string>$32,000</string>
+		<key>Name</key>
+		<string>MENGISTU, MIHERET</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6040 JESSUP RD</string>
+		<key>Appraisal</key>
+		<string>$114,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A0605161</string>
+		<key>MinBid</key>
+		<string>$76,000</string>
+		<key>Name</key>
+		<string>MERS, MIKE</string>
+		<key>Plaintiff</key>
+		<string>ABN AMRO MORTGAGE GROUP</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6839 KENBYRNE CT</string>
+		<key>Appraisal</key>
+		<string>$84,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1303006</string>
+		<key>MinBid</key>
+		<string>$56,000</string>
+		<key>Name</key>
+		<string>MEYER, CRAIG</string>
+		<key>Plaintiff</key>
+		<string>FEDERAL HOME LOAN  MORTGAGE CORP</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3508 BEVIS AVE</string>
+		<key>Appraisal</key>
+		<string>$42,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1305516</string>
+		<key>MinBid</key>
+		<string>$28,000</string>
+		<key>Name</key>
+		<string>MILLER JR, OTIS</string>
+		<key>Plaintiff</key>
+		<string>NATIONSTAR MORTGAGE LLC
+NATIONSTAR MORTGAGE LLC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1031 W KEMPER RD</string>
+		<key>Appraisal</key>
+		<string>$66,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1104243</string>
+		<key>MinBid</key>
+		<string>$44,000</string>
+		<key>Name</key>
+		<string>MOSLEY, JUDY</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>521 W MCMILLAN AVE</string>
+		<key>Appraisal</key>
+		<string>$156,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1307556</string>
+		<key>MinBid</key>
+		<string>$104,000</string>
+		<key>Name</key>
+		<string>NETTLER, JOHN</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>466 FEATHERWOOD DR</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>SHAPIRO VAN ESS PHILLIPS</string>
+		<key>AttyPhone</key>
+		<string>396-8100</string>
+		<key>CaseNO</key>
+		<string>A1300201</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>NEUKAM, WILLIAM</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>HARRISON</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5557 TWINLAKES CT #10</string>
+		<key>Appraisal</key>
+		<string>$102,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1203361</string>
+		<key>MinBid</key>
+		<string>$68,000</string>
+		<key>Name</key>
+		<string>OBRIEN, JASON</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4619 GLENSHADE AVE</string>
+		<key>Appraisal</key>
+		<string>$45,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1306238</string>
+		<key>MinBid</key>
+		<string>$30,000</string>
+		<key>Name</key>
+		<string>PELLE, DIANE</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1873 BEECH GROVE DR</string>
+		<key>Appraisal</key>
+		<string>$252,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1304433</string>
+		<key>MinBid</key>
+		<string>$168,000</string>
+		<key>Name</key>
+		<string>PFANDER, ROBERT</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>GREEN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>177 WYOMING WOODS LN</string>
+		<key>Appraisal</key>
+		<string>$570,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302122</string>
+		<key>MinBid</key>
+		<string>$380,000</string>
+		<key>Name</key>
+		<string>PIOCOS, ELIZABETH</string>
+		<key>Plaintiff</key>
+		<string>HUDSON CITY SAVINGS BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>WYOMING</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>5054 ORANGE LAWN DR</string>
+		<key>Appraisal</key>
+		<string>$108,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302814</string>
+		<key>MinBid</key>
+		<string>$72,000</string>
+		<key>Name</key>
+		<string>POLING, GARY</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>DELHI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1175 TOLUCA CT</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1302225</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>PORTER, KIMBERLY</string>
+		<key>Plaintiff</key>
+		<string>J P MORGAN CHASE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3376 HAGEMAN AVE</string>
+		<key>Appraisal</key>
+		<string>$39,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302486</string>
+		<key>MinBid</key>
+		<string>$26,000</string>
+		<key>Name</key>
+		<string>REED, PATRICIA</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SHARONVILLE</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>8210 LITTLE HARBOR DR</string>
+		<key>Appraisal</key>
+		<string>$303,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1303769</string>
+		<key>MinBid</key>
+		<string>$202,000</string>
+		<key>Name</key>
+		<string>RITTER, STEVEN</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>ANDERSON TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3025 HYANNIS DR</string>
+		<key>Appraisal</key>
+		<string>$42,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1300879</string>
+		<key>MinBid</key>
+		<string>$28,000</string>
+		<key>Name</key>
+		<string>RITZE, HELEN</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4233 FERGUS ST</string>
+		<key>Appraisal</key>
+		<string>$27,000</string>
+		<key>AttyName</key>
+		<string>DENNIS REIMER</string>
+		<key>AttyPhone</key>
+		<string>440-600-5500</string>
+		<key>CaseNO</key>
+		<string>A1206986</string>
+		<key>MinBid</key>
+		<string>$18,000</string>
+		<key>Name</key>
+		<string>SANTOS-MADDOX, ANA</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>7955 MORGAN RD</string>
+		<key>Appraisal</key>
+		<string>$54,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1207157</string>
+		<key>MinBid</key>
+		<string>$36,000</string>
+		<key>Name</key>
+		<string>SCHAIBLE, GUY</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>WHITEWATER TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4234 CENTURY LN</string>
+		<key>Appraisal</key>
+		<string>$69,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1306133</string>
+		<key>MinBid</key>
+		<string>$46,000</string>
+		<key>Name</key>
+		<string>SCHWAB, WILLIAM</string>
+		<key>Plaintiff</key>
+		<string>THIRD FEDERAL</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1735 DE ARMAND AVE (VAC LAND)</string>
+		<key>Appraisal</key>
+		<string>$12,000</string>
+		<key>AttyName</key>
+		<string>SHAPIRO VAN ESS PHILLIPS</string>
+		<key>AttyPhone</key>
+		<string>396-8100</string>
+		<key>CaseNO</key>
+		<string>A1207018</string>
+		<key>MinBid</key>
+		<string>$8,000</string>
+		<key>Name</key>
+		<string>SPARROW, LATONYA</string>
+		<key>Plaintiff</key>
+		<string>NATIONSTAR MORTGAGE LLC
+NATIONSTAR MORTGAGE LLC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>N C H</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6276 COLLEGEVUE PL</string>
+		<key>Appraisal</key>
+		<string>$63,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A0804721</string>
+		<key>MinBid</key>
+		<string>$42,000</string>
+		<key>Name</key>
+		<string>SPIKES, CYNTHIA</string>
+		<key>Plaintiff</key>
+		<string>E M C MORTGAGE CORP</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4322 VIRGINIA AVE</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302815</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>STOKES, KEVIN</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>7226 THOMAS DR</string>
+		<key>Appraisal</key>
+		<string>$132,000</string>
+		<key>AttyName</key>
+		<string>JOHN CLUNK</string>
+		<key>AttyPhone</key>
+		<string>330-436-0300</string>
+		<key>CaseNO</key>
+		<string>A1205767</string>
+		<key>MinBid</key>
+		<string>$88,000</string>
+		<key>Name</key>
+		<string>STORK, CAROLINE</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>MADEIRA</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>11132 LEBANON AVE</string>
+		<key>Appraisal</key>
+		<string>$81,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1307495</string>
+		<key>MinBid</key>
+		<string>$54,000</string>
+		<key>Name</key>
+		<string>SURYADEVARA, SREENIVASA</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>BLUE ASH</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>8715 MONSANTO DR</string>
+		<key>Appraisal</key>
+		<string>$66,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1306101</string>
+		<key>MinBid</key>
+		<string>$44,000</string>
+		<key>Name</key>
+		<string>TAYLOR, LAKISHA</string>
+		<key>Plaintiff</key>
+		<string>THIRD FEDERAL</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>504 DELTA AVE</string>
+		<key>Appraisal</key>
+		<string>$57,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1302223</string>
+		<key>MinBid</key>
+		<string>$38,000</string>
+		<key>Name</key>
+		<string>TEDRICK, MARVIN</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>221 THISBE AVE</string>
+		<key>Appraisal</key>
+		<string>$48,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1303939</string>
+		<key>MinBid</key>
+		<string>$32,000</string>
+		<key>Name</key>
+		<string>THOMPSON, DONNA</string>
+		<key>Plaintiff</key>
+		<string>PNC BANK N A</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2786 QUEEN CITY AVE</string>
+		<key>Appraisal</key>
+		<string>$54,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1304292</string>
+		<key>MinBid</key>
+		<string>$36,000</string>
+		<key>Name</key>
+		<string>THOMPSON, ROLANDO</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3041 OBERVATORY AVE</string>
+		<key>Appraisal</key>
+		<string>$1,200,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1303533</string>
+		<key>MinBid</key>
+		<string>$800,000</string>
+		<key>Name</key>
+		<string>THURNER, CANDACE</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1756 PULTE ST</string>
+		<key>Appraisal</key>
+		<string>$18,000</string>
+		<key>AttyName</key>
+		<string>CARLISLE  McNELLIE RINI</string>
+		<key>AttyPhone</key>
+		<string>216-360-7200</string>
+		<key>CaseNO</key>
+		<string>A1306531</string>
+		<key>MinBid</key>
+		<string>$12,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>GENERATION MORTGAGE CO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>120 CARRINGTON PL #103</string>
+		<key>Appraisal</key>
+		<string>$63,000</string>
+		<key>AttyName</key>
+		<string>CUNI FERGUSON &amp; LEVAY</string>
+		<key>AttyPhone</key>
+		<string>771-6768</string>
+		<key>CaseNO</key>
+		<string>A1301796</string>
+		<key>MinBid</key>
+		<string>$42,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>CARRINGTON CROSSING CONDOMINIUM OWNERS ASSOC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>LOVELAND</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6053 KENNEDY AVE</string>
+		<key>Appraisal</key>
+		<string>$36,000</string>
+		<key>AttyName</key>
+		<string>GERNER &amp; KEARNS</string>
+		<key>AttyPhone</key>
+		<string>241-7722</string>
+		<key>CaseNO</key>
+		<string>A1305623</string>
+		<key>MinBid</key>
+		<string>$24,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1189 INNER CIRCLE DR</string>
+		<key>Appraisal</key>
+		<string>$123,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1209009</string>
+		<key>MinBid</key>
+		<string>$82,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>MIDFIRST BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>6451 MEIS AVE</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1203477</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>UPSHAW, VALERIE</string>
+		<key>Plaintiff</key>
+		<string>BANK OF AMERICA</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>N C H</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1959 KINNEY AVE</string>
+		<key>Appraisal</key>
+		<string>$39,000</string>
+		<key>AttyName</key>
+		<string>WELTMAN WEINBERG &amp; REIS</string>
+		<key>AttyPhone</key>
+		<string>800-910-4249</string>
+		<key>CaseNO</key>
+		<string>A1305113</string>
+		<key>MinBid</key>
+		<string>$26,000</string>
+		<key>Name</key>
+		<string>VAN EATON, JAMES</string>
+		<key>Plaintiff</key>
+		<string>NATIONSTAR MORTGAGE LLC
+NATIONSTAR MORTGAGE LLC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>318 BROOKFOREST DR</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>GRIFFIN FLETHCHER &amp; HERNDON</string>
+		<key>AttyPhone</key>
+		<string>421-1313</string>
+		<key>CaseNO</key>
+		<string>A1305542</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string> </string>
+		<key>Plaintiff</key>
+		<string>CINCINNATI FEDERAL SAVINGS &amp; LOAN</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>DELHI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>7220 CREEKVIEW DR #5</string>
+		<key>Appraisal</key>
+		<string>$36,000</string>
+		<key>AttyName</key>
+		<string>CUNI FERGUSON &amp; LEVAY</string>
+		<key>AttyPhone</key>
+		<string>771-6768</string>
+		<key>CaseNO</key>
+		<string>A1209885</string>
+		<key>MinBid</key>
+		<string>$24,000</string>
+		<key>Name</key>
+		<string>WADDELL, FREDERICK</string>
+		<key>Plaintiff</key>
+		<string>TAYLOR CREEK CONDOMINIUM ASSOCIATION</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4513 BARBARA PL</string>
+		<key>Appraisal</key>
+		<string>$39,000</string>
+		<key>AttyName</key>
+		<string>FELTY &amp; LEMBRIGHT</string>
+		<key>AttyPhone</key>
+		<string>216-588-1500</string>
+		<key>CaseNO</key>
+		<string>A1306696</string>
+		<key>MinBid</key>
+		<string>$26,000</string>
+		<key>Name</key>
+		<string>WALKER, TRACEY</string>
+		<key>Plaintiff</key>
+		<string>FIFTH THIRD MORTGAGE COMPANY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>2729 LEOTA LN</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>ALLBERY CROSS FOGARTY</string>
+		<key>AttyPhone</key>
+		<string>937-228-5912</string>
+		<key>CaseNO</key>
+		<string>A1306861</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>WALKO, JOHN</string>
+		<key>Plaintiff</key>
+		<string>DEUTSCHE BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>COLERAIN TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>1924 TRUITT AVE</string>
+		<key>Appraisal</key>
+		<string>$27,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1206845</string>
+		<key>MinBid</key>
+		<string>$18,000</string>
+		<key>Name</key>
+		<string>WARREN, RONALD</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>8643 MOCKINGBIRD LN</string>
+		<key>Appraisal</key>
+		<string>$60,000</string>
+		<key>AttyName</key>
+		<string>LUPER NEIDENTHAL &amp; LOGAN</string>
+		<key>AttyPhone</key>
+		<string>614-221-7663</string>
+		<key>CaseNO</key>
+		<string>A0806498</string>
+		<key>MinBid</key>
+		<string>$40,000</string>
+		<key>Name</key>
+		<string>WEBSTER, ROBERT</string>
+		<key>Plaintiff</key>
+		<string>BANK OF NEW YORK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SPRINGFIELD TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3812 INDIANVIEW AVE</string>
+		<key>Appraisal</key>
+		<string>$261,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1209648</string>
+		<key>MinBid</key>
+		<string>$174,000</string>
+		<key>Name</key>
+		<string>WEINLAND, MATTHEW</string>
+		<key>Plaintiff</key>
+		<string>WELLS  FARGO</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>MARIEMONT</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>11169 MAPLE ST</string>
+		<key>Appraisal</key>
+		<string>$72,000</string>
+		<key>AttyName</key>
+		<string>ADAMS STEPNER WOLTERMAN &amp;</string>
+		<key>AttyPhone</key>
+		<string>216-621-0040</string>
+		<key>CaseNO</key>
+		<string>A1304532</string>
+		<key>MinBid</key>
+		<string>$48,000</string>
+		<key>Name</key>
+		<string>WERNER, DAVID</string>
+		<key>Plaintiff</key>
+		<string>BANK OF KENTUCKY</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>SHARONVILLE</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>4438 MT ALVERNO RD</string>
+		<key>Appraisal</key>
+		<string>$93,000</string>
+		<key>AttyName</key>
+		<string>LAURITO &amp; LAURITO</string>
+		<key>AttyPhone</key>
+		<string>937-743-4878</string>
+		<key>CaseNO</key>
+		<string>A1306269</string>
+		<key>MinBid</key>
+		<string>$62,000</string>
+		<key>Name</key>
+		<string>WESTFELT, DENNIS</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>DELHI TWSP</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3223 VINE ST</string>
+		<key>Appraisal</key>
+		<string>$99,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1209683</string>
+		<key>MinBid</key>
+		<string>$66,000</string>
+		<key>Name</key>
+		<string>WILKINS, DWIGHT</string>
+		<key>Plaintiff</key>
+		<string>HSBC</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>11596 NEW HOPE DR</string>
+		<key>Appraisal</key>
+		<string>$93,000</string>
+		<key>AttyName</key>
+		<string>LERNER SAMPSON ROTHFUSS</string>
+		<key>AttyPhone</key>
+		<string>241-3100</string>
+		<key>CaseNO</key>
+		<string>A1205198</string>
+		<key>MinBid</key>
+		<string>$62,000</string>
+		<key>Name</key>
+		<string>WILLIAMSON, LOGAN</string>
+		<key>Plaintiff</key>
+		<string>U S  BANK</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>FOREST PARK</string>
+		<key>WD</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Address</key>
+		<string>3303 BEREDITH PL</string>
+		<key>Appraisal</key>
+		<string>$162,000</string>
+		<key>AttyName</key>
+		<string>MANLEY DEAS KOCHALSKI</string>
+		<key>AttyPhone</key>
+		<string>614-220-5611</string>
+		<key>CaseNO</key>
+		<string>A1307223</string>
+		<key>MinBid</key>
+		<string>$108,000</string>
+		<key>Name</key>
+		<string>WILSON, DWAYNE</string>
+		<key>Plaintiff</key>
+		<string>CITIMORTGAGE</string>
+		<key>SaleDate</key>
+		<string>3/20/2014</string>
+		<key>Township</key>
+		<string>CINTI</string>
 		<key>WD</key>
 		<string></string>
 	</dict>

@@ -14,7 +14,6 @@
 #import "AddressLookup.h"
 #import "PSPropertyAnnotation.h"
 #import "PSGoogleMapsManager.h"
-#import "PSAppleMapsManager.h"
 #import "PSCoreLocationManager.h"
 #import "UIColor+Theme.h"
 
@@ -32,7 +31,6 @@ static float const kMetersPerMile = 1609.344;
 
 @property (weak, nonatomic) Property *selectedProperty;
 @property (strong, nonatomic) PSGoogleMapsManager *googleMapsManager;
-@property (strong, nonatomic) PSAppleMapsManager *appleMapsManager;
 
 @property (strong, nonatomic) PSCoreLocationManager *locationManager;
 
@@ -48,7 +46,6 @@ static float const kMetersPerMile = 1609.344;
 	// Do any additional setup after loading the view.
     
     self.googleMapsManager = [[PSGoogleMapsManager alloc] init];
-    self.appleMapsManager = [[PSAppleMapsManager alloc] init];
     
     self.locationManager = [[PSCoreLocationManager alloc] init];
     self.locationManager.mapController = self;
@@ -69,7 +66,7 @@ static float const kMetersPerMile = 1609.344;
     [super viewWillAppear:animated];
     
     [self setupMap];
-    LogDebug(@"Total number of displayed annotations: %lu", [self.mapView.annotations count]);
+    LogDebug(@"Total number of displayed annotations: %lu", (unsigned long)[self.mapView.annotations count]);
     
     EXIT_LOG;
 }
@@ -114,9 +111,9 @@ static float const kMetersPerMile = 1609.344;
       takeUntil:willDisappear]
      subscribeNext:^(id x) {
          @strongify(self);
-         LogDebug(@"Adding Annotations count: %lu", [x count]);
+         LogDebug(@"Adding Annotations count: %lu", (unsigned long)[x count]);
          
-         PSDataManager *dataManager = [[PSDataManager alloc] init];
+         PSDataManager *dataManager = [PSDataManager sharedInstance];
          self.saleDates = [dataManager getSaleDates];
          [self addAnnotations];
      } error:^(NSError *error) {
@@ -277,6 +274,7 @@ static float const kMetersPerMile = 1609.344;
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler: ^(MKDirectionsResponse *response, NSError *error) {
         LogDebug(@"MKDirectionsResponse: %@", response);
+        [SVProgressHUD dismiss];
         if (error) {
             LogError(@"Error is %@",error);
         } else {
@@ -319,6 +317,7 @@ static float const kMetersPerMile = 1609.344;
     {
         case MapDirectionsDestinationTypeInBuilt:
             LogInfo(@"InBuilt Directions Type is selected");
+            [SVProgressHUD showWithStatus:@"Calculating Routes" maskType:SVProgressHUDMaskTypeGradient];
             [self showDirectionsFromCurrentLocation];
             break;
         case MapDirectionsDestinationTypeInGoogle:

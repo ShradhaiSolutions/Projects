@@ -18,18 +18,21 @@
     EXIT_LOG;
     
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogDebug(@"Parsing the Property Metadata response - Start");
+        
         TFHpple *parsedResponseObject = [TFHpple hppleWithHTMLData:responseData];
         
         NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionaryWithCapacity:14];
         
         [self parseInputElements:parsedResponseObject into:paramsDictionary];
-
         [self parseSelectElements:parsedResponseObject into:paramsDictionary];
-
         [self parseSaleDates:parsedResponseObject into:paramsDictionary];
         
-        [subscriber sendNext:[paramsDictionary copy]];
+        parsedResponseObject = nil;
         
+        LogDebug(@"Parsing the Property Metadata response - Completed");
+        
+        [subscriber sendNext:[paramsDictionary copy]];
         [subscriber sendCompleted];
         
         return nil;
@@ -58,6 +61,8 @@
         }
     }
     
+    propertyNodes = nil;
+    
     EXIT_LOG;
 }
 
@@ -81,12 +86,12 @@
         }
     }
     
+    propertyNodes = nil;
+    
     //Extra parameters for next request
     [paramsDictionary setObject:@"ddlDate" forKey:@"__EVENTTARGET"];
     [paramsDictionary setObject:@"" forKey:@"__EVENTARGUMENT"];
     [paramsDictionary setObject:@"" forKey:@"__LASTFOCUS"];
-    
-//    [paramsDictionary setObject:@"2/6/2014" forKey:@"ddlDate"];
     
     EXIT_LOG;
 }
@@ -108,7 +113,16 @@
         }
     }
     
-    [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
+    propertyNodes = nil;
+    
+    //Todo: make this configurable
+    //Fetch the properties for only first five sale dates
+    if([saleDates count] > 5) {
+        [paramsDictionary setObject:[[saleDates copy] subarrayWithRange:NSMakeRange(0, 5)] forKey:@"SaleDatesArray"];
+    } else {
+        [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
+    }
+
     
     EXIT_LOG;
 }

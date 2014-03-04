@@ -43,7 +43,7 @@
     
     if ([PSCoreLocationManager locationServicesAuthorized]) {
         [self configureLocationManager];
-        [self.locationManager startMonitoringSignificantLocationChanges];
+        [self.locationManager startUpdatingLocation];
     } else {
         [self showSimpleAlertWithTitle:@"Enable Location Service"
                                message:@"Turn On Location Services to Allow the app to Determine Your Location"];
@@ -56,7 +56,7 @@
 {
     ENTRY_LOG;
     
-    [self.locationManager stopMonitoringSignificantLocationChanges];
+    [self.locationManager stopUpdatingLocation];
     
     EXIT_LOG;
 }
@@ -90,6 +90,36 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     ENTRY_LOG;
+    
+    [self stopUpdatingCurrentLocation];
+    
+    NSString *errorDesc = @"";
+    
+    switch (error.code) {
+        case kCLErrorDenied:
+            errorDesc = @"Access to location services was denied";
+            break;
+        case kCLErrorNetwork:
+            errorDesc = @"Network error encountered";
+            
+            break;
+        default:
+            errorDesc = @"Error While fetching the Location";
+            break;
+    }
+    
+    [self showSimpleAlertWithTitle:@"Location Error"
+                           message:errorDesc];
+    
+    EXIT_LOG;
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didFinishDeferredUpdatesWithError:(NSError *)error
+{
+    ENTRY_LOG;
+    
+    [self stopUpdatingCurrentLocation];
     
     NSString *errorDesc = @"";
     

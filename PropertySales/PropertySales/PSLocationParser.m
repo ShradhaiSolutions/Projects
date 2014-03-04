@@ -131,6 +131,8 @@
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         
+        LogDebug(@"Parsing the address: %@", address);
+        
         [geocoder geocodeAddressString:address
                      completionHandler:^(NSArray *placemarks, NSError *error) {
                          
@@ -174,37 +176,6 @@
     }] doError:^(NSError *error) {
         LogError(@"%@",error);
     }];
-}
-
-- (void)convertAddressToCoordinate1:(NSString *)address
-{
-    ENTRY_LOG;
-    
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    
-    [geocoder geocodeAddressString:address
-                 completionHandler:^(NSArray *placemarks, NSError *error) {
-                     if (error) {
-                         LogError(@"Geocode failed with error: %@, for the address %@", error, address);
-                         return;
-                     }
-                     
-                     if(placemarks && placemarks.count > 0)
-                     {
-                         CLPlacemark *placemark = placemarks[0];
-                         CLLocation *location = placemark.location;
-                         CLLocationCoordinate2D coords = location.coordinate;
-                         
-                         LogDebug(@"Latitude = %f, Longitude = %f", coords.latitude, coords.longitude);
-                         [self.addressToGeocodeMappingDictionary setObject:[NSValue valueWithMKCoordinate:coords]
-                                                      forKey:address];
-                     } else {
-                         LogError(@"No coordinates are found for the address %@", address);
-                     }
-                 }
-     ];
-    
-    EXIT_LOG;
 }
 
 - (NSString *)getAddress:(NSMutableDictionary *)property

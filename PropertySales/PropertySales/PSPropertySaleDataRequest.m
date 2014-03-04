@@ -25,13 +25,15 @@ static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
     
     EXIT_LOG;
     
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        LogDebug(@"Sending HTTP Request for Property Sales Data");
         
         AFHTTPSessionManager *manager = [PSHttpClient httpClient];
         
         [manager POST:kRequestURL
            parameters:postParams
               success:^(NSURLSessionDataTask *task, id responseObject) {
+                  LogDebug(@"Http response is received for Property Sales Data");
                   LogVerbose(@"ResponseObject: %@", responseObject);
                   
                   [subscriber sendNext:responseObject];
@@ -41,11 +43,13 @@ static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
                   LogError(@"Error: %@", error);
                   [subscriber sendError:error];
               }];
+        
+        manager = nil;
 
         return nil;
     }] doError:^(NSError *error) {
         LogError(@"%@",error);
-    }];
+    }] deliverOn:[RACScheduler scheduler]];
 }
 
 @end

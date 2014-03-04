@@ -18,7 +18,7 @@
     EXIT_LOG;
 
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
+        LogDebug(@"Saving html response to disk");
         NSString *responseDataString  = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         LogVerbose(@"ResponseData: %@", responseDataString);
         
@@ -27,6 +27,8 @@
         BOOL succeed = [responseDataString writeToFile:path
                                             atomically:YES
                                               encoding:NSUTF8StringEncoding error:&error];
+        responseDataString = nil;
+        
         if (succeed){
             // Handle error here
             LogInfo(@"Successfully saved to %@", path);

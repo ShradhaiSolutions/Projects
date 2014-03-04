@@ -21,12 +21,17 @@
 
 - (id)init
 {
+    ENTRY_LOG;
+    
     self = [super init];
     if (self) {
-        PSDataManager *dataManager = [[PSDataManager alloc] init];
+        PSDataManager *dataManager = [PSDataManager sharedInstance];
         _saleDates = [dataManager getSaleDates];
         _saleDateStrings = [dataManager getSaleDatesStrings];
     }
+    
+    EXIT_LOG;
+    
     return self;
 }
 
@@ -73,28 +78,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LogDebug(@"Selected Date: %@", self.saleDates[indexPath.row]);
-//    //    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     [self.selectedDates addObject:self.saleDates[indexPath.row]];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
     [self.selectedDates removeObject:self.saleDates[indexPath.row]];
 }
-
-//- (void)tableView:(UITableView *)tableView setRowAtIndexPath:(NSIndexPath *)indexPath selected:(BOOL)selected
-//{
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    [self setCellAccessory:selected forCell:cell];
-//    cell.selectedBackgroundView = nil;
-//}
-//
-//- (void)setCellAccessory:(BOOL)checked forCell:(UITableViewCell *)cell
-//{
-//    cell.accessoryType = checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-//}
 
 @end

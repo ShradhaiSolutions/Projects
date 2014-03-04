@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	
     self.dataSource = [[PSPropertyFilterTableDataSource alloc] init];
-    self.dataSource.selectedDates = [self.searchResultsViewModel.selectedSaleDatesForFiltering mutableCopy]; //[NSMutableSet set]; //[NSMutableSet setWithSet:self.searchResultsViewModel.selectedSaleDatesForFiltering]; //
+    self.dataSource.selectedDates = [self.searchResultsViewModel.selectedSaleDatesForFiltering mutableCopy]; 
     
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;

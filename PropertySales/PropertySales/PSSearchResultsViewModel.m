@@ -24,21 +24,7 @@
     ENTRY_LOG;
 
     RAC(self, propertiesFromSearchResult) = [RACObserve(self, properties) deliverOn:[RACScheduler mainThreadScheduler]];
-    
-    
-//    [[RACObserve(self, properties)
-//      deliverOn:[RACScheduler mainThreadScheduler]]
-//     subscribeNext:^(id x) {
-//         LogError(@"ViewModel - data into search result array. isMainThread: %@. First Property: %@", [NSThread isMainThread] ? @"YES" : @"NO", x[0]);
-//         self.propertiesFromSearchResult = x;
-//    }];
-    
-//    NSDateFormatter *dateFormmater = [[NSDateFormatter alloc] init];
-//    [dateFormmater setDateFormat:@"MM/dd/yyyy"];
-//    
-//    self.selectedSaleDatesForFiltering = [NSSet setWithArray:@[[dateFormmater dateFromString:@"02/20/2014"],
-//                                                               [dateFormmater dateFromString:@"02/27/2014"]]];
-    
+
     @weakify(self);
     [[RACSignal
      combineLatest:@[RACObserve(self, searchString), RACObserve(self, selectedSaleDatesForFiltering)]
@@ -68,13 +54,13 @@
 - (NSPredicate *)buildPredicate
 {
     NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"(caseNo CONTAINS[cd] $searchString)"
-            "OR (plaintiff CONTAINS[cd] $searchString)"
-            "OR (name CONTAINS[cd] $searchString)"
-            "OR (address CONTAINS[cd] $searchString)"
-            "OR (attyName CONTAINS[cd] $searchString)"
-            "OR (appraisal CONTAINS[cd] $searchString)"
-            "OR (minBid CONTAINS[cd] $searchString)"
-            "OR (township CONTAINS[cd] $searchString)"
+            "OR (plaintiff CONTAINS[c] $searchString)"
+            "OR (name CONTAINS[c] $searchString)"
+            "OR (address CONTAINS[c] $searchString)"
+            "OR (attyName CONTAINS[c] $searchString)"
+            "OR (appraisal CONTAINS[c] $searchString)"
+            "OR (minBid CONTAINS[c] $searchString)"
+            "OR (township CONTAINS[c] $searchString)"
             "OR (saleData IN $searchDates)"
      ];
     
