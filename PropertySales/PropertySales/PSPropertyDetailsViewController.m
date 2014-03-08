@@ -28,6 +28,9 @@
     self.tableView.delegate = self.dataSource;
     
     self.dataSource.selectedProperty = self.selectedProperty;
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"Property Details" forKey:kGAIScreenName] build]];
+
 }
 
 - (void)didReceiveMemoryWarning

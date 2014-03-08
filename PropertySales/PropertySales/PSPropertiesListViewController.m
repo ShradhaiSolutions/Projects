@@ -44,6 +44,9 @@
          [self.tableView endUpdates];
      }];
     
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"Properties List" forKey:kGAIScreenName] build]];
+
+    
     EXIT_LOG;
 }
 

@@ -20,6 +20,12 @@
 
 static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
 
+@interface PSAppDelegate ()
+
+@property (strong, nonatomic) id<GAITracker> analytics;
+
+@end
+
 @implementation PSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -36,6 +42,8 @@ static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
     [self setupLoggerFramework];
     
     [Crashlytics startWithAPIKey:[[[PSApplicationContext sharedInstance] appKeys] objectForKey:kCrashlyticsAPIKey]];
+    
+    [self setupGoogleAnalytics];
 
     //Set the RootViewController after integrating all the frameworks
 //    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"PSTestStoryboard"
@@ -44,6 +52,28 @@ static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
                                       instantiateInitialViewController];
 
     return YES;
+}
+
+- (void)setupGoogleAnalytics
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = NO;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    //To set the DryRun mode (send the analytics data to Google or Not)
+    [[GAI sharedInstance] setDryRun:NO];
+    
+#ifdef DEBUG
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+#else
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelError];
+#endif
+    
+    // Initialize tracker.
+    self.analytics = [[GAI sharedInstance] trackerWithTrackingId:@"UA-48656616-1"];
 }
 
 - (void) setupLoggerFramework

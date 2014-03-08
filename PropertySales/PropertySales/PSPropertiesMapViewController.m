@@ -17,7 +17,6 @@
 #import "PSCoreLocationManager.h"
 #import "UIColor+Theme.h"
 
-
 typedef NS_ENUM(NSUInteger, MapDirectionsDestinationType) {
     MapDirectionsDestinationTypeInBuilt = 0,
     MapDirectionsDestinationTypeInGoogle = 1,
@@ -55,6 +54,9 @@ static float const kMetersPerMile = 1609.344;
     
     [self addCurrentLocationButton];
     [self navigateToCurrentLocation];
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"Properties Map" forKey:kGAIScreenName] build]];
+
     
     EXIT_LOG;
 }

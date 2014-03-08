@@ -33,6 +33,9 @@
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"Properties Filter" forKey:kGAIScreenName] build]];
+
+    
     EXIT_LOG;
 }
 
