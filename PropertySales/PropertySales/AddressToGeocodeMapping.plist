@@ -30,12 +30,26 @@
 		<key>longitude</key>
 		<real>-84.575904186999907</real>
 	</dict>
+	<key>1011 EDGETREE LN CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.114031416000003</real>
+		<key>longitude</key>
+		<real>-84.610011048999894</real>
+	</dict>
 	<key>1011 W KEMPER RD FOREST PARK OH USA</key>
 	<dict>
 		<key>latitude</key>
 		<real>39.289381028112103</real>
 		<key>longitude</key>
 		<real>-84.515884894261703</real>
+	</dict>
+	<key>10125 GRANDVIEW AVE WOODLAWN OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.250672294000097</real>
+		<key>longitude</key>
+		<real>-84.466496288999906</real>
 	</dict>
 	<key>10189 STORM DR COLERAIN TWSP OH USA</key>
 	<dict>
@@ -163,6 +177,13 @@
 		<key>longitude</key>
 		<real>-84.5509444428005</real>
 	</dict>
+	<key>10579 ROBINDALE DR SHARONVILLE OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.257149466999998</real>
+		<key>longitude</key>
+		<real>-84.397909889999895</real>
+	</dict>
 	<key>10623 BRADBURY DR FOREST PARK OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -232,6 +253,13 @@
 		<real>39.1761191244982</real>
 		<key>longitude</key>
 		<real>-84.480129824331101</real>
+	</dict>
+	<key>1111 OLIVIA LN CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.114515608408801</real>
+		<key>longitude</key>
+		<real>-84.597420674041402</real>
 	</dict>
 	<key>11132 LEBANON AVE BLUE ASH OH USA</key>
 	<dict>
@@ -331,6 +359,13 @@
 		<key>longitude</key>
 		<real>-84.507667229999896</real>
 	</dict>
+	<key>1149 WITT RD #406 ANDERSON TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.070868601105197</real>
+		<key>longitude</key>
+		<real>-84.335531210185295</real>
+	</dict>
 	<key>11528 GAFFNEY PL FOREST PARK OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -365,6 +400,13 @@
 		<real>39.207573177460297</real>
 		<key>longitude</key>
 		<real>-84.533815727217302</real>
+	</dict>
+	<key>11654 HANOVER RD FOREST PARK OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.292732566654699</real>
+		<key>longitude</key>
+		<real>-84.511106621216499</real>
 	</dict>
 	<key>1169 MARKLEY RD ANDERSON TWSP OH USA</key>
 	<dict>
@@ -421,6 +463,13 @@
 		<real>39.299716718000099</real>
 		<key>longitude</key>
 		<real>-84.542220266999905</real>
+	</dict>
+	<key>11919 2ND AVE SYCAMORE TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.285438067512999</real>
+		<key>longitude</key>
+		<real>-84.352556314839006</real>
 	</dict>
 	<key>11945 MILL RD SPRINGFIELD TWSP OH USA</key>
 	<dict>
@@ -527,6 +576,13 @@
 		<key>longitude</key>
 		<real>-84.475589728999907</real>
 	</dict>
+	<key>1239-1241 RUTLEDGE AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.113272899999998</real>
+		<key>longitude</key>
+		<real>-84.587689800000007</real>
+	</dict>
 	<key>124 N WALL ST LOVELAND OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -547,6 +603,13 @@
 		<real>39.281970072</real>
 		<key>longitude</key>
 		<real>-84.524926353999902</real>
+	</dict>
+	<key>1285 BRUSHWOOD AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.214159565261902</real>
+		<key>longitude</key>
+		<real>-84.537129139307396</real>
 	</dict>
 	<key>1292 GLENDALE MILFORD RD WOODLAWN OH USA</key>
 	<dict>
@@ -582,6 +645,13 @@
 		<real>39.281631232000102</real>
 		<key>longitude</key>
 		<real>-84.530131643999894</real>
+	</dict>
+	<key>1345 BEECH AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.118532956000102</real>
+		<key>longitude</key>
+		<real>-84.577070090999896</real>
 	</dict>
 	<key>1358 SECTION RD SPRINGFIELD TWSP OH USA</key>
 	<dict>
@@ -645,6 +715,13 @@
 		<real>39.078881775000099</real>
 		<key>longitude</key>
 		<real>-84.353287718999894</real>
+	</dict>
+	<key>1496 BEACON ST CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.079782694715803</real>
+		<key>longitude</key>
+		<real>-84.382092483983797</real>
 	</dict>
 	<key>1508 CLOVERNOLL DR N C H OH USA</key>
 	<dict>
@@ -744,12 +821,26 @@
 		<key>longitude</key>
 		<real>-84.553356640091906</real>
 	</dict>
+	<key>1684 HUNTCREST DR ANDERSON TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.081514326275297</real>
+		<key>longitude</key>
+		<real>-84.339667800395006</real>
+	</dict>
 	<key>1712 MADISON RD CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
 		<real>39.1300391300001</real>
 		<key>longitude</key>
 		<real>-84.474182181999893</real>
+	</dict>
+	<key>1713 WITTENBERG DR LOVELAND OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.2710447985787</real>
+		<key>longitude</key>
+		<real>-84.288325419514095</real>
 	</dict>
 	<key>1723 ASPENHILL DR SPRINGFIELD TWSP OH USA</key>
 	<dict>
@@ -982,6 +1073,13 @@
 		<key>longitude</key>
 		<real>-84.634240141999896</real>
 	</dict>
+	<key>2126 TRAPP CT SPRINGFIELD TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.253892528999998</real>
+		<key>longitude</key>
+		<real>-84.5657169979999</real>
+	</dict>
 	<key>221 THISBE AVE CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1052,6 +1150,13 @@
 		<key>longitude</key>
 		<real>-84.494291989689899</real>
 	</dict>
+	<key>2420 INDIAN MOUND AVE NORWOOD OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.1686000710001</real>
+		<key>longitude</key>
+		<real>-84.446116470999897</real>
+	</dict>
 	<key>2430 LITTLE DRY RUN RD ANDERSON TWSP OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1079,6 +1184,13 @@
 		<real>39.212819183308802</real>
 		<key>longitude</key>
 		<real>-84.5731119409553</real>
+	</dict>
+	<key>2482 SCHON DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.249594030000097</real>
+		<key>longitude</key>
+		<real>-84.572240600999905</real>
 	</dict>
 	<key>2494 DUNAWAY CT CINTI OH USA</key>
 	<dict>
@@ -1143,12 +1255,26 @@
 		<key>longitude</key>
 		<real>-84.444546719423798</real>
 	</dict>
+	<key>2562 ST LEO PL CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.133356999999997</real>
+		<key>longitude</key>
+		<real>-84.557693</real>
+	</dict>
 	<key>2566 DOLPHIN DR COLERAIN TWSP OH USA</key>
 	<dict>
 		<key>latitude</key>
 		<real>39.222316023000097</real>
 		<key>longitude</key>
 		<real>-84.574050197999995</real>
+	</dict>
+	<key>2572 ST LEO PL CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.1336539693554</real>
+		<key>longitude</key>
+		<real>-84.557206192568898</real>
 	</dict>
 	<key>2583 ROYAL GLEN DR COLERAIN TWSP OH USA</key>
 	<dict>
@@ -1248,6 +1374,13 @@
 		<key>longitude</key>
 		<real>-84.579704067999899</real>
 	</dict>
+	<key>2835 HARRIS AVE NORWOOD OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.1622490496541</real>
+		<key>longitude</key>
+		<real>-84.438305974204795</real>
+	</dict>
 	<key>2882 W TOWER AVE CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1268,6 +1401,32 @@
 		<real>39.1475645600066</real>
 		<key>longitude</key>
 		<real>-84.595268254781203</real>
+	</dict>
+	<key>2929-2931 VAUGHN ST CINTI OH USA</key>
+	<dict>
+		<key>error</key>
+		<string>Failed with the address: Error Domain=kCLErrorDomain Code=2 "The operation couldn’t be completed. (kCLErrorDomain error 2.)"</string>
+	</dict>
+	<key>2938 WILLOW RIDGE DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.263245611000102</real>
+		<key>longitude</key>
+		<real>-84.579159493999896</real>
+	</dict>
+	<key>3000 FAIRFIELD AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.131605238191298</real>
+		<key>longitude</key>
+		<real>-84.471999715223404</real>
+	</dict>
+	<key>3016 VEAZEY AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.131953721000102</real>
+		<key>longitude</key>
+		<real>-84.601374205999903</real>
 	</dict>
 	<key>3024 STRATFORD CT #119 LOVELAND OH USA</key>
 	<dict>
@@ -1318,6 +1477,20 @@
 		<key>longitude</key>
 		<real>-84.428409056195207</real>
 	</dict>
+	<key>3047 OVERDALE DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.287202672715303</real>
+		<key>longitude</key>
+		<real>-84.579802131334702</real>
+	</dict>
+	<key>3064 S HEGRY CIR CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.130237782000101</real>
+		<key>longitude</key>
+		<real>-84.603599429999903</real>
+	</dict>
 	<key>3067 BELDEN CIR CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1338,6 +1511,27 @@
 		<real>39.233703349580097</real>
 		<key>longitude</key>
 		<real>-84.454066036225498</real>
+	</dict>
+	<key>3070 PRESERVE LN #3D COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.208988195000103</real>
+		<key>longitude</key>
+		<real>-84.585224473999901</real>
+	</dict>
+	<key>3078 VEAZEY AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.132078530000101</real>
+		<key>longitude</key>
+		<real>-84.604198603999905</real>
+	</dict>
+	<key>3105 ELKHORN DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.245282532812801</real>
+		<key>longitude</key>
+		<real>-84.580263068482395</real>
 	</dict>
 	<key>3150 LAVERNE DR COLERAIN TWSP OH USA</key>
 	<dict>
@@ -1456,6 +1650,13 @@
 		<key>longitude</key>
 		<real>-84.462184543685893</real>
 	</dict>
+	<key>3339 CHEVIOT AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.147887962000098</real>
+		<key>longitude</key>
+		<real>-84.607113958999904</real>
+	</dict>
 	<key>3344 NINANN CT CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1477,6 +1678,13 @@
 		<key>longitude</key>
 		<real>-84.411677561161497</real>
 	</dict>
+	<key>3390 ALTA VISTA AVE CHEVIOT OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.148740117000003</real>
+		<key>longitude</key>
+		<real>-84.619202254999905</real>
+	</dict>
 	<key>3422 ANACONDA DR CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1497,6 +1705,13 @@
 		<real>39.219417668000098</real>
 		<key>longitude</key>
 		<real>-84.595523771999893</real>
+	</dict>
+	<key>3427 MARKAY CT GREEN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.151781307961201</real>
+		<key>longitude</key>
+		<real>-84.653384246874197</real>
 	</dict>
 	<key>3428 HARVEY AVE CINTI OH USA</key>
 	<dict>
@@ -1575,6 +1790,13 @@
 		<key>longitude</key>
 		<real>-84.465026602999899</real>
 	</dict>
+	<key>3510 MT CARMEL RD ANDERSON TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.121112336000103</real>
+		<key>longitude</key>
+		<real>-84.308771137999898</real>
+	</dict>
 	<key>3523 MARY ANN LN CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1588,6 +1810,13 @@
 		<real>39.141736836685801</real>
 		<key>longitude</key>
 		<real>-84.418009179180103</real>
+	</dict>
+	<key>3541 AMBERWAY CT #62 COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.2423528200001</real>
+		<key>longitude</key>
+		<real>-84.593667584999906</real>
 	</dict>
 	<key>3580 LOCUST LN GREEN TWSP OH USA</key>
 	<dict>
@@ -1630,6 +1859,13 @@
 		<real>39.152448640000003</real>
 		<key>longitude</key>
 		<real>-84.611717997999904</real>
+	</dict>
+	<key>3661 HEEKIN AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.124867382973498</real>
+		<key>longitude</key>
+		<real>-84.415244472645696</real>
 	</dict>
 	<key>3662 EYRICH RD GREEN TWSP OH USA</key>
 	<dict>
@@ -1750,6 +1986,13 @@
 		<key>longitude</key>
 		<real>-84.606927234442196</real>
 	</dict>
+	<key>3896 READING RD #P CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.155279831000101</real>
+		<key>longitude</key>
+		<real>-84.480596522999903</real>
+	</dict>
 	<key>3900 ROSE HILL AVE #201A CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1771,12 +2014,26 @@
 		<key>longitude</key>
 		<real>-84.612243180403695</real>
 	</dict>
+	<key>3932 HOLMAN CIR SILVERTON OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.188402082000003</real>
+		<key>longitude</key>
+		<real>-84.403144220999906</real>
+	</dict>
 	<key>3939 KENKEL AVE CHEVIOT OH USA</key>
 	<dict>
 		<key>latitude</key>
 		<real>39.160611563000103</real>
 		<key>longitude</key>
 		<real>-84.619151329999895</real>
+	</dict>
+	<key>3964 RACE RD GREEN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.162969132999997</real>
+		<key>longitude</key>
+		<real>-84.629343801999894</real>
 	</dict>
 	<key>3966 PARKER PL CINTI OH USA</key>
 	<dict>
@@ -1799,6 +2056,13 @@
 		<key>longitude</key>
 		<real>-84.400854684933293</real>
 	</dict>
+	<key>401 COOPER ST READING OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.222866941606199</real>
+		<key>longitude</key>
+		<real>-84.446519592604602</real>
+	</dict>
 	<key>4016 GLENWAY AVE CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -1812,6 +2076,27 @@
 		<real>39.1520048731266</real>
 		<key>longitude</key>
 		<real>-84.453335427968895</real>
+	</dict>
+	<key>4044 SHANNON ST CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.078464742999998</real>
+		<key>longitude</key>
+		<real>-84.6095770619999</real>
+	</dict>
+	<key>4061 HARDING AVE CHEVIOT OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.154218016098703</real>
+		<key>longitude</key>
+		<real>-84.6175945559838</real>
+	</dict>
+	<key>41 EVERGREEN CIR WYOMING OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.244663128000099</real>
+		<key>longitude</key>
+		<real>-84.474575748999897</real>
 	</dict>
 	<key>4147 FOX HOLLOW DR BLUE ASH OH USA</key>
 	<dict>
@@ -2044,6 +2329,13 @@
 		<key>longitude</key>
 		<real>-84.4643683379999</real>
 	</dict>
+	<key>4811 SECTION AVE NORWOOD OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.164728809237303</real>
+		<key>longitude</key>
+		<real>-84.460446169921497</real>
+	</dict>
 	<key>4929 CHARLEMAR DR CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2163,6 +2455,27 @@
 		<key>longitude</key>
 		<real>-84.610072048352393</real>
 	</dict>
+	<key>527 HOGE ST CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.118354759000098</real>
+		<key>longitude</key>
+		<real>-84.437395648999896</real>
+	</dict>
+	<key>5395 FOLEY RD DELHI TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.1041493817388</real>
+		<key>longitude</key>
+		<real>-84.622198729538098</real>
+	</dict>
+	<key>54 ILLONA DR GREENHILLS OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.272755281000101</real>
+		<key>longitude</key>
+		<real>-84.517800960999907</real>
+	</dict>
 	<key>5404 WHITMORE DR DELHI TWSP OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2191,6 +2504,13 @@
 		<key>longitude</key>
 		<real>-84.574347789648698</real>
 	</dict>
+	<key>5429 SONGBIRD DR CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.190104149786798</real>
+		<key>longitude</key>
+		<real>-84.575221707995198</real>
+	</dict>
 	<key>5450 HOBBIT RD INDIAN HILL OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2204,6 +2524,13 @@
 		<real>39.191255775999998</real>
 		<key>longitude</key>
 		<real>-84.577444545999896</real>
+	</dict>
+	<key>55 GROVE RD WOODLAWN OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.247606401214597</real>
+		<key>longitude</key>
+		<real>-84.4733903965369</real>
 	</dict>
 	<key>5505 DAVIES PL CINTI OH USA</key>
 	<dict>
@@ -2288,6 +2615,20 @@
 		<real>39.178000224730802</real>
 		<key>longitude</key>
 		<real>-84.458481350719595</real>
+	</dict>
+	<key>578 GRAND AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.1030627578902</real>
+		<key>longitude</key>
+		<real>-84.5606665922259</real>
+	</dict>
+	<key>5784 PANAMA ST CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.066532107999997</real>
+		<key>longitude</key>
+		<real>-84.430160695999902</real>
 	</dict>
 	<key>5801 ARNSBY PL CINTI OH USA</key>
 	<dict>
@@ -2380,6 +2721,13 @@
 		<key>longitude</key>
 		<real>-84.445531285999905</real>
 	</dict>
+	<key>6095 PAWNEE DR CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.203221385000099</real>
+		<key>longitude</key>
+		<real>-84.556632600999905</real>
+	</dict>
 	<key>6111 TAHITI DR CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2400,6 +2748,13 @@
 		<real>39.183459050000103</real>
 		<key>longitude</key>
 		<real>-84.413981020999898</real>
+	</dict>
+	<key>6189 BERAUER RD GREEN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.161973300427597</real>
+		<key>longitude</key>
+		<real>-84.651515644673907</real>
 	</dict>
 	<key>6204 ENGLEWOOD AVE CINTI OH USA</key>
 	<dict>
@@ -2450,6 +2805,13 @@
 		<key>longitude</key>
 		<real>-84.561186254999896</real>
 	</dict>
+	<key>641 BRUNNER DR FOREST PARK OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.270796395037699</real>
+		<key>longitude</key>
+		<real>-84.499591222797804</real>
+	</dict>
 	<key>644 FLEMING RD SPRINGFIELD TWSP OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2463,6 +2825,13 @@
 		<real>39.209741582268315</real>
 		<key>longitude</key>
 		<real>-84.552840452427361</real>
+	</dict>
+	<key>6480 DALEVIEW RD COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.211226574000101</real>
+		<key>longitude</key>
+		<real>-84.654248293999899</real>
 	</dict>
 	<key>649 CLEMMER AVE CINTI OH USA</key>
 	<dict>
@@ -2484,6 +2853,13 @@
 		<real>39.153640837000097</real>
 		<key>longitude</key>
 		<real>-84.385829248999897</real>
+	</dict>
+	<key>6541 RIDGEFIELD DR SPRINGFIELD TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.204475945158897</real>
+		<key>longitude</key>
+		<real>-84.530317900475595</real>
 	</dict>
 	<key>6604 HEARNE RD UNIT 52 GREEN TWSP OH USA</key>
 	<dict>
@@ -2545,6 +2921,13 @@
 		<real>39.156527391000097</real>
 		<key>longitude</key>
 		<real>-84.379606203999899</real>
+	</dict>
+	<key>6835 EAST FORK AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.159715590000097</real>
+		<key>longitude</key>
+		<real>-84.379363757999897</real>
 	</dict>
 	<key>6839 KENBYRNE CT SPRINGFIELD TWSP OH USA</key>
 	<dict>
@@ -2700,6 +3083,13 @@
 		<key>longitude</key>
 		<real>-84.428567522999899</real>
 	</dict>
+	<key>754 ARLINGTON AVE ARLINGTON HGTS OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.218987936000097</real>
+		<key>longitude</key>
+		<real>-84.451822804999907</real>
+	</dict>
 	<key>764 BEECHWOOD AVE CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2720,6 +3110,20 @@
 		<real>39.201177636000097</real>
 		<key>longitude</key>
 		<real>-84.459929965999905</real>
+	</dict>
+	<key>7752 MONTGOMERY RD #53 SYCAMORE TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.194296795000099</real>
+		<key>longitude</key>
+		<real>-84.384289185999904</real>
+	</dict>
+	<key>7782 FOXTROT DR MIAMI TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.164246329254901</real>
+		<key>longitude</key>
+		<real>-84.701818335658601</real>
 	</dict>
 	<key>7821 BUCKEYE CRESCENT MADEIRA OH USA</key>
 	<dict>
@@ -2770,6 +3174,13 @@
 		<key>longitude</key>
 		<real>-84.528289602301498</real>
 	</dict>
+	<key>8032 COLETTE LN SPRINGFIELD TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.214674137102001</real>
+		<key>longitude</key>
+		<real>-84.529794226076007</real>
+	</dict>
 	<key>807 GREENWICH AVE CINTI OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2812,6 +3223,13 @@
 		<key>longitude</key>
 		<real>-84.512614413999898</real>
 	</dict>
+	<key>8429 CURZON AVE CINTI OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.216266148014498</real>
+		<key>longitude</key>
+		<real>-84.464087326670906</real>
+	</dict>
 	<key>8436 FONTAINEBLEAU CT MIAMI TWSP OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -2839,6 +3257,13 @@
 		<real>39.059542415600198</real>
 		<key>longitude</key>
 		<real>-84.3157991186077</real>
+	</dict>
+	<key>859 GLASGOW DR FOREST PARK OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.286977764862101</real>
+		<key>longitude</key>
+		<real>-84.508605424130806</real>
 	</dict>
 	<key>8643 MOCKINGBIRD LN SPRINGFIELD TWSP OH USA</key>
 	<dict>
@@ -2895,6 +3320,13 @@
 		<real>39.235388811000099</real>
 		<key>longitude</key>
 		<real>-84.573118790999899</real>
+	</dict>
+	<key>9009 ORANGEWOOD DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.234601805578997</real>
+		<key>longitude</key>
+		<real>-84.568910491973796</real>
 	</dict>
 	<key>902 BURNS AVE WYOMING OH USA</key>
 	<dict>
@@ -2987,6 +3419,20 @@
 		<key>longitude</key>
 		<real>-84.473395797044404</real>
 	</dict>
+	<key>9706 OVERVIEW LN SPRINGFIELD TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.245774271000101</real>
+		<key>longitude</key>
+		<real>-84.548725866999902</real>
+	</dict>
+	<key>9728 LORALINDA DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.247562977000101</real>
+		<key>longitude</key>
+		<real>-84.5838184079999</real>
+	</dict>
 	<key>9773 OVERVIEW LN SPRINGFIELD TWSP OH USA</key>
 	<dict>
 		<key>latitude</key>
@@ -3007,6 +3453,20 @@
 		<real>39.2507934002453</real>
 		<key>longitude</key>
 		<real>-84.568554817381298</real>
+	</dict>
+	<key>9965 CAPSTAN DR COLERAIN TWSP OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.254661795805397</real>
+		<key>longitude</key>
+		<real>-84.598359633559099</real>
+	</dict>
+	<key>998 GOODHUE CIR FOREST PARK OH USA</key>
+	<dict>
+		<key>latitude</key>
+		<real>39.286941517999999</real>
+		<key>longitude</key>
+		<real>-84.515838663999901</real>
 	</dict>
 </dict>
 </plist>
