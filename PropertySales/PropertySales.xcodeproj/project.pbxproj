@@ -47,6 +47,8 @@
 		8A38027E18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A38027D18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m */; };
 		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
+		8A63C43C18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A63C43A18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist */; };
+		8A63C44118CAF07F00DE8BE5 /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A63C44018CAF07F00DE8BE5 /* PropertiesArray.plist */; };
 		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
 		8A645C1E18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
 		8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1018AFD671004FCC37 /* PSPropertySaleDataParser.m */; };
@@ -93,8 +95,6 @@
 		8AE7587818B2757F00879C2E /* PSPropertyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587718B2757F00879C2E /* PSPropertyListTableViewCell.m */; };
 		8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */; };
 		8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */; };
-		8AF2A1E018CAA2E100D440A3 /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AF2A1DE18CAA2E100D440A3 /* AddressToGeocodeMapping.plist */; };
-		8AF2A1E118CAA2E100D440A3 /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AF2A1DF18CAA2E100D440A3 /* PropertiesArray.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +153,8 @@
 		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
 		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
 		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
+		8A63C43A18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
+		8A63C44018CAF07F00DE8BE5 /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8A645C1B18A1B1B800DCD756 /* PSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationManager.h; sourceTree = "<group>"; };
 		8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationManager.m; sourceTree = "<group>"; };
 		8A6A9B0F18AFD671004FCC37 /* PSPropertySaleDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertySaleDataParser.h; sourceTree = "<group>"; };
@@ -214,8 +216,6 @@
 		8AE7587F18B2931B00879C2E /* PSPropertyFilterTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertyFilterTableDataSource.m; sourceTree = "<group>"; };
 		8AF2934A18AC66A200DA0D2D /* PSSearchResultsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSearchResultsViewModel.h; sourceTree = "<group>"; };
 		8AF2934B18AC66A200DA0D2D /* PSSearchResultsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSearchResultsViewModel.m; sourceTree = "<group>"; };
-		8AF2A1DE18CAA2E100D440A3 /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
-		8AF2A1DF18CAA2E100D440A3 /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8AFAD2A5189DE455007457B8 /* PSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLogging.h; sourceTree = "<group>"; };
 		A6414AA82B044257923D8A23 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		AE1B0038DC8245B09D11F7E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,8 +379,8 @@
 		8AA758D518A734DB006DFB84 /* AppStartupData */ = {
 			isa = PBXGroup;
 			children = (
-				8AF2A1DE18CAA2E100D440A3 /* AddressToGeocodeMapping.plist */,
-				8AF2A1DF18CAA2E100D440A3 /* PropertiesArray.plist */,
+				8A63C44018CAF07F00DE8BE5 /* PropertiesArray.plist */,
+				8A63C43A18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist */,
 			);
 			name = AppStartupData;
 			sourceTree = "<group>";
@@ -596,10 +596,10 @@
 			files = (
 				8A37453C18A7EEC20012E8A2 /* PropertySales.storyboard in Resources */,
 				8ADD4AFA189DA3AC00F1C54B /* InfoPlist.strings in Resources */,
-				8AF2A1E118CAA2E100D440A3 /* PropertiesArray.plist in Resources */,
+				8A63C44118CAF07F00DE8BE5 /* PropertiesArray.plist in Resources */,
 				8A38027B18C2C32C0055041F /* Application-Keys.plist in Resources */,
 				8ADD4B02189DA3AC00F1C54B /* Images.xcassets in Resources */,
-				8AF2A1E018CAA2E100D440A3 /* AddressToGeocodeMapping.plist in Resources */,
+				8A63C43C18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist in Resources */,
 				8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

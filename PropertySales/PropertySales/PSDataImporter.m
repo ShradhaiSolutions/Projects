@@ -11,24 +11,7 @@
 #import "AddressLookup+Methods.h"
 #import "PSFileManager.h"
 
-@interface PSDataImporter ()
-
-@property (strong, nonatomic) NSDateFormatter *formatter;
-
-@end
-
-
 @implementation PSDataImporter
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        _formatter = [[NSDateFormatter alloc] init];
-        [_formatter setDateFormat:@"MM/dd/yyyy"];
-    }
-    return self;
-}
 
 - (RACSignal *)setupData
 {
@@ -81,7 +64,7 @@
     for (NSDictionary *propertyDictionary in propertyData) {
         
         Property *property = [Property MR_createInContext:localContext];
-        [self mapData:propertyDictionary toProperty:property];
+        [property mapData:propertyDictionary];
         
         //Relationship
         AddressLookup *addressLookup = [AddressLookup MR_findFirstByAttribute:@"lookupAddress"
@@ -113,22 +96,6 @@
     return [NSPredicate predicateWithFormat:@"caseNo == %@, attyName == %@",
             property[@"CaseNO"], property[@"AttyName"]];
 
-}
-
-- (void)mapData:(NSDictionary *)propertyDictionary toProperty:(Property *)property
-{
-    property.address = propertyDictionary[@"Address"];
-    property.appraisal = propertyDictionary[@"Appraisal"];
-    property.attyName = propertyDictionary[@"AttyName"];
-    property.attyPhone = propertyDictionary[@"AttyPhone"];
-    property.caseNo = propertyDictionary[@"CaseNO"];
-    property.minBid = propertyDictionary[@"MinBid"];
-    property.name = propertyDictionary[@"Name"];
-    property.plaintiff = propertyDictionary[@"Plaintiff"];
-    property.saleData = [self.formatter dateFromString:propertyDictionary[@"SaleDate"]];
-    property.township = propertyDictionary[@"Township"];
-    property.wd = propertyDictionary[@"WD"];
-    property.lookupAddress = [property getAddress];
 }
 
 @end
