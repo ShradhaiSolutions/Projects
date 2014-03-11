@@ -140,6 +140,7 @@ double kDataFetchSuccess = 1.0;
              self.dataFetchProgress = @(kDataFetchFailure);
              
              [self logExecutionTime:startTime];
+             [self logDataFetchError:error];
          } completed:^{
              properties = nil;
              self.locationParser = nil;
@@ -375,10 +376,20 @@ double kDataFetchSuccess = 1.0;
 #pragma mark - Analytics
 - (void)logDataFetchTime:(NSTimeInterval)fetchTime
 {
+    int fetchTimeInMilliSeconds = fetchTime * 1000;
     [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createTimingWithCategory:@"DataFetch"
-                                                                                       interval:@(fetchTime * 1000)
+                                                                                       interval:@(fetchTimeInMilliSeconds)
                                                                                            name:@"TotalDataFetchTime"
                                                                                           label:@"TotalDataFetchTime"] build]];
+}
+
+- (void)logDataFetchError:(NSError *)error
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"Error"
+                                                                                        action:@"DataFetchError"
+                                                                                         label:[error domain]
+                                                                                         value:@([error code])] build]];
+    
 }
 
 @end

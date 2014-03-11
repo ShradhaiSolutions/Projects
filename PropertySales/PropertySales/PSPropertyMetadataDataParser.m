@@ -30,12 +30,18 @@ static NSUInteger const kMaxNumberOfSaleDates = 5;
         [self parseSelectElements:parsedResponseObject into:paramsDictionary];
         [self parseSaleDates:parsedResponseObject into:paramsDictionary];
         
+        NSArray *saleDates = [paramsDictionary objectForKey:@"SaleDatesArray"];
+        
         parsedResponseObject = nil;
         
-        LogDebug(@"Parsing the Property Metadata response - Completed");
-        
-        [subscriber sendNext:[paramsDictionary copy]];
-        [subscriber sendCompleted];
+        if([saleDates count] <= 0) {
+            [subscriber sendError:[NSError errorWithDomain:@"PropertyMetaDataParseNoSaleDates" code:100 userInfo:nil]];
+        } else {
+            LogDebug(@"Parsing the Property Metadata response - Completed");
+            
+            [subscriber sendNext:[paramsDictionary copy]];
+            [subscriber sendCompleted];
+        }
         
         return nil;
     }] doError:^(NSError *error) {
