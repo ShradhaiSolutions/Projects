@@ -165,6 +165,7 @@
 - (void)forceDataFetch
 {
     RIButtonItem *okItem = [RIButtonItem itemWithLabel:@"OK" action:^{
+        [self logUserInitiatedDataFetchAnalytics];
         [[PSDataManager sharedInstance] forceDataFetch];
     }];
     
@@ -179,5 +180,13 @@
     [alertView show];
 }
 
+#pragma mark - Analytics
+- (void)logUserInitiatedDataFetchAnalytics
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"Settings"
+                                                                                        action:@"ForceDataFetch"
+                                                                                         label:@"UserInitiatedDataFetch"
+                                                                                         value:nil] build]];
+}
 
 @end

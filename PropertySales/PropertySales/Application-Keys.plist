@@ -4,5 +4,7 @@
 <dict>
 	<key>CrashlyticsAPIKey</key>
 	<string>fae00db142eb503989a6c199d8a844b24463151f</string>
+	<key>GoogleAnalyticsTrackingId</key>
+	<string>UA-48656616-1</string>
 </dict>
 </plist>

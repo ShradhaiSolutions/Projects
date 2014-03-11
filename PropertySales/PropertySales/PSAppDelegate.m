@@ -19,6 +19,7 @@
 #import "PSDataManager.h"
 
 static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
+static NSString * const kGoogleAnalyticsTrackingId = @"GoogleAnalyticsTrackingId";
 
 @interface PSAppDelegate ()
 
@@ -73,7 +74,7 @@ static NSString * const kCrashlyticsAPIKey = @"CrashlyticsAPIKey";
 #endif
     
     // Initialize tracker.
-    self.analytics = [[GAI sharedInstance] trackerWithTrackingId:@"UA-48656616-1"];
+    self.analytics = [[GAI sharedInstance] trackerWithTrackingId:[[[PSApplicationContext sharedInstance] appKeys] objectForKey:kGoogleAnalyticsTrackingId]];
 }
 
 - (void) setupLoggerFramework

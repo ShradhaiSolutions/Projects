@@ -348,18 +348,21 @@ static float const kMetersPerMile = 1609.344;
         case MapDirectionsDestinationTypeInBuilt:
             LogInfo(@"InBuilt Directions Type is selected");
             [SVProgressHUD showWithStatus:@"Calculating Routes" maskType:SVProgressHUDMaskTypeGradient];
+            [self logShowMapDirectionsAnalytics:@"InBuilt"];
             [self showDirectionsFromCurrentLocation];
             break;
         case MapDirectionsDestinationTypeInGoogle:
             LogInfo(@"Google Map Directions Type is selected");
             
             [self.googleMapsManager openGoogleMapsWithDestinationAddress:self.selectedProperty.lookupAddress];
+            [self logShowMapDirectionsAnalytics:@"Google Maps"];
             break;
         case MapDirectionsDestinationTypeInApple:
             LogInfo(@"Apple App Directions Type is selected");
             
             [self.selectedProperty.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey:
                                                                              MKLaunchOptionsDirectionsModeDriving}];
+            [self logShowMapDirectionsAnalytics:@"Apple Maps"];
             
             break;
         default:
@@ -398,5 +401,15 @@ static float const kMetersPerMile = 1609.344;
 {
     self.mapView.delegate = nil;
 }
+
+#pragma mark - Analytics
+- (void)logShowMapDirectionsAnalytics:(NSString *)type
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"MapDirections"
+                                                                                        action:@"ShowMapDirectionsOfType"
+                                                                                         label:type
+                                                                                         value:nil] build]];
+}
+
 
 @end

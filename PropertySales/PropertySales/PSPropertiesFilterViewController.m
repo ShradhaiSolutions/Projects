@@ -63,9 +63,21 @@
     ENTRY_LOG;
     
     LogInfo(@"Selected Dates: %@", self.dataSource.selectedDates);
+    
+    [self logDataFilterAnalytics];
     self.searchResultsViewModel.selectedSaleDatesForFiltering = self.dataSource.selectedDates;
     [self dismissViewControllerAnimated:YES completion:nil];
     
     EXIT_LOG;
 }
+
+#pragma mark - Analytics
+- (void)logDataFilterAnalytics
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"PropertyDataFilter"
+                                                                                        action:@"FilterBySaleDate"
+                                                                                         label:@"NumberOfSelectedSaleDates"
+                                                                                         value:@([self.dataSource.selectedDates count])] build]];
+}
+
 @end

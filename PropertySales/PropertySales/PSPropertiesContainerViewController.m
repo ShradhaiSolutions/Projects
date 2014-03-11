@@ -143,6 +143,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 {
     ENTRY_LOG;
     
+    [self logSearchAnalytics:self.searchBar.text];
     [self.searchBar resignFirstResponder];
 
     EXIT_LOG;
@@ -191,6 +192,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
         CGRect barRect = [self.view convertRect:self.searchBar.frame fromView:self.searchBar.superview];
         
         if (!CGRectContainsPoint(barRect, touchPoint)) {
+            [self logSearchAnalytics:self.searchBar.text];
             [self.searchBar resignFirstResponder];
         }
     }
@@ -201,6 +203,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     if (recognizer == self.panGestureRecognizer) {
         CGPoint touchPoint = [recognizer locationInView:self.view];
         if (!CGRectContainsPoint(self.searchBar.frame, touchPoint)) {
+            [self logSearchAnalytics:self.searchBar.text];
             [self.searchBar resignFirstResponder];
         }
     }
@@ -213,6 +216,15 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
         PSPropertiesFilterViewController *controller = [segue.destinationViewController childViewControllers][0];
         controller.searchResultsViewModel = self.searchResultsViewModel;
     }
+}
+
+#pragma mark - Analytics
+- (void)logSearchAnalytics:(NSString *)searchTerm
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"PropertyDataSearch"
+                                                                                        action:@"SearchBySearchTerm"
+                                                                                         label:searchTerm
+                                                                                         value:@([self.searchResultsViewModel.propertiesFromSearchResult count])] build]];
 }
 
 @end

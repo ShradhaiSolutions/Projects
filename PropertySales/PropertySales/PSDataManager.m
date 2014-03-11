@@ -150,6 +150,8 @@ double kDataFetchSuccess = 1.0;
              
              [self logExecutionTime:startTime];
              [self loadPropertiesFromCoreDataOnMainThread];
+
+             [self logDataFetchTime:[[NSDate date] timeIntervalSinceDate:startTime]];
              LogInfo(@"Remote Data Import is Completed!!!");
          }];
     
@@ -368,6 +370,15 @@ double kDataFetchSuccess = 1.0;
     LogInfo(@"ShouldRefreshData: %@", refreshRequired ? @"YES" : @"NO");
     
     return refreshRequired;
+}
+
+#pragma mark - Analytics
+- (void)logDataFetchTime:(NSTimeInterval)fetchTime
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createTimingWithCategory:@"DataFetch"
+                                                                                       interval:@(fetchTime * 1000)
+                                                                                           name:@"TotalDataFetchTime"
+                                                                                          label:@"TotalDataFetchTime"] build]];
 }
 
 @end
