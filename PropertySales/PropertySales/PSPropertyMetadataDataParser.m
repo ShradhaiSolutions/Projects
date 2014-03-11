@@ -9,6 +9,8 @@
 #import "PSPropertyMetadataDataParser.h"
 #import "TFHpple.h"
 
+static NSUInteger const kMaxNumberOfSaleDates = 5;
+
 @implementation PSPropertyMetadataDataParser
 
 - (RACSignal *)parsePropertySalesInitialRequest:(NSData *)responseData
@@ -117,8 +119,8 @@
     
     //Todo: make this configurable
     //Fetch the properties for only first five sale dates
-    if([saleDates count] > 5) {
-        [paramsDictionary setObject:[[saleDates copy] subarrayWithRange:NSMakeRange(0, 5)] forKey:@"SaleDatesArray"];
+    if([saleDates count] > kMaxNumberOfSaleDates) {
+        [paramsDictionary setObject:[[saleDates copy] subarrayWithRange:NSMakeRange(0, kMaxNumberOfSaleDates)] forKey:@"SaleDatesArray"];
     } else {
         [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
     }

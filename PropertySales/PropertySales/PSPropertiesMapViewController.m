@@ -33,6 +33,8 @@ static float const kMetersPerMile = 1609.344;
 
 @property (strong, nonatomic) PSCoreLocationManager *locationManager;
 
+@property (assign, nonatomic) CLLocationCoordinate2D previousCurrentLocation;
+
 @end
 
 @implementation PSPropertiesMapViewController
@@ -51,6 +53,13 @@ static float const kMetersPerMile = 1609.344;
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+    
+    //Initialization
+    CLLocationCoordinate2D initialLocation;
+    initialLocation.latitude = 39.2438;
+    initialLocation.longitude = -84.3853;
+    
+    self.previousCurrentLocation = initialLocation;
     
     [self addCurrentLocationButton];
     [self navigateToCurrentLocation];
@@ -132,14 +141,20 @@ static float const kMetersPerMile = 1609.344;
     if(location.latitude != 0 && location.longitude != 0) {
         currentLocation.latitude = location.latitude;
         currentLocation.longitude= location.longitude;
+        
+        self.previousCurrentLocation = currentLocation;
     } else {
         LogError(@"Couldn't obtain the curent Location");
 
-        currentLocation.latitude = 39.2438;
-        currentLocation.longitude= -84.3853;
+        currentLocation = self.previousCurrentLocation;
     }
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
+    [self zoomTheMapToLocation:currentLocation];
+}
+
+- (void)zoomTheMapToLocation:(CLLocationCoordinate2D)location
+{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
     [self.mapView setRegion:viewRegion animated:YES];
 }
@@ -162,6 +177,19 @@ static float const kMetersPerMile = 1609.344;
             [annotation setPropertyDetails:property];
             
             [self.mapView addAnnotation:annotation];
+        }
+        
+        if([self.properties count] == 1) {
+            Property *property = [self.properties firstObject];
+            CLLocationCoordinate2D propertyCoordinate;
+            propertyCoordinate.latitude = [property.addressLookup.latitude doubleValue];
+            propertyCoordinate.longitude = [property.addressLookup.longitude doubleValue];
+
+            [self.mapView setCenterCoordinate:propertyCoordinate animated:YES];
+        } else if([self.properties count] < 15) {
+            [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+        } else {
+            [self zoomTheMapToLocation:self.previousCurrentLocation];
         }
     }
 }

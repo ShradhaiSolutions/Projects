@@ -10,15 +10,56 @@
 
 @implementation Property (Methods)
 
++ (NSString *)lookupAddressWithAdress:(NSDictionary *)propertyData
+{
+    NSString *addr = propertyData[@"Address"];
+    NSString *township = propertyData[@"Township"];
+    
+    return [Property lookupAddressWithAdress:addr township:township];
+}
+
+
++ (NSString *)lookupAddressWithAdress:(NSString *)address township:(NSString *)township
+{
+    static dispatch_once_t once;
+    static NSDictionary *townshipExpansion;
+    dispatch_once(&once, ^ {
+        townshipExpansion = @{@"CINTI":@"Cincinnati"};
+    });
+    
+    township = [townshipExpansion objectForKey:[township uppercaseString]] ? : township;
+    NSString *lookupAddress = [NSString stringWithFormat:@"%@ %@ OH USA", address, township];
+    
+    return lookupAddress;
+    
+}
+
 - (NSString *)getAddress
 {
-    NSString *address = nil;
-    
-    if(self.address && self.township) {
-        address = [NSString stringWithFormat:@"%@ %@ OH USA", self.address, self.township];
-    }
-    
-    return address;
+    return [Property lookupAddressWithAdress:self.address township:self.township];
+}
+
+- (void)mapData:(NSDictionary *)propertyDictionary
+{
+    static dispatch_once_t once;
+    static NSDateFormatter *formatter;
+    dispatch_once(&once, ^ {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MM/dd/yyyy"];
+    });
+
+    self.address = propertyDictionary[@"Address"];
+    self.appraisal = propertyDictionary[@"Appraisal"];
+    self.attyName = propertyDictionary[@"AttyName"];
+    self.attyPhone = propertyDictionary[@"AttyPhone"];
+    self.caseNo = propertyDictionary[@"CaseNO"];
+    self.minBid = propertyDictionary[@"MinBid"];
+    self.name = propertyDictionary[@"Name"];
+    self.plaintiff = propertyDictionary[@"Plaintiff"];
+    self.saleData = [formatter dateFromString:propertyDictionary[@"SaleDate"]];
+    self.township = propertyDictionary[@"Township"];
+    self.wd = propertyDictionary[@"WD"];
+    self.lookupAddress = [self getAddress];
 }
 
 - (NSString *)description

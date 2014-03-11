@@ -10,6 +10,10 @@
 
 @interface Property (Methods)
 
++ (NSString *)lookupAddressWithAdress:(NSDictionary *)propertyData;
++ (NSString *)lookupAddressWithAdress:(NSString *)address township:(NSString *)township;
+
+- (void)mapData:(NSDictionary *)propertyDictionary;
 - (NSString *)getAddress;
 
 - (NSString *)title;

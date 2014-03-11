@@ -34,7 +34,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 	<string>10</string>
+=======
+	<string>11</string>
+>>>>>>> master
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -46,8 +50,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

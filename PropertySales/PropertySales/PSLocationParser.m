@@ -9,6 +9,7 @@
 #import "PSLocationParser.h"
 #import <MapKit/MapKit.h>
 #import "PSFileManager.h"
+#import "Property+Methods.h"
 
 @implementation PSLocationParser
 
@@ -58,7 +59,7 @@
 //                   break;
 //               }
                
-               NSString *nextAddress = [self getAddress:property];
+               NSString *nextAddress = [Property lookupAddressWithAdress:property];
                NSDictionary *geoCodeInfo = [self.addressToGeocodeMappingDictionary objectForKey:nextAddress];
                
                if(geoCodeInfo == nil ||
@@ -107,7 +108,7 @@
                //Increment the main index
                i++;
                
-               NSString *nextAddress = [self getAddress:property];
+               NSString *nextAddress = [Property lookupAddressWithAdress:property];
                NSDictionary *geoCodeInfo = [self.addressToGeocodeMappingDictionary objectForKey:nextAddress];
                
                if(geoCodeInfo == nil ||
@@ -176,19 +177,6 @@
     }] doError:^(NSError *error) {
         LogError(@"%@",error);
     }];
-}
-
-- (NSString *)getAddress:(NSMutableDictionary *)property
-{
-//    ENTRY_LOG;
-    
-    NSString *addr = property[@"Address"];
-    NSString *township = property[@"Township"];
-    NSString *address = [NSString stringWithFormat:@"%@ %@ OH USA", addr, township];
-    
-//    EXIT_LOG;
-    
-    return address;
 }
 
 @end
