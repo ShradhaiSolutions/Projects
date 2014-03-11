@@ -7,7 +7,6 @@
 //
 
 #import "PSDataManager.h"
-#import "PSPropertyMetaDataRequest.h"
 #import "PSDataCommunicator.h"
 #import "PSPropertyMetadataDataParser.h"
 #import "PSPropertySaleDataParser.h"
@@ -87,8 +86,15 @@ double kDataFetchSuccess = 1.0;
     self.dataFetchProgress = @0.0;
     
     @weakify(self);
-    [[[[[[self fetchPropertyMetaData]
+    [[[[[[[self fetchPropertyMetaData]
          flattenMap:^RACStream *(id metaDataDictionary) {
+             LogDebug(@"Property Meta Data is received");
+             LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
+             
+             self.dataFetchProgress = @0.1;
+             
+             return [self fetchPropertySaleDatesWithPasedMetadata:metaDataDictionary];
+         }] flattenMap:^RACStream *(id metaDataDictionary) {
              LogDebug(@"Property Meta Data is received");
              LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
              
@@ -175,6 +181,38 @@ double kDataFetchSuccess = 1.0;
     
 }
 
+#pragma mark - Fetch Property Sale Dates
+- (RACSignal *)fetchPropertySaleDatesWithPasedMetadata:(NSDictionary *)parsedData
+{
+    ENTRY_LOG;
+    
+    NSMutableDictionary *postParams = [parsedData mutableCopy];
+    [postParams removeObjectForKey:@"SaleDatesArray"];
+
+    LogInfo(@"Fetching the Property Sale Dates");
+    [postParams setObject:@"Upcoming Foreclosures" forKey:@"btnCurrent"];
+
+    return [self fetchPropertySaleDatesWithPostParams:[postParams copy]];
+    
+    EXIT_LOG;
+}
+
+- (RACSignal *)fetchPropertySaleDatesWithPostParams:(NSDictionary *)postParams
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+    
+    return [[self.communicator fetchPropertySaleDatesWithPostParams:postParams]
+            flattenMap:^RACStream *(id responseData) {
+                LogDebug(@"Property Sale Dates response is received");
+                PSPropertyMetadataDataParser *parser = [[PSPropertyMetadataDataParser alloc] init];
+                return [parser parsePropertySalesInitialRequest:responseData];
+            }];
+    
+}
+
+
 #pragma mark - Fetch Property Saledata
 - (RACSignal *)fetchPropertySalesWithPasedMetadata:(NSDictionary *)parsedData
 {
@@ -194,6 +232,11 @@ double kDataFetchSuccess = 1.0;
             
             LogInfo(@"Fetching the properties for the sale date: %@", saleDate);
             [postParams setObject:saleDate forKey:@"ddlDate"];
+            [postParams setObject:@"" forKey:@"ddlTown"];
+            [postParams setObject:@"" forKey:@"txtAddress"];
+            [postParams setObject:@"" forKey:@"txtAddress_TextBoxWatermarkExtender_ClientState"];
+            [postParams setObject:@"GO" forKey:@"btnGo"];
+            [postParams setObject:@"" forKey:@"txtCaseno"];
             
             RACSignal *saleDataFetchSignal = [self fetchPropertySaleDataWithPostParams:[postParams copy]];
             [saleDateSignals addObject:saleDataFetchSignal];
@@ -327,7 +370,7 @@ double kDataFetchSuccess = 1.0;
         [saleDateStrings addObject:[self.dateFormatter stringFromDate:saleDate]];
     }
     
-    LogDebug(@"SaleDate Stringss: %@", saleDateStrings);
+    LogDebug(@"SaleDate Strings: %@", saleDateStrings);
     
     self.saleDates = [saleDates copy];
     self.saleDateStrings = [saleDateStrings copy];
@@ -376,9 +419,11 @@ double kDataFetchSuccess = 1.0;
 #pragma mark - Analytics
 - (void)logDataFetchTime:(NSTimeInterval)fetchTime
 {
-    int fetchTimeInMilliSeconds = fetchTime * 1000;
+    //If we send the whole number, the value is not popping up at Analytics
+    int fetchIntervalInMilliSeconds = abs(fetchTime * 1000);
+    
     [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createTimingWithCategory:@"DataFetch"
-                                                                                       interval:@(fetchTimeInMilliSeconds)
+                                                                                       interval:@(fetchIntervalInMilliSeconds)
                                                                                            name:@"TotalDataFetchTime"
                                                                                           label:@"TotalDataFetchTime"] build]];
 }
