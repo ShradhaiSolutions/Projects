@@ -101,7 +101,6 @@ double kDataFetchSuccess = 1.0;
              self.dataFetchProgress = @0.1;
              
              return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
-
          }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
              LogDebug(@"Property Sale Data is received");
              LogVerbose(@"Parsed Metadata: %@", propertiesOfASaleDate);
@@ -232,6 +231,11 @@ double kDataFetchSuccess = 1.0;
             
             LogInfo(@"Fetching the properties for the sale date: %@", saleDate);
             [postParams setObject:saleDate forKey:@"ddlDate"];
+            [postParams setObject:@"" forKey:@"ddlTown"];
+            [postParams setObject:@"" forKey:@"txtAddress"];
+            [postParams setObject:@"" forKey:@"txtAddress_TextBoxWatermarkExtender_ClientState"];
+            [postParams setObject:@"GO" forKey:@"btnGo"];
+            [postParams setObject:@"" forKey:@"txtCaseno"];
             
             RACSignal *saleDataFetchSignal = [self fetchPropertySaleDataWithPostParams:[postParams copy]];
             [saleDateSignals addObject:saleDataFetchSignal];
@@ -365,7 +369,7 @@ double kDataFetchSuccess = 1.0;
         [saleDateStrings addObject:[self.dateFormatter stringFromDate:saleDate]];
     }
     
-    LogDebug(@"SaleDate Stringss: %@", saleDateStrings);
+    LogDebug(@"SaleDate Strings: %@", saleDateStrings);
     
     self.saleDates = [saleDates copy];
     self.saleDateStrings = [saleDateStrings copy];
