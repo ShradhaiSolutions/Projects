@@ -47,6 +47,7 @@
 		8A38027E18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A38027D18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m */; };
 		8A4B2EF3189E0651005AEADF /* PSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF2189E0651005AEADF /* PSTestViewController.m */; };
 		8A4B2EF5189E0B3B005AEADF /* PSTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */; };
+		8A4EBF1818CF76A5000E9323 /* PSPropertySaleDatesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4EBF1718CF76A5000E9323 /* PSPropertySaleDatesRequest.m */; };
 		8A63C43C18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A63C43A18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist */; };
 		8A63C44118CAF07F00DE8BE5 /* PropertiesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A63C44018CAF07F00DE8BE5 /* PropertiesArray.plist */; };
 		8A645C1D18A1B1B800DCD756 /* PSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A645C1C18A1B1B800DCD756 /* PSLocationManager.m */; };
@@ -153,6 +154,8 @@
 		8A4B2EF1189E0651005AEADF /* PSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTestViewController.h; sourceTree = "<group>"; };
 		8A4B2EF2189E0651005AEADF /* PSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTestViewController.m; sourceTree = "<group>"; };
 		8A4B2EF4189E0B3B005AEADF /* PSTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSTestStoryboard.storyboard; sourceTree = "<group>"; };
+		8A4EBF1618CF76A5000E9323 /* PSPropertySaleDatesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertySaleDatesRequest.h; sourceTree = "<group>"; };
+		8A4EBF1718CF76A5000E9323 /* PSPropertySaleDatesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPropertySaleDatesRequest.m; sourceTree = "<group>"; };
 		8A63C43A18CAEDBD00DE8BE5 /* AddressToGeocodeMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressToGeocodeMapping.plist; sourceTree = "<group>"; };
 		8A63C44018CAF07F00DE8BE5 /* PropertiesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertiesArray.plist; sourceTree = "<group>"; };
 		8A645C1B18A1B1B800DCD756 /* PSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationManager.h; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 			children = (
 				8A2965AB18ADD02100AA330C /* PSPropertyMetaDataRequest.h */,
 				8A2965AC18ADD02100AA330C /* PSPropertyMetaDataRequest.m */,
+				8A4EBF1618CF76A5000E9323 /* PSPropertySaleDatesRequest.h */,
+				8A4EBF1718CF76A5000E9323 /* PSPropertySaleDatesRequest.m */,
 				8AA6686418AEF2DB00C6C83A /* PSPropertySaleDataRequest.h */,
 				8AA6686518AEF2DB00C6C83A /* PSPropertySaleDataRequest.m */,
 				8A2965AF18ADD1B000AA330C /* PSHttpClient.h */,
@@ -701,6 +706,7 @@
 				8AA758D318A73456006DFB84 /* Property.m in Sources */,
 				8AA758E218A743D1006DFB84 /* Property+Methods.m in Sources */,
 				8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */,
+				8A4EBF1818CF76A5000E9323 /* PSPropertySaleDatesRequest.m in Sources */,
 				8A86CF6118A47628009048A4 /* PSProperty+LocationParser.m in Sources */,
 				8A37454518A7F68E0012E8A2 /* PSPropertiesListViewController.m in Sources */,
 				8AF2934C18AC66A200DA0D2D /* PSSearchResultsViewModel.m in Sources */,

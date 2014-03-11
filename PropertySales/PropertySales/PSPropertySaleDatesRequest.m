@@ -1,22 +1,21 @@
 //
-//  PSPropertySaleDataRequest.m
+//  PSPropertySaleDatesRequest.m
 //  PropertySales
 //
-//  Created by DHANA PRAKASH MUDDINETI on 2/14/14.
+//  Created by DHANA PRAKASH MUDDINETI on 3/11/14.
 //  Copyright (c) 2014 Shradha iSolutions. All rights reserved.
 //
 
-#import "PSPropertySaleDataRequest.h"
+#import "PSPropertySaleDatesRequest.h"
 #import <AFNetworking/AFNetworking.h>
 #import "PSHttpClient.h"
 
-@implementation PSPropertySaleDataRequest
+@implementation PSPropertySaleDatesRequest
 
 /**
- *	Fetch the Property Sales data for a given sale date
+ *	Fetch the initial data (meta data) from the website
  *
  */
-
 - (RACSignal *)invokeRequestWithPostParams:(NSDictionary *)postParams
 {
     ENTRY_LOG;
@@ -43,7 +42,7 @@
               }];
         
         manager = nil;
-
+        
         return nil;
     }] doError:^(NSError *error) {
         LogError(@"%@",error);

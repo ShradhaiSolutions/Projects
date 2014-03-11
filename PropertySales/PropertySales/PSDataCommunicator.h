@@ -11,6 +11,7 @@
 @interface PSDataCommunicator : NSObject
 
 - (RACSignal *)fetchPropertyMetaData;
+- (RACSignal *)fetchPropertySaleDatesWithPostParams:(NSDictionary *)postParams;
 - (RACSignal *)fetchPropertySaleDataWithPostParams:(NSDictionary *)postParams;
 
 @end

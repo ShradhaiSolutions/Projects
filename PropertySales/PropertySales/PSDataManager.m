@@ -7,7 +7,6 @@
 //
 
 #import "PSDataManager.h"
-#import "PSPropertyMetaDataRequest.h"
 #import "PSDataCommunicator.h"
 #import "PSPropertyMetadataDataParser.h"
 #import "PSPropertySaleDataParser.h"
@@ -87,14 +86,22 @@ double kDataFetchSuccess = 1.0;
     self.dataFetchProgress = @0.0;
     
     @weakify(self);
-    [[[[[[self fetchPropertyMetaData]
+    [[[[[[[self fetchPropertyMetaData]
          flattenMap:^RACStream *(id metaDataDictionary) {
              LogDebug(@"Property Meta Data is received");
              LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
              
              self.dataFetchProgress = @0.1;
              
+             return [self fetchPropertySaleDatesWithPasedMetadata:metaDataDictionary];
+         }] flattenMap:^RACStream *(id metaDataDictionary) {
+             LogDebug(@"Property Meta Data is received");
+             LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
+             
+             self.dataFetchProgress = @0.1;
+             
              return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
+
          }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
              LogDebug(@"Property Sale Data is received");
              LogVerbose(@"Parsed Metadata: %@", propertiesOfASaleDate);
@@ -173,6 +180,38 @@ double kDataFetchSuccess = 1.0;
             }];
     
 }
+
+#pragma mark - Fetch Property Sale Dates
+- (RACSignal *)fetchPropertySaleDatesWithPasedMetadata:(NSDictionary *)parsedData
+{
+    ENTRY_LOG;
+    
+    NSMutableDictionary *postParams = [parsedData mutableCopy];
+    [postParams removeObjectForKey:@"SaleDatesArray"];
+
+    LogInfo(@"Fetching the Property Sale Dates");
+    [postParams setObject:@"Upcoming Foreclosures" forKey:@"btnCurrent"];
+
+    return [self fetchPropertySaleDatesWithPostParams:[postParams copy]];
+    
+    EXIT_LOG;
+}
+
+- (RACSignal *)fetchPropertySaleDatesWithPostParams:(NSDictionary *)postParams
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+    
+    return [[self.communicator fetchPropertySaleDatesWithPostParams:postParams]
+            flattenMap:^RACStream *(id responseData) {
+                LogDebug(@"Property Sale Dates response is received");
+                PSPropertyMetadataDataParser *parser = [[PSPropertyMetadataDataParser alloc] init];
+                return [parser parsePropertySalesInitialRequest:responseData];
+            }];
+    
+}
+
 
 #pragma mark - Fetch Property Saledata
 - (RACSignal *)fetchPropertySalesWithPasedMetadata:(NSDictionary *)parsedData
@@ -375,10 +414,14 @@ double kDataFetchSuccess = 1.0;
 #pragma mark - Analytics
 - (void)logDataFetchTime:(NSTimeInterval)fetchTime
 {
+    //If we send the whole number, the value is not popping up at Analytics
+    int fetchIntervalInMilliSeconds = abs(fetchTime * 1000);
+    
     [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createTimingWithCategory:@"DataFetch"
-                                                                                       interval:@(fetchTime * 1000)
+                                                                                       interval:@(fetchIntervalInMilliSeconds)
                                                                                            name:@"TotalDataFetchTime"
                                                                                           label:@"TotalDataFetchTime"] build]];
 }
+
 
 @end
