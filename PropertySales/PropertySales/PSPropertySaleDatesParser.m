@@ -1,19 +1,20 @@
 //
-//  PSDataParser.m
+//  PSPropertySaleDatesParser.m
 //  PropertySales
 //
-//  Created by DHANA PRAKASH MUDDINETI on 2/14/14.
+//  Created by DHANA PRAKASH MUDDINETI on 3/11/14.
 //  Copyright (c) 2014 Shradha iSolutions. All rights reserved.
 //
 
-#import "PSPropertyMetadataDataParser.h"
+#import "PSPropertySaleDatesParser.h"
+
 #import "TFHpple.h"
 
 static NSUInteger const kMaxNumberOfSaleDates = 5;
 
-@implementation PSPropertyMetadataDataParser
+@implementation PSPropertySaleDatesParser
 
-- (RACSignal *)parsePropertySalesInitialRequest:(NSData *)responseData
+- (RACSignal *)parsePropertySaleDatesResponse:(NSData *)responseData
 {
     ENTRY_LOG;
     
@@ -32,10 +33,17 @@ static NSUInteger const kMaxNumberOfSaleDates = 5;
         
         parsedResponseObject = nil;
         
-        LogDebug(@"Parsing the Property Metadata response - Completed");
+        NSArray *saleDates = [paramsDictionary objectForKey:@"SaleDatesArray"];
         
-        [subscriber sendNext:[paramsDictionary copy]];
-        [subscriber sendCompleted];
+        if([saleDates count] <= 0) {
+            [subscriber sendError:[NSError errorWithDomain:@"PropertyMetaDataParseNoSaleDates" code:100 userInfo:nil]];
+        } else {
+            LogDebug(@"Parsing the Property Metadata response - Completed");
+            
+            [subscriber sendNext:[paramsDictionary copy]];
+            [subscriber sendCompleted];
+        }
+        
         
         return nil;
     }] doError:^(NSError *error) {
@@ -124,7 +132,7 @@ static NSUInteger const kMaxNumberOfSaleDates = 5;
     } else {
         [paramsDictionary setObject:[saleDates copy] forKey:@"SaleDatesArray"];
     }
-
+    
     
     EXIT_LOG;
 }

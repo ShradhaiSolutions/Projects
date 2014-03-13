@@ -9,6 +9,7 @@
 #import "PSDataManager.h"
 #import "PSDataCommunicator.h"
 #import "PSPropertyMetadataDataParser.h"
+#import "PSPropertySaleDatesParser.h"
 #import "PSPropertySaleDataParser.h"
 #import "PSFileManager.h"
 #import "PSLocationParser.h"
@@ -98,7 +99,7 @@ double kDataFetchSuccess = 1.0;
              LogDebug(@"Property Meta Data is received");
              LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
              
-             self.dataFetchProgress = @0.1;
+             self.dataFetchProgress = @0.2;
              
              return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
          }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
@@ -113,7 +114,7 @@ double kDataFetchSuccess = 1.0;
              return [RACSignal empty];
          }] then:^RACSignal *{
              @strongify(self);
-             LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", [properties count]);
+             LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", (unsigned long)[properties count]);
              [self logExecutionTime:startTime];
              
              self.communicator = nil;
@@ -206,8 +207,8 @@ double kDataFetchSuccess = 1.0;
     return [[self.communicator fetchPropertySaleDatesWithPostParams:postParams]
             flattenMap:^RACStream *(id responseData) {
                 LogDebug(@"Property Sale Dates response is received");
-                PSPropertyMetadataDataParser *parser = [[PSPropertyMetadataDataParser alloc] init];
-                return [parser parsePropertySalesInitialRequest:responseData];
+                PSPropertySaleDatesParser *parser = [[PSPropertySaleDatesParser alloc] init];
+                return [parser parsePropertySaleDatesResponse:responseData];
             }];
     
 }
@@ -293,7 +294,7 @@ double kDataFetchSuccess = 1.0;
          LogError(@"Error while importing the data: %@",error);
      } completed:^{
          [self loadPropertiesFromCoreData];
-         LogDebug(@"Local Cache is successfull imported into Core Data. Number of Properties: %lu", [self.properties count]);
+         LogDebug(@"Local Cache is successfull imported into Core Data. Number of Properties: %lu", (unsigned long)[self.properties count]);
      }];
 }
 
@@ -399,7 +400,7 @@ double kDataFetchSuccess = 1.0;
 
         NSTimeInterval elapstedTime = fabs([lastSuccessfulRefreshDate timeIntervalSinceNow]);
         
-        LogDebug(@"{elapstedTime: %f, refreshInterval:%lu}", elapstedTime, interval);
+        LogDebug(@"{elapstedTime: %f, refreshInterval:%lu}", elapstedTime, (unsigned long)interval);
         
         if(elapstedTime > interval) {
             refreshRequired = YES;
