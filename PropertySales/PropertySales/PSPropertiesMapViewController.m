@@ -13,6 +13,7 @@
 #import "PSDataManager.h"
 #import "AddressLookup.h"
 #import "PSPropertyAnnotation.h"
+#import "PSLocationSearchAnnotation.h"
 #import "PSGoogleMapsManager.h"
 #import "PSCoreLocationManager.h"
 #import "UIColor+Theme.h"
@@ -206,6 +207,29 @@ static float const kMetersPerMile = 1609.344;
     [self.mapView removeAnnotations:annotations];
 }
 
+- (void)addLocationSearchAnnotation:(CLLocationCoordinate2D)location
+{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
+    
+    PSLocationSearchAnnotation *searchAnnotation = [[PSLocationSearchAnnotation alloc] initWithCoordinates:location title:@"Title"];
+
+    [self removeExistingLocationSearchAnnotations];
+    [self.mapView addAnnotation:searchAnnotation];
+    [self.mapView setRegion:viewRegion animated:YES];
+}
+
+- (void)removeExistingLocationSearchAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray array];
+    [self.mapView.annotations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[PSLocationSearchAnnotation class]]) {
+            [annotations addObject:obj];
+        }
+    }];
+    
+    [self.mapView removeAnnotations:annotations];
+}
+
 - (void)removeExistingOverlays
 {
     [self.mapView removeOverlays:self.mapView.overlays];
@@ -214,11 +238,12 @@ static float const kMetersPerMile = 1609.344;
 #pragma mark - MKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    static NSString *identifier = @"PropertyAnnotation";
+    static NSString *propertyAnnotationIdentifier = @"PropertyAnnotation";
+    static NSString *locationSearchAnnotationIdentifier = @"LocationSearchAnnotation";
     if ([annotation isKindOfClass:[PSPropertyAnnotation class]]) {
-        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:propertyAnnotationIdentifier];
         if (annotationView == nil) {
-            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:propertyAnnotationIdentifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             
@@ -253,6 +278,32 @@ static float const kMetersPerMile = 1609.344;
         
         
         return annotationView;
+    } else if ([annotation isKindOfClass:[PSLocationSearchAnnotation class]]) {
+        MKAnnotationView *annotationView = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:locationSearchAnnotationIdentifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:locationSearchAnnotationIdentifier];
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = NO;
+        } else {
+            annotationView.annotation = annotation;
+        }
+        
+        UIImage *mapPin = [UIImage imageNamed:@"MapPin"];
+        mapPin = [mapPin imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        
+//        annotationView.image = [UIImage imageNamed:@"MapPin"];
+//        annotationView.tintColor = [UIColor greenColor];
+        [annotationView setTintColor:[UIColor clearColor]];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:mapPin];
+        imageView.tintColor = [UIColor blueColor];
+        
+        
+        [annotationView addSubview:imageView];
+        
+        return annotationView;
+        
     }
     
     return nil;
@@ -260,7 +311,7 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    if([view isKindOfClass:[MKPinAnnotationView class]]) {
+    if([view isKindOfClass:[PSPropertyAnnotation class]]) {
         [self removeExistingOverlays];
         self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
         LogDebug(@"Annotation is selected: %@", view);

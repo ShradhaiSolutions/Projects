@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+
+typedef void (^PSLocationSearchCompletionBlock)(CLLocationCoordinate2D coords);
 
 @interface PSLocationManager : NSObject
 
@@ -14,5 +17,6 @@
 
 - (void)getCoordinates;
 -(NSArray *)createPropertiesModel;
+- (void)convertAddressToCoordinate:(NSString *)address withCompletion:(PSLocationSearchCompletionBlock)completion;
 
 @end

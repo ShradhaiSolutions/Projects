@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 - (void)updateTheMapRegion:(CLLocationCoordinate2D)location;
+- (void)addLocationSearchAnnotation:(CLLocationCoordinate2D)location;
 - (void)showDirectionsFromCurrentLocation;
 
 @end
