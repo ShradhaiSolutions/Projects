@@ -292,12 +292,10 @@ static float const kMetersPerMile = 1609.344;
         UIImage *mapPin = [UIImage imageNamed:@"MapPin"];
         mapPin = [mapPin imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
-//        annotationView.image = [UIImage imageNamed:@"MapPin"];
-//        annotationView.tintColor = [UIColor greenColor];
         [annotationView setTintColor:[UIColor clearColor]];
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:mapPin];
-        imageView.tintColor = [UIColor blueColor];
+        imageView.tintColor = [UIColor blueTintColor];
         
         
         [annotationView addSubview:imageView];

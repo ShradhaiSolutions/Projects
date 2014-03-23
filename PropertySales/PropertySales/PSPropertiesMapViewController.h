@@ -19,6 +19,7 @@
 
 - (void)updateTheMapRegion:(CLLocationCoordinate2D)location;
 - (void)addLocationSearchAnnotation:(CLLocationCoordinate2D)location;
+- (void)removeExistingLocationSearchAnnotations;
 - (void)showDirectionsFromCurrentLocation;
 
 @end
