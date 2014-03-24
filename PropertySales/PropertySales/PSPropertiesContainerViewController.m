@@ -10,6 +10,7 @@
 #import "PSPropertiesListViewController.h"
 #import "PSPropertiesMapViewController.h"
 #import "PSPropertiesFilterViewController.h"
+#import "PSLocationSearchResultsViewController.h"
 #import "PSDataManager.h"
 #import "PSCoreLocationManagerDelegate.h"
 #import "PSSearchResultsViewModel.h"
@@ -24,13 +25,14 @@ typedef NS_ENUM(NSUInteger, SearchType) {
     SearchTypeLocation = 1
 };
 
-@interface PSPropertiesContainerViewController () <UISearchBarDelegate, UIGestureRecognizerDelegate>
+@interface PSPropertiesContainerViewController () <UISearchBarDelegate, UIGestureRecognizerDelegate, PSLocationSearchDelegate>
 
 @property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
 @property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
 @property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
 @property (assign, nonatomic) SearchType searchType;
 @property (strong, nonatomic) NSString *locationSearchText;
+@property (strong, nonatomic) CLPlacemark *locationSearchPlacemark;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *searchToolbar;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -114,6 +116,7 @@ typedef NS_ENUM(NSUInteger, SearchType) {
         self.searchBar.text = self.searchResultsViewModel.searchString;
     } else {
         PSPropertiesMapViewController *vc = (PSPropertiesMapViewController *)childViewController;
+        vc.locationSearchPlacemark = self.locationSearchPlacemark;
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
         
         NSMutableArray *toolbarButtons = [self.searchToolbar.items mutableCopy];
@@ -219,12 +222,48 @@ typedef NS_ENUM(NSUInteger, SearchType) {
         self.locationSearchText = searchBar.text;
         [SVProgressHUD showWithStatus:@"Finding Address" maskType:SVProgressHUDMaskTypeGradient];
         PSLocationManager *locationManager = [[PSLocationManager alloc] init];
-        [locationManager convertAddressToCoordinate:searchBar.text withCompletion:^(CLLocationCoordinate2D coords) {
-            [((PSPropertiesMapViewController *) [self.childViewControllers firstObject]) addLocationSearchAnnotation:coords];
+        
+        @weakify(self);
+        [locationManager convertAddressToCoordinate:searchBar.text withCompletion:^(NSArray *placemarks) {
+            @strongify(self);
+            [self handleLocationSearchResults:placemarks];
         }];
     }
 
     EXIT_LOG;
+}
+
+- (void)handleLocationSearchResults:(NSArray *)placemarks
+{
+    if([placemarks count] > 0) {
+        if([placemarks count] == 1) {
+            [self addLocationSearchAnnotation:[placemarks firstObject]];
+        } else {
+            UINavigationController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LocationSearchResults"];
+            PSLocationSearchResultsViewController *locationSearchVC = (PSLocationSearchResultsViewController *) [viewController topViewController];
+            locationSearchVC.searchResults = placemarks;
+            locationSearchVC.delegate = self;
+            
+            [self presentViewController:viewController animated:YES completion:nil];
+            
+            LogDebug(@"Number of Search Results: %lu", (unsigned long)[placemarks count]);
+        }
+    }
+}
+
+- (void)addLocationSearchAnnotation:(CLPlacemark *)placemark
+{
+    if(placemark == nil) {
+        return;
+    }
+    
+    PSPropertiesMapViewController *mapVC = (PSPropertiesMapViewController *) [self.childViewControllers firstObject];
+    mapVC.locationSearchPlacemark = placemark;
+    self.locationSearchPlacemark = placemark;
+    
+    [mapVC showLocationSearchAnnotation];
+    
+    LogDebug(@"Latitude = %f, Longitude = %f", placemark.location.coordinate.latitude, placemark.location.coordinate.longitude);
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -239,7 +278,11 @@ typedef NS_ENUM(NSUInteger, SearchType) {
             if([[self.childViewControllers firstObject] isKindOfClass:[PSPropertiesMapViewController class]]) {
                 DDLogVerbose(@"Empty String");
                 self.locationSearchText = nil;
-                [((PSPropertiesMapViewController *) [self.childViewControllers firstObject]) removeExistingLocationSearchAnnotations];
+                
+                PSPropertiesMapViewController *mapVC = (PSPropertiesMapViewController *) [self.childViewControllers firstObject];
+                mapVC.locationSearchPlacemark = nil;
+                self.locationSearchPlacemark = nil;
+                [mapVC removeExistingLocationSearchAnnotations];
             }
         }
     }

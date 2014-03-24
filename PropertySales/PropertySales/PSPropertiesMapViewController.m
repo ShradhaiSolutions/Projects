@@ -128,6 +128,10 @@ static float const kMetersPerMile = 1609.344;
          PSDataManager *dataManager = [PSDataManager sharedInstance];
          self.saleDates = [dataManager getSaleDates];
          [self addAnnotations];
+         
+         if(self.locationSearchPlacemark) {
+             [self showLocationSearchAnnotation];
+         }
      } error:^(NSError *error) {
          LogError(@"Error While adding Annotations: %@", error);
      }];
@@ -207,11 +211,14 @@ static float const kMetersPerMile = 1609.344;
     [self.mapView removeAnnotations:annotations];
 }
 
-- (void)addLocationSearchAnnotation:(CLLocationCoordinate2D)location
+- (void)showLocationSearchAnnotation
 {
+    CLLocationCoordinate2D location = self.locationSearchPlacemark.location.coordinate;
+    
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
     
-    PSLocationSearchAnnotation *searchAnnotation = [[PSLocationSearchAnnotation alloc] initWithCoordinates:location title:@"Title"];
+    PSLocationSearchAnnotation *searchAnnotation = [[PSLocationSearchAnnotation alloc] initWithCoordinates:location
+                                                                                                     title:@"Title"];
 
     [self removeExistingLocationSearchAnnotations];
     [self.mapView addAnnotation:searchAnnotation];
@@ -228,6 +235,10 @@ static float const kMetersPerMile = 1609.344;
     }];
     
     [self.mapView removeAnnotations:annotations];
+    
+    if(self.locationSearchPlacemark == nil) {
+        [self zoomTheMapToLocation:self.previousCurrentLocation];
+    }
 }
 
 - (void)removeExistingOverlays
@@ -284,7 +295,7 @@ static float const kMetersPerMile = 1609.344;
         if (annotationView == nil) {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:locationSearchAnnotationIdentifier];
             annotationView.enabled = YES;
-            annotationView.canShowCallout = NO;
+            annotationView.canShowCallout = YES;
         } else {
             annotationView.annotation = annotation;
         }

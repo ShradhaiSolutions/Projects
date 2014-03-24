@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-typedef void (^PSLocationSearchCompletionBlock)(CLLocationCoordinate2D coords);
+typedef void (^PSLocationSearchCompletionBlock)(NSArray *placemarks);
 
 @interface PSLocationManager : NSObject
 

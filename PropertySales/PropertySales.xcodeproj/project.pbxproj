@@ -58,6 +58,9 @@
 		8A6A9B1418B00024004FCC37 /* PSLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1318B00024004FCC37 /* PSLocationParser.m */; };
 		8A6A9B1718B01443004FCC37 /* NSObject+ExecutionTimeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */; };
 		8A718B3418BA5D9000B71CE9 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */; };
+		8A79547E18DFAC9C00448082 /* PSLocationSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A79547D18DFAC9C00448082 /* PSLocationSearchResultsViewController.m */; };
+		8A79548118DFADE900448082 /* PSLocationSearchResultsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A79548018DFADE900448082 /* PSLocationSearchResultsTableDataSource.m */; };
+		8A79548418DFCA4100448082 /* NSArray+StringDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A79548318DFCA4100448082 /* NSArray+StringDescription.m */; };
 		8A795F0518A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0618A890D700A9508B /* Property+MKAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0418A890D700A9508B /* Property+MKAnnotations.m */; };
 		8A795F0918A8999F00A9508B /* PSPropertyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A795F0818A8999F00A9508B /* PSPropertyDetailsViewController.m */; };
@@ -174,6 +177,12 @@
 		8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ExecutionTimeLogger.m"; sourceTree = "<group>"; };
 		8A718B3218BA5D9000B71CE9 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		8A718B3318BA5D9000B71CE9 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
+		8A79547C18DFAC9C00448082 /* PSLocationSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationSearchResultsViewController.h; sourceTree = "<group>"; };
+		8A79547D18DFAC9C00448082 /* PSLocationSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationSearchResultsViewController.m; sourceTree = "<group>"; };
+		8A79547F18DFADE900448082 /* PSLocationSearchResultsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLocationSearchResultsTableDataSource.h; sourceTree = "<group>"; };
+		8A79548018DFADE900448082 /* PSLocationSearchResultsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLocationSearchResultsTableDataSource.m; sourceTree = "<group>"; };
+		8A79548218DFCA4100448082 /* NSArray+StringDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+StringDescription.h"; sourceTree = "<group>"; };
+		8A79548318DFCA4100448082 /* NSArray+StringDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+StringDescription.m"; sourceTree = "<group>"; };
 		8A795F0318A890D700A9508B /* Property+MKAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property+MKAnnotations.h"; sourceTree = "<group>"; };
 		8A795F0418A890D700A9508B /* Property+MKAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Property+MKAnnotations.m"; sourceTree = "<group>"; };
 		8A795F0718A8999F00A9508B /* PSPropertyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPropertyDetailsViewController.h; sourceTree = "<group>"; };
@@ -354,6 +363,10 @@
 				8A2A3D5B18B84B6100078596 /* PSGoogleMapsManager.m */,
 				8A38027C18C2EC3F0055041F /* PSAboutRefreshPolicyCell.h */,
 				8A38027D18C2EC3F0055041F /* PSAboutRefreshPolicyCell.m */,
+				8A79547C18DFAC9C00448082 /* PSLocationSearchResultsViewController.h */,
+				8A79547D18DFAC9C00448082 /* PSLocationSearchResultsViewController.m */,
+				8A79547F18DFADE900448082 /* PSLocationSearchResultsTableDataSource.h */,
+				8A79548018DFADE900448082 /* PSLocationSearchResultsTableDataSource.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -521,6 +534,8 @@
 				8A6A9B1618B01443004FCC37 /* NSObject+ExecutionTimeLogger.m */,
 				8AD25BB018C1103C00A4475F /* NSDate+Utilities.h */,
 				8AD25BB118C1103C00A4475F /* NSDate+Utilities.m */,
+				8A79548218DFCA4100448082 /* NSArray+StringDescription.h */,
+				8A79548318DFCA4100448082 /* NSArray+StringDescription.m */,
 			);
 			name = "Object+Categories";
 			sourceTree = "<group>";
@@ -732,13 +747,16 @@
 				8A37453918A7DC080012E8A2 /* PSDataImporter.m in Sources */,
 				8A37454918A7F69C0012E8A2 /* PSPropertiesMapViewController.m in Sources */,
 				8A1215BB18BFF03C00468925 /* PSAboutViewController.m in Sources */,
+				8A79547E18DFAC9C00448082 /* PSLocationSearchResultsViewController.m in Sources */,
 				8A2965BE18ADD49700AA330C /* PSDataCommunicator.m in Sources */,
 				8AA758C418A7304F006DFB84 /* PropertySales.xcdatamodeld in Sources */,
 				8ABAAEDB18A9CE380011A12C /* PSCoreLocationManagerDelegate.m in Sources */,
 				8A6A9B1118AFD671004FCC37 /* PSPropertySaleDataParser.m in Sources */,
+				8A79548418DFCA4100448082 /* NSArray+StringDescription.m in Sources */,
 				8AE7588018B2931C00879C2E /* PSPropertyFilterTableDataSource.m in Sources */,
 				8AA758DE18A73C35006DFB84 /* AddressLookup+Methods.m in Sources */,
 				8AA758CF18A73456006DFB84 /* AddressLookup.m in Sources */,
+				8A79548118DFADE900448082 /* PSLocationSearchResultsTableDataSource.m in Sources */,
 				8A2965AD18ADD02100AA330C /* PSPropertyMetaDataRequest.m in Sources */,
 				8A2965B118ADD1B000AA330C /* PSHttpClient.m in Sources */,
 				8A2965C318ADDB6200AA330C /* PSPropertyMetadataDataParser.m in Sources */,
