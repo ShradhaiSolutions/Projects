@@ -44,7 +44,7 @@
              self.propertiesFromSearchResult = self.properties;
          }
          
-         LogInfo(@"After filtering Search results: %lu", [self.propertiesFromSearchResult count]);
+         LogInfo(@"After filtering Search results: %lu", (unsigned long)[self.propertiesFromSearchResult count]);
          
          return nil;
          
