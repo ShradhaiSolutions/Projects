@@ -320,7 +320,7 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    if([view isKindOfClass:[PSPropertyAnnotation class]]) {
+    if([view.annotation isKindOfClass:[PSPropertyAnnotation class]]) {
         [self removeExistingOverlays];
         self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
         LogDebug(@"Annotation is selected: %@", view);
