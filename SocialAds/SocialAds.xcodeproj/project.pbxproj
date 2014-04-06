@@ -1,0 +1,766 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A09B3DF18D9261800DB9158 /* SADataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A09B3DE18D9261800DB9158 /* SADataImporter.m */; };
+		8A09B3E318D9282900DB9158 /* SADataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A09B3E218D9282900DB9158 /* SADataParser.m */; };
+		8A09B3E618D930CA00DB9158 /* SADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A09B3E518D930CA00DB9158 /* SADataManager.m */; };
+		8A3780A6187329B600AB58C3 /* SAFacebookHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3780A5187329B600AB58C3 /* SAFacebookHomeViewController.m */; };
+		8A3780A7187329B600AB58C3 /* SAFacebookHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3780A5187329B600AB58C3 /* SAFacebookHomeViewController.m */; };
+		8A3A9168186D0CFB000BE745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3A9167186D0CFB000BE745 /* Foundation.framework */; };
+		8A3A916A186D0CFB000BE745 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3A9169186D0CFB000BE745 /* CoreGraphics.framework */; };
+		8A3A916C186D0CFB000BE745 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3A916B186D0CFB000BE745 /* UIKit.framework */; };
+		8A3A9172186D0CFB000BE745 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A9170186D0CFB000BE745 /* InfoPlist.strings */; };
+		8A3A9174186D0CFB000BE745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A9173186D0CFB000BE745 /* main.m */; };
+		8A3A9178186D0CFB000BE745 /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A9177186D0CFB000BE745 /* SAAppDelegate.m */; };
+		8A3A917A186D0CFB000BE745 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A9179186D0CFB000BE745 /* Images.xcassets */; };
+		8A3A9181186D0CFC000BE745 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3A9180186D0CFC000BE745 /* XCTest.framework */; };
+		8A3A9182186D0CFC000BE745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3A9167186D0CFB000BE745 /* Foundation.framework */; };
+		8A3A9183186D0CFC000BE745 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3A916B186D0CFB000BE745 /* UIKit.framework */; };
+		8A3A918B186D0CFC000BE745 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A9189186D0CFC000BE745 /* InfoPlist.strings */; };
+		8A3A918D186D0CFC000BE745 /* SocialAdsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A918C186D0CFC000BE745 /* SocialAdsTests.m */; };
+		8A3A9197186D0DB4000BE745 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A9196186D0DB4000BE745 /* SignIn.storyboard */; };
+		8A646ED018AC291E00C0A661 /* SAGuestHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A646ECF18AC291E00C0A661 /* SAGuestHomeViewController.m */; };
+		8A646ED318AC29E100C0A661 /* SAEventListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A646ED218AC29E100C0A661 /* SAEventListDataSource.m */; };
+		8A646ED618AC2A1C00C0A661 /* SAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A646ED518AC2A1C00C0A661 /* SAEvent.m */; };
+		8A646ED918AC2FB300C0A661 /* SAEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A646ED818AC2FB300C0A661 /* SAEventDetailsViewController.m */; };
+		8A646EDC18AC2FF200C0A661 /* SAEventDetailsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A646EDB18AC2FF200C0A661 /* SAEventDetailsDataSource.m */; };
+		8A79547B18DF773400448082 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 8A79547A18DF773400448082 /* default.css */; };
+		8A8BBB991879BC2A0089461F /* SAEventsListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BBB981879BC2A0089461F /* SAEventsListDataSource.m */; };
+		8A8C39D518725C8E00B2C3AB /* SASigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C39D418725C8E00B2C3AB /* SASigninViewController.m */; };
+		8A8C39D618725C8E00B2C3AB /* SASigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C39D418725C8E00B2C3AB /* SASigninViewController.m */; };
+		8A8C39D918725F6200B2C3AB /* SAFacebookIntegrationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C39D818725F6200B2C3AB /* SAFacebookIntegrationHandler.m */; };
+		8A8C39DA18725F6200B2C3AB /* SAFacebookIntegrationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C39D818725F6200B2C3AB /* SAFacebookIntegrationHandler.m */; };
+		8AC6489618C5792500F63C45 /* SAHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC6489518C5792500F63C45 /* SAHttpClient.m */; };
+		8AC6489918C579BC00F63C45 /* SADataCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC6489818C579BC00F63C45 /* SADataCommunicator.m */; };
+		8AC6489D18C57A2E00F63C45 /* SAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC6489C18C57A2E00F63C45 /* SAFileManager.m */; };
+		8AC648A618C57C8200F63C45 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC648A118C57C8200F63C45 /* UIColor+Theme.m */; };
+		8AC648A718C57C8200F63C45 /* NSObject+ExecutionTimeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC648A318C57C8200F63C45 /* NSObject+ExecutionTimeLogger.m */; };
+		8AC648A818C57C8200F63C45 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC648A518C57C8200F63C45 /* NSDate+Utilities.m */; };
+		8AC648AB18C57E0800F63C45 /* SAEventsDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC648AA18C57E0800F63C45 /* SAEventsDataRequest.m */; };
+		A49E740AD5B249E88E1E8E46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A314BC375D1942AEA591D9D4 /* libPods.a */; };
+		E6172ED2CF834DE1B672EE18 /* libPods-SocialAdsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE843A6DE1EA4DBEB55B909F /* libPods-SocialAdsTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A3A9184186D0CFC000BE745 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A3A915C186D0CFB000BE745 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A3A9163186D0CFB000BE745;
+			remoteInfo = SocialAds;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7164C6FE15C347448259F1C4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8A09B3DD18D9261800DB9158 /* SADataImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADataImporter.h; sourceTree = "<group>"; };
+		8A09B3DE18D9261800DB9158 /* SADataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADataImporter.m; sourceTree = "<group>"; };
+		8A09B3E118D9282900DB9158 /* SADataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADataParser.h; sourceTree = "<group>"; };
+		8A09B3E218D9282900DB9158 /* SADataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADataParser.m; sourceTree = "<group>"; };
+		8A09B3E418D930CA00DB9158 /* SADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADataManager.h; sourceTree = "<group>"; };
+		8A09B3E518D930CA00DB9158 /* SADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADataManager.m; sourceTree = "<group>"; };
+		8A3780A4187329B500AB58C3 /* SAFacebookHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFacebookHomeViewController.h; sourceTree = "<group>"; };
+		8A3780A5187329B600AB58C3 /* SAFacebookHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFacebookHomeViewController.m; sourceTree = "<group>"; };
+		8A3A9164186D0CFB000BE745 /* SocialAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3A9167186D0CFB000BE745 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A3A9169186D0CFB000BE745 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A3A916B186D0CFB000BE745 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A3A916F186D0CFB000BE745 /* SocialAds-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialAds-Info.plist"; sourceTree = "<group>"; };
+		8A3A9171186D0CFB000BE745 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A3A9173186D0CFB000BE745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A3A9175186D0CFB000BE745 /* SocialAds-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialAds-Prefix.pch"; sourceTree = "<group>"; };
+		8A3A9176186D0CFB000BE745 /* SAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAAppDelegate.h; sourceTree = "<group>"; };
+		8A3A9177186D0CFB000BE745 /* SAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAAppDelegate.m; sourceTree = "<group>"; };
+		8A3A9179186D0CFB000BE745 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A3A917F186D0CFC000BE745 /* SocialAdsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAdsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3A9180186D0CFC000BE745 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A3A9188186D0CFC000BE745 /* SocialAdsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialAdsTests-Info.plist"; sourceTree = "<group>"; };
+		8A3A918A186D0CFC000BE745 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A3A918C186D0CFC000BE745 /* SocialAdsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialAdsTests.m; sourceTree = "<group>"; };
+		8A3A9196186D0DB4000BE745 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		8A646ECE18AC291E00C0A661 /* SAGuestHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAGuestHomeViewController.h; sourceTree = "<group>"; };
+		8A646ECF18AC291E00C0A661 /* SAGuestHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAGuestHomeViewController.m; sourceTree = "<group>"; };
+		8A646ED118AC29E100C0A661 /* SAEventListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventListDataSource.h; sourceTree = "<group>"; };
+		8A646ED218AC29E100C0A661 /* SAEventListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventListDataSource.m; sourceTree = "<group>"; };
+		8A646ED418AC2A1C00C0A661 /* SAEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEvent.h; sourceTree = "<group>"; };
+		8A646ED518AC2A1C00C0A661 /* SAEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEvent.m; sourceTree = "<group>"; };
+		8A646ED718AC2FB300C0A661 /* SAEventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventDetailsViewController.h; sourceTree = "<group>"; };
+		8A646ED818AC2FB300C0A661 /* SAEventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventDetailsViewController.m; sourceTree = "<group>"; };
+		8A646EDA18AC2FF200C0A661 /* SAEventDetailsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventDetailsDataSource.h; sourceTree = "<group>"; };
+		8A646EDB18AC2FF200C0A661 /* SAEventDetailsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventDetailsDataSource.m; sourceTree = "<group>"; };
+		8A79547A18DF773400448082 /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
+		8A8BBB971879BC2A0089461F /* SAEventsListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventsListDataSource.h; sourceTree = "<group>"; };
+		8A8BBB981879BC2A0089461F /* SAEventsListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventsListDataSource.m; sourceTree = "<group>"; };
+		8A8C39D318725C8E00B2C3AB /* SASigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASigninViewController.h; sourceTree = "<group>"; };
+		8A8C39D418725C8E00B2C3AB /* SASigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASigninViewController.m; sourceTree = "<group>"; };
+		8A8C39D718725F6200B2C3AB /* SAFacebookIntegrationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFacebookIntegrationHandler.h; sourceTree = "<group>"; };
+		8A8C39D818725F6200B2C3AB /* SAFacebookIntegrationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFacebookIntegrationHandler.m; sourceTree = "<group>"; };
+		8AC6489418C5792500F63C45 /* SAHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHttpClient.h; sourceTree = "<group>"; };
+		8AC6489518C5792500F63C45 /* SAHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAHttpClient.m; sourceTree = "<group>"; };
+		8AC6489718C579BC00F63C45 /* SADataCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SADataCommunicator.h; sourceTree = "<group>"; };
+		8AC6489818C579BC00F63C45 /* SADataCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SADataCommunicator.m; sourceTree = "<group>"; };
+		8AC6489B18C57A2E00F63C45 /* SAFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFileManager.h; sourceTree = "<group>"; };
+		8AC6489C18C57A2E00F63C45 /* SAFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFileManager.m; sourceTree = "<group>"; };
+		8AC6489E18C57ACD00F63C45 /* PSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLogging.h; sourceTree = "<group>"; };
+		8AC648A018C57C8200F63C45 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
+		8AC648A118C57C8200F63C45 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
+		8AC648A218C57C8200F63C45 /* NSObject+ExecutionTimeLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ExecutionTimeLogger.h"; sourceTree = "<group>"; };
+		8AC648A318C57C8200F63C45 /* NSObject+ExecutionTimeLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ExecutionTimeLogger.m"; sourceTree = "<group>"; };
+		8AC648A418C57C8200F63C45 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		8AC648A518C57C8200F63C45 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		8AC648A918C57E0800F63C45 /* SAEventsDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventsDataRequest.h; sourceTree = "<group>"; };
+		8AC648AA18C57E0800F63C45 /* SAEventsDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventsDataRequest.m; sourceTree = "<group>"; };
+		A314BC375D1942AEA591D9D4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE843A6DE1EA4DBEB55B909F /* libPods-SocialAdsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocialAdsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CA5CB872394F719D19122F /* Pods-SocialAdsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialAdsTests.xcconfig"; path = "Pods/Pods-SocialAdsTests.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A3A9161186D0CFB000BE745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3A916A186D0CFB000BE745 /* CoreGraphics.framework in Frameworks */,
+				8A3A916C186D0CFB000BE745 /* UIKit.framework in Frameworks */,
+				8A3A9168186D0CFB000BE745 /* Foundation.framework in Frameworks */,
+				A49E740AD5B249E88E1E8E46 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A3A917C186D0CFC000BE745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3A9181186D0CFC000BE745 /* XCTest.framework in Frameworks */,
+				8A3A9183186D0CFC000BE745 /* UIKit.framework in Frameworks */,
+				8A3A9182186D0CFC000BE745 /* Foundation.framework in Frameworks */,
+				E6172ED2CF834DE1B672EE18 /* libPods-SocialAdsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A09B3DC18D925EA00DB9158 /* Importer */ = {
+			isa = PBXGroup;
+			children = (
+				8A09B3DD18D9261800DB9158 /* SADataImporter.h */,
+				8A09B3DE18D9261800DB9158 /* SADataImporter.m */,
+			);
+			name = Importer;
+			sourceTree = "<group>";
+		};
+		8A09B3E018D9281A00DB9158 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8A09B3E118D9282900DB9158 /* SADataParser.h */,
+				8A09B3E218D9282900DB9158 /* SADataParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		8A3A915B186D0CFB000BE745 = {
+			isa = PBXGroup;
+			children = (
+				8A3A916D186D0CFB000BE745 /* SocialAds */,
+				8A3A9186186D0CFC000BE745 /* SocialAdsTests */,
+				8A3A9166186D0CFB000BE745 /* Frameworks */,
+				8A3A9165186D0CFB000BE745 /* Products */,
+				7164C6FE15C347448259F1C4 /* Pods.xcconfig */,
+				F4CA5CB872394F719D19122F /* Pods-SocialAdsTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8A3A9165186D0CFB000BE745 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A3A9164186D0CFB000BE745 /* SocialAds.app */,
+				8A3A917F186D0CFC000BE745 /* SocialAdsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A3A9166186D0CFB000BE745 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A3A9167186D0CFB000BE745 /* Foundation.framework */,
+				8A3A9169186D0CFB000BE745 /* CoreGraphics.framework */,
+				8A3A916B186D0CFB000BE745 /* UIKit.framework */,
+				8A3A9180186D0CFC000BE745 /* XCTest.framework */,
+				A314BC375D1942AEA591D9D4 /* libPods.a */,
+				EE843A6DE1EA4DBEB55B909F /* libPods-SocialAdsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A3A916D186D0CFB000BE745 /* SocialAds */ = {
+			isa = PBXGroup;
+			children = (
+				8A79547718DF770100448082 /* freestyle */,
+				8AC6489F18C57C7000F63C45 /* Object+Categories */,
+				8AC6489118C5758400F63C45 /* Data */,
+				8A3A9176186D0CFB000BE745 /* SAAppDelegate.h */,
+				8A3A9177186D0CFB000BE745 /* SAAppDelegate.m */,
+				8A8BBB971879BC2A0089461F /* SAEventsListDataSource.h */,
+				8A8BBB981879BC2A0089461F /* SAEventsListDataSource.m */,
+				8A8C39D718725F6200B2C3AB /* SAFacebookIntegrationHandler.h */,
+				8A8C39D818725F6200B2C3AB /* SAFacebookIntegrationHandler.m */,
+				8A3A9196186D0DB4000BE745 /* SignIn.storyboard */,
+				8A8C39D318725C8E00B2C3AB /* SASigninViewController.h */,
+				8A8C39D418725C8E00B2C3AB /* SASigninViewController.m */,
+				8A646ECE18AC291E00C0A661 /* SAGuestHomeViewController.h */,
+				8A646ECF18AC291E00C0A661 /* SAGuestHomeViewController.m */,
+				8A646ED718AC2FB300C0A661 /* SAEventDetailsViewController.h */,
+				8A646ED818AC2FB300C0A661 /* SAEventDetailsViewController.m */,
+				8A646ED118AC29E100C0A661 /* SAEventListDataSource.h */,
+				8A646ED218AC29E100C0A661 /* SAEventListDataSource.m */,
+				8A646EDA18AC2FF200C0A661 /* SAEventDetailsDataSource.h */,
+				8A646EDB18AC2FF200C0A661 /* SAEventDetailsDataSource.m */,
+				8A646ED418AC2A1C00C0A661 /* SAEvent.h */,
+				8A646ED518AC2A1C00C0A661 /* SAEvent.m */,
+				8A3780A4187329B500AB58C3 /* SAFacebookHomeViewController.h */,
+				8A3780A5187329B600AB58C3 /* SAFacebookHomeViewController.m */,
+				8A3A9179186D0CFB000BE745 /* Images.xcassets */,
+				8A3A916E186D0CFB000BE745 /* Supporting Files */,
+			);
+			path = SocialAds;
+			sourceTree = "<group>";
+		};
+		8A3A916E186D0CFB000BE745 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A3A916F186D0CFB000BE745 /* SocialAds-Info.plist */,
+				8AC6489E18C57ACD00F63C45 /* PSLogging.h */,
+				8A3A9170186D0CFB000BE745 /* InfoPlist.strings */,
+				8A3A9173186D0CFB000BE745 /* main.m */,
+				8A3A9175186D0CFB000BE745 /* SocialAds-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A3A9186186D0CFC000BE745 /* SocialAdsTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A3A918C186D0CFC000BE745 /* SocialAdsTests.m */,
+				8A3A9187186D0CFC000BE745 /* Supporting Files */,
+			);
+			path = SocialAdsTests;
+			sourceTree = "<group>";
+		};
+		8A3A9187186D0CFC000BE745 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A3A9188186D0CFC000BE745 /* SocialAdsTests-Info.plist */,
+				8A3A9189186D0CFC000BE745 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A79547718DF770100448082 /* freestyle */ = {
+			isa = PBXGroup;
+			children = (
+				8A79547818DF770B00448082 /* themes */,
+			);
+			name = freestyle;
+			sourceTree = "<group>";
+		};
+		8A79547818DF770B00448082 /* themes */ = {
+			isa = PBXGroup;
+			children = (
+				8A79547918DF771C00448082 /* pixate-blue */,
+			);
+			name = themes;
+			sourceTree = "<group>";
+		};
+		8A79547918DF771C00448082 /* pixate-blue */ = {
+			isa = PBXGroup;
+			children = (
+				8A79547A18DF773400448082 /* default.css */,
+			);
+			name = "pixate-blue";
+			sourceTree = "<group>";
+		};
+		8AC6489118C5758400F63C45 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8A09B3E018D9281A00DB9158 /* Parser */,
+				8A09B3DC18D925EA00DB9158 /* Importer */,
+				8AC6489A18C57A1E00F63C45 /* FileManager */,
+				8AC6489318C578FE00F63C45 /* Communicator */,
+				8AC6489218C575D500F63C45 /* Controller */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		8AC6489218C575D500F63C45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A09B3E418D930CA00DB9158 /* SADataManager.h */,
+				8A09B3E518D930CA00DB9158 /* SADataManager.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8AC6489318C578FE00F63C45 /* Communicator */ = {
+			isa = PBXGroup;
+			children = (
+				8AC6489718C579BC00F63C45 /* SADataCommunicator.h */,
+				8AC6489818C579BC00F63C45 /* SADataCommunicator.m */,
+				8AC6489418C5792500F63C45 /* SAHttpClient.h */,
+				8AC6489518C5792500F63C45 /* SAHttpClient.m */,
+				8AC648A918C57E0800F63C45 /* SAEventsDataRequest.h */,
+				8AC648AA18C57E0800F63C45 /* SAEventsDataRequest.m */,
+			);
+			name = Communicator;
+			sourceTree = "<group>";
+		};
+		8AC6489A18C57A1E00F63C45 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AC6489B18C57A2E00F63C45 /* SAFileManager.h */,
+				8AC6489C18C57A2E00F63C45 /* SAFileManager.m */,
+			);
+			name = FileManager;
+			sourceTree = "<group>";
+		};
+		8AC6489F18C57C7000F63C45 /* Object+Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8AC648A018C57C8200F63C45 /* UIColor+Theme.h */,
+				8AC648A118C57C8200F63C45 /* UIColor+Theme.m */,
+				8AC648A218C57C8200F63C45 /* NSObject+ExecutionTimeLogger.h */,
+				8AC648A318C57C8200F63C45 /* NSObject+ExecutionTimeLogger.m */,
+				8AC648A418C57C8200F63C45 /* NSDate+Utilities.h */,
+				8AC648A518C57C8200F63C45 /* NSDate+Utilities.m */,
+			);
+			name = "Object+Categories";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A3A9163186D0CFB000BE745 /* SocialAds */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A3A9190186D0CFC000BE745 /* Build configuration list for PBXNativeTarget "SocialAds" */;
+			buildPhases = (
+				707786485947406DBEDEFB9F /* Check Pods Manifest.lock */,
+				8A3A9160186D0CFB000BE745 /* Sources */,
+				8A3A9161186D0CFB000BE745 /* Frameworks */,
+				8A3A9162186D0CFB000BE745 /* Resources */,
+				F30FA33BF13543579BA00A89 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialAds;
+			productName = SocialAds;
+			productReference = 8A3A9164186D0CFB000BE745 /* SocialAds.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A3A917E186D0CFC000BE745 /* SocialAdsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A3A9193186D0CFC000BE745 /* Build configuration list for PBXNativeTarget "SocialAdsTests" */;
+			buildPhases = (
+				FB86C8F7F8FC40E5B4F77F75 /* Check Pods Manifest.lock */,
+				8A3A917B186D0CFC000BE745 /* Sources */,
+				8A3A917C186D0CFC000BE745 /* Frameworks */,
+				8A3A917D186D0CFC000BE745 /* Resources */,
+				E3B53781788C45CD8A600EE0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A3A9185186D0CFC000BE745 /* PBXTargetDependency */,
+			);
+			name = SocialAdsTests;
+			productName = SocialAdsTests;
+			productReference = 8A3A917F186D0CFC000BE745 /* SocialAdsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A3A915C186D0CFB000BE745 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SA;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Social Ads";
+				TargetAttributes = {
+					8A3A917E186D0CFC000BE745 = {
+						TestTargetID = 8A3A9163186D0CFB000BE745;
+					};
+				};
+			};
+			buildConfigurationList = 8A3A915F186D0CFB000BE745 /* Build configuration list for PBXProject "SocialAds" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A3A915B186D0CFB000BE745;
+			productRefGroup = 8A3A9165186D0CFB000BE745 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A3A9163186D0CFB000BE745 /* SocialAds */,
+				8A3A917E186D0CFC000BE745 /* SocialAdsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A3A9162186D0CFB000BE745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3A9172186D0CFB000BE745 /* InfoPlist.strings in Resources */,
+				8A3A9197186D0DB4000BE745 /* SignIn.storyboard in Resources */,
+				8A3A917A186D0CFB000BE745 /* Images.xcassets in Resources */,
+				8A79547B18DF773400448082 /* default.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A3A917D186D0CFC000BE745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3A918B186D0CFC000BE745 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		707786485947406DBEDEFB9F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3B53781788C45CD8A600EE0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-SocialAdsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F30FA33BF13543579BA00A89 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB86C8F7F8FC40E5B4F77F75 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A3A9160186D0CFB000BE745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A646ED918AC2FB300C0A661 /* SAEventDetailsViewController.m in Sources */,
+				8A3A9178186D0CFB000BE745 /* SAAppDelegate.m in Sources */,
+				8A3780A6187329B600AB58C3 /* SAFacebookHomeViewController.m in Sources */,
+				8A8C39D918725F6200B2C3AB /* SAFacebookIntegrationHandler.m in Sources */,
+				8A09B3E318D9282900DB9158 /* SADataParser.m in Sources */,
+				8AC648AB18C57E0800F63C45 /* SAEventsDataRequest.m in Sources */,
+				8AC6489D18C57A2E00F63C45 /* SAFileManager.m in Sources */,
+				8A8C39D518725C8E00B2C3AB /* SASigninViewController.m in Sources */,
+				8AC6489918C579BC00F63C45 /* SADataCommunicator.m in Sources */,
+				8A646ED618AC2A1C00C0A661 /* SAEvent.m in Sources */,
+				8A3A9174186D0CFB000BE745 /* main.m in Sources */,
+				8A09B3DF18D9261800DB9158 /* SADataImporter.m in Sources */,
+				8A8BBB991879BC2A0089461F /* SAEventsListDataSource.m in Sources */,
+				8A646ED018AC291E00C0A661 /* SAGuestHomeViewController.m in Sources */,
+				8AC648A618C57C8200F63C45 /* UIColor+Theme.m in Sources */,
+				8A646EDC18AC2FF200C0A661 /* SAEventDetailsDataSource.m in Sources */,
+				8A09B3E618D930CA00DB9158 /* SADataManager.m in Sources */,
+				8A646ED318AC29E100C0A661 /* SAEventListDataSource.m in Sources */,
+				8AC648A818C57C8200F63C45 /* NSDate+Utilities.m in Sources */,
+				8AC6489618C5792500F63C45 /* SAHttpClient.m in Sources */,
+				8AC648A718C57C8200F63C45 /* NSObject+ExecutionTimeLogger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A3A917B186D0CFC000BE745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8C39D618725C8E00B2C3AB /* SASigninViewController.m in Sources */,
+				8A3A918D186D0CFC000BE745 /* SocialAdsTests.m in Sources */,
+				8A8C39DA18725F6200B2C3AB /* SAFacebookIntegrationHandler.m in Sources */,
+				8A3780A7187329B600AB58C3 /* SAFacebookHomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A3A9185186D0CFC000BE745 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A3A9163186D0CFB000BE745 /* SocialAds */;
+			targetProxy = 8A3A9184186D0CFC000BE745 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A3A9170186D0CFB000BE745 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A3A9171186D0CFB000BE745 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A3A9189186D0CFC000BE745 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A3A918A186D0CFC000BE745 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A3A918E186D0CFC000BE745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A3A918F186D0CFC000BE745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A3A9191186D0CFC000BE745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7164C6FE15C347448259F1C4 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kon2740/Documents/FacebookSDK,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialAds/SocialAds-Prefix.pch";
+				INFOPLIST_FILE = "SocialAds/SocialAds-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C943CC83-3EF8-4D5A-96AA-EA1D12C045BE";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A3A9192186D0CFC000BE745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7164C6FE15C347448259F1C4 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kon2740/Documents/FacebookSDK,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialAds/SocialAds-Prefix.pch";
+				INFOPLIST_FILE = "SocialAds/SocialAds-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C943CC83-3EF8-4D5A-96AA-EA1D12C045BE";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A3A9194186D0CFC000BE745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4CA5CB872394F719D19122F /* Pods-SocialAdsTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SocialAds.app/SocialAds";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialAds/SocialAds-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SocialAdsTests/SocialAdsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A3A9195186D0CFC000BE745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4CA5CB872394F719D19122F /* Pods-SocialAdsTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SocialAds.app/SocialAds";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialAds/SocialAds-Prefix.pch";
+				INFOPLIST_FILE = "SocialAdsTests/SocialAdsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A3A915F186D0CFB000BE745 /* Build configuration list for PBXProject "SocialAds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A3A918E186D0CFC000BE745 /* Debug */,
+				8A3A918F186D0CFC000BE745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A3A9190186D0CFC000BE745 /* Build configuration list for PBXNativeTarget "SocialAds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A3A9191186D0CFC000BE745 /* Debug */,
+				8A3A9192186D0CFC000BE745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A3A9193186D0CFC000BE745 /* Build configuration list for PBXNativeTarget "SocialAdsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A3A9194186D0CFC000BE745 /* Debug */,
+				8A3A9195186D0CFC000BE745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A3A915C186D0CFB000BE745 /* Project object */;
+}

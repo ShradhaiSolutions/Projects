@@ -12,12 +12,15 @@
 
 @interface PSPropertiesMapViewController : PSBaseViewController <MKMapViewDelegate, UIActionSheetDelegate>
 
-@property(copy, nonatomic) NSArray *properties;
-@property(copy, nonatomic) NSArray *saleDates;
+@property (copy, nonatomic) NSArray *properties;
+@property (copy, nonatomic) NSArray *saleDates;
+@property (copy, nonatomic) CLPlacemark *locationSearchPlacemark;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 - (void)updateTheMapRegion:(CLLocationCoordinate2D)location;
+- (void)showLocationSearchAnnotation;
+- (void)removeExistingLocationSearchAnnotations;
 - (void)showDirectionsFromCurrentLocation;
 
 @end

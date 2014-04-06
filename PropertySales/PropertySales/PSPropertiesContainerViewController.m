@@ -10,28 +10,40 @@
 #import "PSPropertiesListViewController.h"
 #import "PSPropertiesMapViewController.h"
 #import "PSPropertiesFilterViewController.h"
+#import "PSLocationSearchResultsViewController.h"
 #import "PSDataManager.h"
 #import "PSCoreLocationManagerDelegate.h"
 #import "PSSearchResultsViewModel.h"
+#import "PSLocationManager.h"
+#import "UIColor+Theme.h"
 
 static NSString *const kPropertiesListStoryboardIdentifier = @"PropertiesList";
 static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 
+typedef NS_ENUM(NSUInteger, SearchType) {
+    SearchTypeProperty = 0,
+    SearchTypeLocation = 1
+};
 
-@interface PSPropertiesContainerViewController () <UISearchBarDelegate, UIGestureRecognizerDelegate>
+@interface PSPropertiesContainerViewController () <UISearchBarDelegate, UIGestureRecognizerDelegate, PSLocationSearchDelegate>
+
+@property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
+@property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
+@property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
+@property (assign, nonatomic) SearchType searchType;
+@property (strong, nonatomic) NSString *locationSearchText;
+@property (strong, nonatomic) CLPlacemark *locationSearchPlacemark;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *searchToolbar;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchTypeButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewTypeSegmentControl;
 
 - (IBAction)viewTypeSegmentControlValueChanged:(id)sender;
-
-@property (strong, nonatomic) PSSearchResultsViewModel *searchResultsViewModel;
-
-@property (strong, nonatomic) UIGestureRecognizer *tapGestureRecognizer;
-@property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
+- (IBAction)toggleSearchType:(id)sender;
 
 @end
+
 
 @implementation PSPropertiesContainerViewController
 
@@ -53,10 +65,13 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     
     LogDebug(@"Number of Properties: %lu", (unsigned long)[self.searchResultsViewModel.propertiesFromSearchResult count]);
     
-    RAC(self.searchResultsViewModel, searchString) = RACObserve(self, searchBar.text);
     [self.searchResultsViewModel setup];
-    
+
     self.searchBar.delegate = self;
+    
+    //Setup SearchType
+    self.searchType = SearchTypeProperty;
+    [self setupPropertySearchBarButtonItem];
     
     //Add the child view controller
     [self addMapViewController];
@@ -90,9 +105,33 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     if([childViewController isKindOfClass:[PSPropertiesListViewController class]]) {
         PSPropertiesListViewController *vc = (PSPropertiesListViewController *)childViewController;
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
+        
+        NSMutableArray *toolbarButtons = [self.searchToolbar.items mutableCopy];
+        [toolbarButtons removeObject:self.searchTypeButton];
+        self.searchToolbar.items = toolbarButtons;
+        
+        CGRect frame = self.searchBar.frame;
+        frame.size.width = 288;
+        self.searchBar.frame = frame;
+        self.searchBar.text = self.searchResultsViewModel.searchString;
     } else {
         PSPropertiesMapViewController *vc = (PSPropertiesMapViewController *)childViewController;
+        vc.locationSearchPlacemark = self.locationSearchPlacemark;
         RAC(vc, properties) = RACObserve(self.searchResultsViewModel, propertiesFromSearchResult);
+        
+        NSMutableArray *toolbarButtons = [self.searchToolbar.items mutableCopy];
+        UIBarButtonItem *searchTypeButton = [[UIBarButtonItem alloc] initWithImage:nil
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(toggleSearchType:)];
+        self.searchTypeButton = searchTypeButton;
+        [toolbarButtons addObject:self.searchTypeButton];
+        [self setupPropertySearchBarButtonItem];
+        self.searchToolbar.items = toolbarButtons;
+        
+        CGRect frame = self.searchBar.frame;
+        frame.size.width = 252;
+        self.searchBar.frame = frame;
     }
     
     childViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -120,6 +159,39 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     [self swapChildViewControllers];
 }
 
+- (IBAction)toggleSearchType:(id)sender {
+    if(self.searchType == SearchTypeProperty) {
+        [self setupLocationSearchBarButtonItem];
+    } else {
+        [self setupPropertySearchBarButtonItem];
+    }
+}
+
+- (void)setupPropertySearchBarButtonItem
+{
+    self.searchType = SearchTypeProperty;
+    
+    UIImage *image = [UIImage imageNamed:@"PropertyIcon"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    [self.searchTypeButton setImage:image];
+    
+    self.searchBar.text = self.searchResultsViewModel.searchString;
+}
+
+- (void)setupLocationSearchBarButtonItem
+{
+    self.searchType = SearchTypeLocation;
+    
+    UIImage *image = [UIImage imageNamed:@"MapPin"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    [self.searchTypeButton setImage:image];
+    self.searchTypeButton.tintColor = [UIColor blueTintColor];
+    
+    self.searchBar.text = self.locationSearchText;
+}
+
 #pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -143,16 +215,77 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
 {
     ENTRY_LOG;
     
+    [self logSearchAnalytics:self.searchBar.text];
     [self.searchBar resignFirstResponder];
+    
+    if(self.searchType == SearchTypeLocation) {
+        self.locationSearchText = searchBar.text;
+        [SVProgressHUD showWithStatus:@"Finding Address" maskType:SVProgressHUDMaskTypeGradient];
+        PSLocationManager *locationManager = [[PSLocationManager alloc] init];
+        
+        @weakify(self);
+        [locationManager convertAddressToCoordinate:searchBar.text withCompletion:^(NSArray *placemarks) {
+            @strongify(self);
+            [self handleLocationSearchResults:placemarks];
+        }];
+    }
 
     EXIT_LOG;
+}
+
+- (void)handleLocationSearchResults:(NSArray *)placemarks
+{
+    if([placemarks count] > 0) {
+        if([placemarks count] == 1) {
+            [self addLocationSearchAnnotation:[placemarks firstObject]];
+        } else {
+            UINavigationController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LocationSearchResults"];
+            PSLocationSearchResultsViewController *locationSearchVC = (PSLocationSearchResultsViewController *) [viewController topViewController];
+            locationSearchVC.searchResults = placemarks;
+            locationSearchVC.delegate = self;
+            
+            [self presentViewController:viewController animated:YES completion:nil];
+            
+            LogDebug(@"Number of Search Results: %lu", (unsigned long)[placemarks count]);
+        }
+    }
+}
+
+- (void)addLocationSearchAnnotation:(CLPlacemark *)placemark
+{
+    if(placemark == nil) {
+        return;
+    }
+    
+    PSPropertiesMapViewController *mapVC = (PSPropertiesMapViewController *) [self.childViewControllers firstObject];
+    mapVC.locationSearchPlacemark = placemark;
+    self.locationSearchPlacemark = placemark;
+    
+    [mapVC showLocationSearchAnnotation];
+    
+    LogDebug(@"Latitude = %f, Longitude = %f", placemark.location.coordinate.latitude, placemark.location.coordinate.longitude);
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     ENTRY_LOG;
     
-    self.searchResultsViewModel.searchString = searchText;
+    if(self.searchType == SearchTypeProperty) {
+        self.searchResultsViewModel.searchString = searchText;
+    } else {
+        LogVerbose(@"SearchType - Address: %@", searchText);
+        if(self.searchBar.text == nil || [self.searchBar.text isEqualToString:@""]) {
+            if([[self.childViewControllers firstObject] isKindOfClass:[PSPropertiesMapViewController class]]) {
+                DDLogVerbose(@"Empty String");
+                self.locationSearchText = nil;
+                
+                PSPropertiesMapViewController *mapVC = (PSPropertiesMapViewController *) [self.childViewControllers firstObject];
+                mapVC.locationSearchPlacemark = nil;
+                self.locationSearchPlacemark = nil;
+                [mapVC removeExistingLocationSearchAnnotations];
+            }
+        }
+    }
     
     EXIT_LOG;
 }
@@ -191,6 +324,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
         CGRect barRect = [self.view convertRect:self.searchBar.frame fromView:self.searchBar.superview];
         
         if (!CGRectContainsPoint(barRect, touchPoint)) {
+            [self logSearchAnalytics:self.searchBar.text];
             [self.searchBar resignFirstResponder];
         }
     }
@@ -201,6 +335,7 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
     if (recognizer == self.panGestureRecognizer) {
         CGPoint touchPoint = [recognizer locationInView:self.view];
         if (!CGRectContainsPoint(self.searchBar.frame, touchPoint)) {
+            [self logSearchAnalytics:self.searchBar.text];
             [self.searchBar resignFirstResponder];
         }
     }
@@ -213,6 +348,23 @@ static NSString *const kPropertiesMapStoryboardIdentifier = @"PropertiesMap";
         PSPropertiesFilterViewController *controller = [segue.destinationViewController childViewControllers][0];
         controller.searchResultsViewModel = self.searchResultsViewModel;
     }
+}
+
+#pragma mark - Analytics
+- (void)logSearchAnalytics:(NSString *)searchTerm
+{
+    NSString *category = nil;
+    
+    if(self.searchType == SearchTypeProperty) {
+        category = @"PropertyDataSearch";
+    } else {
+        category = @"LocationSearch";
+    }
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category
+                                                                                        action:@"SearchBySearchTerm"
+                                                                                         label:searchTerm
+                                                                                         value:@([self.searchResultsViewModel.propertiesFromSearchResult count])] build]];
 }
 
 @end

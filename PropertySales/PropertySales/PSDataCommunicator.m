@@ -8,6 +8,7 @@
 
 #import "PSDataCommunicator.h"
 #import "PSPropertyMetaDataRequest.h"
+#import "PSPropertySaleDatesRequest.h"
 #import "PSPropertySaleDataRequest.h"
 #import "PSFileManager.h"
 
@@ -60,6 +61,35 @@
                      LogInfo(@"Html Response is successfully saved to disk");
                  }];
 #endif
+                LogDebug(@"Http Response map block is completed");
+                
+                return responseHtml;
+            }];
+}
+
+- (RACSignal *)fetchPropertySaleDatesWithPostParams:(NSDictionary *)postParams
+{
+    ENTRY_LOG;
+    
+    PSPropertySaleDatesRequest *request = [[PSPropertySaleDatesRequest alloc] init];
+    
+    EXIT_LOG;
+    
+    //TODO: research to find a away for executing file manager asynchronoulsy
+    return [[request invokeRequestWithPostParams:postParams]
+            map:^id(id responseHtml) {
+                LogDebug(@"Http Response is received for Property Sales Data");
+                
+#if TARGET_IPHONE_SIMULATOR
+                //Saving the data to Disk
+                [[self.fileManager saveResponseHTML:responseHtml toFile:kPropertySaleDatesResponseFileName]
+                 subscribeError:^(NSError *error) {
+                     LogError(@"Error While Saving the data %@", error);
+                 } completed:^{
+                     LogInfo(@"Data is successfully saved");
+                 }];
+#endif
+                
                 LogDebug(@"Http Response map block is completed");
                 
                 return responseHtml;

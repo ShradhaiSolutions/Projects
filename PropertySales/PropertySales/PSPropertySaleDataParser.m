@@ -42,7 +42,7 @@
             }
             
             if([properties count] > 0) {
-                LogInfo(@"Property Sales are parsed successfully. Number of Properties: %lu", [properties count]);
+                LogInfo(@"Property Sales are parsed successfully. Number of Properties: %lu", (unsigned long)[properties count]);
                 LogVerbose(@"Properties: %@", properties);
             } else {
                 LogError(@"There is some problem in parsing the Property Sales html response");
@@ -65,17 +65,17 @@
 - (NSUInteger)numberOfRecords:(TFHpple *)propertySalesParse
 {
     NSArray *propertyRecords = [propertySalesParse searchWithXPathQuery:@"//*[@id='GridView1']//tr"];
-    LogDebug(@"Number of Available Properties - count: %lu", [propertyRecords count]);
+    LogDebug(@"Number of Available Properties - count: %lu", (unsigned long)[propertyRecords count]);
     
     return [propertyRecords count];
 }
 
 - (NSArray *)parseTableHeader:(TFHpple *)propertySalesParse
 {
-    NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:@"//*[@id='GridView1']//tr[1]/th/font/b"];
+    NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:@"//*[@id='GridView1']//tr[1]/th"];
     NSMutableArray *headers = [NSMutableArray array];
     
-    LogVerbose(@"Number of Columns: %lu", propertyNodes.count);
+    LogVerbose(@"Number of Columns: %lu", (unsigned long)propertyNodes.count);
     
     for (TFHppleElement *element in propertyNodes) {
         [headers addObject:[[element firstChild] content]];
@@ -84,27 +84,9 @@
     return headers;
 }
 
-- (NSArray *)parseTableRowData:(TFHpple *)propertySalesParse forTheRowNumber:(NSUInteger)rowNumber
-{
-    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%lu]/td/font", rowNumber];
-    NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:xpath];
-    NSMutableArray *values = [NSMutableArray array];
-    
-    for (TFHppleElement *element in propertyNodes) {
-        if([[element firstChild] content] != nil) {
-            [values addObject:[[element firstChild] content]];
-        } else {
-            [values addObject:@""];
-        }
-        
-    }
-    
-    return values;
-}
-
 - (NSMutableDictionary *)parseTableRowData:(TFHpple *)propertySalesParse forTheRowNumber:(NSUInteger)rowNumber withHeaders:(NSArray *)headers
 {
-    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%lu]/td/font", (unsigned long)rowNumber];
+    NSString *xpath = [NSString stringWithFormat:@"//*[@id='GridView1']/tr[%lu]/td", (unsigned long)rowNumber];
     NSArray *propertyNodes = [propertySalesParse searchWithXPathQuery:xpath];
     
     NSMutableDictionary *propertyDictionary = [NSMutableDictionary dictionary];

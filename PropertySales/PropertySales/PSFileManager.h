@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString * const kPropertyMetaDataResponseFileName = @"PropertyMetaData.html";
+static NSString * const kPropertySaleDatesResponseFileName = @"PropertySaleDates.html";
 static NSString * const kPropertySaleDataResponseFileName = @"PropertySaleData";
 static NSString * const kPropertySalesArrayFileName = @"PropertiesArray.plist";
 static NSString * const kAddressToGeocodeMappingDictionaryFileName = @"AddressToGeocodeMapping.plist";

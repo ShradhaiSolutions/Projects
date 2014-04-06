@@ -21,4 +21,8 @@
     #import "CoreData+MagicalRecord.h"
     #import "NSObject+ExecutionTimeLogger.h"
     #import "SVProgressHUD.h"
+    #import "GAI.h"
+    #import "GAIFields.h"
+    #import "GAITracker.h"
+    #import "GAIDictionaryBuilder.h"
 #endif

@@ -7,9 +7,9 @@
 //
 
 #import "PSDataManager.h"
-#import "PSPropertyMetaDataRequest.h"
 #import "PSDataCommunicator.h"
 #import "PSPropertyMetadataDataParser.h"
+#import "PSPropertySaleDatesParser.h"
 #import "PSPropertySaleDataParser.h"
 #import "PSFileManager.h"
 #import "PSLocationParser.h"
@@ -87,12 +87,19 @@ double kDataFetchSuccess = 1.0;
     self.dataFetchProgress = @0.0;
     
     @weakify(self);
-    [[[[[[self fetchPropertyMetaData]
+    [[[[[[[self fetchPropertyMetaData]
          flattenMap:^RACStream *(id metaDataDictionary) {
              LogDebug(@"Property Meta Data is received");
              LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
              
              self.dataFetchProgress = @0.1;
+             
+             return [self fetchPropertySaleDatesWithPasedMetadata:metaDataDictionary];
+         }] flattenMap:^RACStream *(id metaDataDictionary) {
+             LogDebug(@"Property Meta Data is received");
+             LogVerbose(@"Parsed Metadata: %@", metaDataDictionary);
+             
+             self.dataFetchProgress = @0.2;
              
              return [self fetchPropertySalesWithPasedMetadata:metaDataDictionary];
          }] flattenMap:^RACStream *(id propertiesOfASaleDate) {
@@ -107,7 +114,7 @@ double kDataFetchSuccess = 1.0;
              return [RACSignal empty];
          }] then:^RACSignal *{
              @strongify(self);
-             LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", [properties count]);
+             LogInfo(@"Property data is downloaded and parsed. Total Number of Properties: %lu", (unsigned long)[properties count]);
              [self logExecutionTime:startTime];
              
              self.communicator = nil;
@@ -140,6 +147,7 @@ double kDataFetchSuccess = 1.0;
              self.dataFetchProgress = @(kDataFetchFailure);
              
              [self logExecutionTime:startTime];
+             [self logDataFetchError:error];
          } completed:^{
              properties = nil;
              self.locationParser = nil;
@@ -150,6 +158,8 @@ double kDataFetchSuccess = 1.0;
              
              [self logExecutionTime:startTime];
              [self loadPropertiesFromCoreDataOnMainThread];
+
+             [self logDataFetchTime:[[NSDate date] timeIntervalSinceDate:startTime]];
              LogInfo(@"Remote Data Import is Completed!!!");
          }];
     
@@ -172,6 +182,38 @@ double kDataFetchSuccess = 1.0;
     
 }
 
+#pragma mark - Fetch Property Sale Dates
+- (RACSignal *)fetchPropertySaleDatesWithPasedMetadata:(NSDictionary *)parsedData
+{
+    ENTRY_LOG;
+    
+    NSMutableDictionary *postParams = [parsedData mutableCopy];
+    [postParams removeObjectForKey:@"SaleDatesArray"];
+
+    LogInfo(@"Fetching the Property Sale Dates");
+    [postParams setObject:@"Upcoming Foreclosures" forKey:@"btnCurrent"];
+
+    return [self fetchPropertySaleDatesWithPostParams:[postParams copy]];
+    
+    EXIT_LOG;
+}
+
+- (RACSignal *)fetchPropertySaleDatesWithPostParams:(NSDictionary *)postParams
+{
+    ENTRY_LOG;
+    
+    EXIT_LOG;
+    
+    return [[self.communicator fetchPropertySaleDatesWithPostParams:postParams]
+            flattenMap:^RACStream *(id responseData) {
+                LogDebug(@"Property Sale Dates response is received");
+                PSPropertySaleDatesParser *parser = [[PSPropertySaleDatesParser alloc] init];
+                return [parser parsePropertySaleDatesResponse:responseData];
+            }];
+    
+}
+
+
 #pragma mark - Fetch Property Saledata
 - (RACSignal *)fetchPropertySalesWithPasedMetadata:(NSDictionary *)parsedData
 {
@@ -191,6 +233,11 @@ double kDataFetchSuccess = 1.0;
             
             LogInfo(@"Fetching the properties for the sale date: %@", saleDate);
             [postParams setObject:saleDate forKey:@"ddlDate"];
+            [postParams setObject:@"" forKey:@"ddlTown"];
+            [postParams setObject:@"" forKey:@"txtAddress"];
+            [postParams setObject:@"" forKey:@"txtAddress_TextBoxWatermarkExtender_ClientState"];
+            [postParams setObject:@"GO" forKey:@"btnGo"];
+            [postParams setObject:@"" forKey:@"txtCaseno"];
             
             RACSignal *saleDataFetchSignal = [self fetchPropertySaleDataWithPostParams:[postParams copy]];
             [saleDateSignals addObject:saleDataFetchSignal];
@@ -247,7 +294,7 @@ double kDataFetchSuccess = 1.0;
          LogError(@"Error while importing the data: %@",error);
      } completed:^{
          [self loadPropertiesFromCoreData];
-         LogDebug(@"Local Cache is successfull imported into Core Data. Number of Properties: %lu", [self.properties count]);
+         LogDebug(@"Local Cache is successfull imported into Core Data. Number of Properties: %lu", (unsigned long)[self.properties count]);
      }];
 }
 
@@ -324,7 +371,7 @@ double kDataFetchSuccess = 1.0;
         [saleDateStrings addObject:[self.dateFormatter stringFromDate:saleDate]];
     }
     
-    LogDebug(@"SaleDate Stringss: %@", saleDateStrings);
+    LogDebug(@"SaleDate Strings: %@", saleDateStrings);
     
     self.saleDates = [saleDates copy];
     self.saleDateStrings = [saleDateStrings copy];
@@ -353,7 +400,7 @@ double kDataFetchSuccess = 1.0;
 
         NSTimeInterval elapstedTime = fabs([lastSuccessfulRefreshDate timeIntervalSinceNow]);
         
-        LogDebug(@"{elapstedTime: %f, refreshInterval:%lu}", elapstedTime, interval);
+        LogDebug(@"{elapstedTime: %f, refreshInterval:%lu}", elapstedTime, (unsigned long)interval);
         
         if(elapstedTime > interval) {
             refreshRequired = YES;
@@ -368,6 +415,27 @@ double kDataFetchSuccess = 1.0;
     LogInfo(@"ShouldRefreshData: %@", refreshRequired ? @"YES" : @"NO");
     
     return refreshRequired;
+}
+
+#pragma mark - Analytics
+- (void)logDataFetchTime:(NSTimeInterval)fetchTime
+{
+    //If we send the whole number, the value is not popping up at Analytics
+    int fetchIntervalInMilliSeconds = abs(fetchTime * 1000);
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createTimingWithCategory:@"DataFetch"
+                                                                                       interval:@(fetchIntervalInMilliSeconds)
+                                                                                           name:@"TotalDataFetchTime"
+                                                                                          label:@"TotalDataFetchTime"] build]];
+}
+
+- (void)logDataFetchError:(NSError *)error
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"Error"
+                                                                                        action:@"DataFetchError"
+                                                                                         label:[error domain]
+                                                                                         value:@([error code])] build]];
+    
 }
 
 @end

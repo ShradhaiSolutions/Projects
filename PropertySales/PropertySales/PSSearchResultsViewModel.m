@@ -32,6 +32,10 @@
          @strongify(self);
          LogInfo(@"Search String: %@, SelectedSaleDates: %@", searchString, selectedSaleDatesForFiltering);
          
+         if(searchString == nil) {
+             searchString = @"";
+         }
+         
          if(searchString.length > 0 || [selectedSaleDatesForFiltering count] > 0) {
              self.propertiesFromSearchResult = [self.properties
                                                 filteredArrayUsingPredicate:[[self buildPredicate]
@@ -40,7 +44,7 @@
              self.propertiesFromSearchResult = self.properties;
          }
          
-         LogInfo(@"After filtering Search results: %lu", [self.propertiesFromSearchResult count]);
+         LogInfo(@"After filtering Search results: %lu", (unsigned long)[self.propertiesFromSearchResult count]);
          
          return nil;
          

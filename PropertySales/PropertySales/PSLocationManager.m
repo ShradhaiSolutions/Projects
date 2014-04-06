@@ -7,7 +7,6 @@
 //
 
 #import "PSLocationManager.h"
-#import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
 #import "PSProperty.h"
 
@@ -31,40 +30,25 @@
     return property;
 }
 
-- (void)getCoordinates
-{
-    ENTRY_LOG;
-    
-    for (NSMutableDictionary *property in self.propertiesArray) {
-        [self convertAddressToCoordinate:property];
-    }
-    
-    EXIT_LOG;
-}
-
-- (void)convertAddressToCoordinate:(NSMutableDictionary *)property
+- (void)convertAddressToCoordinate:(NSString *)address withCompletion:(PSLocationSearchCompletionBlock)completion;
 {
     ENTRY_LOG;
     
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
-    NSString *address = [self getAddress:property];
-    [geocoder geocodeAddressString:[self getAddress:property]
+    [geocoder geocodeAddressString:address
                  completionHandler:^(NSArray *placemarks, NSError *error) {
+                     [SVProgressHUD dismiss];
                      
                      if (error) {
                          LogError(@"Geocode failed with error: %@, for the address %@", error, address);
                          return;
                      }
                      
-                     if(placemarks && placemarks.count > 0)
-                     {
-                         CLPlacemark *placemark = placemarks[0];
-                         CLLocation *location = placemark.location;
-                         CLLocationCoordinate2D coords = location.coordinate;
-                         
-                         LogDebug(@"Latitude = %f, Longitude = %f", coords.latitude, coords.longitude);
-                         [property setObject:[NSValue valueWithMKCoordinate:coords] forKey:@"Coordinates"];
+                     if(placemarks && placemarks.count > 0) {
+                         if(completion) {
+                             completion(placemarks);
+                         }
                      } else {
                          LogError(@"No coordinates are found for the address %@", address);
                      }

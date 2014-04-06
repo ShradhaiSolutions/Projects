@@ -13,10 +13,10 @@
 #import "PSDataManager.h"
 #import "AddressLookup.h"
 #import "PSPropertyAnnotation.h"
+#import "PSLocationSearchAnnotation.h"
 #import "PSGoogleMapsManager.h"
 #import "PSCoreLocationManager.h"
 #import "UIColor+Theme.h"
-
 
 typedef NS_ENUM(NSUInteger, MapDirectionsDestinationType) {
     MapDirectionsDestinationTypeInBuilt = 0,
@@ -64,6 +64,9 @@ static float const kMetersPerMile = 1609.344;
     
     [self addCurrentLocationButton];
     [self navigateToCurrentLocation];
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"Properties Map" forKey:kGAIScreenName] build]];
+
     
     EXIT_LOG;
 }
@@ -125,6 +128,10 @@ static float const kMetersPerMile = 1609.344;
          PSDataManager *dataManager = [PSDataManager sharedInstance];
          self.saleDates = [dataManager getSaleDates];
          [self addAnnotations];
+         
+         if(self.locationSearchPlacemark) {
+             [self showLocationSearchAnnotation];
+         }
      } error:^(NSError *error) {
          LogError(@"Error While adding Annotations: %@", error);
      }];
@@ -204,6 +211,36 @@ static float const kMetersPerMile = 1609.344;
     [self.mapView removeAnnotations:annotations];
 }
 
+- (void)showLocationSearchAnnotation
+{
+    CLLocationCoordinate2D location = self.locationSearchPlacemark.location.coordinate;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 7.5*kMetersPerMile, 7.5*kMetersPerMile);
+    
+    PSLocationSearchAnnotation *searchAnnotation = [[PSLocationSearchAnnotation alloc] initWithCoordinates:location
+                                                                                                     title:@"Title"];
+
+    [self removeExistingLocationSearchAnnotations];
+    [self.mapView addAnnotation:searchAnnotation];
+    [self.mapView setRegion:viewRegion animated:YES];
+}
+
+- (void)removeExistingLocationSearchAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray array];
+    [self.mapView.annotations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[PSLocationSearchAnnotation class]]) {
+            [annotations addObject:obj];
+        }
+    }];
+    
+    [self.mapView removeAnnotations:annotations];
+    
+    if(self.locationSearchPlacemark == nil) {
+        [self zoomTheMapToLocation:self.previousCurrentLocation];
+    }
+}
+
 - (void)removeExistingOverlays
 {
     [self.mapView removeOverlays:self.mapView.overlays];
@@ -212,11 +249,12 @@ static float const kMetersPerMile = 1609.344;
 #pragma mark - MKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    static NSString *identifier = @"PropertyAnnotation";
+    static NSString *propertyAnnotationIdentifier = @"PropertyAnnotation";
+    static NSString *locationSearchAnnotationIdentifier = @"LocationSearchAnnotation";
     if ([annotation isKindOfClass:[PSPropertyAnnotation class]]) {
-        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:propertyAnnotationIdentifier];
         if (annotationView == nil) {
-            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:propertyAnnotationIdentifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             
@@ -251,6 +289,30 @@ static float const kMetersPerMile = 1609.344;
         
         
         return annotationView;
+    } else if ([annotation isKindOfClass:[PSLocationSearchAnnotation class]]) {
+        MKAnnotationView *annotationView = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:locationSearchAnnotationIdentifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:locationSearchAnnotationIdentifier];
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
+        } else {
+            annotationView.annotation = annotation;
+        }
+        
+        UIImage *mapPin = [UIImage imageNamed:@"MapPin"];
+        mapPin = [mapPin imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        
+        [annotationView setTintColor:[UIColor clearColor]];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:mapPin];
+        imageView.tintColor = [UIColor blueTintColor];
+        
+        
+        [annotationView addSubview:imageView];
+        
+        return annotationView;
+        
     }
     
     return nil;
@@ -258,7 +320,7 @@ static float const kMetersPerMile = 1609.344;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    if([view isKindOfClass:[MKPinAnnotationView class]]) {
+    if([view.annotation isKindOfClass:[PSPropertyAnnotation class]]) {
         [self removeExistingOverlays];
         self.selectedProperty = ((PSPropertyAnnotation *) view.annotation).property;
         LogDebug(@"Annotation is selected: %@", view);
@@ -346,18 +408,21 @@ static float const kMetersPerMile = 1609.344;
         case MapDirectionsDestinationTypeInBuilt:
             LogInfo(@"InBuilt Directions Type is selected");
             [SVProgressHUD showWithStatus:@"Calculating Routes" maskType:SVProgressHUDMaskTypeGradient];
+            [self logShowMapDirectionsAnalytics:@"InBuilt"];
             [self showDirectionsFromCurrentLocation];
             break;
         case MapDirectionsDestinationTypeInGoogle:
             LogInfo(@"Google Map Directions Type is selected");
             
             [self.googleMapsManager openGoogleMapsWithDestinationAddress:self.selectedProperty.lookupAddress];
+            [self logShowMapDirectionsAnalytics:@"Google Maps"];
             break;
         case MapDirectionsDestinationTypeInApple:
             LogInfo(@"Apple App Directions Type is selected");
             
             [self.selectedProperty.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey:
                                                                              MKLaunchOptionsDirectionsModeDriving}];
+            [self logShowMapDirectionsAnalytics:@"Apple Maps"];
             
             break;
         default:
@@ -396,5 +461,15 @@ static float const kMetersPerMile = 1609.344;
 {
     self.mapView.delegate = nil;
 }
+
+#pragma mark - Analytics
+- (void)logShowMapDirectionsAnalytics:(NSString *)type
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"MapDirections"
+                                                                                        action:@"ShowMapDirectionsOfType"
+                                                                                         label:type
+                                                                                         value:nil] build]];
+}
+
 
 @end

@@ -10,8 +10,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "PSHttpClient.h"
 
-static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
-
 @implementation PSPropertySaleDataRequest
 
 /**

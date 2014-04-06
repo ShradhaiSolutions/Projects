@@ -35,6 +35,8 @@
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"About" forKey:kGAIScreenName] build]];
+    
     EXIT_LOG;
 }
 
@@ -71,9 +73,15 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    int numberOfHours = self.dataSource.stepper.value;
+    int refreshIntervalInHoursNewValue = self.dataSource.stepper.value;
     
-    [[PSApplicationContext sharedInstance] updateRefreshInterval:@(numberOfHours * 60 * 60)];
+    int refreshIntervalInHoursCurrentValue = ([[PSApplicationContext sharedInstance] refreshIntervalInSeconds])/(60 * 60);
+    
+    if(refreshIntervalInHoursCurrentValue != refreshIntervalInHoursNewValue) {
+        [self logUpdateRefreshPolicyAnalytics:refreshIntervalInHoursNewValue];
+    }
+    
+    [[PSApplicationContext sharedInstance] updateRefreshInterval:@(refreshIntervalInHoursNewValue * 60 * 60)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +136,16 @@
     }
     
     [self.dataSource.progressView setProgress:1.0 animated:YES];
+}
+
+#pragma mark - Analytics
+- (void)logUpdateRefreshPolicyAnalytics:(int)refreshIntervalInHoursNewValue
+{
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"Settings"
+                                                                                        action:@"UpdateRefreshPolicy"
+                                                                                         label:@"RefreshIntervalInHours"
+                                                                                         value:@(refreshIntervalInHoursNewValue)] build]];
+    
 }
 
 @end

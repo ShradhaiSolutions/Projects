@@ -1,0 +1,19 @@
+platform :ios, '7.0'
+
+pod 'AFNetworking', '~> 2.2'
+pod 'Facebook-iOS-SDK', '~> 3.12'
+pod 'MagicalRecord', '~> 2.2'
+pod 'CocoaLumberjack', '~> 1.8'
+pod 'CrashlyticsLumberjack', '~> 1.0'
+pod 'CrashlyticsFramework', '~> 2.1'
+pod 'SVProgressHUD', '~> 1.0'
+pod 'ReactiveCocoa', '~> 2.2'
+pod 'UIAlertView-Blocks', '~> 1.0'
+pod 'PixateFreestyle', '~> 2.1'
+
+target 'SocialAdsTests' do
+  link_with 'SocialAdsTests'
+  pod 'OCMock', '~> 2.2'
+end
+
+link_with 'SocialAds'

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 
+static NSString * const kRequestURL = @"http://apps.hcso.org/PropertySale.aspx";
+
 @interface PSHttpClient : NSObject
 
 + (AFHTTPSessionManager *)httpClient;
