@@ -1,4 +1,2 @@
-Projects
-========
 
-My Personal Private Projects
+Read Me Notes
